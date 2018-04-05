@@ -1,0 +1,135 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>立博国际娱乐</title>
+	<meta http-equiv="refresh" content="1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/global.css" />
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/style.css" />
+    <script type="text/javascript" src="/statics/jquery-1.11.3.min.js"></script>
+    <script src="/statics/layer/layer.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/statics/sytle/js/EM.tools.js"></script>
+    <script type="text/javascript" src="/statics/global.js"></script>
+    <script src="/statics/sytle/js/MSClass.js" type="text/javascript"></script>
+    <script src="/statics/json/Lottery_Json.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var lid = joinValue('lid');
+        $(document).ready(function () {
+            ajaxList();
+        });
+
+        function ajaxList() {
+            var u = "/ajax/ajax.aspx?oper=GetKaiJiangInfo";
+            var index = emLoading();
+            $.ajax({
+                type: "get",
+                dataType: "json",
+                data: "&clienttime=" + Math.random(),
+                url: u + lid,
+                error: function (XmlHttpRequest, textStatus, errorThrown) { emAlert("亲！页面过期,请刷新页面!"); },
+                success: function (d) {
+                    switch (d.result) {
+                        case '-1':
+                            emAlert(d.returnval); top.window.location = '/login.html';
+                            break;
+                        case '0':
+                            emAlert(d.returnval);
+                            break;
+                        case '1':
+                            $("#ajaxList").setTemplateElement("tplList", null, { filter_data: true });
+                            $("#ajaxList").processTemplate(d);
+                            $i("lotName").innerHTML = d.table[0].lotteryname;
+                            break;
+                    }
+                    closeload(index);
+                }
+            });
+        }
+        function GetSytle(balls) {
+            if (balls != "") {
+                var strArray = balls.split(",");
+                var str = "";
+                for (var i = 0; i < strArray.length; i++) {
+                    str += "<span class='ball ball-scc'>" + strArray[i] + "</span>";
+                }
+                return str;
+            }
+        }
+
+        function GetNumberState(balls, lid) {
+            if (balls != "") {
+                var strArray = balls.split(",");
+                var str = "";
+                if (lid <= 1013) {
+                    if (strArray[0] == strArray[1] || strArray[0] == strArray[2] || strArray[1] == strArray[2]) {
+                        str += "组三 | ";
+                    }
+                    else {
+                        str += "组六 | ";
+                    }
+                    if (strArray[2] == strArray[3] || strArray[2] == strArray[4] || strArray[3] == strArray[4]) {
+                        str += "组三";
+                    }
+                    else {
+                        str += "组六";
+                    }
+                }
+                else if (lid >= 3001 && lid <= 3005) {
+                    if (strArray[0] == strArray[1] || strArray[0] == strArray[2] || strArray[1] == strArray[2]) {
+                        str += "组三";
+                    }
+                    else {
+                        str += "组六";
+                    }
+                }
+                else {
+                    str += "无状态信息";
+                }
+                return str;
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div class="container">
+    <header id="header">
+        <h1 id="lotName" class="title">重庆时时彩</h1>
+        <a href="javascript:history.go(-1);" class="back"></a>
+    </header>
+    <main id="main">
+        <div class="lottery-center">
+        	<ul id="ajaxList" class="lottery-list">
+            	
+            </ul>
+        </div>
+    </main>
+    <div class="height50"></div>
+    <nav id="navbar">
+            <a href="/main.html"><i class="icon-rec"></i>精彩推荐</a>
+            <a href="/game.html"><i class="icon-cart"></i>购彩大厅</a>
+            <a href="/lottery.html" class="on"><i class="icon-history"></i>开奖信息</a>
+            <a href="/center.html"><i class="icon-user"></i>我的账户</a>
+    </nav>
+</div>
+</body>
+<textarea class="template" id="tplList" rows="1" cols="1" style="display: none">
+{#foreach $T.table as record}
+<li>
+    <div class="info">
+        <span class="issue"><i class="icon-date"></i>{$T.record.title} 期</span>
+        <span class="time">{$T.record.opentime}</span>
+    </div>
+    <div class="result">
+        <div class="lottery-numbers">
+            {GetSytle($T.record.number)}
+        </div>
+        <span class="other">{GetNumberState($T.record.number,$T.record.type)}</span>
+    </div>
+</li>
+{#/for}
+</textarea>
+</html>

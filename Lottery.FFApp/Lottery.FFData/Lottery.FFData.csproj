@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05F71969-D197-4194-BB5C-04C666CBC869}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lottery.FFData</RootNamespace>
+    <AssemblyName>Lottery.FFData</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Act_ActiveNews.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_ActiveRecord.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_ActiveSet.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_AgentFHRecord.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_AutoRecord.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_BetRecond.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_Day15FHSet.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_DayGzSet.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_DayYJSet.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_SetChargeDetail.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_SetFHDetail.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_SetGZDetail.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_SetGZDetail2.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_SetYJDetail.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_SetYJDetail2.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Act_UserFHDetail.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log_AdminOper.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="log_Bet.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log_ContractOper.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log_Exception.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log_Point.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log_Sys.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log_UserLogin.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_Merchant.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_User.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserBank.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserBankLog.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserBet.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserCharge.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserChargeLog.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserContract.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserContractDetail.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserEmail.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserGetCash.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserGetCashHistory.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserGroup.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserGroupQuota.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserLevel.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserMessage.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserMoneyLog.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserMoneyStatAll.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserPlaySetting.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserPointQuota.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserQuota.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserQuotas.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserRegLink.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="N_UserZhBet.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PayUrl_temp.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_temp.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sys_Admin.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_AutoRank.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_Bank.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_BankBinInfo.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_ChargeSet.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_Info.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_LoginCheck.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_Lottery.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_LotteryCheck.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_LotteryData.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_LotteryPlaySetting.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_LotteryTime.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_lotteryUrl.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_Menu.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_Message.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_News.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_PlayBigType.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_PlaySmallType.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_Role.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_SbfChannelMap.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_TaskSet.cs">
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ticket.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ticket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ticket.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="Ticket.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Ticket.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Ticket.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Ticket.edmx</DependentUpon>
+      <LastGenOutput>Ticket.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Ticket.edmx.diagram">
+      <DependentUpon>Ticket.edmx</DependentUpon>
+    </None>
+    <None Include="Ticket.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Ticket.edmx</DependentUpon>
+      <LastGenOutput>Ticket.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

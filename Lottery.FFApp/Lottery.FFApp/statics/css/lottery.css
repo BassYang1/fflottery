@@ -1,0 +1,281 @@
+.lottery-container{position:relative;border-radius:5px;background-color:#fff;box-shadow:0 2px 4px rgba(0,0,0,.25);}
+
+.lottery-header,.lottery-hl,.lottery-hm,.lottery-hr,.lottery-logo,.lottery-countdown,.lottery-result{height:110px;}
+.lottery-header,.lottery-content{position:relative;}
+.lottery-header{border-bottom:1px solid #ddd;}
+.lottery-hl,.lottery-hm,.lottery-hr,.lottery-countdown,.lottery-issue,.betting-countdown,.lottery-result,.lottery-show{float:left;overflow:hidden;}
+.lottery-hl{width:120px;}
+.lottery-hm{width:750px;}
+.lottery-hr{float:right;width:94px;padding-left:18px;padding-right:18px;}
+.lottery-logo{line-height:110px;text-align:center;}
+.lottery-name{position:absolute;z-index:9;left:120px;top:30px;height:24px;font-size:16px;font-weight:normal;}
+
+.lottery-issue{width:150px;line-height:25px;margin-top:26px;text-align:center;}
+.lottery-issue .issue{margin:0 5px;color:#e55172;}
+.lottery-countdown{width:310px;}
+.lottery-countdown .lottery-issue{width:130px;margin-top:55px;margin-right:4px;text-align:left;}
+.betting-countdown{width:176px;height:44px;line-height:44px;overflow:hidden;margin-top:33px;color:#302e37;text-align:center;font-size:25px;font-family:Arial,sans-serif;background:url(../img/betting_countdown.png) no-repeat;}
+.betting-countdown span{float:left;width:50px;margin-left:11px;letter-spacing:11px;text-indent:4px;}
+.betting-countdown span:first-child{margin-left:4px;}
+
+.lottery-result{width:440px;margin-top:2px;}
+.lottery-show,.lottery-numbers{height:50px;overflow:hidden;}
+.lottery-show{width:290px;margin-top:28px;}
+
+.lottery-numbers{font-size:0;text-align:center;}
+.lottery-numbers li,.lottery-numbers .inner,.lottery-numbers .number{width:44px;height:44px;line-height:44px;overflow:hidden;}
+.lottery-numbers li{display:inline-block;padding:2px 4px 6px;margin-left:-1px;margin-right:-1px;background:url(../img/lottery_number_ball.png) no-repeat;}
+.lottery-numbers .inner{position:relative;}
+.lottery-numbers .number{font-size:24px;font-style:italic;font-family:Arial, sans-serif;color:#4a4c61;}
+
+.lottery-numbers2{font-size:0;text-align:center;}
+.lottery-numbers2 li,.lottery-numbers2 .inner,.lottery-numbers2 .number{width:44px;height:44px;line-height:44px;overflow:hidden;}
+.lottery-numbers2 li{display:inline-block;padding:2px;margin-left:-1px;margin-right:-1px;background:url(../img/lottery_number_ball.png) no-repeat;}
+.lottery-numbers2 .inner{position:relative;}
+.lottery-numbers2 .number{font-size:24px;font-style:italic;font-family:Arial, sans-serif;color:#4a4c61; font-weight:bold;}
+
+.lottery-klc .lottery-show,.lottery-klc .lottery-numbers{height:50px;}
+.lottery-klc .lottery-show{margin-top:31px;}
+.lottery-klc .lottery-numbers li,.lottery-klc .lottery-numbers .inner,.lottery-klc .lottery-numbers .number{width:50px;height:50px;}
+.lottery-klc .lottery-numbers li{padding:0;margin:0 5px;background:none;}
+.lottery-klc .lottery-numbers .number{background-repeat:no-repeat;}
+.lottery-klc .lottery-numbers .n1{background-image:url(../img/lottery_dice_1.png);}
+.lottery-klc .lottery-numbers .n2{background-image:url(../img/lottery_dice_2.png);}
+.lottery-klc .lottery-numbers .n3{background-image:url(../img/lottery_dice_3.png);}
+.lottery-klc .lottery-numbers .n4{background-image:url(../img/lottery_dice_4.png);}
+.lottery-klc .lottery-numbers .n5{background-image:url(../img/lottery_dice_5.png);}
+.lottery-klc .lottery-numbers .n6{background-image:url(../img/lottery_dice_6.png);}
+
+.lottery-links{margin-top:25px;}
+.lottery-links a,.lottery-sound{padding-left:2px;padding-right:2px;padding-bottom:4px;}
+.lottery-links a{display:block;height:25px;line-height:25px;overflow:hidden;margin-bottom:6px;text-align:left;background:url(../img/btn_lot.png) no-repeat;}
+.lottery-links a i{float:left;width:16px;height:16px;margin-left:9px;margin-right:6px;margin-top:4px;}
+.lottery-links a .icon-trend{background-image:url(../img/icon_lot_trend.png);}
+.lottery-links a .icon-history{background-image:url(../img/icon_lot_history.png);}
+
+.lottery-sound{display:inline-block;width:19px;height:19px;margin-left:10px;text-align:center;background:url(../img/btn_lot_sm.png) no-repeat;vertical-align:top;}
+.lottery-sound .icon-sound{position:relative;top:4px;width:12px;height:11px;vertical-align:top;background-image:url(../img/icon_sound_open.png);}
+.lottery-sound.closed .icon-sound{position:relative;top:4px;width:12px;height:11px;vertical-align:top;background-image:url(../img/icon_sound_close.png);}
+
+.lottery-area{overflow:hidden;}
+
+.lottery-playgroup,.lottery-playgroup li{height:30px;overflow:hidden;}
+.lottery-playgroup{padding:5px 10px;border-bottom:1px solid #dee3eb;text-align:center;}
+.lottery-playgroup li{float:left;width:65px;line-height:30px;font-weight:bold;cursor:pointer;}
+.lottery-playgroup .selected{border-radius:5px;color:#fff;font-weight:normal;background-color:#53525f;}
+.lottery-klc .lottery-playgroup li,.lottery-pk10 .lottery-playgroup li{width:90px;}
+
+.lottery-play{padding:10px 30px 0;}
+.lottery-play dl{overflow:hidden;margin-bottom:10px;}
+.lottery-play dt,.lottery-play dd{float:left;overflow:hidden;}
+.lottery-play dt{min-width:40px;height:24px;line-height:24px;margin-right:15px;font-weight:bold;}
+.lottery-play dd{height:22px;line-height:22px;padding-left:6px;padding-right:6px;margin-right:12px;border:1px solid #ccc;border-radius:5px;color:#666;cursor:pointer;}
+.lottery-play .selected{border-color:#848fa5;color:#fff;background:#848fa5;}
+
+.lottery-subpanel{position:relative;}
+
+.lottery-playinfo{position:relative;height:36px;padding:10px 300px 10px 52px;}
+
+.lottery-example,.lottery-example .icon-i{width:13px;height:13px;}
+.lottery-example{position:absolute;z-index:19;left:30px;top:13px;overflow:hidden;}
+.lottery-example .icon-i{background-image:url(../img/icon_lot_i.png);}
+.lottery-example .play-example{position:absolute;left:-10px;top:24px;width:360px;padding:9px;border-radius:3px;color:#fff;background-color:#53525f;}
+.lottery-example .play-example .triangle{position:absolute;top:-5px;left:12px;border-width:0 5px 5px;border-bottom-color:#53525f;}
+.lottery-example:hover{overflow:visible;}
+
+.lottery-bonus{position:absolute;z-index:9;top:10px;right:30px;}
+.lottery-bonus .icon-cny{float:left;width:13px;height:13px;margin:4px 7px 0 0;background-image:url(../img/icon_lot_cny.png);}
+.lottery-bonus .money{margin-right:5px;color:#e65172;}
+
+.lottery-choose{padding:0 20px;}
+.lottery-choose li{overflow:hidden;}
+.lottery-choose .oper,.lottery-choose .pos{margin-top:5px;font-size:13px;text-align:center;}
+.lottery-choose .oper{float:right;}
+.lottery-choose .oper a,.ball{padding:0 2px 4px;text-align:center;}
+.lottery-choose .oper a{float:left;width:30px;height:30px;line-height:30px;margin-left:6px;background:url(../img/lottery_oper.png) no-repeat;}
+.lottery-choose .oper a:hover{color:#fff;background-image:url(../img/lottery_oper_hover.png);}
+.lottery-choose .pos{position:relative;float:left;width:65px;height:30px;line-height:30px;margin-right:35px;border-radius:5px 0 0 5px;color:#4a4c5f;background-color:#ddd;}
+.lottery-choose .pos:after{content:'';position:absolute;right:-15px;top:0;width:0;height:0;overflow:hidden;border-style:solid;border-width:15px 0 15px 15px;border-color:transparent transparent transparent #ddd;}
+
+.lottery-balls{float:left;width:500px;overflow:hidden;}
+.lottery-11x5 .lottery-balls{width:550px;}
+
+.ball{display:inline-block;width:40px;height:40px;line-height:40px;overflow:hidden;font-size:20px;font-family:Arial, sans-serif;color:#4a4c61;background:url(../img/lottery_ball.png) no-repeat;}
+.ball.selected{color:#fff;}
+.big-ball{width:80px;font-size:16px;background:url(../img/lottery_ball_big.png) no-repeat;}
+
+.lottery-balls .ball{float:left;margin-left:6px;margin-bottom:6px;cursor:pointer;}
+.lottery-pos .lottery-balls .ball:first-child{margin-left:0;}
+
+.lottery-fc3d .ball.selected{background-image:url(../img/lottery_ball_fc3d.png);}
+.lottery-tcp3 .ball.selected{background-image:url(../img/lottery_ball_tcp3.png);}
+.lottery-ssc .ball.selected,.lottery-qtc .ball.selected{background-image:url(../img/lottery_ball_ssc.png);}
+.lottery-ssl .ball.selected{background-image:url(../img/lottery_ball_ssl.png);}
+.lottery-11x5 .ball.selected{background-image:url(../img/lottery_ball_11x5.png);}
+.lottery-klc .ball.selected{background-image:url(../img/lottery_ball_klc.png);}
+.lottery-klc .big-ball.selected{background-image:url(../img/lottery_ball_klc_big.png);}
+.lottery-pk10 .ball.selected{background-image:url(../img/lottery_ball_pk10.png);}
+
+.lottery-input{padding:0 30px;}
+.lottery-input textarea{width:928px;height:168px;padding:5px;margin-top:12px;border:1px solid #e6e6e6;}
+
+.lottery-position{height:18px;overflow:hidden;margin-top:10px;}
+.lottery-position label{float:left;height:18px;overflow:hidden;margin-right:25px;}
+.lottery-position label input{float:left;margin:2px 10px 0 0;}
+
+.betting-area{overflow:hidden;padding:15px 20px 20px;margin-top:15px;border-top:1px solid #ddd;}
+.betting-settings{overflow:hidden;padding-top:3px;padding-bottom:3px;}
+
+.betting-settings,.betting-number,.betting-multi .lab,.betting-mode .lab,.betting-bonus,.betting-adjust .lab,.betting-adjust .ratio,.betting-subtotal{height:24px;}
+.betting-number,.betting-multi .lab,.betting-mode .lab,.betting-bonus,.betting-adjust .lab,.betting-adjust .ratio,.betting-subtotal{float:left;line-height:24px;overflow:hidden;}
+.betting-number .amount,.betting-bonus .money,.betting-subtotal .money,.betting-total em{margin:0 5px;color:#e65172;}
+
+.betting-subtotal{margin-left:15px;}
+.betting-subtotal .money{display:inline-block;font-size:16px;vertical-align:top;}
+
+.betting-multi,.betting-mode,.betting-bonus,.betting-adjust{float:left;margin-left:30px;}
+.betting-multi .lab,.betting-mode .lab,.betting-adjust .lab{margin-right:10px;}
+.betting-adjust .ratio{margin-left:10px;}
+
+.betting-amount,.betting-amount .minus,.betting-amount .plus,.betting-amount .number{float:left;}
+.betting-amount .minus,.betting-amount .plus{width:20px;height:20px;margin-top:2px;border-radius:50%;background-color:#ddd;background-position:center;background-repeat:no-repeat;}
+.betting-amount .minus{margin-right:5px;background-image:url(../img/icon_lot_minus.png);}
+.betting-amount .plus{margin-left:5px;background-image:url(../img/icon_lot_plus.png);}
+.betting-amount .minus.disable,.betting-amount .plus.disable{background-color:#eee;cursor:not-allowed;}
+.betting-amount .number,.betting-mode li{border:1px solid #d5d8db;text-align:center;background-color:#fff;}
+.betting-amount .number{width:38px;height:22px;line-height:22px \9;}
+
+.betting-mode ul,.betting-mode li{float:left;}
+.betting-mode li{width:22px;height:22px;line-height:22px;overflow:hidden;margin-left:6px;border-radius:50%;cursor:pointer;}
+.betting-mode li:first-child{margin-left:0;}
+.betting-mode .selected{border-color:#848fa5;color:#fff;background-color:#848fa5;}
+
+.betting-adjust{text-align:right;}
+.betting-slider{float:left;border-radius:3px;}
+.betting-slider{position:relative;width:100px;height:8px;margin:8px 5px;background-color:#cfcfd5;}
+.betting-slider .cover{float:right;height:100%;overflow:hidden;background-color:#53525f;}
+.betting-slider .ui-slider-handle{position:absolute;z-index:9;width:19px;height:20px;margin:-6px 0 0 -9px;background:url(../img/slider_handle.png) no-repeat;}
+
+
+.betting-add{float:right;width:110px;height:30px;line-height:30px;margin-top:-3px;border-radius:3px;font-size:13px;color:#fff;background-color:#33d571;}
+.betting-add .icon-add{top:8px;width:14px;height:14px;margin-right:9px;background-image:url(../img/icon_lot_add.png);}
+
+.lottery-basket,.betting-bottom{float:left;width:660px;overflow:hidden;}
+.lottery-basket{height:105px;margin-top:15px;}
+
+.betting-actions{float:right;width:80px;}
+.betting-actions a,.betting-confirm{border-radius:3px;color:#fff;background-color:#e69a17;}
+.betting-actions a{display:block;height:31px;line-height:31px;margin-bottom:6px;}
+.betting-actions a i{top:8px;width:14px;height:16px;margin-right:5px;}
+.betting-actions a .icon-bet{background-image:url(../img/icon_lot_bet.png);}
+.betting-actions a .icon-clear{background-image:url(../img/icon_lot_clear.png);}
+.betting-actions a .icon-append{background-image:url(../img/icon_lot_append.png);}
+.betting-actions a:hover{background-color:#da7d2c;}
+.betting-actions .btn-betting{background-color:#33d571;}
+
+.betting-lottery{width:564px;height:99px;overflow:auto;padding:2px;border:1px solid #d5d8db;}
+
+.betting-list{color:#666;}
+.betting-list li,.betting-list span{height:33px;line-height:33px;overflow:hidden;}
+.betting-list li:nth-child(odd){background-color:#edf0f4;}
+.betting-list span{float:left;width:60px;text-align:center;}
+.betting-list em{color:#e65172;}
+.betting-list .number{width:250px; text-align:left;}
+.betting-list .money{width:80px;}
+.betting-list .oper{width:35px;}
+.betting-list .del,.betting-list .del .icon-del{display:block;width:16px;height:16px;}
+.betting-list .del{margin:8px auto;}
+.betting-list .del .icon-del{background-image:url(../img/icon_lot_del.png);}
+.betting-list .no{width:180px;}
+
+.betting-bottom{margin-top:15px;}
+
+.betting-total{float:left;height:40px;line-height:40px;overflow:hidden;}
+
+.betting-confirm{position:relative;float:right;width:60px;height:32px;overflow:hidden;line-height:16px;padding:4px 100px 4px 40px;text-align:left;background-color:#4b4a55;}
+.betting-confirm .text{position:absolute;right:0;top:0;width:100px;height:40px;line-height:40px;overflow:hidden;text-align:center;font-size:14px;background-color:#53525f;}
+.betting-confirm .icon-clock{position:absolute;left:10px;top:7px;width:22px;height:26px;background-image:url(../img/icon_lot_clock.png);}
+
+.confirm-countdown{display:block;}
+
+.lottery-tabs{position:relative;float:right;width:278px;height:158px;margin-top:15px;border:1px solid #d5d8db;}
+.lottery-tabs .tabs-nav,.lottery-tabs .tabs-nav li{height:28px;overflow:hidden;}
+.lottery-tabs .tabs-nav{padding:2px;border-bottom:1px solid #d5d8db;text-align:center;background-color:#edf0f4;}
+.lottery-tabs .tabs-nav li{float:left;line-height:28px; cursor:pointer;}
+.lottery-tabs .tabs-nav li{display:block;width:80px;}
+.lottery-tabs .tabs-nav .ui-state-active{border-radius:3px;background-color:#e69a17;color:#fff;}
+.lottery-tabs .tabs-nav .ui-state-active a{color:#fff;}
+.lottery-tabs .tabs-panel{padding:3px;}
+
+.query-more{position:absolute;z-index:9;top:7px;right:10px;}
+.query-more .icon-more{float:left;width:13px;height:13px;margin-top:4px;margin-right:5px;background-image:url(../img/icon_bet_more.png);}
+
+.betting-table{text-align:center;}
+.betting-table span{float:left;width:80px;}
+.betting-table .no{width:180px;}
+.betting-table .table-head{height:26px;line-height:26px;overflow:hidden;margin-bottom:3px;background-color:#edf0f4;}
+.betting-table .table-body{height:90px;overflow:auto;}
+.betting-table .betting-list li{background-color:transparent;}
+.betting-table .betting-list li:nth-child(even){background-color:#edf0f4;}
+
+.lottery-pk10 .lottery-numbers,.lottery-pk10 .lottery-show{height:auto;}
+.lottery-pk10 .lottery-show{margin-top:3px;}
+.lottery-pk10 .lottery-numbers2{margin-top:25px;}
+
+.myappend{position:relative;padding-top:20px;padding-bottom:20px;}
+
+.append-stop{position:absolute;left:140px;top:-34px;height:18px;}
+.append-stop input{float:left;margin:2px 10px 0 0;}
+
+.append-form{position:relative;padding:5px 35px;margin-top:20px;background-color:#f5f5f5;}
+.append-form .input-group{height:24px;margin:15px 0;}
+.append-form .input-wrap,.append-form .lab,.append-form select,.append-form .ipt,.append-form .kv,.append-form .kv .k,.append-form .kv .v,.append-form dt,.append-form dd,.append-form .unit{float:left;}
+.append-form .input-wrap,.append-form .kv{margin-right:32px;}
+.append-form .lab,.append-form .kv .k,.append-form .kv .v,.append-form dt,.append-form .unit{height:24px;line-height:24px;overflow:hidden;}
+.append-form .lab,.append-form .kv .k,.append-form dt{margin-right:8px;}
+.append-form select,.append-form .ipt{border:1px solid #e9e8f0;}
+.append-form select{width:110px;height:24px;padding-left:6px;background-color:#fff;}
+.append-form .ipt{width:36px;height:22px;line-height:22px \9;padding:0 11px;}
+.append-form .unit{margin-left:8px;}
+.append-form .btn-append{position:absolute;right:40px;bottom:15px;}
+
+.append-table .table-head{height:40px;overflow:hidden;color:#fff;background-color:#a497f2;}
+.append-table .table-body{height:240px;overflow:auto;}
+.append-table span{float:left;height:24px;line-height:24px;overflow:hidden;padding:8px 0;text-align:center;}
+.append-table .chk{width:70px;}
+.append-table .issue{width:190px;}
+.append-table .multi,.append-table .money{width:140px;}
+.append-table .date{width:240px;}
+.append-table .chk input{margin-top:5px;}
+.append-table .multi input{width:26px;height:22px;line-height:22px;padding:0 11px;margin-right:7px;border:1px solid #e9eced;}
+
+.append-list li{height:40px;overflow:hidden;}
+.append-list li:nth-child(2n){background-color:#f5f5f5;}
+.append-list .money{color:#f75653;}
+
+.append-actions{margin-top:20px;padding:0 40px;text-align:right;}
+
+.betting-details{padding:25px 35px 35px;}
+.betting-details p{height:30px;overflow:hidden;margin-bottom:10px;margin-left:-30px;}
+.betting-details p .k,.betting-details p .v{float:left;overflow:hidden;}
+.betting-details p .k{width:70px;height:30px;line-height:30px;margin-left:30px;color:#666;}
+.betting-details p .v,.betting-details .number{border:1px solid #e1e1e1;}
+.betting-details p .v{width:258px;height:28px;line-height:28px;padding-left:10px;padding-right:10px;}
+.betting-details .number{height:120px;line-height:24px;overflow:auto;padding:5px 15px;margin-bottom:30px;word-break:break-all;word-wrap:break-word;}
+.betting-details .btn-group{height:30px;text-align:center;}
+.betting-details .btn-group a{margin:0 5px;}
+
+.lottery-history{display:none;position:absolute;z-index:199;top:100px;right:20px;width:350px;border-radius:5px;background-color:#4a4c61;}
+.lottery-history .history-heading{height:40px;line-height:40px;overflow:hidden;color:#fff;}
+.lottery-history .issue,.lottery-history .number{float:left;width:150px;text-align:center;}
+.lottery-history .number{margin-left:18px;}
+.lottery-history .history-content{height:315px;overflow:auto;border:6px solid #4a4c61;border-top:0 none;background-color:#fff;}
+
+.history-list li{height:22px;line-height:22px;overflow:hidden;margin-top:9px;margin-bottom:9px;}
+.history-list li .n{display:inline-block;width:22px;height:22px;border-radius:50%;color:#fff;background-color:#d54141;}
+
+.lottery-more,.lottery-more .icon-8{position:absolute;z-index:299;}
+.lottery-more{left:50%;width:15px;height:75px;line-height:15px;padding-top:45px;padding-left:15px;padding-right:15px;margin-left:-570px;top:0;border-radius:5px;font-size:14px;color:#fff;background-color:#e69a17;}
+.lottery-more .icon-8{left:12px;top:15px;width:20px;height:20px;background-image:url(../img/icon_lot_8.png);}
+
+.lottery-games{top:0;}

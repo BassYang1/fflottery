@@ -1,0 +1,151 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>立博国际娱乐</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/global.css" />
+    <link rel="stylesheet" type="text/css" href="./css/member.css" />
+    <link rel="stylesheet" type="text/css" href="./css/activity.css" />
+    <script type="text/javascript" src="/statics/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/statics/global.js"></script>
+    <script type="text/javascript" src="/statics/layer/layer.min.js"></script>
+    <script type="text/javascript" src="/statics/sytle/js/jquery_json.js"></script>
+    <script src="/statics/sytle/js/EM.tools.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            ajaxList();
+        });
+
+        function ajaxList() {
+            var index = emLoading();
+            $.ajax({
+                type: "get",
+                dataType: "json",
+                data: "clienttime=" + Math.random(),
+                url: "/ajax/ajaxActive.aspx?oper=GetGroup2Gz",
+                error: function (XmlHttpRequest, textStatus, errorThrown) { emAlert("亲！页面过期,请刷新页面!"); },
+                success: function (d) {
+                    switch (d.result) {
+                        case '-1':
+                            top.window.location = '/login.html';
+                            break;
+                        case '1':
+                            $i('bet').innerHTML = d.table[0].bet;
+                            $i('money').innerHTML = d.table[0].money;
+                            break;
+                    }
+                    closeload(index);
+                }
+            });
+        }
+
+        function chkPost() {
+            var index = emLoading();
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                data: "",
+                url: "/ajax/ajaxActive.aspx?oper=SaveGroup2Gz&clienttime=" + Math.random(),
+                error: function (XmlHttpRequest, textStatus, errorThrown) { emAlert("亲！页面过期,请刷新页面!"); },
+                success: function (d) {
+                    if (d.result == "1") {
+                        emAlert(d.message);
+                        ajaxList();
+                    }
+                    else {
+                        emAlert(d.message);
+                    }
+                    closeload(index);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="zj-page" style="background-color: #fff;">
+        <header class="header">
+                <h1 class="title">日奖励活动</h1>
+                 <a href="javascript:history.go(-1);" class="back"></a>
+            </header>
+        <div class="content">
+            <div id="main">
+                <div class="prom-content">
+                    <div class="prom-part">
+                        <h3>
+                            <i class="icon-time"></i>活动时间</h3>
+                        <p>
+                            此活动长期进行，若活动有更改将提前72小时通知。</p>
+                    </div>
+                    <div class="prom-part">
+                        <h3>
+                            <i class="icon-con"></i>活动内容</h3>
+                        <table class="prom-table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        团队消费量
+                                    </th>
+                                    <th>
+                                        活跃会员人数
+                                    </th>
+                                    <th>
+                                        日工资（无间隙）
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        1W+
+                                    </td>
+                                    <td>
+                                        ≥ 3
+                                    </td>
+                                    <td>
+                                        1.2%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        工资以此类推无阶梯，无间隙，上限200W！
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="prom-info">
+                            <tr>
+                                <td>
+                                    &nbsp;总消费量：<em id="bet">0.00</em> 元
+                                </td>
+                                <td>
+                                    日奖励：<em id="money">0.00</em> 元
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="prom-part">
+                        <h3>
+                            <i class="icon-rule"></i>活动条款</h3>
+                        <p>
+                            1. 无需亏损要求，有明显团队结构，并非个别人刷量。</p>
+                        <p>
+                            如：今日消费量为100W，次日可领取（100W*1.2%=12000元）。</p>
+                        <p>
+                            2. 达标者，于次日23：59分前在平台活动专区点击领取。</p>
+                        <p>
+                            3. 立博国际娱乐保留所有权利，有权利修改、停止此活动！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-wrap">
+            <a href="javascript:void(0);" onclick="chkPost()" class="btn primary-btn">
+                点击领取</a>
+        </div>
+    </div>
+</body>
+</html>

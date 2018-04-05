@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <Name>时时彩</Name>
+  <Dir>/Web/</Dir>
+  <WebIsOpen>0</WebIsOpen>
+  <WebCloseSeason>系统维护中，请您稍后再试试！</WebCloseSeason>
+  <ZHIsOpen>0</ZHIsOpen>
+  <RegIsOpen>0</RegIsOpen>
+  <BetIsOpen>0</BetIsOpen>
+  <CSUrl>http://f18.livechatvalue.com/chat/chatClient/chatbox.jsp?companyID=564759&amp;configID=56715&amp;jid=6079852464</CSUrl>
+  <SignMinTotal>1</SignMinTotal>
+  <SignMaxTotal>5</SignMaxTotal>
+  <SignNum>100</SignNum>
+  <WarnTotal>5000.00</WarnTotal>
+  <MaxBet>200000.00</MaxBet>
+  <MaxWin>300000.00</MaxWin>
+  <MaxWinFK>0.00</MaxWinFK>
+  <MaxLevel>13.00</MaxLevel>
+  <MinCharge>1.00</MinCharge>
+  <Points>1000</Points>
+  <PriceOutCheck>30.00</PriceOutCheck>
+  <PriceOut>100.00</PriceOut>
+  <PriceOut2>49999.00</PriceOut2>
+  <PriceNum>999</PriceNum>
+  <PriceTime1>10:00</PriceTime1>
+  <PriceTime2>02:00</PriceTime2>
+  <BankTime>5.00</BankTime>
+  <PriceOutPerson>3</PriceOutPerson>
+  <ClientVersion>20141104</ClientVersion>
+  <UpdateTime>2014-11-04 12:46:18</UpdateTime>
+  <NewsUpdateTime>2014-11-04 12:48:16</NewsUpdateTime>
+  <AutoLottery>0</AutoLottery>
+  <ProfitModel>0</ProfitModel>
+  <ProfitMargin>80</ProfitMargin>
+  <AutoRanking>0</AutoRanking>
+  <CookieDomain>
+  </CookieDomain>
+  <CookiePath>/</CookiePath>
+  <CookiePrev>LotteryUser</CookiePrev>
+  <CookieKeyCode>
+  </CookieKeyCode>
+  <Version>20141104</Version>
+  <DebugKey>5E7D-8A8B-F75C-BFF3</DebugKey>
+</Root>

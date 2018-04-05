@@ -1,0 +1,144 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>立博国际娱乐</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/style.css" />
+    <script type="text/javascript" src="/statics/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/statics/global.js"></script>
+    <script type="text/javascript" src="/statics/layer/layer.min.js"></script>
+    <script type="text/javascript" src="/statics/json/LotAndSmalldata.js"></script>
+    <script type="text/javascript" src="/statics/sytle/js/EM.tools.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            itemid = "&Id=" + GetQueryString("id");
+            ajaxList();
+        });
+
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+
+        function ajaxList() {
+            var u = "/ajax/ajaxBet.aspx?oper=ajaxGetBetInfo";
+            var index = emLoading();
+            $.ajax({
+                type: "get",
+                dataType: "json",
+                data: "clienttime=" + Math.random(),
+                url: u + itemid,
+                error: function (XmlHttpRequest, textStatus, errorThrown) { emAlert("亲！页面过期,请刷新页面!"); },
+                success: function (d) {
+                    switch (d.result) {
+                        case '-1':
+                            emAlert(d.returnval); top.window.location = '/login.html';
+                            break;
+                        case '0':
+                            emAlert(d.returnval);
+                            break;
+                        case '1':
+                            $("#ajaxList").setTemplateElement("tplList", null, { filter_data: true });
+                            $("#ajaxList").processTemplate(d);
+                            break;
+                    }
+                    closeload(index);
+                }
+            });
+        }
+
+        function ajaxCancel(Id) {
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                data: "&Id=" + Id,
+                url: "/ajax/ajaxBetting.aspx?oper=ajaxBettingCancel&clienttime=" + Math.random(),
+                error: function (XmlHttpRequest, textStatus, errorThrown) { emAlert("亲！页面过期,请刷新页面!"); },
+                success: function (d) {
+                    switch (d.result) {
+                        case '-1':
+                            emAlert(d.returnval);
+                            break;
+                        case '0':
+                            emAlert(d.returnval);
+                            break;
+                        case '1':
+                            emAlert(d.returnval);
+                            closeload(index);
+                            ajaxList();
+                            break;
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body class="whitebg">
+    <div class="zj-page">
+        <header class="header">
+                <h1 class="title">方案详情</h1>
+                 <a href="javascript:history.go(-1);" class="back"></a>
+            </header>
+        <div class="content" id="ajaxList">
+        </div>
+    </div>
+</body>
+<textarea class="template" id="tplList" rows="1" cols="1" style="display: none">
+{#foreach $T.table as record}
+    <div class="scheme-details">
+        <div class="lottery-info">
+            <img src="/statics/sytle/images/logo/{$T.record.lotteryid}lg.png" alt="" class="lottery-logo" />
+            <p class="name">
+                {$T.record.lotteryname}</p>
+            <p>
+                {$T.record.playname}</p>
+            <p class="issue">
+                第 {$T.record.issuenum} 期</p>
+            <p class="time">
+                {$T.record.stime2}</p>
+        </div>
+        <div class="zj-info scheme-info">
+            <p>
+                <span class="k">当前状态：</span><span class="v"> {#if $T.record.state == "0"} 未开奖{#/if}
+                    {#if $T.record.state == "1"} <font color="gray">撤单</font> {#/if} {#if $T.record.state
+                    == "2"} <font color="green">未中奖</font> {#/if} {#if $T.record.state == "3"} <font
+                        color="red">已中奖</font> {#/if}</span></p>
+            <p>
+                <span class="k">订单编号：</span><span class="v">{$T.record.ssid}</span></p>
+            <p>
+                <span class="k">投注期号：</span><span class="v">{$T.record.issuenum}</span></p>
+            <p>
+                <span class="k">购买金额：</span><span class="v">{$T.record.total}</span></p>
+            <p>
+                <span class="k">中奖金额：</span><span class="v">{$T.record.winbonus}</span></p>
+            <p>
+                <span class="k">购买倍数：</span><span class="v">{$T.record.times}</span></p>
+            <p>
+                <span class="k">投注注数：</span><span class="v">{$T.record.num}</span></p>
+            <p>
+                <span class="k">中奖注数：</span><span class="v">{$T.record.winnum}</span></p>
+            <p>
+                <span class="k">购买返点：</span><span class="v">{$T.record.point2}</span></p>
+            <p>
+                <span class="k">返点金额：</span><span class="v">{$T.record.pointmoney}</span></p>
+            <p>
+                <span class="k">开奖号码：</span><span class="v">{$T.record.kjnumber}</span></p>
+            <p>
+                <span class="k">实际盈亏：</span><span class="v">{formatCurrency($T.record.realget)}</span></p>
+            <p>
+                <span class="k">投注时间：</span><span class="v">{$T.record.stime2}</span></p>
+            <p class="number">
+                {$T.record.detail}</p>
+        </div>
+        <div class="bottom-wrap">
+            <a href="javascript:void(0);" onclick="ajaxCancel('{$T.record.id}')" class="btn primary-btn">
+                撤 单</a>
+        </div>
+    </div>
+{#/for}
+</textarea>
+</html>

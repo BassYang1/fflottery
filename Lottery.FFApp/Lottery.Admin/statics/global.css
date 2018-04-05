@@ -1,0 +1,355 @@
+﻿/*定义一些通用的样式*/
+img{ms-interpolation-mode: bicubic;}
+.nochinese {ime-mode:disabled;}
+a.highlight { color:#000; background-color:yellow; }
+a.highlight:hover { color:#000; text-decoration: underline; }
+
+
+textarea.template{width:0;height:0;margin:0;padding:0;border:none;}
+.ipt { border: 1px solid #b5b8c8; font-family: verdana, simsun, sans-serif; }
+.Btn { border: 1px solid #eeeeee; height: 20px; width: 50px; font-family: "宋体", Verdana, Arial; font-size: 12px; text-align: center; }
+#hintSpan { font-size: 12px; }
+#hintSpan * { margin: 0; }
+#hintdot { border: 0px; padding-right: 5px; }
+#hintDiv { position: absolute; visibility: visible; width: 271px; z-index: 191; }
+#hintIframe { position: absolute; z-index: 190; width: 266px; }
+.hintmessagetext { overflow: hidden; zoom: 1; border-left: 1px solid #000; border-right: 1px solid #000; padding: 0 10px 0 10px; text-align: left; background: #ffffe1; word-break: break-all; letter-break: break-all; }
+.hintmessagetext img { float: left; margin: 0 3px 3px 3px; }
+#windowMask { position: absolute; z-index: 200; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.06; filter: alpha(opacity=6); background-color: transparent !important; background-color: #000000; background-image: url(/statics/admin/img/maskBG.png) !important; background-image: none; background-repeat: repeat; display: none; }
+/*dialog样式0*/
+.dialogSubmit0 { cursor:pointer; font-size: 12px; width: 71px; height: 22px; line-height: 22px; border-style: none; background: transparent url(/statics/dialog/0/button1.gif); }
+.dialogCancel0 { cursor:pointer; font-size: 12px; width: 71px; height: 22px; line-height: 22px; border-style: none; background: transparent url(/statics/dialog/0/button1.gif); }
+
+.dialogMsg0 { text-align: left; font-size: 12px; color: #000; }
+.dialogFunc0 { text-align: center; }
+.dialogBox0 { border: 1px solid #D1D1D1; z-index: 210; }
+.dialogTitleDiv0 { display:none; }
+.dialogBoxTitle0 { display:none; }
+.dialogBoxClose0 { display:none; }
+.dialogBody0 { background: #fff; color: #000; border: 0px; margin: 0px; padding: 0px; overflow:hidden;}
+/*dialog样式1*/
+.dialogSubmit1 { cursor:pointer; font-size: 12px; width: 71px; height: 22px; line-height: 22px; border-style: none; background: transparent url(/statics/dialog/1/button1.gif); }
+.dialogCancel1 { cursor:pointer; font-size: 12px; width: 71px; height: 22px; line-height: 22px; border-style: none; background: transparent url(/statics/dialog/1/button1.gif); }
+
+.dialogMsg1 { text-align: left; font-size: 12px; color: #000; }
+.dialogFunc1 { text-align: center; }
+.dialogBox1 { border: 1px solid #AACCEE; z-index: 210; color: #000; }
+.dialogTitleDiv1 { height: 45px; border: 0px; color:#000; margin: 0px; padding: 0px; background: #F5F5F5 url(/statics/dialog/1/title_bg.png) repeat-x; }
+.dialogBoxTitle1 { text-align: left; font-size: 14px; float: left; height: 35px; line-height: 35px; font-weight: normal; padding-left: 10px; text-indent: 4px; }
+.dialogBoxClose1 { float: right; padding-right: 10px; }
+.dialogBody1 { background: #fff; color: #000; border: 0px; margin: 0px; padding: 0px; overflow:hidden;}
+/*dialog样式2*/
+.dialogSubmit2 { cursor:pointer; font-size: 12px; width: 71px; height: 22px; line-height: 22px; border-style: none; background: transparent url(/statics/dialog/2/button1.gif); }
+.dialogCancel2 { cursor:pointer; font-size: 12px; width: 71px; height: 22px; line-height: 22px; border-style: none; background: transparent url(/statics/dialog/2/button1.gif); }
+.dialogBoxFace2 { }
+.dialogMsg2 { text-align: left; font-size: 12px; color: #000; }
+.dialogFunc2 { border-top: 1px solid #D1D1D1; background: #F5F5F5; text-align: right; padding-right: 20px; }
+.dialogBox2 { border: 0px solid #D1D1D1; z-index: 210;overflow:hidden;border-radius:5px;}
+.dialogTitleDiv2 { height: 45px; line-height: 45px;border: 0px; margin: 0px; padding: 0px; background: #F5F5F5 url(/statics/dialog/2/title_bg.png) repeat-x; }
+.dialogBoxTitle2 { text-align: left; color: #FFFFFF; font-size: 14px; font-family:微软雅黑; float: left; height: 45px; line-height: 45px; font-weight:bold; padding-left: 10px; text-indent: 4px; }
+.dialogBoxClose2 { float: right; padding-right: 10px;}
+.dialogBody2 { background: #fff; color: #000; border: 0px; margin: 0px; padding: 0px; overflow:hidden;}
+
+.mask{
+	position:fixed;
+	z-index:998;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.3);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#66000000', endColorstr='#66000000', GradientType=0);
+}
+
+#dialogBoxShadow { z-index: 209; }
+#dialogBoxDivShim { z-index: 208; }
+#dialogFrame { border: 0px; margin: 0px; padding: 0px; }
+
+.jtip { margin:0 auto; padding: 1px; font-size: 12px; opacity: 0.99; filter: alpha(opacity=99); }
+.jtip-inner { width:235px; height:auto; border: 1px solid #C5C5C5; padding: 10px; background:url(../_libs/jquery.jtip/images/jtip-bg.gif) repeat-x; color: #000000; text-align: left; line-height:14px;}
+.jtip-inner strong { color: #0072C1; }
+.jtip-b { background-image: url(../_libs/jquery.jtip/images/jtip-b.gif); background-position: top center; }
+.jtip-t { background-image: url(../_libs/jquery.jtip/images/jtip-t.gif); background-position: bottom center; }
+.jtip-l { background-image: url(../_libs/jquery.jtip/images/jtip-l.gif); background-position: right center; }
+.jtip-r { background-image: url(../_libs/jquery.jtip/images/jtip-r.gif); background-position: left center; }
+
+.tip-t { background:url(../_libs/jquery.jtip/images/help.gif) no-repeat left top; width:16px; height:16px; display:inline-block; padding: 0px; margin:0px; cursor:pointer; border:none; }
+.tip-r { background:url(../_libs/jquery.jtip/images/help.gif) no-repeat left top; width:16px; height:16px; display:inline-block; padding: 0px; margin:0px; cursor:pointer; border:none; }
+.tip-b { background:url(../_libs/jquery.jtip/images/help.gif) no-repeat left top; width:16px; height:16px; display:inline-block; padding: 0px; margin:0px; cursor:pointer; border:none; }
+.tip-l { background:url(../_libs/jquery.jtip/images/help.gif) no-repeat left top; width:16px; height:16px; display:inline-block; padding: 0px; margin:0px; cursor:pointer; border:none; }
+
+
+.onNormal,
+.onShow,
+.onFocus,
+.onError,
+.onSuccess,
+.onLoad
+{
+
+    padding: 4px 10px 4px 25px;
+    font-size: 12px;
+    line-height:14px;
+    font:12px/1.0 verdana,simsun,sans-serif;
+    margin:0;
+}
+.onNormal
+{
+    border: 0px solid #E3E3E3;
+    color: #999999;
+}
+.onShow
+{
+    padding: 4px 10px 4px 9px;
+    border: 0px solid #E8E8E8;
+    color: #999999;
+}
+.onFocus
+{
+    background: url(../_libs/jquery.formvalidator/images/reg_ico.gif) no-repeat 4px 0px;
+    border: 0px solid #E8E8E8;
+    color: #999999;
+}
+.onError
+{
+    background: url(../_libs/jquery.formvalidator/images/reg_ico.gif) no-repeat 4px -96px;
+    border: 0px solid #EBADB0;
+    color: #B52726;
+}
+.onSuccess
+{
+    background: url(../_libs/jquery.formvalidator/images/reg_ico.gif) no-repeat 4px -48px;
+    border: 0px solid #ABCDE8;
+    color: #2666AF;
+}
+.onLoad
+{
+    background: url(../_libs/jquery.formvalidator/images/loading.gif) no-repeat;
+    border: 0px solid #E8E8E8;
+    color: #000000;
+}
+span.mb1 { margin-bottom:-1px; }
+span.mb2 { margin-bottom:-2px; }
+span.mb3 { margin-bottom:-3px; }
+span.mb4 { margin-bottom:-4px; }
+span.mb5 { margin-bottom:-5px; }
+
+
+
+#ColorPickerDiv 
+{
+	display: block;
+	display: none;
+	position: relative;
+	border: 1px solid #777;
+	background: #fff;
+}
+.ColorPickerArea
+{
+	border-collapse: collapse;
+	border: solid;
+	border-color: #000000;
+	border-width:1px;
+}
+.ColorPickerDivSample
+{
+	margin: 0px 0px 0px 4px;
+	border: solid 1px #000;
+	padding: 0px 10px;	
+	position: relative;
+	cursor: pointer;
+}
+
+
+
+
+.colorPicker_button_back{width:32px;height:21px;background:url(../_libs/jquery.colorPicker/picker_back.jpg);cursor:pointer;border:solid 1px #4A4A4A;position:relative;}
+.colorPicker_button_color{width:17px;height:4px;margin:16px 0 0 2px;position:absolute;overflow:hidden;}            
+.colorPicker_button_back_popup{border-bottom:none;z-index:2;height:22px;}      
+.picker_panel{position:absolute;background-color:#fff;margin-top:-1px;border:solid 1px #4A4A4A;z-index:1;display:none;width:178px;}
+.picker_panel_header{background:url("picker_popup_back.jpg") no-repeat scroll center 3px transparent; height:10px;}
+.clear{clear:both;}
+.color_parent{height:20px; width:18px;padding:2px;float:left;display:inline;overflow:hidden;}
+.color_parent a{padding:2px;display:block;}
+.color_parent a:hover{border:solid 1px #1b253e;}
+.color_parent a div{height:10px; width:11px;border:solid 1px #808080;overflow:hidden;}
+
+
+
+
+
+
+.tabberlive .tabbertabhide
+{
+	display: none;
+}
+.tabber
+{
+	padding:3px;
+}
+.tabberlive
+{
+	margin-top: 0px;
+}
+ul.tabbernav
+{
+	margin: 0;
+	padding: 0;
+	font: bold 12px Verdana, sans-serif;
+	height:26px;
+	z-index:999;
+	position:relative;
+}
+
+ul.tabbernav li
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height:26px;
+	float:left;
+}
+
+ul.tabbernav li a
+{
+	padding: 0px 6px;
+	margin-left: 3px;
+	border: 1px solid #AFCFDC;
+	background-color: #E5EDF0;
+	text-decoration: none;
+	line-height:24px;
+	display: inline-block;
+}
+
+ul.tabbernav li a:link
+{
+	color: #005590;
+	text-decoration: none; 
+}
+ul.tabbernav li a:visited
+{
+	color: #005590;
+	text-decoration: none;
+}
+
+ul.tabbernav li a:hover
+{
+	color: #000;
+	text-decoration: none;
+}
+
+ul.tabbernav li.tabberactive a
+{
+	background-color: #ffffff;
+	border-bottom: 1px solid #ffeeff;
+}
+
+ul.tabbernav li.tabberactive a:hover
+{
+	color: #000;
+	background-color: #ffffff;
+	border-bottom: 1px solid #ffffff;
+}
+
+.tabberlive .tabbertab
+{
+	padding: 5px;
+	margin: 0;
+	border: 1px solid #AFCFDC;
+	margin-top: -1px;
+	z-index:998;
+	position:relative;
+}
+.tabbertab h2
+{
+	display: none;
+}
+.tabbertab h3
+{
+	display: none;
+}
+
+
+
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{ float:left;margin:auto; border:0; display:block; max-width:none;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
+
+/* 
+    User Style:
+    Change the following styles to modify the appearance of ColorBox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay{background:url(../_libs/jquery.colorbox/overlay.png) repeat 0 0;}
+#colorbox{}
+    #cboxTopLeft{width:21px; height:21px; background:url(../_libs/jquery.colorbox/controls.png) no-repeat -101px 0;}
+    #cboxTopRight{width:21px; height:21px; background:url(../_libs/jquery.colorbox/controls.png) no-repeat -130px 0;}
+    #cboxBottomLeft{width:21px; height:21px; background:url(../_libs/jquery.colorbox/controls.png) no-repeat -101px -29px;}
+    #cboxBottomRight{width:21px; height:21px; background:url(../_libs/jquery.colorbox/controls.png) no-repeat -130px -29px;}
+    #cboxMiddleLeft{width:21px; background:url(../_libs/jquery.colorbox/controls.png) left top repeat-y;}
+    #cboxMiddleRight{width:21px; background:url(../_libs/jquery.colorbox/controls.png) right top repeat-y;}
+    #cboxTopCenter{height:21px; background:url(../_libs/jquery.colorbox/border.png) 0 0 repeat-x;}
+    #cboxBottomCenter{height:21px; background:url(../_libs/jquery.colorbox/border.png) 0 -29px repeat-x;}
+    #cboxContent{background:#fff; overflow:hidden;}
+        .cboxIframe{background:#fff;}
+        #cboxError{padding:50px; border:1px solid #ccc;}
+        #cboxLoadedContent{margin-bottom:28px;}
+        #cboxTitle{position:absolute; bottom:4px; left:0; text-align:center; width:100%; color:#949494;}
+        #cboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494;}
+        #cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+        #cboxPrevious{position:absolute; bottom:0; left:0; background:url(../_libs/jquery.colorbox/controls.png) no-repeat -75px 0; width:25px; height:25px; text-indent:-9999px;}
+        #cboxPrevious:hover{background-position:-75px -25px;}
+        #cboxNext{position:absolute; bottom:0; left:27px; background:url(../_libs/jquery.colorbox/controls.png) no-repeat -50px 0; width:25px; height:25px; text-indent:-9999px;}
+        #cboxNext:hover{background-position:-50px -25px;}
+        #cboxLoadingOverlay{background:url(../_libs/jquery.colorbox/loading_background.png) no-repeat center center;}
+        #cboxLoadingGraphic{background:url(../_libs/jquery.colorbox/loading.gif) no-repeat center center;}
+        #cboxClose{position:absolute; bottom:0; right:0; background:url(../_libs/jquery.colorbox/controls.png) no-repeat -25px 0; width:25px; height:25px; text-indent:-9999px;}
+        #cboxClose:hover{background-position:-25px -25px;}
+
+/*
+  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+  See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}
+
+/*
+  The following provides PNG transparency support for IE6
+  Feel free to remove this and the /ie6/ directory if you have dropped IE6 support.
+*/
+.cboxIE6 #cboxTopLeft{background:url(../_libs/jquery.colorbox/ie6/borderTopLeft.png);}
+.cboxIE6 #cboxTopCenter{background:url(../_libs/jquery.colorbox/ie6/borderTopCenter.png);}
+.cboxIE6 #cboxTopRight{background:url(../_libs/jquery.colorbox/ie6/borderTopRight.png);}
+.cboxIE6 #cboxBottomLeft{background:url(../_libs/jquery.colorbox/ie6/borderBottomLeft.png);}
+.cboxIE6 #cboxBottomCenter{background:url(../_libs/jquery.colorbox/ie6/borderBottomCenter.png);}
+.cboxIE6 #cboxBottomRight{background:url(../_libs/jquery.colorbox/ie6/borderBottomRight.png);}
+.cboxIE6 #cboxMiddleLeft{background:url(../_libs/jquery.colorbox/ie6/borderMiddleLeft.png);}
+.cboxIE6 #cboxMiddleRight{background:url(../_libs/jquery.colorbox/ie6/borderMiddleRight.png);}
+
+.cboxIE6 #cboxTopLeft,
+.cboxIE6 #cboxTopCenter,
+.cboxIE6 #cboxTopRight,
+.cboxIE6 #cboxBottomLeft,
+.cboxIE6 #cboxBottomCenter,
+.cboxIE6 #cboxBottomRight,
+.cboxIE6 #cboxMiddleLeft,
+.cboxIE6 #cboxMiddleRight {
+    _behavior: expression(this.src = this.src ? this.src : this.currentStyle.backgroundImage.split('"')[1], this.style.background = "none", this.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=" + this.src + ", sizingMethod='scale')");
+}

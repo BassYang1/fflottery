@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <Name>时时彩</Name>
+  <Dir>/</Dir>
+  <WebIsOpen>0</WebIsOpen>
+  <WebCloseSeason>22222222222222222</WebCloseSeason>
+  <ZHIsOpen>0</ZHIsOpen>
+  <RegIsOpen>0</RegIsOpen>
+  <BetIsOpen>0</BetIsOpen>
+  <CSUrl>http://www.hao123.com</CSUrl>
+  <SignMinTotal>1</SignMinTotal>
+  <SignMaxTotal>5</SignMaxTotal>
+  <SignNum>100</SignNum>
+  <WarnTotal>5000.00</WarnTotal>
+  <MaxBet>1000000.00</MaxBet>
+  <MaxWin>200000.00</MaxWin>
+  <MaxWinFK>18000.00</MaxWinFK>
+  <MaxLevel>13.10</MaxLevel>
+  <MinCharge>50.00</MinCharge>
+  <Points>500</Points>
+  <PriceOutCheck>30.00</PriceOutCheck>
+  <PriceOut>100.00</PriceOut>
+  <PriceOut2>50000.00</PriceOut2>
+  <PriceNum>999</PriceNum>
+  <PriceTime1>12:00</PriceTime1>
+  <PriceTime2>02:00</PriceTime2>
+  <BankTime>6.00</BankTime>
+  <PriceOutPerson>3</PriceOutPerson>
+  <ClientVersion>v1.0.0.6</ClientVersion>
+  <UpdateTime>2014/11/4 12:46:18</UpdateTime>
+  <NewsUpdateTime>2014/11/4 12:48:16</NewsUpdateTime>
+  <AutoLottery>0</AutoLottery>
+  <ProfitModel>0</ProfitModel>
+  <ProfitMargin>80</ProfitMargin>
+  <AutoRanking>0</AutoRanking>
+  <CookieDomain>
+  </CookieDomain>
+  <CookiePath>/</CookiePath>
+  <CookiePrev>LotteryUser</CookiePrev>
+  <CookieKeyCode>
+  </CookieKeyCode>
+  <Version>v1.0.0.6</Version>
+  <DebugKey>5E7D-8A8B-F75C-BFF3</DebugKey>
+</Root>

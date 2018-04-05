@@ -1,0 +1,141 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>立博国际娱乐</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/global.css" />
+    <link rel="stylesheet" type="text/css" href="./css/member.css" />
+    <link rel="stylesheet" type="text/css" href="./css/activity.css" />
+    <script type="text/javascript" src="/statics/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/statics/global.js"></script>
+    <script type="text/javascript" src="/statics/layer/layer.min.js"></script>
+    <script type="text/javascript" src="/statics/sytle/js/jquery_json.js"></script>
+    <script src="/statics/sytle/js/EM.tools.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            ajaxList();
+        });
+
+        function ajaxList() {
+            var index = emLoading();
+            $.ajax({
+                type: "get",
+                dataType: "json",
+                data: "clienttime=" + Math.random(),
+                url: "/ajax/ajaxActive.aspx?oper=GetHBInfo",
+                error: function (XmlHttpRequest, textStatus, errorThrown) { emAlert("亲！页面过期,请刷新页面!"); },
+                success: function (d) {
+                    switch (d.result) {
+                        case '-1':
+                            top.window.location = '/login.html';
+                            break;
+                        case '1':
+                            $i('bet').innerHTML = d.table[0].bet + " 元";
+                            $i('hbNum').innerHTML = (parseFloat(d.table[0].hbnum) - parseFloat(d.table[0].todayhbnum)) + " 个";
+                            $i('hbMoney').innerHTML = d.table[0].todayhbmoney + " 元";
+                            break;
+                    }
+                    closeload(index);
+                }
+            });
+        }
+
+        function chkPost() {
+            var index = emLoading();
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                data: "",
+                url: "/ajax/ajaxActive.aspx?oper=PaiFaHB&clienttime=" + Math.random(),
+                error: function (XmlHttpRequest, textStatus, errorThrown) { emAlert("亲！页面过期,请刷新页面!"); },
+                success: function (d) {
+                    if (d.result == "1") {
+                        emAlert("您成功领取红包"+d.message+"元！");
+                        ajaxList();
+                    }
+                    else {
+                        emAlert(d.message);
+                    }
+                    closeload(index);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="zj-page" style="background-color: #fff;">
+        <header class="header">
+                <h1 class="title">红包大派送</h1>
+                 <a href="javascript:history.go(-1);" class="back"></a>
+            </header>
+        <div class="content">
+            <div id="main">
+                <div class="prom-content">
+                    <div class="prom-part">
+                        <h3>
+                            <i class="icon-time"></i>活动时间</h3>
+                        <p>
+                            此活动长期进行，若活动有更改将提前72小时通知。</p>
+                    </div>
+                    <div class="prom-part">
+                        <h3>
+                            <i class="icon-con"></i>活动内容</h3>
+                        <p>
+                            消费每累积1888即可参加一次，红包金额为1-588元，随机抽取派送！</p>
+                        <p>
+                            红包奖金分为1元-2元-5元-8元-18元-28元-38元-58元-88元-188元-288元-588元。</p>
+                                  <table class="prom-table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        当日消费金额
+                                    </th>
+                                    <th>
+                                        当日剩余红包
+                                    </th>
+                                    <th>
+                                        当日红包金额
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <em id="bet">0 元</em>
+                                    </td>
+                                    <td>
+                                        <em id="hbNum">0 个</em>
+                                    </td>
+                                    <td>
+                                        <em id="hbMoney">0 元</em>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="prom-part">
+                        <h3>
+                            <i class="icon-rule"></i>活动条款</h3>
+                        <p>
+                            1、当日消费超过1888 即可参与红包大派送活动。</p>
+                        <p>
+                            2、消费累积1888即可参加一次，消费累积3776即可参加两次，以此类推。最高8次一天。</p>
+                        <p>
+                            3、红包金额由1-588元！随机抽取，派送，最高可中588元！每天派送3000个有效红包，先领先得，送完为止。</p>
+                        <p>
+                            4、立博国际娱乐平台保留对此活动的最终解释权，并持有修改、终止等权利。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-wrap">
+            <a href="javascript:void(0);" onclick="chkPost()" class="btn primary-btn">
+                点击领取</a>
+        </div>
+    </div>
+</body>
+</html>

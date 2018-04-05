@@ -1,0 +1,749 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6CDA61E2-AB5B-4F56-ADC1-5797C6464F57}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lottery.IPhone</RootNamespace>
+    <AssemblyName>Lottery.IPhone</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\DLLs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="money\chargeSbf.aspx" />
+    <Content Include="pay\suibipay\notify.aspx" />
+    <Content Include="pay\suibipay\pay.aspx" />
+    <Content Include="pay\suibipay\result.aspx" />
+    <Content Include="plus\ajaxuploadhandler.ashx" />
+    <Content Include="statics\data\qqwry.dat" />
+    <Content Include="statics\layer\layer.rar" />
+    <Content Include="statics\log\hacker_20140821.log" />
+    <Content Include="statics\log\hacker_20140822.log" />
+    <Content Include="statics\log\hacker_20140823.log" />
+    <Content Include="statics\log\hacker_20140826.log" />
+    <Content Include="statics\log\hacker_20141219.log" />
+    <Content Include="statics\log\hacker_20150331.log" />
+    <Content Include="statics\log\hacker_20150401.log" />
+    <Content Include="statics\log\hacker_20150515.log" />
+    <Content Include="statics\log\hacker_20150721.log" />
+    <Content Include="statics\log\hacker_20150925.log" />
+    <Content Include="statics\log\hacker_20150928.log" />
+    <Content Include="statics\log\hacker_20151022.log" />
+    <Content Include="statics\log\hacker_20151025.log" />
+    <Content Include="statics\log\hacker_20160904.log" />
+    <Content Include="statics\log\hacker_20160905.log" />
+    <Content Include="statics\log\hacker_20160907.log" />
+    <Content Include="statics\log\hacker_20160908.log" />
+    <Content Include="statics\log\hacker_20161023.log" />
+    <Content Include="statics\log\hacker_20161029.log" />
+    <Content Include="statics\log\hacker_20170428.log" />
+    <Content Include="statics\log\hacker_20170607.log" />
+    <None Include="Properties\PublishProfiles\ffmobile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="active\active1.html" />
+    <Content Include="active\active2.html" />
+    <Content Include="active\active3.html" />
+    <Content Include="active\active4.html" />
+    <Content Include="active\active5.html" />
+    <Content Include="active\css\activity.css" />
+    <Content Include="active\css\client.css" />
+    <Content Include="active\css\flipclock.css" />
+    <Content Include="active\css\global.css" />
+    <Content Include="active\css\lottery.css" />
+    <Content Include="active\css\main.css" />
+    <Content Include="active\css\member.css" />
+    <Content Include="active\css\mmc.css" />
+    <Content Include="active\css\swiper.min.css" />
+    <Content Include="active\css\webim.css" />
+    <Content Include="active\images\prom_p1.jpg" />
+    <Content Include="active\images\prom_p2.jpg" />
+    <Content Include="active\images\prom_p3.jpg" />
+    <Content Include="active\images\prom_p4.jpg" />
+    <Content Include="active\images\prom_p5.jpg" />
+    <Content Include="active\images\prom_p6.jpg" />
+    <Content Include="active\images\yl_act.png" />
+    <Content Include="active\images\yl_prom.png" />
+    <Content Include="active\index.html" />
+    <Content Include="ajax\ajax.aspx" />
+    <Content Include="ajax\ajaxActive.aspx" />
+    <Content Include="ajax\ajaxBank.aspx" />
+    <Content Include="ajax\ajaxBet.aspx" />
+    <Content Include="ajax\ajaxBetting.aspx" />
+    <Content Include="ajax\ajaxEmail.aspx" />
+    <Content Include="ajax\ajaxHistory.aspx" />
+    <Content Include="ajax\ajaxMoney.aspx" />
+    <Content Include="ajax\ajaxNews.aspx" />
+    <Content Include="ajax\ajaxProfitloss.aspx" />
+    <Content Include="ajax\ajaxUser.aspx" />
+    <Content Include="bet\betInfo.html" />
+    <Content Include="bet\betlist.html" />
+    <Content Include="bet\betzhdetils.html" />
+    <Content Include="bet\betzhInfo.html" />
+    <Content Include="bet\betzhlist.html" />
+    <Content Include="bet\index.html" />
+    <Content Include="center.html" />
+    <Content Include="center\bankInfo.aspx" />
+    <Content Include="center\bankpwd.html" />
+    <Content Include="center\index.html" />
+    <Content Include="center\userpwd.html" />
+    <Content Include="center\userverify.html" />
+    <Content Include="email\add.html" />
+    <Content Include="email\Info.aspx" />
+    <Content Include="email\Info2.aspx" />
+    <Content Include="email\Receivelist.html" />
+    <Content Include="email\Sendlist.html" />
+    <Content Include="game.html" />
+    <Content Include="help\11x5.html" />
+    <Content Include="help\index.html" />
+    <Content Include="help\p3.html" />
+    <Content Include="help\sd.html" />
+    <Content Include="help\ssc.html" />
+    <Content Include="index.html" />
+    <Content Include="login.html" />
+    <Content Include="lottery.html" />
+    <Content Include="lotterylist.html" />
+    <Content Include="main.html" />
+    <Content Include="money\charge.aspx" />
+    <Content Include="money\chargelist.html" />
+    <Content Include="money\chargeZfb.aspx" />
+    <Content Include="money\getcash.aspx" />
+    <Content Include="money\getcashlist.html" />
+    <Content Include="money\index.html" />
+    <Content Include="nav.aspx" />
+    <Content Include="news\index.html" />
+    <Content Include="news\newsinfo.aspx" />
+    <Content Include="password.html" />
+    <Content Include="plus\getcode.aspx" />
+    <Content Include="plus\GetNumber.aspx" />
+    <Content Include="report\activelist.aspx" />
+    <Content Include="report\chargecash.aspx" />
+    <Content Include="report\history.html" />
+    <Content Include="report\index.aspx" />
+    <Content Include="report\pointreport.aspx" />
+    <Content Include="report\profitloss.aspx" />
+    <Content Include="report\profitlosssub.aspx" />
+    <Content Include="statics\formValidator.js" />
+    <Content Include="statics\global.js" />
+    <Content Include="statics\html\betSuccess.html" />
+    <Content Include="statics\html\close.htm" />
+    <Content Include="statics\html\pop.html" />
+    <Content Include="statics\html\zhSuccess.html" />
+    <Content Include="statics\jquery-1.11.3.min.js" />
+    <Content Include="statics\json\BigAndSmalldata.js" />
+    <Content Include="statics\json\json_0.00.js" />
+    <Content Include="statics\json\json_10.00.js" />
+    <Content Include="statics\json\json_100.00.js" />
+    <Content Include="statics\json\json_101.00.js" />
+    <Content Include="statics\json\json_102.00.js" />
+    <Content Include="statics\json\json_103.00.js" />
+    <Content Include="statics\json\json_104.00.js" />
+    <Content Include="statics\json\json_105.00.js" />
+    <Content Include="statics\json\json_106.00.js" />
+    <Content Include="statics\json\json_107.00.js" />
+    <Content Include="statics\json\json_108.00.js" />
+    <Content Include="statics\json\json_109.00.js" />
+    <Content Include="statics\json\json_110.00.js" />
+    <Content Include="statics\json\json_111.00.js" />
+    <Content Include="statics\json\json_112.00.js" />
+    <Content Include="statics\json\json_113.00.js" />
+    <Content Include="statics\json\json_114.00.js" />
+    <Content Include="statics\json\json_115.00.js" />
+    <Content Include="statics\json\json_116.00.js" />
+    <Content Include="statics\json\json_117.00.js" />
+    <Content Include="statics\json\json_118.00.js" />
+    <Content Include="statics\json\json_119.00.js" />
+    <Content Include="statics\json\json_120.00.js" />
+    <Content Include="statics\json\json_121.00.js" />
+    <Content Include="statics\json\json_122.00.js" />
+    <Content Include="statics\json\json_123.00.js" />
+    <Content Include="statics\json\json_124.00.js" />
+    <Content Include="statics\json\json_125.00.js" />
+    <Content Include="statics\json\json_126.00.js" />
+    <Content Include="statics\json\json_127.00.js" />
+    <Content Include="statics\json\json_128.00.js" />
+    <Content Include="statics\json\json_129.00.js" />
+    <Content Include="statics\json\json_130.00.js" />
+    <Content Include="statics\json\json_131.00.js" />
+    <Content Include="statics\json\json_132.00.js" />
+    <Content Include="statics\json\json_133.00.js" />
+    <Content Include="statics\json\json_15.00.js" />
+    <Content Include="statics\json\json_20.00.js" />
+    <Content Include="statics\json\json_25.00.js" />
+    <Content Include="statics\json\json_30.00.js" />
+    <Content Include="statics\json\json_35.00.js" />
+    <Content Include="statics\json\json_40.00.js" />
+    <Content Include="statics\json\json_45.00.js" />
+    <Content Include="statics\json\json_5.00.js" />
+    <Content Include="statics\json\json_50.00.js" />
+    <Content Include="statics\json\json_55.00.js" />
+    <Content Include="statics\json\json_60.00.js" />
+    <Content Include="statics\json\json_65.00.js" />
+    <Content Include="statics\json\json_70.00.js" />
+    <Content Include="statics\json\json_75.00.js" />
+    <Content Include="statics\json\json_80.00.js" />
+    <Content Include="statics\json\json_85.00.js" />
+    <Content Include="statics\json\json_90.00.js" />
+    <Content Include="statics\json\json_95.00.js" />
+    <Content Include="statics\json\LotAndSmalldata.js" />
+    <Content Include="statics\json\Lottery_Json.js" />
+    <Content Include="statics\json\PlayBigdate.js" />
+    <Content Include="statics\layer\extend\layer.ext.js" />
+    <Content Include="statics\layer\layer.min.js" />
+    <Content Include="statics\layer\skin\default\bg.png" />
+    <Content Include="statics\layer\skin\default\btn_all.png" />
+    <Content Include="statics\layer\skin\default\icon-ext.png" />
+    <Content Include="statics\layer\skin\default\icon.png" />
+    <Content Include="statics\layer\skin\default\loading-0.gif" />
+    <Content Include="statics\layer\skin\default\loading-1.gif" />
+    <Content Include="statics\layer\skin\default\loading-2.gif" />
+    <Content Include="statics\layer\skin\default\xubox_title0 - 副本 %282%29.png" />
+    <Content Include="statics\layer\skin\default\xubox_title0 - 副本.png" />
+    <Content Include="statics\layer\skin\default\xubox_title0.png" />
+    <Content Include="statics\layer\skin\layer.css" />
+    <Content Include="statics\layer\skin\layer.ext.css" />
+    <Content Include="statics\music\pop.mp3" />
+    <Content Include="statics\music\time.mp3" />
+    <Content Include="statics\sytle\css\flipclock.css" />
+    <Content Include="statics\sytle\css\global.css" />
+    <Content Include="statics\sytle\css\style.css" />
+    <Content Include="statics\sytle\images\account.png" />
+    <Content Include="statics\sytle\images\account_bg.jpg" />
+    <Content Include="statics\sytle\images\account_on.png" />
+    <Content Include="statics\sytle\images\add_lottery.png" />
+    <Content Include="statics\sytle\images\ballxz.png" />
+    <Content Include="statics\sytle\images\ball_11x5.png" />
+    <Content Include="statics\sytle\images\ball_11x5_big.png" />
+    <Content Include="statics\sytle\images\ball_fc3d_big.png" />
+    <Content Include="statics\sytle\images\ball_k3_2_big.png" />
+    <Content Include="statics\sytle\images\ball_k3_big.png" />
+    <Content Include="statics\sytle\images\ball_qtc_big.png" />
+    <Content Include="statics\sytle\images\ball_ssc.png" />
+    <Content Include="statics\sytle\images\ball_ssc_big.png" />
+    <Content Include="statics\sytle\images\ball_ssl.png" />
+    <Content Include="statics\sytle\images\ball_ssl_big.png" />
+    <Content Include="statics\sytle\images\ball_tcp3_big.png" />
+    <Content Include="statics\sytle\images\banner.jpg" />
+    <Content Include="statics\sytle\images\betting_l.png" />
+    <Content Include="statics\sytle\images\betting_line.png" />
+    <Content Include="statics\sytle\images\betting_m.png" />
+    <Content Include="statics\sytle\images\betting_r.png" />
+    <Content Include="statics\sytle\images\betting_success.png" />
+    <Content Include="statics\sytle\images\blank.png" />
+    <Content Include="statics\sytle\images\bootstrap_bg.jpg" />
+    <Content Include="statics\sytle\images\bootstrap_logo.png" />
+    <Content Include="statics\sytle\images\bootstrap_slogan.png" />
+    <Content Include="statics\sytle\images\btn_bg.png" />
+    <Content Include="statics\sytle\images\btn_w_bg.png" />
+    <Content Include="statics\sytle\images\code.jpg" />
+    <Content Include="statics\sytle\images\countdown_bg.png" />
+    <Content Include="statics\sytle\images\date_bg.png" />
+    <Content Include="statics\sytle\images\icon_account.png" />
+    <Content Include="statics\sytle\images\icon_account_on.png" />
+    <Content Include="statics\sytle\images\icon_acc_setting.png" />
+    <Content Include="statics\sytle\images\icon_add.png" />
+    <Content Include="statics\sytle\images\icon_add_1.png" />
+    <Content Include="statics\sytle\images\icon_add_g.png" />
+    <Content Include="statics\sytle\images\icon_amount_minus.png" />
+    <Content Include="statics\sytle\images\icon_amount_minus_on.png" />
+    <Content Include="statics\sytle\images\icon_amount_plus.png" />
+    <Content Include="statics\sytle\images\icon_amount_plus_on.png" />
+    <Content Include="statics\sytle\images\icon_append.png" />
+    <Content Include="statics\sytle\images\icon_arrow.png" />
+    <Content Include="statics\sytle\images\icon_arrow_1.png" />
+    <Content Include="statics\sytle\images\icon_arr_red.png" />
+    <Content Include="statics\sytle\images\icon_back.png" />
+    <Content Include="statics\sytle\images\icon_ball.png" />
+    <Content Include="statics\sytle\images\icon_ball_blue.png" />
+    <Content Include="statics\sytle\images\icon_ball_cyan.png" />
+    <Content Include="statics\sytle\images\icon_ball_green.png" />
+    <Content Include="statics\sytle\images\icon_ball_nav.png" />
+    <Content Include="statics\sytle\images\icon_ball_orange.png" />
+    <Content Include="statics\sytle\images\icon_ball_pink.png" />
+    <Content Include="statics\sytle\images\icon_ball_pink_b.png" />
+    <Content Include="statics\sytle\images\icon_ball_purple.png" />
+    <Content Include="statics\sytle\images\icon_ball_red.png" />
+    <Content Include="statics\sytle\images\icon_bell.png" />
+    <Content Include="statics\sytle\images\icon_bell_o.png" />
+    <Content Include="statics\sytle\images\icon_betting.png" />
+    <Content Include="statics\sytle\images\icon_betting_doc.png" />
+    <Content Include="statics\sytle\images\icon_betting_list.png" />
+    <Content Include="statics\sytle\images\icon_bet_cart.png" />
+    <Content Include="statics\sytle\images\icon_bet_clear.png" />
+    <Content Include="statics\sytle\images\icon_bet_del.png" />
+    <Content Include="statics\sytle\images\icon_bet_phone.png" />
+    <Content Include="statics\sytle\images\icon_big_ball.png" />
+    <Content Include="statics\sytle\images\icon_buy.png" />
+    <Content Include="statics\sytle\images\icon_cancel.png" />
+    <Content Include="statics\sytle\images\icon_card.png" />
+    <Content Include="statics\sytle\images\icon_cart.png" />
+    <Content Include="statics\sytle\images\icon_checkbox.png" />
+    <Content Include="statics\sytle\images\icon_checkbox_2_checked.png" />
+    <Content Include="statics\sytle\images\icon_checkbox_checked.png" />
+    <Content Include="statics\sytle\images\icon_checkbox_selected.png" />
+    <Content Include="statics\sytle\images\icon_chest.png" />
+    <Content Include="statics\sytle\images\icon_clock.png" />
+    <Content Include="statics\sytle\images\icon_clock_1.png" />
+    <Content Include="statics\sytle\images\icon_close.png" />
+    <Content Include="statics\sytle\images\icon_code.png" />
+    <Content Include="statics\sytle\images\icon_cup.png" />
+    <Content Include="statics\sytle\images\icon_cup_on.png" />
+    <Content Include="statics\sytle\images\icon_date.png" />
+    <Content Include="statics\sytle\images\icon_del.png" />
+    <Content Include="statics\sytle\images\icon_del_w.png" />
+    <Content Include="statics\sytle\images\icon_detail.png" />
+    <Content Include="statics\sytle\images\icon_dl.png" />
+    <Content Include="statics\sytle\images\icon_doc.png" />
+    <Content Include="statics\sytle\images\icon_download.png" />
+    <Content Include="statics\sytle\images\icon_flipclock.png" />
+    <Content Include="statics\sytle\images\icon_fund.png" />
+    <Content Include="statics\sytle\images\icon_hall.png" />
+    <Content Include="statics\sytle\images\icon_hall_on.png" />
+    <Content Include="statics\sytle\images\icon_help.png" />
+    <Content Include="statics\sytle\images\icon_home.png" />
+    <Content Include="statics\sytle\images\icon_horn.png" />
+    <Content Include="statics\sytle\images\icon_in.png" />
+    <Content Include="statics\sytle\images\icon_info.png" />
+    <Content Include="statics\sytle\images\icon_key.png" />
+    <Content Include="statics\sytle\images\icon_lock.png" />
+    <Content Include="statics\sytle\images\icon_lock_1.png" />
+    <Content Include="statics\sytle\images\icon_login.png" />
+    <Content Include="statics\sytle\images\icon_lottery_toggle.png" />
+    <Content Include="statics\sytle\images\icon_menu_append.png" />
+    <Content Include="statics\sytle\images\icon_menu_recharge.png" />
+    <Content Include="statics\sytle\images\icon_menu_record.png" />
+    <Content Include="statics\sytle\images\icon_menu_user.png" />
+    <Content Include="statics\sytle\images\icon_menu_withdrawal.png" />
+    <Content Include="statics\sytle\images\icon_mes.png" />
+    <Content Include="statics\sytle\images\icon_message.png" />
+    <Content Include="statics\sytle\images\icon_minus_off.png" />
+    <Content Include="statics\sytle\images\icon_minus_on.png" />
+    <Content Include="statics\sytle\images\icon_mode.png" />
+    <Content Include="statics\sytle\images\icon_money.png" />
+    <Content Include="statics\sytle\images\icon_money_1.png" />
+    <Content Include="statics\sytle\images\icon_money_2.png" />
+    <Content Include="statics\sytle\images\icon_money_3.png" />
+    <Content Include="statics\sytle\images\icon_money_s.png" />
+    <Content Include="statics\sytle\images\icon_msg.png" />
+    <Content Include="statics\sytle\images\icon_msg1.png" />
+    <Content Include="statics\sytle\images\icon_nav_cart.png" />
+    <Content Include="statics\sytle\images\icon_nav_cart_on.png" />
+    <Content Include="statics\sytle\images\icon_nav_history.png" />
+    <Content Include="statics\sytle\images\icon_nav_history_on.png" />
+    <Content Include="statics\sytle\images\icon_nav_rec.png" />
+    <Content Include="statics\sytle\images\icon_nav_rec_on.png" />
+    <Content Include="statics\sytle\images\icon_nav_user.png" />
+    <Content Include="statics\sytle\images\icon_nav_user_on.png" />
+    <Content Include="statics\sytle\images\icon_order_info.png" />
+    <Content Include="statics\sytle\images\icon_out.png" />
+    <Content Include="statics\sytle\images\icon_phone.png" />
+    <Content Include="statics\sytle\images\icon_plus.png" />
+    <Content Include="statics\sytle\images\icon_plus_off.png" />
+    <Content Include="statics\sytle\images\icon_plus_on.png" />
+    <Content Include="statics\sytle\images\icon_problem.png" />
+    <Content Include="statics\sytle\images\icon_pushpin.png" />
+    <Content Include="statics\sytle\images\icon_rec.png" />
+    <Content Include="statics\sytle\images\icon_recharge.png" />
+    <Content Include="statics\sytle\images\icon_record.png" />
+    <Content Include="statics\sytle\images\icon_record_1.png" />
+    <Content Include="statics\sytle\images\icon_record_2.png" />
+    <Content Include="statics\sytle\images\icon_rec_on.png" />
+    <Content Include="statics\sytle\images\icon_refresh.png" />
+    <Content Include="statics\sytle\images\icon_scheme.png" />
+    <Content Include="statics\sytle\images\icon_sel.png" />
+    <Content Include="statics\sytle\images\icon_select.png" />
+    <Content Include="statics\sytle\images\icon_select120.png" />
+    <Content Include="statics\sytle\images\icon_select_arrow.png" />
+    <Content Include="statics\sytle\images\icon_sel_2.png" />
+    <Content Include="statics\sytle\images\icon_setting.png" />
+    <Content Include="statics\sytle\images\icon_setting_w.png" />
+    <Content Include="statics\sytle\images\icon_set_arrow.png" />
+    <Content Include="statics\sytle\images\icon_shake.png" />
+    <Content Include="statics\sytle\images\icon_user.png" />
+    <Content Include="statics\sytle\images\icon_user_g.png" />
+    <Content Include="statics\sytle\images\icon_wh.png" />
+    <Content Include="statics\sytle\images\icon_withdrawal.png" />
+    <Content Include="statics\sytle\images\icon_x.png" />
+    <Content Include="statics\sytle\images\icon_x_1.png" />
+    <Content Include="statics\sytle\images\icon_zzcz.png" />
+    <Content Include="statics\sytle\images\ico_num.png" />
+    <Content Include="statics\sytle\images\install.jpg" />
+    <Content Include="statics\sytle\images\install_bg.jpg" />
+    <Content Include="statics\sytle\images\install_btn.png" />
+    <Content Include="statics\sytle\images\install_colourful.png" />
+    <Content Include="statics\sytle\images\install_help.png" />
+    <Content Include="statics\sytle\images\install_intro.png" />
+    <Content Include="statics\sytle\images\install_logo.png" />
+    <Content Include="statics\sytle\images\install_phone.png" />
+    <Content Include="statics\sytle\images\install_slogan.png" />
+    <Content Include="statics\sytle\images\kefu.png" />
+    <Content Include="statics\sytle\images\latest_lottery_bg.jpg" />
+    <Content Include="statics\sytle\images\login_user.png" />
+    <Content Include="statics\sytle\images\logo.png" />
+    <Content Include="statics\sytle\images\logo\1001.png" />
+    <Content Include="statics\sytle\images\logo\1002.png" />
+    <Content Include="statics\sytle\images\logo\1003.png" />
+    <Content Include="statics\sytle\images\logo\1004.png" />
+    <Content Include="statics\sytle\images\logo\1005.png" />
+    <Content Include="statics\sytle\images\logo\1007.png" />
+    <Content Include="statics\sytle\images\logo\1009.png" />
+    <Content Include="statics\sytle\images\logo\1010.png" />
+    <Content Include="statics\sytle\images\logo\1011.png" />
+    <Content Include="statics\sytle\images\logo\1012.png" />
+    <Content Include="statics\sytle\images\logo\1013.png" />
+    <Content Include="statics\sytle\images\logo\1014.png" />
+    <Content Include="statics\sytle\images\logo\1015.png" />
+    <Content Include="statics\sytle\images\logo\1016.png" />
+    <Content Include="statics\sytle\images\logo\1017.png" />
+    <Content Include="statics\sytle\images\logo\1018.png" />
+    <Content Include="statics\sytle\images\logo\1019.png" />
+    <Content Include="statics\sytle\images\logo\1020.png" />
+    <Content Include="statics\sytle\images\logo\2001.png" />
+    <Content Include="statics\sytle\images\logo\2002.png" />
+    <Content Include="statics\sytle\images\logo\2003.png" />
+    <Content Include="statics\sytle\images\logo\2004.png" />
+    <Content Include="statics\sytle\images\logo\2005.png" />
+    <Content Include="statics\sytle\images\logo\2006.png" />
+    <Content Include="statics\sytle\images\logo\3001.png" />
+    <Content Include="statics\sytle\images\logo\3002.png" />
+    <Content Include="statics\sytle\images\logo\3003.png" />
+    <Content Include="statics\sytle\images\logo\3004.png" />
+    <Content Include="statics\sytle\images\logo\3005.png" />
+    <Content Include="statics\sytle\images\logo\3006.png" />
+    <Content Include="statics\sytle\images\logo\4001.png" />
+    <Content Include="statics\sytle\images\logo\4002.png" />
+    <Content Include="statics\sytle\images\logo\4003.png" />
+    <Content Include="statics\sytle\images\logo\4004.png" />
+    <Content Include="statics\sytle\images\logo_cp_11x5_cq.png" />
+    <Content Include="statics\sytle\images\logo_cp_11x5_gd.png" />
+    <Content Include="statics\sytle\images\logo_cp_11x5_jx.png" />
+    <Content Include="statics\sytle\images\logo_cp_11x5_sd.png" />
+    <Content Include="statics\sytle\images\logo_cp_efc.png" />
+    <Content Include="statics\sytle\images\logo_cp_fc3d.png" />
+    <Content Include="statics\sytle\images\logo_cp_pl3.png" />
+    <Content Include="statics\sytle\images\logo_cp_sc_bj.png" />
+    <Content Include="statics\sytle\images\logo_cp_ssc_cq.png" />
+    <Content Include="statics\sytle\images\logo_cp_ssc_jx.png" />
+    <Content Include="statics\sytle\images\logo_cp_ssc_xj.png" />
+    <Content Include="statics\sytle\images\logo_cp_ssl.png" />
+    <Content Include="statics\sytle\images\logo_cp_wfc.png" />
+    <Content Include="statics\sytle\images\logo_cp_yfc.png" />
+    <Content Include="statics\sytle\images\new_ui.png" />
+    <Content Include="statics\sytle\images\photo.png" />
+    <Content Include="statics\sytle\images\reward_1.png" />
+    <Content Include="statics\sytle\images\reward_2.png" />
+    <Content Include="statics\sytle\images\reward_3.png" />
+    <Content Include="statics\sytle\images\scheme_bg.png" />
+    <Content Include="statics\sytle\images\user.png" />
+    <Content Include="statics\sytle\images\v_d_line.png" />
+    <Content Include="statics\sytle\images\welcome.jpg" />
+    <Content Include="statics\sytle\js\EM.center.js" />
+    <Content Include="statics\sytle\js\EM.header.js" />
+    <Content Include="statics\sytle\js\EM.index.js" />
+    <Content Include="statics\sytle\js\EM.input.js" />
+    <Content Include="statics\sytle\js\EM.jquery2.js" />
+    <Content Include="statics\sytle\js\EM.jquery3.js" />
+    <Content Include="statics\sytle\js\EM.jquery4.js" />
+    <Content Include="statics\sytle\js\EM.jquery5.js" />
+    <Content Include="statics\sytle\js\EM.lottery.js" />
+    <Content Include="statics\sytle\js\EM.lotteryTime.js" />
+    <Content Include="statics\sytle\js\EM.nav.js" />
+    <Content Include="statics\sytle\js\EM.navinit.js" />
+    <Content Include="statics\sytle\js\EM.operBet.js" />
+    <Content Include="statics\sytle\js\EM.page.js" />
+    <Content Include="statics\sytle\js\EM.tools.js" />
+    <Content Include="statics\sytle\js\flipclock.min.js" />
+    <Content Include="statics\sytle\js\jquery.min.js" />
+    <Content Include="statics\sytle\js\jquery_json.js" />
+    <Content Include="statics\sytle\js\MSClass.js" />
+    <Content Include="statics\sytle\js\script.js" />
+    <Content Include="statics\sytle\js\sharedata.js" />
+    <Content Include="statics\sytle\js\swiper.min.js" />
+    <Content Include="temp\WebLot.aspx" />
+    <Content Include="temp\WebPlay.aspx" />
+    <Content Include="temp\WebPoint.aspx" />
+    <Content Include="temp\WebSite.aspx" />
+    <Content Include="user\index.html" />
+    <Content Include="user\useradd.aspx" />
+    <Content Include="user\userlinklist.html" />
+    <Content Include="user\userlist.html" />
+    <Content Include="user\userteamtotal.html" />
+    <Content Include="user\userupdate.aspx" />
+    <Content Include="WEB-INF\site.xml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ajax\ajax.aspx.cs">
+      <DependentUpon>ajax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxActive.aspx.cs">
+      <DependentUpon>ajaxActive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxBank.aspx.cs">
+      <DependentUpon>ajaxBank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxBet.aspx.cs">
+      <DependentUpon>ajaxBet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxBetting.aspx.cs">
+      <DependentUpon>ajaxBetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxEmail.aspx.cs">
+      <DependentUpon>ajaxEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxHistory.aspx.cs">
+      <DependentUpon>ajaxHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxMoney.aspx.cs">
+      <DependentUpon>ajaxMoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxNews.aspx.cs">
+      <DependentUpon>ajaxNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxProfitloss.aspx.cs">
+      <DependentUpon>ajaxProfitloss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxUser.aspx.cs">
+      <DependentUpon>ajaxUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="center\bankInfo.aspx.cs">
+      <DependentUpon>bankInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="email\Info.aspx.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="email\Info2.aspx.cs">
+      <DependentUpon>Info2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EMWeb\ajaxuploadhandler.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="money\charge.aspx.cs">
+      <DependentUpon>charge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="money\chargeSbf.aspx.cs">
+      <DependentUpon>chargeSbf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="money\chargeZfb.aspx.cs">
+      <DependentUpon>chargeZfb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="money\getcash.aspx.cs">
+      <DependentUpon>getcash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nav.aspx.cs">
+      <DependentUpon>nav.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="news\newsinfo.aspx.cs">
+      <DependentUpon>newsinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pay\SbfHelper.cs" />
+    <Compile Include="pay\suibipay\notify.aspx.cs">
+      <DependentUpon>notify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pay\suibipay\pay.aspx.cs">
+      <DependentUpon>pay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pay\suibipay\result.aspx.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="plus\getcode.aspx.cs">
+      <DependentUpon>getcode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="plus\GetNumber.aspx.cs">
+      <DependentUpon>GetNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="report\activelist.aspx.cs">
+      <DependentUpon>activelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\chargecash.aspx.cs">
+      <DependentUpon>chargecash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\pointreport.aspx.cs">
+      <DependentUpon>pointreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\profitloss.aspx.cs">
+      <DependentUpon>profitloss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report\profitlosssub.aspx.cs">
+      <DependentUpon>profitlosssub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="temp\WebLot.aspx.cs">
+      <DependentUpon>WebLot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="temp\WebPlay.aspx.cs">
+      <DependentUpon>WebPlay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="temp\WebPoint.aspx.cs">
+      <DependentUpon>WebPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="temp\WebSite.aspx.cs">
+      <DependentUpon>WebSite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\useradd.aspx.cs">
+      <DependentUpon>useradd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\userupdate.aspx.cs">
+      <DependentUpon>userupdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="statics\temp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lottery.Collect\Lottery.Collect.csproj">
+      <Project>{8db8a3f8-22f8-49a3-8271-adec06af09f1}</Project>
+      <Name>Lottery.Collect</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.DAL\Lottery.DAL.csproj">
+      <Project>{90c59389-0af4-4c84-b839-4b50c5cc3027}</Project>
+      <Name>Lottery.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.DBUtility\Lottery.DBUtility.csproj">
+      <Project>{71e9ac32-7eaf-4677-9b25-9adb150f8bcf}</Project>
+      <Name>Lottery.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.Entity\Lottery.Entity.csproj">
+      <Project>{17a4cf66-b240-4a8f-8137-c134ca6a2c89}</Project>
+      <Name>Lottery.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.FFCache\Lottery.FFCache.csproj">
+      <Project>{13e68fae-a641-4e95-b08a-a6614bf530c8}</Project>
+      <Name>Lottery.FFCache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.Utils\Lottery.Utils.csproj">
+      <Project>{7fde2b50-2656-4ed1-8c0c-d6547fe9a21a}</Project>
+      <Name>Lottery.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1474</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1474/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

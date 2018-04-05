@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@font-face {
+    font-family: Charle;
+    src: url('images/charle.eot');
+    src: url('images/charle.eot') format('embedded-opentype'),
+         url('images/charle.woff2') format('woff2'),
+         url('images/charle.woff') format('woff'),
+         url('images/charle.ttf') format('truetype'),
+         url('images/charle.svg#CharlemagneStdBold') format('svg');
+}

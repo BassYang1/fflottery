@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GetNumber.aspx.cs" Inherits="Lottery.EMWeb.plus.GetNumber" %>

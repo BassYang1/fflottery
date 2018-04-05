@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: F:\pros\tianheng\bf\WebAppOld\bin\Lottery.DAL.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90C59389-0AF4-4C84-B839-4B50C5CC3027}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Lottery.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>1.0.1.1</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Lottery.DAL</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\DLLs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Net20">
+      <HintPath>..\DLLs\Newtonsoft.Json.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComData.cs" />
+    <Compile Include="List.cs" />
+    <Compile Include="LotteryDataDAL.cs" />
+    <Compile Include="SiteDAL.cs" />
+    <Compile Include="Flex\SbfDAL.cs" />
+    <Compile Include="Youle11x5Check.cs" />
+    <Compile Include="YouleCheck.cs" />
+    <Compile Include="LotteryUtils.cs" />
+    <Compile Include="UserMoneyStatDAL.cs" />
+    <Compile Include="LogAdminOperDAL.cs" />
+    <Compile Include="GYouleCheck.cs" />
+    <Compile Include="conPlay.cs" />
+    <Compile Include="TiskDAL.cs" />
+    <Compile Include="HistoryDAL.cs" />
+    <Compile Include="LotteryCheck.cs" />
+    <Compile Include="LogExceptionDAL.cs" />
+    <Compile Include="YoulePk10Check.cs" />
+    <Compile Include="DateTimePubDAL.cs" />
+    <Compile Include="LogUserLoginDAL.cs" />
+    <Compile Include="LotteryDAL.cs" />
+    <Compile Include="ChargeSetDAL.cs" />
+    <Compile Include="UserRegLinkDAL.cs" />
+    <Compile Include="conNumber.cs" />
+    <Compile Include="UserDAL.cs" />
+    <Compile Include="BasicPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDAL.cs" />
+    <Compile Include="conPlayType.cs" />
+    <Compile Include="Calculate.cs" />
+    <Compile Include="GYoule11x5Check.cs" />
+    <Compile Include="UserBankDAL.cs" />
+    <Compile Include="UserCenterSession.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Youle3dCheck.cs" />
+    <Compile Include="UserBetZhDAL.cs" />
+    <Compile Include="UserChargeDAL.cs" />
+    <Compile Include="UserTotalTran.cs" />
+    <Compile Include="CheckOperation.cs" />
+    <Compile Include="GYoule3dCheck.cs" />
+    <Compile Include="SFTDAL.cs" />
+    <Compile Include="UserBetDAL.cs" />
+    <Compile Include="ActiveAutoDAL.cs" />
+    <Compile Include="AdminBasicPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCenter.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GYoulePk10Check.cs" />
+    <Compile Include="DoGetObjTask.cs" />
+    <Compile Include="AsyncHelper.cs" />
+    <Compile Include="UserMessageDAL.cs" />
+    <Compile Include="BetCheck.cs" />
+    <Compile Include="HtmlOperate.cs" />
+    <Compile Include="LotteryTimeDAL.cs" />
+    <Compile Include="SysActiveRecordDAL.cs" />
+    <Compile Include="WebAppListOper.cs" />
+    <Compile Include="ActiveDAL.cs" />
+    <Compile Include="conSite.cs" />
+    <Compile Include="UserMoneyLogDAL.cs" />
+    <Compile Include="LogSysDAL.cs" />
+    <Compile Include="UserEmailDAL.cs" />
+    <Compile Include="AgentFHDAL.cs" />
+    <Compile Include="SysDelDataDAL.cs" />
+    <Compile Include="conLottery.cs" />
+    <Compile Include="UserQuotaDAL.cs" />
+    <Compile Include="NewsDAL.cs" />
+    <Compile Include="Flex\ContractDAL.cs" />
+    <Compile Include="Flex\UserBetDAL.cs" />
+    <Compile Include="Flex\HistoryDAL.cs" />
+    <Compile Include="Flex\UserContractDAL.cs" />
+    <Compile Include="Flex\UserGetCashDAL.cs" />
+    <Compile Include="Flex\UserBankDAL.cs" />
+    <Compile Include="Flex\ContractGzDAL.cs" />
+    <Compile Include="Flex\UserEmailDAL.cs" />
+    <Compile Include="Flex\UserDAL.cs" />
+    <Compile Include="Flex\BetDetailDAL.cs" />
+    <Compile Include="Flex\PublicDAL.cs" />
+    <Compile Include="Flex\UserChargeDAL.cs" />
+    <Compile Include="Flex\ActiveDAL.cs" />
+    <Compile Include="Flex\UserMoneyStatDAL.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lottery.DBUtility\Lottery.DBUtility.csproj">
+      <Project>{71e9ac32-7eaf-4677-9b25-9adb150f8bcf}</Project>
+      <Name>Lottery.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.Entity\Lottery.Entity.csproj">
+      <Project>{17a4cf66-b240-4a8f-8137-c134ca6a2c89}</Project>
+      <Name>Lottery.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.FFCache\Lottery.FFCache.csproj">
+      <Project>{13e68fae-a641-4e95-b08a-a6614bf530c8}</Project>
+      <Name>Lottery.FFCache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.Utils\Lottery.Utils.csproj">
+      <Project>{7fde2b50-2656-4ed1-8c0c-d6547fe9a21a}</Project>
+      <Name>Lottery.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

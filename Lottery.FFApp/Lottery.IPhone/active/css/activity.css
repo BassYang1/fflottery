@@ -1,0 +1,56 @@
+.icon-prom{position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:top;}
+.icon-prom,.qd-count,.qd-calendar .date .minus,.qd-calendar .date .plus,.qd-list li,.qd-list .unable,.qd-list .btn-receive,.qd-list .unqd{background:url(../images/yl_act.png) no-repeat;}
+
+.hongbao-winning,.hongbao-winning .winning-inner{height:216px;overflow:hidden;}
+.hongbao-winning{position:absolute;z-index:9;left:30px;top:64px;width:177px;padding:78px 25px 2px;background:url(../images/hongbao_winning.png) no-repeat;}
+.hongbao-winning .winning-list{color:#fff;}
+.hongbao-winning .winning-list li{height:24px;line-height:24px;overflow:hidden;}
+.hongbao-float{position:fixed;z-index:199;left:50%;top:210px;width:180px;margin-left:520px;}
+.hongbao-receive{position:relative;display:block;width:90px;height:63px;padding-top:57px;margin:0 auto;color:#fff;text-align:center;background:url(../images/hongbao_float.png) no-repeat;}
+.hongbao-receive .close{position:absolute;top:-6px;right:-6px;}
+.hongbao-receive .close .icon-close{width:20px;height:20px;background-position:-40px 0;}
+.hongbao-receive span{display:block;}
+.hongbao-receive .num{height:36px;line-height:36px;overflow:hidden;margin-top:2px;font-size:35px;color:#fff10d;}
+.hongbao-message{display:none;position:relative;height:36px;overflow:hidden;padding:5px 15px 5px 40px;margin-top:12px;border-radius:23px;text-align:center;color:#fff;background-color:#f03333;}
+.hongbao-message .icon-sound{position:absolute;left:10px;top:50%;width:25px;height:22px;margin-top:-11px;background-position:0 0;}
+.hongbao-result{position:fixed;z-index:1999;left:50%;top:50%;width:600px;height:602px;margin-top:-301px;margin-left:-300px;background:url(../images/hongbao_result.png) no-repeat;}
+.hongbao-result .hongbao-money,.hongbao-result .close{position:absolute;z-index:9;}
+.hongbao-result .hongbao-money{left:215px;top:204px;width:160px;height:80px;line-height:80px;overflow:hidden;font-size:80px;font-family:Arial;color:#e2b572;text-align:center;-webkit-transform:rotate(-8deg);-ms-transform:rotate(-8deg);-moz-transform:rotate(-8deg);transform:rotate(-8deg);}
+.hongbao-result .close{left:367px;top:71px;width:50px;height:50px;border-radius:50%;cursor:pointer;}
+
+.act-qd{position:absolute;z-index:9;left:0;top:0;width:100%;height:100%;}
+.qd-top,.qd-btm{margin-left:25px;margin-top:20px;}
+.qd-top{width:440px;height:260px;overflow:hidden;padding:10px 5px;border-radius:10px;background-color:#fff;}
+.qd-count{height:35px;line-height:35px;overflow:hidden;text-align:center;background-position:0 -40px;}
+.qd-count .days{color:#e54633;}
+.qd-count .icon-pen{top:6px;width:23px;height:22px;margin-right:8px;background-position:-70px 0;}
+
+.qd-calendar{margin-top:12px;}
+.qd-calendar .date{height:24px;overflow:hidden;margin-bottom:12px;text-align:center;}
+.qd-calendar .date .minus,.qd-calendar .date .plus,.qd-calendar .date select{height:24px;text-align:center;vertical-align:top;}
+.qd-calendar .date select{width:100px;margin:0 5px;border:1px solid #dfdfdf;}
+.qd-calendar .date .minus,.qd-calendar .date .plus{display:inline-block;*display:inline;*zoom:1;width:24px;height:24px;}
+.qd-calendar .date .minus{background-position:-110px 0;}
+.qd-calendar .date .plus{background-position:-150px 0;}
+.qd-calendar .date .month-minus{margin-left:18px;}
+.qd-calendar .date .year-plus{margin-right:18px;}
+.qd-calendar .weeks,.qd-calendar .days{padding-left:31px;padding-right:31px;}
+.qd-calendar .weeks{height:25px;line-height:25px;overflow:hidden;color:#fff;background-color:#d11a2d;text-align:center;}
+.qd-calendar .weeks span{float:left;width:54px;}
+.qd-calendar .weeks .weekend{color:#fc0;}
+.qd-calendar .days{overflow:hidden;color:#000;text-align:center;}
+.qd-calendar .days span{float:left;width:20px;height:20px;line-height:20px;overflow:hidden;margin-top:5px;margin-left:17px;margin-right:17px;}
+.qd-calendar .days .weekend{color:#d11a2d;}
+.qd-calendar .days .current{border-radius:3px;background-color:#dde3ea;}
+.qd-list{overflow:hidden;text-align:center;}
+.qd-list li{float:left;width:94px;height:94px;margin-right:1px;background-position:0 -85px;}
+.qd-list span{display:block;}
+.qd-list .text{height:26px;line-height:26px;overflow:hidden;color:#fff;}
+
+
+
+.unable,.btn-receive,.unqd{background:url(../images/yl_act.png) no-repeat;}
+.unable,.btn-receive,.unqd{width:64px;height:24px;line-height:22px;margin:35px auto 0;text-indent:-1px;}
+.unable{color:#fff;background-position:-190px 0;cursor:default;}
+.btn-receive{color:#912018;background-position:-270px 0;}
+.unqd{color:#06c;background-position:-350px 0;cursor:default;}

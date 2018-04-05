@@ -1,0 +1,66 @@
+﻿<script src="/statics/js/page.header.js" type="text/javascript"></script>
+<script src="/statics/json/Lottery.js" type="text/javascript"></script>
+<script src="/statics/yanue.pop.js" type="text/javascript"></script>
+<!-- 顶部栏 start -->
+<div class="tto-topbar">
+    <div class="tto-layout">
+        <div class="pull-left">
+            <img src="/statics/img/slogan.png" alt="" class="slogan" /></div>
+        <div class="pull-right">
+            <div class="user-info">
+                <img src="/statics/img/acc_default.png" alt="" class="avatar" />
+                欢迎您，<span id="username" class="name"></span>
+            </div>
+            <div class="top-msg">
+                <a href="/vip.e"><span class="num">0</span></a></div>
+            <div class="top-acc">
+                <div class="acc-text">
+                    <a href="/vip.c">我的账户</a><span class="triangle"></span></div>
+                <div class="acc-serv">
+                    <a href="/vip.c">会员中心</a> 
+                    <a href="/vip.m">资金管理</a> 
+                    <a href="/vip.b">订单管理</a> 
+                    <a href="/vip.u">代理管理</a>
+                    <a id="qy" href="/vip.q">分红契约</a>
+                    <a id="gz" href="/vip.g">日结契约</a>
+                </div>
+            </div>
+            <div class="top-balance">
+                <div class="balance">
+                    余额：￥<span id="money" class="amount">0.00</span> <a href="javascript:;" onclick="ajaxRefresh()"
+                        class="refresh"></a>
+                </div>
+            </div>
+            <div class="top-serv">
+                <a href="/vip.m">充值</a> | <a href="/vip.m1">取款</a> | <a href="http://www16.53kf.com/webCompany.php?arg=10155057" target="_blank" class="os">
+                    在线客服</a>
+            </div>
+            <a href="javascript:;" onclick="chkLogout()" class="btn btn-exit"><i class="icon icon-exit">
+            </i>登出</a>
+        </div>
+    </div>
+</div>
+<!-- 顶部栏 end -->
+<!-- 头部 start -->
+<div class="tto-header">
+    <div class="tto-layout">
+        <div class="tto-logo">
+            <a href="/">
+                <img src="/statics/img/ff_logo.png" alt="非凡娱乐" /></a>
+        </div>
+        <div class="tto-nav">
+            <a href="/">首页</a> 
+            <a href="javascript:;" id="look-lot">彩票中心</a> 
+            <a href="/vip.live">真人娱乐</a> 
+            <a href="/vip.ele">电子游艺</a> 
+            <a href="/vip.lic">实力牌照</a>
+            <a href="/vip.a">平台活动</a> 
+            <a href="/vip.news">平台公告</a> 
+            <a href="javascript:;" onclick="ajaxPagePop('客户端下载','800px','550px','/html/download.html')">下载中心</a>
+        </div>
+        <div class="lottery-games lottery-nav" id="lottery-nav">
+            <span class="triangle"></span>
+        </div>
+    </div>
+</div>
+<!-- 头部 end -->

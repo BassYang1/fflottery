@@ -1,0 +1,22 @@
+﻿<script type="text/javascript" src="/_libs/jquery.tools.pack.js"></script>
+<script type="text/javascript" src="/statics/global.js"></script>
+<script type="text/javascript">
+try{
+	try{
+		parent.ajaxList(parent.page);
+	}
+	catch(e){
+		top.getCurrentIframe().ajaxList(top.getCurrentIframe().page);
+	}
+}
+catch(e){}
+try{
+	try{
+		parent.Lottery.Popup.hide();
+	}
+	catch(e){
+		top.Lottery.Popup.hide();
+	}
+}
+catch(e){}
+</script>

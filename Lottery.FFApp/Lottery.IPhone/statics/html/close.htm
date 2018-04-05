@@ -1,0 +1,18 @@
+﻿<script type="text/javascript" src="/statics/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/statics/global.js"></script>
+<script type="text/javascript" src="/statics/layer/layer.min.js"></script>
+<script type="text/javascript">
+    var index = parent.layer.getFrameIndex(window.name);
+    try {
+        try {
+            parent.ajaxList(1);
+            parent.layer.close(index);
+        }
+        catch (e) {
+            parent.layer.close(index);
+        }
+    }
+    catch (e) {
+        parent.layer.close(index);
+    }
+</script>

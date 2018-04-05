@@ -1,0 +1,136 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <title>立博国际娱乐</title>
+    <link rel="stylesheet" type="text/css" href="/statics/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/statics/css/member.css" />
+    <script type="text/javascript" src="/statics/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/statics/global.js"></script>
+    <script type="text/javascript" src="/statics/layer/layer.js"></script>
+    <script type="text/javascript" src="/statics/js/EM.tools.js"></script>
+    <script type="text/javascript" src="/statics/base/lotMenu.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            ajaxList();
+        });
+
+        function ajaxList() {
+            var index = emLoading();
+            $.ajax({
+                type: "get",
+                dataType: "json",
+                data: "clienttime=" + Math.random(),
+                url: "/ajax/ajaxActive.aspx?oper=GetGroupGzJSON&gId=3",
+                error: function (XmlHttpRequest, textStatus, errorThrown) {  alert(XmlHttpRequest.responseText);},
+                success: function (d) {
+                    switch (d.result) {
+                        case '-1':
+                            top.window.location = '/index.aspx';
+                            break;
+                        case '1':
+                            $i('bet').innerHTML = d.table[0].bet;
+                            $i('hynum').innerHTML = d.table[0].hynum;
+                            $i('money').innerHTML = d.table[0].money;
+                            break;
+                    }
+                    closeload(index);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="promotion-details">
+        <div class="prom-banner">
+            <img src="/statics/img/prom_banner3.jpg" alt="" />
+        </div>
+        <div class="prom-header">
+            <h1 class="prom-title">
+                日奖励活动</h1>
+            <a href="#" class="btn prom-back"></a>
+        </div>
+        <div class="prom-content">
+            <div class="prom-part">
+                <h2>
+                    <i class="icon icon-time"></i>活动时间</h2>
+                <p>
+                    此活动长期进行。</p>
+            </div>
+            <div class="prom-part">
+                <h2>
+                    <i class="icon icon-con"></i>活动内容</h2>
+                <p>
+                    <table class="prom-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    团队消费量
+                                </th>
+                                <th>
+                                    活跃会员人数
+                                </th>
+                                <th>
+                                    日工资（无间隙）
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    无
+                                </td>
+                                <td>
+                                    无
+                                </td>
+                                <td>
+                                    0.3%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    200W+
+                                </td>
+                                <td>
+                                    ≥ 100
+                                </td>
+                                <td>
+                                    0.4%
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="prom-info">
+                        <tr>
+                            <td align="left">
+                                &nbsp;总消费量：<em id="bet">0.00</em> 元
+                            </td>
+                            <td align="center">
+                                活跃人数：<em id="hynum">0.00</em> 人
+                            </td>
+                            <td align="right">
+                                日奖励：<em id="money">0.00</em> 元&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </p>
+            </div>
+            <div class="prom-part">
+                <h2>
+                    <i class="icon icon-rule"></i>活动条款</h2>
+                <p>
+                    1. 无需亏损要求，有明显团队结构，并非个别人刷量。</p>
+                <p>
+                    如：今日消费量为100W，次日可派发（100W*0.3%=3000元）。</p>
+                <p>
+                    2. 达标者，于次日03：00-04：00系统自动派发。</p>
+                <p>
+                    3. 非凡娱乐保留所有权利，有权利修改、停止此活动！</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

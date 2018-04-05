@@ -1,0 +1,112 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>立博国际娱乐</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/global.css" />
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/style.css" />
+    <script type="text/javascript" src="/statics/jquery-1.11.3.min.js"></script>
+    <script src="/statics/layer/layer.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/statics/sytle/js/EM.tools.js"></script>
+    <script type="text/javascript" src="/statics/global.js"></script>
+    <script type="text/javascript">
+        var id = joinValue('id');
+        var itemid = joinValue('itemid');
+        var pagesize = 10;
+        var page = thispage();
+        $(document).ready(function () {
+            ajaxList(page);
+            $('#nav a').click(function () {
+                $(this).parent().find('a').removeClass();
+                $(this).addClass('current');
+                var state = $(this).attr("nmb");
+                itemid = "&state=" + state;
+                ajaxList(1);
+            });
+        });
+
+        function ajaxList(currentpage) {
+            var u = "/ajax/ajaxBet.aspx?oper=ajaxGetZHInfo";
+            if (currentpage != null)
+                page = currentpage;
+            var index = emLoading();
+            $.ajax({
+                type: "get",
+                dataType: "json",
+                data: "page=" + currentpage + "&pagesize=" + pagesize + "&clienttime=" + Math.random(),
+                url: u + itemid + id,
+                error: function (XmlHttpRequest, textStatus, errorThrown) { emAlert("亲！页面过期,请刷新页面!"); },
+                success: function (d) {
+                    switch (d.result) {
+                        case '-1':
+                            emAlert(d.returnval); top.window.location = '/login.html';
+                            break;
+                        case '0':
+                            emAlert(d.returnval);
+                            break;
+                        case '1':
+                            $("#ajaxList").setTemplateElement("tplList", null, { filter_data: true });
+                            $("#ajaxList").processTemplate(d);
+                            $("#ajaxPageBar").html(d.pagebar);
+                            break;
+                    }
+                    closeload(index);
+                }
+            });
+        }
+
+    </script>
+</head>
+<body class="whitebg">
+    <div class="container">
+        <header id="header">
+        <h1 class="title">投注记录</h1>
+        <a href="javascript:history.go(-1);" class="back"></a>
+    </header>
+        <main id="main">
+        <div class="betting-record">
+        	<nav id="nav">
+            	<a href="javascript:void(0)" nmb="" class="current">全&nbsp;&nbsp;&nbsp;部</a>
+                <a href="javascript:void(0)" nmb="0">未开奖</a>
+                <a href="javascript:void(0)" nmb="2">已中奖</a>
+                <a href="javascript:void(0)" nmb="3">未中奖</a>
+            </nav>
+            <section class="record-main">
+            	<ul id="ajaxList" class="record-list">
+                </ul>
+                            <div id="ajaxPageBar" class="pagination">
+            </div>
+            </section>
+        </div>
+    </main>
+    </div>
+</body>
+<textarea class="template" id="tplList" rows="1" cols="1" style="display: none">
+{#foreach $T.table as record}
+<li><a href="BetInfo.html?id={$T.record.id}">
+<p class="p1">
+    <span class="name">{$T.record.lotteryname}--{$T.record.playname}</span>
+    <span class="state">{#if $T.record.state == "0"}
+未开奖{#/if}
+{#if $T.record.state == "1"}
+<font color="gray">撤单</font>
+{#/if}
+{#if $T.record.state == "2"}
+<font color="green">未中奖</font>
+{#/if}
+{#if $T.record.state == "3"}
+<font color="red">已中奖</font>
+{#/if}</span>
+</p>
+<p class="p2">
+    <span class="logo"><img src="/statics/sytle/images/logo/{$T.record.lotteryid}.png" alt=""/></span>
+    <span class="info">第 {$T.record.issuenum} 期<br/>{$T.record.stime2}</span>
+    <span class="money">投注：<em>{formatCurrency($T.record.total)}</em>元<br />盈亏：<em>{formatCurrency($T.record.realget)}</em>元</span>
+</p></a>
+</li>
+{#/for}
+</textarea>
+</html>

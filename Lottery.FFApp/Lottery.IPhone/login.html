@@ -1,0 +1,153 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>立博国际娱乐</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/global.css" />
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/style.css" />
+    <script type="text/javascript" src="/statics/jquery-1.11.3.min.js"></script>
+    <script src="/statics/layer/layer.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/statics/sytle/js/EM.tools.js"></script>
+    <script type="text/javascript" src="/statics/global.js"></script>
+    <script src="/statics/sytle/js/MSClass.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var index = emLoading();
+            _jcms_GetRefreshCode('imgCode');
+            $.ajax({
+                type: "get",
+                dataType: "json",
+                data: "clienttime=" + Math.random(),
+                url: "/ajax/ajax.aspx?oper=ajaxCheckLogin",
+                error: function (XmlHttpRequest, textStatus, errorThrown) { if (XmlHttpRequest.responseText != "") { emAlert("亲！页面过期,请刷新页面!"); } },
+                success: function (d) {
+                    if (d.result != "0") {
+                        top.location.href = '/main.html';
+                    }
+                }
+            });
+            closeload(index);
+            if (getCookie("username") != null) {
+                $("#txtUserName").val(getCookie("username"));
+            }
+            if (getCookie("password") != null) {
+                $("#txtUserPass").val(getCookie("password"));
+                $("#txtUserPass").attr('type', 'password');
+            }
+        });
+        function ajaxLogin() {
+            var uName = stripscript($("#txtUserName").val());
+            var oPass = $('#txtUserPass').val();
+            var typeNum = $("#txtLoginType").val();
+            var code = $("#txtUserCode").val();
+            if (document.getElementById('chkRemember').checked == true) {
+                setCookie("username", uName);
+                setCookie("password", oPass);
+            }
+            if (site.WebIsOpen == "1") {
+                emAlert(site.WebCloseSeason);
+                return false;
+            }
+            if (uName == "") {
+                emAlert("会员账号不能为空");
+                return false;
+            }
+            if (oPass == "") {
+                emAlert("密码不能为空");
+                return false;
+            }
+            if (code == "") {
+                emAlert("验证码不能为空");
+                return false;
+            }
+            var pattern = new RegExp("[~'!@#$%^&*()-+_=:]");
+            if (uName != "" && uName != null) {
+                if (pattern.test(uName)) {
+                    emAlert("会员账号中包含非法字符！");
+                    $("#txtUserName").attr("value", "");
+                    $("#txtUserName").focus();
+                    return false;
+                }
+            }
+            var index = emLoading();
+
+            uPass = Lottery.MD5(oPass);
+            //$('#txtUserPass').val(uPass);
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "ajax/ajax.aspx?oper=login&clienttime=" + Math.random(),
+                data: "name=" + encodeURIComponent(uName) + "&pass=" + encodeURIComponent(uPass) + "&type=" + typeNum + "&code=" + encodeURIComponent(code),
+                error: function (XmlHttpRequest, textStatus, errorThrown) { emAlert("亲！页面过期,请刷新页面!"); },
+                success: function (d) {
+                    layer.close(index);
+                    if (d.result == "1") {
+                        top.location.href = 'main.html';
+                    }
+                    else {
+                        emAlert(d.message);
+                        return;
+                    }
+                    closeload(index);
+                    $('#txtUserPass').val("");
+                    $('#txtUserCode').val("");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header id="header">
+<h1 class="title">登   录</h1>
+</header>
+        <main id="main">
+<div class="user-login">
+<figure class="avatar">
+<img src="/statics/sytle/images/login_user.png" alt=""/>
+</figure>
+<form action="" method="post" class="lt-form login-form">
+<div class="form-item">
+<div class="item-title">
+<label class="lab"><i class="icon-user"></i>用户名</label>
+</div>
+<div class="item-content">
+<input id="txtUserName" type="text" value="" class="ipt"/>
+</div>
+</div>
+<div class="form-item">
+<div class="item-title">
+<label class="lab"><i class="icon-lock"></i>密<span class="sw w1"></span>码</label>
+</div>
+<div class="item-content">
+<input id="txtUserPass" type="password" value="" class="ipt"/>
+</div>
+</div>
+<div class="form-item">
+<div class="item-title">
+<label class="lab"><i class="icon-lock"></i>验证码</label>
+</div>
+<div class="item-content">
+<input id="txtUserCode" type="text" value="" class="ipt" onfocus="_jcms_GetRefreshCode('imgCode');" maxlength="4" />
+</div>
+<img id="imgCode" onclick="_jcms_GetRefreshCode('imgCode');" src="" alt="" class="code" />
+</div>
+<div class="form-btns">
+<label class="rm">
+<input id="chkRemember" type="checkbox"  checked/>记住用户名</label>
+<a href="password.html" class="fw">忘记密码</a>
+</div>
+<div class="form-btns">
+<input type="button" value="登&nbsp;&nbsp;&nbsp;录" onclick="ajaxLogin()" class="btn primary-btn" />
+<input type="hidden" id="Hidden1" name="txtRefer" value="<%=Referer%>" />
+<input type="hidden" id="Hidden2" name="txtLoginType" value="7" />
+</div>
+</form>
+</div>
+</main>
+    </div>
+</body>
+</html>

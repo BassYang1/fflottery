@@ -1,0 +1,125 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <title>立博国际娱乐</title>
+    <link rel="stylesheet" type="text/css" href="/statics/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/statics/css/test.css" />
+    <script type="text/javascript" src="/statics/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/statics/global.js"></script>
+    <script type="text/javascript" src="/statics/layer/layer.js"></script>
+    <script type="text/javascript" src="/statics/js/EM.tools.js"></script>
+</head>
+<body>
+    <div class="line-test">
+        <div class="lt-header">
+            <a href="/" class="lt-logo">
+                <img src="/statics/img/ff_logo.png" alt=""></a>
+        </div>
+        <div class="lt-content">
+            <div class="tto-layout">
+                <div class="lt-row">
+                    <div class="lt-col">
+                        <div class="lt-section">
+                            <h3 class="sec-title">
+                                <i class="icon icon-link"></i>速度测试完成！请在下面选择最快的线路</h3>
+                            <div class="sec-content">
+                                <ul id="line-list" class="line-list">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lt-col">
+                        <div class="lt-section">
+                            <h3 class="sec-title">
+                                <i class="icon icon-dl"></i>苹果手机APP下载</h3>
+                            <div class="sec-content">
+                                <div class="lt-download">
+                                    <img src="/statics/img/Ios.png" width="150" height="150" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lt-section">
+                            <h3 class="sec-title">
+                                <i class="icon icon-dl"></i>安卓手机APP下载</h3>
+                            <div class="sec-content">
+                                <div class="lt-download">
+                                    <img src="/statics/img/Android.png" width="150" height="150" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lt-section">
+                            <h3 class="sec-title">
+                                <i class="icon icon-dl"></i>PC客户端下载</h3>
+                            <div class="sec-content">
+                                <div class="lt-download">
+                                    <a href="/statics/data/pc.rar" class="btn btn-pc">一键下载安装</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lt-footer">
+            <div class="tto-layout">
+                <div class="payment-platform">
+                    <h4>
+                        支付平台</h4>
+                    <img src="/statics/img/payment_platform.png" alt="" />
+                </div>
+                <div class="regulatory-authority">
+                    <h4>
+                        监管机构</h4>
+                    <img src="/statics/img/regulatory_authority.png" alt="" />
+                </div>
+                <div class="copyright">
+                    Copyright © 2017 非凡娱乐 版权所有 All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+     <script language="javascript">
+         var tim = 1;
+         var b = 0;
+         setInterval("tim++", 100);
+         var autourl = new Array()
+         autourl[0] = "www.feifan1188.com";
+         autourl[1] = "111.feifan1188.com";
+         autourl[2] = "222.feifan1188.com";
+         autourl[3] = "333.feifan1188.com";
+         autourl[4] = "666.feifan1188.com";
+         autourl[5] = "888.feifan1188.com";
+         function butt() {
+             var html = '';
+             for (var i = 0; i < autourl.length; i++) {
+                 html += '<li id="li' + i + '"><span id="tm' + i + '" class="delay">测速中</span>';
+                 html += ' <span id="url' + i + '" class="url"></span>';
+                 html += '<a id="href' + i + '" href="#" class="btn btn-go"></a></li>';
+             }
+             $("#line-list").append(html);
+         }
+         butt();
+         function auto(url) {
+             $('#url' + b).html(url);
+             $("#href" + b).attr('href', url).html('进入网站');
+             if (tim > 50 && tim <= 150) {
+                 $('#tm' + b).html(tim * 100 + "ms");
+             }
+             else if (tim > 150) {
+                 $('#tm' + b).html("超时");
+             }
+             else {
+                 $('#tm' + b).html(tim * 100 + "ms");
+             }
+             b++;
+         }
+         function run() {
+             for (var j = 0; j < autourl.length; j++) document.write("<img src=http://" + autourl[j] + "/" + Math.random() + " width=1 height=1 onerror=auto('http://" + autourl[j] + "')>");
+         }
+         run();
+    </script>
+</body>
+</html>

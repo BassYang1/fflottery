@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>立博国际娱乐</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/global.css" />
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/style.css" />
+    <script type="text/javascript" src="/statics/jquery-1.11.3.min.js"></script>
+    <script src="/statics/layer/layer.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/statics/sytle/js/EM.tools.js"></script>
+    <script type="text/javascript" src="/statics/global.js"></script>
+    <script>
+        $(document).ready(function () {
+            if (getCookie("price") != null) {
+                $("#model2").val(getCookie("price"));
+            }
+            else {
+                $("#model2").val("1");
+            }
+            var index = emLoading();
+            closeload(index);
+        });
+
+        function SelectModel() {
+            Price = $("#model2").find("option:selected").attr("value");
+            PriceName = name;
+            setCookie("price", Price);
+            setCookie("priceName", PriceName);
+        }
+
+        function chkLogout() {
+            $.ajax({
+                type: "get",
+                dataType: "json",
+                url: "/ajax/ajax.aspx?oper=logout&clienttime=" + Math.random(),
+                error: function (XmlHttpRequest, textStatus, errorThrown) {
+                    alert(XmlHttpRequest.responseText)
+                },
+                success: function (d) {
+                    if (d.result == "1")
+                        top.location.href = '/login.html'
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+<div class="container">
+    <header id="header">
+        <h1 class="title">账户设置</h1>
+        <a href="/center.html" class="back"></a>
+    </header>
+    <main id="main">
+        <div class="account-settings">
+        	<ul class="set-list">
+            	<li>
+                	<a href="userpwd.html">
+                    	<div class="set-title"><i class="icon-set icon-key"></i>修改登录密码<i class="icon-arrow"></i></div>
+                    </a>
+                </li>
+                <li>
+                	<a href="bankpwd.html">
+                    	<div class="set-title"><i class="icon-set icon-fund"></i>设置资金密码<i class="icon-arrow"></i></div>
+                    </a>
+                </li>
+                <li>
+                	<a href="userverify.html">
+                    	<div class="set-title"><i class="icon-set icon-problem"></i>安全问题<i class="icon-arrow"></i></div>
+                    </a>
+                </li>
+                <li>
+                	<a href="bankInfo.aspx">
+                    	<div class="set-title"><i class="icon-set icon-card"></i>卡号绑定<i class="icon-arrow"></i></div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="set-list">
+                <li>
+                	<div class="set-title"><i class="icon-set icon-mode"></i>元角模式</div>
+                    <div class="set-extra">
+                    	 <select id="model2" onchange="SelectModel()" class="unit">
+                                <option value="1">元</option>
+                                <option value="0.1">角</option>
+                                <option value="0.01">分</option>
+                                <option value="0.001">厘</option>
+                            </select>
+                    </div>
+                </li>
+            </ul>
+            <div class="my-account">
+                    <div class="logout">
+            	<a href="javascript:void(0)" onclick="chkLogout()" class="btn primary-btn exit-btn">注销账户</a>
+            </div></div>
+            <div class="system-version">当前版本 v1.0.0</div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

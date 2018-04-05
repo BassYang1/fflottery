@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: F:\pros\tianheng\bf\WebAppOld\bin\Lottery.Utils.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7FDE2B50-2656-4ED1-8C0C-D6547FE9A21A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Lottery.Utils</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>1.0.1.1</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Lottery.Utils</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\DLLs\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="StriveEngine">
+      <HintPath>..\DLLs\StriveEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SqlHelp.cs" />
+    <Compile Include="MailHelp.cs" />
+    <Compile Include="CheckSSC_4Start.cs" />
+    <Compile Include="dicHelp.cs" />
+    <Compile Include="swftoolsHelp.cs" />
+    <Compile Include="IPScaner.cs" />
+    <Compile Include="FileProcessor.cs" />
+    <Compile Include="ExecuteSqlBlock.cs" />
+    <Compile Include="MachineCode.cs" />
+    <Compile Include="ffmpegHelp.cs" />
+    <Compile Include="CheckSSC_3Start.cs" />
+    <Compile Include="Const.cs" />
+    <Compile Include="CKEditorToolbar.cs" />
+    <Compile Include="ChineseSpell.cs" />
+    <Compile Include="SpellOptions.cs" />
+    <Compile Include="smsHelp.cs" />
+    <Compile Include="NumberCode.cs" />
+    <Compile Include="HttpHelp.cs" />
+    <Compile Include="Func.cs" />
+    <Compile Include="urlHelp.cs" />
+    <Compile Include="CheckSSC_2Start.cs" />
+    <Compile Include="CheckPlay.cs" />
+    <Compile Include="CheckPK10_3Start.cs" />
+    <Compile Include="Check11X5_DDBDD.cs" />
+    <Compile Include="IPHelp.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="jpfileHelp.cs" />
+    <Compile Include="LotterySum.cs" />
+    <Compile Include="CheckPK10_DXDS.cs" />
+    <Compile Include="csvHelp.cs" />
+    <Compile Include="YouLeTcpServerEngine.cs" />
+    <Compile Include="CheckSSC_DN.cs" />
+    <Compile Include="CheckPK10_DDBDD.cs" />
+    <Compile Include="ExcelManage.cs" />
+    <Compile Include="Encrypt.cs" />
+    <Compile Include="Strings.cs" />
+    <Compile Include="CheckPK10_2Start.cs" />
+    <Compile Include="Check11X5_3Start.cs" />
+    <Compile Include="LanguageHelp.cs" />
+    <Compile Include="Cache.cs" />
+    <Compile Include="SsId.cs" />
+    <Compile Include="Validator.cs" />
+    <Compile Include="ValidateCode.cs" />
+    <Compile Include="NumGetString.cs" />
+    <Compile Include="CheckSSC_LHH.cs" />
+    <Compile Include="Cookie.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="MD5.cs" />
+    <Compile Include="DirFile.cs" />
+    <Compile Include="ImageHelp.cs" />
+    <Compile Include="CheckSSC_QW.cs" />
+    <Compile Include="CheckSSC_DDBDD.cs" />
+    <Compile Include="Check11X5_CDS.cs" />
+    <Compile Include="Check11X5_2Start.cs" />
+    <Compile Include="Int.cs" />
+    <Compile Include="CheckSSC_5Start.cs" />
+    <Compile Include="CheckPK10_1Start.cs" />
+    <Compile Include="Check11X5_RXDS.cs" />
+    <Compile Include="Check11X5_CZW.cs" />
+    <Compile Include="dtHelp.cs" />
+    <Compile Include="FileExtension.cs" />
+    <Compile Include="FileValidation.cs" />
+    <Compile Include="LotteryData.cs" />
+    <Compile Include="XmlCOM.cs" />
+    <Compile Include="PageBar.cs" />
+    <Compile Include="CheckSSC_DXDS.cs" />
+    <Compile Include="Check11X5_RXFS.cs" />
+    <Compile Include="Mail\MailFormat.cs" />
+    <Compile Include="Mail\MailPriority.cs" />
+    <Compile Include="Mail\MailAttachments.cs" />
+    <Compile Include="Mail\MailMessage.cs" />
+    <Compile Include="Mail\SmtpServerHelper.cs" />
+    <Compile Include="Mail\SmtpClient.cs" />
+    <Compile Include="fastJSON\SafeDictionary`2.cs" />
+    <Compile Include="fastJSON\JSON.cs" />
+    <Compile Include="fastJSON\Getters.cs" />
+    <Compile Include="fastJSON\JSONSerializer.cs" />
+    <Compile Include="fastJSON\JsonParser.cs" />
+    <Compile Include="IPSearchHelp\Location.cs" />
+    <Compile Include="IPSearchHelp\SearchIndex.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="LuceneHelp\SearchItem.cs" />
+    <Compile Include="LuceneHelp\SearchIndex.cs" />
+    <Compile Include="LuceneHelp\SimpleFacets.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

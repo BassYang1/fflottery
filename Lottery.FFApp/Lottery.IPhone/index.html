@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>立博国际娱乐</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script type="text/javascript" src="/statics/jquery-1.11.3.min.js"></script>
+    <script src="/statics/sytle/js/EM.tools.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/style.css" />
+    <script>
+        var cnt = 5;
+        function lod() {
+            if (cnt < 0) {
+                window.location = "/login.html";
+            } else {
+                document.getElementById("showTime").innerHTML = "0" + cnt;
+                cnt--;
+            }
+            setTimeout("lod()", 1000);
+        }
+
+        function toUrl() {
+            window.location = "/login.html";
+        }
+    </script>
+</head>
+<body onload="lod()" class="welcome">
+    <div class="showtime">
+        <a href="javascript:void(0)" onclick="toUrl()">跳过</a>&nbsp;<font id="showTime" color="red">05</font>
+    </div>
+    <div class="copyright">
+        立博国际娱乐 © 2018 YouLe International</div>
+</body>
+</html>

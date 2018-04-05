@@ -1,0 +1,1431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AE5D9373-2D6C-4974-81C3-ACCD93B04120}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lottery.Admin</RootNamespace>
+    <AssemblyName>Lottery.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Lottery.Collect">
+      <HintPath>..\DLLs\Lottery.Collect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json.Net20">
+      <HintPath>..\DLLs\Newtonsoft.Json.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\DLLs\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="statics\admin\js\adm.notify.js" />
+    <Content Include="statics\app\Thumbs.db" />
+    <Content Include="statics\config\site.config" />
+    <Content Include="statics\config\UrlRewriter.config" />
+    <Content Include="statics\database\ipdata.config" />
+    <Content Include="statics\database\qqwry.dat" />
+    <Content Include="statics\loading\Thumbs.db" />
+    <Content Include="statics\log\hacker_20160929.log" />
+    <Content Include="statics\log\hacker_20160930.log" />
+    <Content Include="statics\log\hacker_20161001.log" />
+    <Content Include="statics\log\hacker_20161004.log" />
+    <Content Include="statics\log\hacker_20161014.log" />
+    <Content Include="statics\log\hacker_20161015.log" />
+    <Content Include="statics\log\hacker_20161016.log" />
+    <Content Include="statics\log\hacker_20161017.log" />
+    <Content Include="statics\log\hacker_20161019.log" />
+    <Content Include="statics\log\hacker_20161020.log" />
+    <Content Include="statics\log\hacker_20161023.log" />
+    <Content Include="statics\log\hacker_20161027.log" />
+    <Content Include="statics\log\hacker_20161028.log" />
+    <Content Include="statics\log\hacker_20161029.log" />
+    <Content Include="statics\log\hacker_20161031.log" />
+    <Content Include="statics\log\hacker_20161101.log" />
+    <Content Include="statics\log\hacker_20161102.log" />
+    <Content Include="statics\log\hacker_20161104.log" />
+    <Content Include="statics\log\hacker_20161114.log" />
+    <Content Include="statics\log\hacker_20161116.log" />
+    <Content Include="statics\log\hacker_20161118.log" />
+    <Content Include="statics\log\hacker_20161120.log" />
+    <Content Include="statics\log\hacker_20161121.log" />
+    <Content Include="statics\log\hacker_20161123.log" />
+    <Content Include="statics\log\hacker_20161124.log" />
+    <Content Include="statics\log\hacker_20161125.log" />
+    <Content Include="statics\log\hacker_20161126.log" />
+    <Content Include="statics\log\hacker_20161128.log" />
+    <Content Include="statics\log\hacker_20161129.log" />
+    <Content Include="statics\log\hacker_20161201.log" />
+    <Content Include="statics\log\hacker_20161227.log" />
+    <Content Include="statics\log\hacker_20161231.log" />
+    <Content Include="statics\log\hacker_20170115.log" />
+    <Content Include="statics\log\hacker_20170116.log" />
+    <Content Include="statics\log\hacker_20170117.log" />
+    <Content Include="statics\log\hacker_20170118.log" />
+    <Content Include="statics\log\hacker_20170124.log" />
+    <Content Include="statics\log\hacker_20170126.log" />
+    <Content Include="statics\log\hacker_20170127.log" />
+    <Content Include="statics\log\hacker_20170128.log" />
+    <Content Include="statics\log\hacker_20170204.log" />
+    <Content Include="statics\log\hacker_20170207.log" />
+    <Content Include="statics\log\hacker_20170315.log" />
+    <Content Include="statics\log\hacker_20170322.log" />
+    <Content Include="statics\log\hacker_20170329.log" />
+    <Content Include="statics\log\hacker_20170330.log" />
+    <Content Include="statics\log\hacker_20170331.log" />
+    <Content Include="statics\log\hacker_20170401.log" />
+    <Content Include="statics\log\hacker_20170402.log" />
+    <Content Include="statics\log\hacker_20170403.log" />
+    <Content Include="statics\log\hacker_20170404.log" />
+    <Content Include="statics\log\hacker_20170405.log" />
+    <Content Include="statics\log\hacker_20170406.log" />
+    <Content Include="statics\log\hacker_20170407.log" />
+    <Content Include="statics\log\hacker_20170408.log" />
+    <Content Include="statics\log\hacker_20170409.log" />
+    <Content Include="statics\log\hacker_20170410.log" />
+    <Content Include="statics\log\hacker_20170411.log" />
+    <Content Include="statics\log\hacker_20170412.log" />
+    <Content Include="statics\log\hacker_20170413.log" />
+    <Content Include="statics\log\hacker_20170414.log" />
+    <Content Include="statics\log\hacker_20170415.log" />
+    <Content Include="statics\log\hacker_20170416.log" />
+    <Content Include="statics\log\hacker_20170417.log" />
+    <Content Include="statics\log\hacker_20170418.log" />
+    <Content Include="statics\log\hacker_20170421.log" />
+    <Content Include="statics\log\hacker_20170422.log" />
+    <Content Include="statics\log\hacker_20170423.log" />
+    <Content Include="statics\log\hacker_20170424.log" />
+    <Content Include="statics\log\hacker_20170425.log" />
+    <Content Include="statics\log\hacker_20170426.log" />
+    <Content Include="statics\log\hacker_20170428.log" />
+    <Content Include="statics\log\hacker_20170429.log" />
+    <Content Include="statics\log\hacker_20170531.log" />
+    <Content Include="statics\music\pay.mp3" />
+    <Content Include="statics\music\withdraw.mp3" />
+    <Content Include="_libs\fckeditor\editor\css\behaviors\disablehandles.htc" />
+    <Content Include="_libs\fckeditor\editor\css\behaviors\hiddenfield.gif" />
+    <Content Include="_libs\fckeditor\editor\css\behaviors\hiddenfield.htc" />
+    <Content Include="_libs\fckeditor\editor\css\behaviors\showtableborders.htc" />
+    <Content Include="_libs\fckeditor\editor\css\fck_editorarea.css" />
+    <Content Include="_libs\fckeditor\editor\css\fck_internal.css" />
+    <Content Include="_libs\fckeditor\editor\css\fck_showtableborders_gecko.css" />
+    <Content Include="_libs\fckeditor\editor\css\images\block_address.png" />
+    <Content Include="_libs\fckeditor\editor\css\images\block_blockquote.png" />
+    <Content Include="_libs\fckeditor\editor\css\images\block_div.png" />
+    <Content Include="_libs\fckeditor\editor\css\images\block_h1.png" />
+    <Content Include="_libs\fckeditor\editor\css\images\block_h2.png" />
+    <Content Include="_libs\fckeditor\editor\css\images\block_h3.png" />
+    <Content Include="_libs\fckeditor\editor\css\images\block_h4.png" />
+    <Content Include="_libs\fckeditor\editor\css\images\block_h5.png" />
+    <Content Include="_libs\fckeditor\editor\css\images\block_h6.png" />
+    <Content Include="_libs\fckeditor\editor\css\images\block_p.png" />
+    <Content Include="_libs\fckeditor\editor\css\images\block_pre.png" />
+    <Content Include="_libs\fckeditor\editor\css\images\fck_anchor.gif" />
+    <Content Include="_libs\fckeditor\editor\css\images\fck_flashlogo.gif" />
+    <Content Include="_libs\fckeditor\editor\css\images\fck_hiddenfield.gif" />
+    <Content Include="_libs\fckeditor\editor\css\images\fck_pagebreak.gif" />
+    <Content Include="_libs\fckeditor\editor\css\images\fck_plugin.gif" />
+    <Content Include="_libs\fckeditor\editor\dialog\common\fcknumericfield.htc" />
+    <Content Include="_libs\fckeditor\editor\dialog\common\fck_dialog_common.css" />
+    <Content Include="_libs\fckeditor\editor\dialog\common\fck_dialog_common.js" />
+    <Content Include="_libs\fckeditor\editor\dialog\common\images\locked.gif" />
+    <Content Include="_libs\fckeditor\editor\dialog\common\images\reset.gif" />
+    <Content Include="_libs\fckeditor\editor\dialog\common\images\unlocked.gif" />
+    <Content Include="_libs\fckeditor\editor\dialog\common\moz-bindings.xml" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_about.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_about\logo_fckeditor.gif" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_about\logo_fredck.gif" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_about\sponsors\spellchecker_net.gif" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_anchor.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_button.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_checkbox.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_colorselector.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_div.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_docprops.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_docprops\fck_document_preview.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_flash.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_flash\fck_flash.js" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_flash\fck_flash_preview.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_form.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_hiddenfield.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_image.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_image\fck_image.js" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_image\fck_image_preview.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_link.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_link\fck_link.js" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_listprop.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_paste.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_radiobutton.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_replace.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_select.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_select\fck_select.js" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_smiley.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_source.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_specialchar.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_spellerpages.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_spellerpages\spellerpages\blank.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_spellerpages\spellerpages\controls.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_spellerpages\spellerpages\controlwindow.js" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_spellerpages\spellerpages\spellchecker.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_spellerpages\spellerpages\spellchecker.js" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_spellerpages\spellerpages\spellerstyle.css" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_spellerpages\spellerpages\wordWindow.js" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_table.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_tablecell.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_template.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_template\images\template1.gif" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_template\images\template2.gif" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_template\images\template3.gif" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_textarea.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_textfield.html" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_universalkey\00.GIF" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_universalkey\data.js" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_universalkey\diacritic.js" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_universalkey\dialogue.js" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_universalkey\fck_universalkey.css" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_universalkey\keyboard_layout.gif" />
+    <Content Include="_libs\fckeditor\editor\dialog\fck_universalkey\multihexa.js" />
+    <Content Include="_libs\fckeditor\editor\fckdebug.html" />
+    <Content Include="_libs\fckeditor\editor\fckdialog.html" />
+    <Content Include="_libs\fckeditor\editor\fckeditor.html" />
+    <Content Include="_libs\fckeditor\editor\fckeditor.original.html" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\browser.css" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\browser.html" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\connectors\aspx\connector.aspx" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\frmactualfolder.html" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\frmcreatefolder.html" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\frmfolders.html" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\frmresourceslist.html" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\frmresourcetype.html" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\frmupload.html" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\buttonarrow.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\Folder.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\Folder32.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\FolderOpened.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\FolderOpened32.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\FolderUp.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\ai.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\avi.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\bmp.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\CS.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\default.icon.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\DLL.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\DOC.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\EXE.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\fla.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\GIF.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\HTM.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\HTML.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\JPG.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\JS.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\mdb.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\MP3.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\PDF.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\png.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\PPT.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\RDP.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\SWF.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\SWT.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\TXT.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\VSD.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\XLS.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\XML.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\32\ZIP.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\ai.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\avi.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\bmp.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\CS.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\default.icon.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\DLL.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\DOC.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\EXE.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\fla.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\GIF.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\HTM.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\HTML.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\JPG.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\JS.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\mdb.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\MP3.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\PDF.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\png.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\PPT.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\RDP.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\SWF.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\SWT.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\TXT.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\VSD.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\XLS.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\XML.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\icons\ZIP.GIF" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\images\spacer.gif" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\js\COMMON.JS" />
+    <Content Include="_libs\fckeditor\editor\filemanager\browser\default\js\FCKXML.JS" />
+    <Content Include="_libs\fckeditor\editor\images\anchor.gif" />
+    <Content Include="_libs\fckeditor\editor\images\arrow_ltr.gif" />
+    <Content Include="_libs\fckeditor\editor\images\arrow_rtl.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\angel_smile.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\angry_smile.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\broken_heart.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\cake.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\confused_smile.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\cry_smile.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\devil_smile.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\embaressed_smile.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\envelope.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\heart.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\kiss.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\lightbulb.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\omg_smile.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\regular_smile.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\sad_smile.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\shades_smile.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\teeth_smile.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\thumbs_down.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\thumbs_up.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\tounge_smile.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\whatchutalkingabout_smile.gif" />
+    <Content Include="_libs\fckeditor\editor\images\smiley\msn\wink_smile.gif" />
+    <Content Include="_libs\fckeditor\editor\images\spacer.gif" />
+    <Content Include="_libs\fckeditor\editor\js\fckadobeair.js" />
+    <Content Include="_libs\fckeditor\editor\js\fckeditorcode_gecko.js" />
+    <Content Include="_libs\fckeditor\editor\js\fckeditorcode_ie.js" />
+    <Content Include="_libs\fckeditor\editor\lang\en-au.js" />
+    <Content Include="_libs\fckeditor\editor\lang\en-ca.js" />
+    <Content Include="_libs\fckeditor\editor\lang\en-uk.js" />
+    <Content Include="_libs\fckeditor\editor\lang\en.js" />
+    <Content Include="_libs\fckeditor\editor\lang\zh-cn.js" />
+    <Content Include="_libs\fckeditor\editor\lang\zh.js" />
+    <Content Include="_libs\fckeditor\editor\plugins\autogrow\fckplugin.js" />
+    <Content Include="_libs\fckeditor\editor\plugins\bbcode\fckplugin.js" />
+    <Content Include="_libs\fckeditor\editor\plugins\bbcode\_sample\sample.config.js" />
+    <Content Include="_libs\fckeditor\editor\plugins\bbcode\_sample\sample.html" />
+    <Content Include="_libs\fckeditor\editor\plugins\dragresizetable\fckplugin.js" />
+    <Content Include="_libs\fckeditor\editor\plugins\placeholder\fckplugin.js" />
+    <Content Include="_libs\fckeditor\editor\plugins\placeholder\fck_placeholder.html" />
+    <Content Include="_libs\fckeditor\editor\plugins\placeholder\lang\de.js" />
+    <Content Include="_libs\fckeditor\editor\plugins\placeholder\lang\en.js" />
+    <Content Include="_libs\fckeditor\editor\plugins\placeholder\lang\es.js" />
+    <Content Include="_libs\fckeditor\editor\plugins\placeholder\lang\fr.js" />
+    <Content Include="_libs\fckeditor\editor\plugins\placeholder\lang\it.js" />
+    <Content Include="_libs\fckeditor\editor\plugins\placeholder\lang\pl.js" />
+    <Content Include="_libs\fckeditor\editor\plugins\placeholder\placeholder.gif" />
+    <Content Include="_libs\fckeditor\editor\plugins\simplecommands\fckplugin.js" />
+    <Content Include="_libs\fckeditor\editor\plugins\tablecommands\fckplugin.js" />
+    <Content Include="_libs\fckeditor\editor\skins\default\fck_dialog.css" />
+    <Content Include="_libs\fckeditor\editor\skins\default\fck_dialog_ie6.js" />
+    <Content Include="_libs\fckeditor\editor\skins\default\fck_editor.css" />
+    <Content Include="_libs\fckeditor\editor\skins\default\fck_strip.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\default\images\dialog.sides.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\default\images\dialog.sides.png" />
+    <Content Include="_libs\fckeditor\editor\skins\default\images\dialog.sides.rtl.png" />
+    <Content Include="_libs\fckeditor\editor\skins\default\images\sprites.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\default\images\sprites.png" />
+    <Content Include="_libs\fckeditor\editor\skins\default\images\toolbar.arrowright.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\default\images\toolbar.bg.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\default\images\toolbar.buttonarrow.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\default\images\toolbar.collapse.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\default\images\toolbar.end.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\default\images\toolbar.expand.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\default\images\toolbar.separator.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\default\images\toolbar.start.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\fck_dialog.css" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\fck_dialog_ie6.js" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\fck_editor.css" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\fck_strip.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\images\dialog.sides.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\images\dialog.sides.png" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\images\dialog.sides.rtl.png" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\images\sprites.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\images\sprites.png" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\images\toolbar.arrowright.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\images\toolbar.bg.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\images\toolbar.buttonarrow.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\images\toolbar.collapse.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\images\toolbar.end.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\images\toolbar.expand.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\images\toolbar.separator.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\office2003\images\toolbar.start.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\fck_dialog.css" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\fck_dialog_ie6.js" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\fck_editor.css" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\fck_strip.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\images\dialog.sides.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\images\dialog.sides.png" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\images\dialog.sides.rtl.png" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\images\sprites.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\images\sprites.png" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\images\toolbar.arrowright.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\images\toolbar.buttonarrow.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\images\toolbar.buttonbg.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\images\toolbar.collapse.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\images\toolbar.end.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\images\toolbar.expand.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\images\toolbar.separator.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\silver\images\toolbar.start.gif" />
+    <Content Include="_libs\fckeditor\editor\skins\_fckviewstrips.html" />
+    <Content Include="_libs\fckeditor\fckconfig.js" />
+    <Content Include="_libs\fckeditor\fckeditor.js" />
+    <Content Include="_libs\fckeditor\fckpackager.xml" />
+    <Content Include="_libs\fckeditor\fckstyles.xml" />
+    <Content Include="_libs\fckeditor\fcktemplates.xml" />
+    <Content Include="_libs\FusionCharts\FCF_Column3D.swf" />
+    <Content Include="_libs\FusionCharts\FCF_Line.swf" />
+    <Content Include="_libs\FusionCharts\FCF_Pie3D.swf" />
+    <Content Include="_libs\jquery.colorPicker\picker_back.jpg" />
+    <Content Include="_libs\jquery.filetree\images\ext_asp.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_aspx.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_avi.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_bat.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_bmp.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_chm.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_com.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_config.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_cs.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_csproj.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_css.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_csv.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_dll.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_doc.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_dot.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_exe.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_fla.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_gif.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_htm.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_html.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_ico.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_ini.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_jpg.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_js.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_log.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_mdb.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_mp3.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_mpeg.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_mpg.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_pdf.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_php.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_png.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_ppt.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_psd.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_rar.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_reg.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_rmvb.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_sql.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_swf.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_txt.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_user.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_vb.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_wav.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_wmv.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_xls.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_xml.gif" />
+    <Content Include="_libs\jquery.filetree\images\ext_zip.gif" />
+    <Content Include="_libs\jquery.filetree\images\ico_directory.gif" />
+    <Content Include="_libs\jquery.filetree\images\ico_file.gif" />
+    <Content Include="_libs\jquery.filetree\images\ico_folder_open.gif" />
+    <Content Include="_libs\jquery.filetree\images\ico_spinner.gif" />
+    <Content Include="_libs\jquery.filetree\style.css" />
+    <Content Include="_libs\jquery.formvalidator\images\loading.gif" />
+    <Content Include="_libs\jquery.formvalidator\images\reg_ico.gif" />
+    <Content Include="_libs\jquery.jBox\images\jbox-button1.png" />
+    <Content Include="_libs\jquery.jBox\images\jbox-button2.png" />
+    <Content Include="_libs\jquery.jBox\images\jbox-close1.gif" />
+    <Content Include="_libs\jquery.jBox\images\jbox-close2.gif" />
+    <Content Include="_libs\jquery.jBox\images\jbox-content-loading.gif" />
+    <Content Include="_libs\jquery.jBox\images\jbox-icons-ie6.gif" />
+    <Content Include="_libs\jquery.jBox\images\jbox-icons.png" />
+    <Content Include="_libs\jquery.jBox\images\jbox-loading1.gif" />
+    <Content Include="_libs\jquery.jBox\images\jbox-loading2.gif" />
+    <Content Include="_libs\jquery.jBox\images\jbox-loading3.gif" />
+    <Content Include="_libs\jquery.jBox\images\jbox-title-icon.gif" />
+    <Content Include="_libs\jquery.jFloat.js" />
+    <Content Include="_libs\jquery.jtip\images\help.gif" />
+    <Content Include="_libs\jquery.jtip\images\jtip-b.gif" />
+    <Content Include="_libs\jquery.jtip\images\jtip-bg.gif" />
+    <Content Include="_libs\jquery.jtip\images\jtip-l.gif" />
+    <Content Include="_libs\jquery.jtip\images\jtip-r.gif" />
+    <Content Include="_libs\jquery.jtip\images\jtip-t.gif" />
+    <Content Include="_libs\jquery.messager\0.gif" />
+    <Content Include="_libs\jquery.messager\1.gif" />
+    <Content Include="_libs\jquery.provincecity\jquery.provincecity.js" />
+    <Content Include="_libs\jquery.select\jquery.select.js" />
+    <Content Include="_libs\Jquery.tableExport\html2canvas.js" />
+    <Content Include="_libs\Jquery.tableExport\jquery.base64.js" />
+    <Content Include="_libs\Jquery.tableExport\jquery.table2excel.js" />
+    <Content Include="_libs\Jquery.tableExport\jquery.table2excel.min.js" />
+    <Content Include="_libs\Jquery.tableExport\jspdf\jspdf.js" />
+    <Content Include="_libs\Jquery.tableExport\jspdf\libs\base64.js" />
+    <Content Include="_libs\Jquery.tableExport\jspdf\libs\sprintf.js" />
+    <Content Include="_libs\Jquery.tableExport\tableExport.js" />
+    <Content Include="_libs\Jquery.tableExport\TimeObjectUtil.js" />
+    <Content Include="_libs\jquery.timer\jquery.timer.js" />
+    <Content Include="_libs\jquery.tools.pack.js" />
+    <Content Include="_libs\jquery.tree.js" />
+    <Content Include="_libs\jquery.tree2.js" />
+    <Content Include="_libs\jquery.tree\images\arrows.gif" />
+    <Content Include="_libs\jquery.tree\images\cbs.gif" />
+    <Content Include="_libs\jquery.tree\images\checkbox_0.gif" />
+    <Content Include="_libs\jquery.tree\images\checkbox_1.gif" />
+    <Content Include="_libs\jquery.tree\images\checkbox_2.gif" />
+    <Content Include="_libs\jquery.tree\images\drop-yes.gif" />
+    <Content Include="_libs\jquery.tree\images\elbow-end-minus-nl.gif" />
+    <Content Include="_libs\jquery.tree\images\elbow-end-minus.gif" />
+    <Content Include="_libs\jquery.tree\images\elbow-end-plus-nl.gif" />
+    <Content Include="_libs\jquery.tree\images\elbow-end-plus.gif" />
+    <Content Include="_libs\jquery.tree\images\elbow-end.gif" />
+    <Content Include="_libs\jquery.tree\images\elbow-line.gif" />
+    <Content Include="_libs\jquery.tree\images\elbow-minus-nl.gif" />
+    <Content Include="_libs\jquery.tree\images\elbow-minus.gif" />
+    <Content Include="_libs\jquery.tree\images\elbow-plus-nl.gif" />
+    <Content Include="_libs\jquery.tree\images\elbow-plus.gif" />
+    <Content Include="_libs\jquery.tree\images\elbow.gif" />
+    <Content Include="_libs\jquery.tree\images\folder-open.gif" />
+    <Content Include="_libs\jquery.tree\images\folder.gif" />
+    <Content Include="_libs\jquery.tree\images\leaf.gif" />
+    <Content Include="_libs\jquery.tree\images\loading.gif" />
+    <Content Include="_libs\jquery.tree\images\s.gif" />
+    <Content Include="_libs\jquery.tree\style.css" />
+    <Content Include="_libs\jquery.ui-select\images\droparrow.gif" />
+    <Content Include="_libs\jquery.ui-select\images\droparrowover.gif" />
+    <Content Include="_libs\jquery.ui-select\images\selectBg.png" />
+    <Content Include="_libs\jquery.ui-select\jquery.ui-select.js" />
+    <Content Include="_libs\jquery.ui-select\style.css" />
+    <Content Include="_libs\Jquery.zclip\jquery.js" />
+    <Content Include="_libs\Jquery.zclip\jquery.zclip.js" />
+    <Content Include="_libs\Jquery.zclip\jquery.zclip.min.js" />
+    <Content Include="_libs\Jquery.zclip\ZeroClipboard.swf" />
+    <Content Include="_libs\kindeditor-4.1.10\kindeditor-all-min.js" />
+    <Content Include="_libs\kindeditor-4.1.10\kindeditor-all.js" />
+    <Content Include="_libs\kindeditor-4.1.10\kindeditor-min.js" />
+    <Content Include="_libs\kindeditor-4.1.10\kindeditor.js" />
+    <Content Include="_libs\kindeditor-4.1.10\lang\ar.js" />
+    <Content Include="_libs\kindeditor-4.1.10\lang\en.js" />
+    <Content Include="_libs\kindeditor-4.1.10\lang\ko.js" />
+    <Content Include="_libs\kindeditor-4.1.10\lang\zh_CN.js" />
+    <Content Include="_libs\kindeditor-4.1.10\lang\zh_TW.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\anchor\anchor.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\autoheight\autoheight.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\baidumap\baidumap.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\baidumap\index.html" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\baidumap\map.html" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\clearhtml\clearhtml.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\code\code.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\code\prettify.css" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\code\prettify.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\emoticons.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\0.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\1.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\10.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\100.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\101.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\102.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\103.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\104.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\105.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\106.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\107.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\108.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\109.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\11.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\110.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\111.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\112.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\113.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\114.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\115.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\116.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\117.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\118.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\119.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\12.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\120.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\121.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\122.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\123.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\124.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\125.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\126.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\127.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\128.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\129.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\13.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\130.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\131.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\132.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\133.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\134.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\14.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\15.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\16.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\17.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\18.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\19.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\2.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\20.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\21.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\22.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\23.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\24.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\25.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\26.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\27.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\28.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\29.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\3.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\30.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\31.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\32.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\33.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\34.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\35.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\36.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\37.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\38.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\39.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\4.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\40.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\41.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\42.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\43.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\44.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\45.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\46.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\47.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\48.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\49.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\5.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\50.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\51.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\52.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\53.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\54.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\55.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\56.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\57.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\58.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\59.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\6.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\60.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\61.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\62.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\63.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\64.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\65.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\66.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\67.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\68.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\69.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\7.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\70.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\71.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\72.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\73.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\74.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\75.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\76.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\77.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\78.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\79.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\8.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\80.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\81.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\82.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\83.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\84.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\85.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\86.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\87.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\88.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\89.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\9.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\90.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\91.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\92.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\93.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\94.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\95.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\96.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\97.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\98.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\99.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\emoticons\images\static.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\filemanager\filemanager.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\filemanager\images\file-16.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\filemanager\images\file-64.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\filemanager\images\go-up.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\flash\flash.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\image\image.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\image\images\align_left.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\image\images\align_right.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\image\images\align_top.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\image\images\refresh.png" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\insertfile\insertfile.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\lineheight\lineheight.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\link\link.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\map\map.html" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\map\map.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\media\media.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\multiimage\images\image.png" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\multiimage\images\select-files-en.png" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\multiimage\images\select-files-zh_CN.png" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\multiimage\images\swfupload.swf" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\multiimage\multiimage.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\pagebreak\pagebreak.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\plainpaste\plainpaste.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\preview\preview.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\quickformat\quickformat.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\table\table.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\template\html\1.html" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\template\html\2.html" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\template\html\3.html" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\template\template.js" />
+    <Content Include="_libs\kindeditor-4.1.10\plugins\wordpaste\wordpaste.js" />
+    <Content Include="_libs\kindeditor-4.1.10\themes\common\anchor.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\themes\common\blank.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\themes\common\flash.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\themes\common\loading.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\themes\common\media.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\themes\common\rm.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\themes\default\background.png" />
+    <Content Include="_libs\kindeditor-4.1.10\themes\default\default.css" />
+    <Content Include="_libs\kindeditor-4.1.10\themes\default\default.png" />
+    <Content Include="_libs\kindeditor-4.1.10\themes\qq\editor.gif" />
+    <Content Include="_libs\kindeditor-4.1.10\themes\qq\qq.css" />
+    <Content Include="_libs\kindeditor-4.1.10\themes\simple\simple.css" />
+    <Content Include="_libs\layer\layer.js" />
+    <Content Include="_libs\layer\skin\default\icon-ext.png" />
+    <Content Include="_libs\layer\skin\default\icon.png" />
+    <Content Include="_libs\layer\skin\default\loading-0.gif" />
+    <Content Include="_libs\layer\skin\default\loading-1.gif" />
+    <Content Include="_libs\layer\skin\default\loading-2.gif" />
+    <Content Include="_libs\layer\skin\layer.css" />
+    <Content Include="_libs\My97DatePicker\calendar.js" />
+    <Content Include="_libs\My97DatePicker\lang\en.js" />
+    <Content Include="_libs\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="_libs\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="_libs\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="_libs\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="_libs\My97DatePicker\skin\default\img.gif" />
+    <Content Include="_libs\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="_libs\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="_libs\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="_libs\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="_libs\My97DatePicker\WdatePicker.js" />
+    <Content Include="_libs\myjsframe0.21\active2.gif" />
+    <Content Include="_libs\myjsframe0.21\active3.gif" />
+    <Content Include="_libs\myjsframe0.21\arrow.gif" />
+    <Content Include="_libs\myjsframe0.21\arrow_squre.gif" />
+    <Content Include="_libs\myjsframe0.21\btn-bg.gif" />
+    <Content Include="_libs\myjsframe0.21\btn-sprite.gif" />
+    <Content Include="_libs\myjsframe0.21\class.gif" />
+    <Content Include="_libs\myjsframe0.21\closecomment.gif" />
+    <Content Include="_libs\myjsframe0.21\collapse-all.gif" />
+    <Content Include="_libs\myjsframe0.21\collapse.gif" />
+    <Content Include="_libs\myjsframe0.21\cssselectors.gif" />
+    <Content Include="_libs\myjsframe0.21\docs.gif" />
+    <Content Include="_libs\myjsframe0.21\e-handle.gif" />
+    <Content Include="_libs\myjsframe0.21\expand-all.gif" />
+    <Content Include="_libs\myjsframe0.21\expand.gif" />
+    <Content Include="_libs\myjsframe0.21\folder.gif" />
+    <Content Include="_libs\myjsframe0.21\hd-sprite.gif" />
+    <Content Include="_libs\myjsframe0.21\help.css" />
+    <Content Include="_libs\myjsframe0.21\helprecord.gif" />
+    <Content Include="_libs\myjsframe0.21\image310.gif" />
+    <Content Include="_libs\myjsframe0.21\indicator_flower.gif" />
+    <Content Include="_libs\myjsframe0.21\logo.png" />
+    <Content Include="_libs\myjsframe0.21\main.css" />
+    <Content Include="_libs\myjsframe0.21\mainbg.gif" />
+    <Content Include="_libs\myjsframe0.21\menuindi8.gif" />
+    <Content Include="_libs\myjsframe0.21\minus.gif" />
+    <Content Include="_libs\myjsframe0.21\multidashed.gif" />
+    <Content Include="_libs\myjsframe0.21\myjsframe.js" />
+    <Content Include="_libs\myjsframe0.21\myjsframelogo.png" />
+    <Content Include="_libs\myjsframe0.21\panel-title-light-bg.gif" />
+    <Content Include="_libs\myjsframe0.21\pkg-closed.gif" />
+    <Content Include="_libs\myjsframe0.21\pkg-open.gif" />
+    <Content Include="_libs\myjsframe0.21\plus.gif" />
+    <Content Include="_libs\myjsframe0.21\tab-close.gif" />
+    <Content Include="_libs\myjsframe0.21\tab-sprite.gif" />
+    <Content Include="_libs\myjsframe0.21\tab-strip-bg.gif" />
+    <Content Include="_libs\myjsframe0.21\tabs-list.gif" />
+    <Content Include="_libs\myjsframe0.21\tabs-sprite.gif" />
+    <Content Include="_libs\myjsframe0.21\text-bg.gif" />
+    <Content Include="_libs\myjsframe0.21\transparent.gif" />
+    <Content Include="_libs\myjsframe0.21\welcome-bg.gif" />
+    <Content Include="_libs\pinyin.js" />
+    <Content Include="_libs\swfobject.js" />
+    <None Include="Properties\PublishProfiles\ffadmin.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\activeNewsEdit.aspx" />
+    <Content Include="admin\activeOpers.aspx" />
+    <Content Include="admin\adminLock.aspx" />
+    <Content Include="admin\adminPower.aspx" />
+    <Content Include="admin\adminPwd.aspx" />
+    <Content Include="admin\ajax.aspx" />
+    <Content Include="admin\ajaxActive.aspx" />
+    <Content Include="admin\ajaxAdmin.aspx" />
+    <Content Include="admin\ajaxAdminLoginCheck.aspx" />
+    <Content Include="admin\ajaxAdminStat.aspx" />
+    <Content Include="admin\ajaxAgentFH.aspx" />
+    <Content Include="admin\ajaxAutoRank.aspx" />
+    <Content Include="admin\ajaxBet.aspx" />
+    <Content Include="admin\ajaxCharge.aspx" />
+    <Content Include="admin\ajaxContract.aspx" />
+    <Content Include="admin\ajaxHistory.aspx" />
+    <Content Include="admin\ajaxLoginCheck.aspx" />
+    <Content Include="admin\ajaxLogs.aspx" />
+    <Content Include="admin\ajaxLottery.aspx" />
+    <Content Include="admin\ajaxLotterydata.aspx" />
+    <Content Include="admin\ajaxMessage.aspx" />
+    <Content Include="admin\ajaxMoneyStatAll.aspx" />
+    <Content Include="admin\ajaxMyinfo.aspx" />
+    <Content Include="admin\ajaxPayRecord.aspx" />
+    <Content Include="admin\ajaxProfitloss.aspx" />
+    <Content Include="admin\ajaxSave.aspx" />
+    <Content Include="admin\ajaxSysBank.aspx" />
+    <Content Include="admin\ajaxSysDelData.aspx" />
+    <Content Include="admin\ajaxSysInfo.aspx" />
+    <Content Include="admin\ajaxSysNews.aspx" />
+    <Content Include="admin\ajaxTask.aspx" />
+    <Content Include="admin\ajaxUser.aspx" />
+    <Content Include="admin\ajaxUserlevel.aspx" />
+    <Content Include="admin\ajaxWarn.aspx" />
+    <Content Include="admin\betCancel.aspx" />
+    <Content Include="admin\betCancelOfNO.aspx" />
+    <Content Include="admin\betInfo.aspx" />
+    <Content Include="admin\betOpers.aspx" />
+    <Content Include="admin\betUpdate.aspx" />
+    <Content Include="admin\betZhinfo.aspx" />
+    <Content Include="admin\close.htm" />
+    <Content Include="admin\conList.aspx" />
+    <Content Include="admin\conListpop.aspx" />
+    <Content Include="admin\contractPop.aspx" />
+    <Content Include="admin\default.aspx" />
+    <Content Include="admin\login.aspx" />
+    <Content Include="admin\login20170109.aspx" />
+    <Content Include="admin\lotteryDataAdd.aspx" />
+    <Content Include="admin\lotteryNoPlay.aspx" />
+    <Content Include="admin\PageEdit.aspx" />
+    <Content Include="admin\PageEditPop.aspx" />
+    <Content Include="admin\PageSavePop.aspx" />
+    <Content Include="admin\SendMessage.aspx" />
+    <Content Include="admin\sysDelData.aspx" />
+    <Content Include="admin\sysNewsAdd.aspx" />
+    <Content Include="admin\sysNewsEdit.aspx" />
+    <Content Include="admin\sysSetInfo.aspx" />
+    <Content Include="admin\Temp.aspx" />
+    <Content Include="admin\userAdd.aspx" />
+    <Content Include="admin\userBankDel.aspx" />
+    <Content Include="admin\userBankEdit.aspx" />
+    <Content Include="admin\userBankUnLock.aspx" />
+    <Content Include="admin\userCashEdit.aspx" />
+    <Content Include="admin\userCharge.aspx" />
+    <Content Include="admin\userChargeAct.aspx" />
+    <Content Include="admin\userChargeEdit.aspx" />
+    <Content Include="admin\userChargeUpList.aspx" />
+    <Content Include="admin\userEdit.aspx" />
+    <Content Include="admin\userHistoryPop.aspx" />
+    <Content Include="admin\userMoneyCFLog.aspx" />
+    <Content Include="admin\userMoneyLog.aspx" />
+    <Content Include="admin\userNoPlay.aspx" />
+    <Content Include="admin\userQuotaadd.aspx" />
+    <Content Include="admin\userQuotas.aspx" />
+    <Content Include="admin\userQuotasEdit.aspx" />
+    <Content Include="admin\userTrueNameEdit.aspx" />
+    <Content Include="admin\userUpdateParent.aspx" />
+    <Content Include="admin\userUpdatePoint.aspx" />
+    <Content Include="admin\userUpdatePoints.aspx" />
+    <Content Include="index.html" />
+    <Content Include="statics\admin\css\common.css" />
+    <Content Include="statics\admin\css\pop.css" />
+    <Content Include="statics\admin\css\style.css" />
+    <Content Include="statics\admin\img\logo.png" />
+    <Content Include="statics\admin\img\maskBG.png" />
+    <Content Include="statics\admin\img\public.png" />
+    <Content Include="statics\admin\img\uc_popup.png" />
+    <Content Include="statics\admin\img\uc_sn.png" />
+    <Content Include="statics\admin\img\uc_ts.png" />
+    <Content Include="statics\admin\img\user_photo.png" />
+    <Content Include="statics\admin\img\v1.jpg" />
+    <Content Include="statics\admin\img\yl_logo.png" />
+    <Content Include="statics\admin\js\admin.js" />
+    <Content Include="statics\admin\js\bet.js" />
+    <Content Include="statics\admin\js\common.js" />
+    <Content Include="statics\admin\js\index.js" />
+    <Content Include="statics\admin\js\lotBase.js" />
+    <Content Include="statics\admin\js\lotData.js" />
+    <Content Include="statics\admin\js\lotFun.js" />
+    <Content Include="statics\admin\js\lotInput.js" />
+    <Content Include="statics\admin\js\StringBuilder.js" />
+    <Content Include="statics\admin\js\temp.js" />
+    <Content Include="statics\admin\js\yanue.pop.js" />
+    <Content Include="statics\app\album.gif" />
+    <Content Include="statics\app\blog.gif" />
+    <Content Include="statics\app\bobi.gif" />
+    <Content Include="statics\app\cart.gif" />
+    <Content Include="statics\app\chat.gif" />
+    <Content Include="statics\app\doing.gif" />
+    <Content Include="statics\app\favorite.gif" />
+    <Content Include="statics\app\friend.gif" />
+    <Content Include="statics\app\fwu.gif" />
+    <Content Include="statics\app\group.gif" />
+    <Content Include="statics\app\home.gif" />
+    <Content Include="statics\app\maimai.gif" />
+    <Content Include="statics\app\member.gif" />
+    <Content Include="statics\app\message.gif" />
+    <Content Include="statics\app\mtag.gif" />
+    <Content Include="statics\app\network.gif" />
+    <Content Include="statics\app\pm.gif" />
+    <Content Include="statics\app\quanzi.gif" />
+    <Content Include="statics\app\share.gif" />
+    <Content Include="statics\app\tougao.gif" />
+    <Content Include="statics\app\zuop.gif" />
+    <Content Include="statics\dialog\0\0.gif" />
+    <Content Include="statics\dialog\0\1.gif" />
+    <Content Include="statics\dialog\0\button1.gif" />
+    <Content Include="statics\dialog\0\button2.gif" />
+    <Content Include="statics\dialog\0\dialogCloseOut.gif" />
+    <Content Include="statics\dialog\0\dialogCloseOver.gif" />
+    <Content Include="statics\dialog\0\login.gif" />
+    <Content Include="statics\dialog\0\png.htc" />
+    <Content Include="statics\dialog\0\sbody_bg.png" />
+    <Content Include="statics\dialog\0\title_bg.png" />
+    <Content Include="statics\dialog\1\0.gif" />
+    <Content Include="statics\dialog\1\1.gif" />
+    <Content Include="statics\dialog\1\button1.gif" />
+    <Content Include="statics\dialog\1\button2.gif" />
+    <Content Include="statics\dialog\1\dialogCloseOut.gif" />
+    <Content Include="statics\dialog\1\dialogCloseOver.gif" />
+    <Content Include="statics\dialog\1\login.gif" />
+    <Content Include="statics\dialog\1\png.htc" />
+    <Content Include="statics\dialog\1\sbody_bg.png" />
+    <Content Include="statics\dialog\1\title_bg.png" />
+    <Content Include="statics\dialog\2\0.gif" />
+    <Content Include="statics\dialog\2\1.gif" />
+    <Content Include="statics\dialog\2\button1.gif" />
+    <Content Include="statics\dialog\2\button2.gif" />
+    <Content Include="statics\dialog\2\dialogCloseOut.gif" />
+    <Content Include="statics\dialog\2\dialogCloseOut.png" />
+    <Content Include="statics\dialog\2\dialogCloseOver.gif" />
+    <Content Include="statics\dialog\2\dialogCloseOver.png" />
+    <Content Include="statics\dialog\2\login.gif" />
+    <Content Include="statics\dialog\2\notice.gif" />
+    <Content Include="statics\dialog\2\png.htc" />
+    <Content Include="statics\dialog\2\sbody_bg.gif" />
+    <Content Include="statics\dialog\2\sbody_bg.png" />
+    <Content Include="statics\dialog\2\title_bg.png" />
+    <Content Include="statics\dialog\ie.gif" />
+    <Content Include="statics\dialog\loading.gif" />
+    <Content Include="statics\flex3\admin\AdminLogin.swf" />
+    <Content Include="statics\flex3\admin\FileUpload.swf" />
+    <Content Include="statics\global.css" />
+    <Content Include="statics\global.js" />
+    <Content Include="statics\json\BigAndSmalldata.js" />
+    <Content Include="statics\json\LotAndSmalldata.js" />
+    <Content Include="statics\json\Lottery_Json.js" />
+    <Content Include="statics\json\playBigdate.js" />
+    <Content Include="statics\loading.html" />
+    <Content Include="statics\loading\00.gif" />
+    <Content Include="statics\loading\01.gif" />
+    <Content Include="statics\loading\02.gif" />
+    <Content Include="statics\loading\03.gif" />
+    <Content Include="statics\loading\04.gif" />
+    <Content Include="statics\loading\05.gif" />
+    <Content Include="statics\loading\07.gif" />
+    <Content Include="statics\loading\11.gif" />
+    <Content Include="statics\loading\21.gif" />
+    <Content Include="statics\loading\22.gif" />
+    <Content Include="statics\loading\23.gif" />
+    <Content Include="statics\loading\24.gif" />
+    <Content Include="statics\loading\25.gif" />
+    <Content Include="statics\loading\26.gif" />
+    <Content Include="statics\loading\31.gif" />
+    <Content Include="statics\log\autotask_20140130.txt" />
+    <Content Include="statics\log\autotask_20140131.txt" />
+    <Content Include="statics\log\autotask_20140717.txt" />
+    <Content Include="statics\log\autotask_20140718.txt" />
+    <Content Include="statics\log\autotask_20140720.txt" />
+    <Content Include="statics\log\autotask_20140722.txt" />
+    <Content Include="statics\log\autotask_20140730.txt" />
+    <Content Include="statics\log\autotask_20140731.txt" />
+    <Content Include="statics\log\autotask_20140801.txt" />
+    <Content Include="statics\log\autotask_20140802.txt" />
+    <Content Include="statics\log\autotask_20140804.txt" />
+    <Content Include="statics\log\autotask_20140811.txt" />
+    <Content Include="statics\log\autotask_20140812.txt" />
+    <Content Include="statics\log\autotask_20140813.txt" />
+    <Content Include="statics\log\autotask_20140814.txt" />
+    <Content Include="statics\log\autotask_20150107.txt" />
+    <Content Include="statics\log\autotask_20150111.txt" />
+    <Content Include="statics\log\autotask_20150112.txt" />
+    <Content Include="statics\log\autotask_20150114.txt" />
+    <Content Include="statics\log\autotask_20150115.txt" />
+    <Content Include="statics\log\autotask_20150120.txt" />
+    <Content Include="statics\log\autotask_20150121.txt" />
+    <Content Include="statics\log\autotask_20150122.txt" />
+    <Content Include="statics\log\index.htm" />
+    <Content Include="statics\plus\getcode.aspx" />
+    <Content Include="statics\sound\0.mp3" />
+    <Content Include="statics\sound\1.mp3" />
+    <Content Include="statics\sound\2.mp3" />
+    <Content Include="statics\sound\3.mp3" />
+    <Content Include="statics\sound\4.mp3" />
+    <Content Include="statics\sound\5.mp3" />
+    <Content Include="statics\sound\6.mp3" />
+    <Content Include="statics\sound\7.mp3" />
+    <Content Include="statics\sound\8.mp3" />
+    <Content Include="statics\sound\9.mp3" />
+    <Content Include="statics\sound\a.mp3" />
+    <Content Include="statics\sound\b.mp3" />
+    <Content Include="statics\sound\begin.mp3" />
+    <Content Include="statics\sound\c.mp3" />
+    <Content Include="statics\sound\d.mp3" />
+    <Content Include="statics\sound\e.mp3" />
+    <Content Include="statics\sound\end.mp3" />
+    <Content Include="statics\sound\f.mp3" />
+    <Content Include="statics\sound\g.mp3" />
+    <Content Include="statics\sound\h.mp3" />
+    <Content Include="statics\sound\i.mp3" />
+    <Content Include="statics\sound\j.mp3" />
+    <Content Include="statics\sound\k.mp3" />
+    <Content Include="statics\sound\l.mp3" />
+    <Content Include="statics\sound\m.mp3" />
+    <Content Include="statics\sound\n.mp3" />
+    <Content Include="statics\sound\o.mp3" />
+    <Content Include="statics\sound\p.mp3" />
+    <Content Include="statics\sound\q.mp3" />
+    <Content Include="statics\sound\r.mp3" />
+    <Content Include="statics\sound\s.mp3" />
+    <Content Include="statics\sound\t.mp3" />
+    <Content Include="statics\sound\u.mp3" />
+    <Content Include="statics\sound\v.mp3" />
+    <Content Include="statics\sound\w.mp3" />
+    <Content Include="statics\sound\x.mp3" />
+    <Content Include="statics\sound\y.mp3" />
+    <Content Include="statics\sound\z.mp3" />
+    <Content Include="statics\tips\0.gif" />
+    <Content Include="statics\tips\1.gif" />
+    <Content Include="WEB-INF\site.xml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin\activeNewsEdit.aspx.cs">
+      <DependentUpon>activeNewsEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\activeOpers.aspx.cs">
+      <DependentUpon>activeOpers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\adminLock.aspx.cs">
+      <DependentUpon>adminLock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\adminPower.aspx.cs">
+      <DependentUpon>adminPower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\adminPwd.aspx.cs">
+      <DependentUpon>adminPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajax.aspx.cs">
+      <DependentUpon>ajax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxActive.aspx.cs">
+      <DependentUpon>ajaxActive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxAdmin.aspx.cs">
+      <DependentUpon>ajaxAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxAdminLoginCheck.aspx.cs">
+      <DependentUpon>ajaxAdminLoginCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxAgentFH.aspx.cs">
+      <DependentUpon>ajaxAgentFH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxAutoRank.aspx.cs">
+      <DependentUpon>ajaxAutoRank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxBet.aspx.cs">
+      <DependentUpon>ajaxBet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxCharge.aspx.cs">
+      <DependentUpon>ajaxCharge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxContract.aspx.cs">
+      <DependentUpon>ajaxContract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxHistory.aspx.cs">
+      <DependentUpon>ajaxHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxLoginCheck.aspx.cs">
+      <DependentUpon>ajaxLoginCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxLogs.aspx.cs">
+      <DependentUpon>ajaxLogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxLottery.aspx.cs">
+      <DependentUpon>ajaxLottery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxLotterydata.aspx.cs">
+      <DependentUpon>ajaxLotterydata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxMessage.aspx.cs">
+      <DependentUpon>ajaxMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxMoneyStatAll.aspx.cs">
+      <DependentUpon>ajaxMoneyStatAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxMyinfo.aspx.cs">
+      <DependentUpon>ajaxMyinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxPayRecord.aspx.cs">
+      <DependentUpon>ajaxPayRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxProfitloss.aspx.cs">
+      <DependentUpon>ajaxProfitloss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxSave.aspx.cs">
+      <DependentUpon>ajaxSave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxSysBank.aspx.cs">
+      <DependentUpon>ajaxSysBank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxSysDelData.aspx.cs">
+      <DependentUpon>ajaxSysDelData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxSysInfo.aspx.cs">
+      <DependentUpon>ajaxSysInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxSysNews.aspx.cs">
+      <DependentUpon>ajaxSysNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxTask.aspx.cs">
+      <DependentUpon>ajaxTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxUser.aspx.cs">
+      <DependentUpon>ajaxUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxUserlevel.aspx.cs">
+      <DependentUpon>ajaxUserlevel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajaxWarn.aspx.cs">
+      <DependentUpon>ajaxWarn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\betCancel.aspx.cs">
+      <DependentUpon>betCancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\betCancelOfNO.aspx.cs">
+      <DependentUpon>betCancelOfNO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\betInfo.aspx.cs">
+      <DependentUpon>betInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\betOpers.aspx.cs">
+      <DependentUpon>betOpers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\betUpdate.aspx.cs">
+      <DependentUpon>betUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\betZhinfo.aspx.cs">
+      <DependentUpon>betZhinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\conList.aspx.cs">
+      <DependentUpon>conList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\conListpop.aspx.cs">
+      <DependentUpon>conListpop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\login20170109.aspx.cs">
+      <DependentUpon>login20170109.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\lotteryDataAdd.aspx.cs">
+      <DependentUpon>lotteryDataAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\lotteryNoPlay.aspx.cs">
+      <DependentUpon>lotteryNoPlay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\PageEdit.aspx.cs">
+      <DependentUpon>PageEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\PageEditPop.aspx.cs">
+      <DependentUpon>PageEditPop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\PageSavePop.aspx.cs">
+      <DependentUpon>PageSavePop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\SendMessage.aspx.cs">
+      <DependentUpon>SendMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\sysDelData.aspx.cs">
+      <DependentUpon>sysDelData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\sysNewsAdd.aspx.cs">
+      <DependentUpon>sysNewsAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\sysNewsEdit.aspx.cs">
+      <DependentUpon>sysNewsEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\sysSetInfo.aspx.cs">
+      <DependentUpon>sysSetInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Temp.aspx.cs">
+      <DependentUpon>Temp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userAdd.aspx.cs">
+      <DependentUpon>userAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userBankDel.aspx.cs">
+      <DependentUpon>userBankDel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userBankEdit.aspx.cs">
+      <DependentUpon>userBankEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userBankUnLock.aspx.cs">
+      <DependentUpon>userBankUnLock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userCashEdit.aspx.cs">
+      <DependentUpon>userCashEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userCharge.aspx.cs">
+      <DependentUpon>userCharge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userChargeAct.aspx.cs">
+      <DependentUpon>userChargeAct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userChargeEdit.aspx.cs">
+      <DependentUpon>userChargeEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userEdit.aspx.cs">
+      <DependentUpon>userEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userHistoryPop.aspx.cs">
+      <DependentUpon>userHistoryPop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userMoneyCFLog.aspx.cs">
+      <DependentUpon>userMoneyCFLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userMoneyLog.aspx.cs">
+      <DependentUpon>userMoneyLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userNoPlay.aspx.cs">
+      <DependentUpon>userNoPlay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userQuotaadd.aspx.cs">
+      <DependentUpon>userQuotaadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userQuotas.aspx.cs">
+      <DependentUpon>userQuotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userQuotasEdit.aspx.cs">
+      <DependentUpon>userQuotasEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userTrueNameEdit.aspx.cs">
+      <DependentUpon>userTrueNameEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userUpdateParent.aspx.cs">
+      <DependentUpon>userUpdateParent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userUpdatePoint.aspx.cs">
+      <DependentUpon>userUpdatePoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userUpdatePoints.aspx.cs">
+      <DependentUpon>userUpdatePoints.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="statics\plus\getcode.aspx.cs">
+      <DependentUpon>getcode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="statics\plus\getcode.aspx.designer.cs">
+      <DependentUpon>getcode.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lottery.DAL\Lottery.DAL.csproj">
+      <Project>{90c59389-0af4-4c84-b839-4b50c5cc3027}</Project>
+      <Name>Lottery.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.DBUtility\Lottery.DBUtility.csproj">
+      <Project>{71e9ac32-7eaf-4677-9b25-9adb150f8bcf}</Project>
+      <Name>Lottery.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.Entity\Lottery.Entity.csproj">
+      <Project>{17a4cf66-b240-4a8f-8137-c134ca6a2c89}</Project>
+      <Name>Lottery.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.Utils\Lottery.Utils.csproj">
+      <Project>{7fde2b50-2656-4ed1-8c0c-d6547fe9a21a}</Project>
+      <Name>Lottery.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="statics\Bets\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1336</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1336/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

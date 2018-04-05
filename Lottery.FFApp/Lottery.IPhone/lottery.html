@@ -1,0 +1,110 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>立博国际娱乐</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/global.css" />
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/style.css" />
+    <script type="text/javascript" src="/statics/jquery-1.11.3.min.js"></script>
+    <script src="/statics/layer/layer.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/statics/sytle/js/EM.tools.js"></script>
+    <script type="text/javascript" src="/statics/global.js"></script>
+    <script src="/statics/sytle/js/MSClass.js" type="text/javascript"></script>
+    <script src="/statics/json/Lottery_Json.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var itemid = joinValue('itemid');
+        $(document).ready(function () {
+            ajaxList();
+
+            window.setInterval(ajaxList, 1000); //定时刷新开奖信息
+        });
+
+        function ajaxList() {
+            var u = "/ajax/ajax.aspx?oper=GetKaiJiangList";
+            //var index = emLoading();
+            $.ajax({
+                type: "get",
+                dataType: "json",
+                data: "&clienttime=" + Math.random(),
+                url: u,
+                error: function (XmlHttpRequest, textStatus, errorThrown) { emAlert("亲！页面过期,请刷新页面!"); },
+                success: function (d) {
+                    switch (d.result) {
+                        case '-1':
+                            emAlert(d.returnval); top.window.location = '/login.html';
+                            break;
+                        case '0':
+                            emAlert(d.returnval);
+                            break;
+                        case '1':
+                            $("#ajaxList").setTemplateElement("tplList", null, { filter_data: true });
+                            $("#ajaxList").processTemplate(d);
+                            break;
+                    }
+                    //closeload(index);
+                }
+            });
+        }
+        function GetSytle(balls, rowid) {
+            if (balls != "") {
+                var strArray = balls.split(",");
+                var str = "";
+                for (var i = 0; i < strArray.length; i++) {
+                    if (rowid % 3 == 0) {
+                        str += "<span class='ball ball-scc'>" + strArray[i] + "</span>";
+                    }
+                    else if (rowid % 3 == 1) {
+                        str += "<span class='ball ball-11x5'>" + strArray[i] + "</span>";
+                    }
+                    else if (rowid % 3 == 2) {
+                        str += "<span class='ball ball-ssl'>" + strArray[i] + "</span>";
+                    }
+                }
+            }
+            return str;
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <header id="header">
+        <h1 class="title">历史开奖</h1>
+    </header>
+    <main id="main">
+        <div class="lottery-center">
+        	<ul id="ajaxList" class="lottery-history">
+            	
+            </ul>
+        </div>
+    </main>
+    <div class="height50"></div>
+    <nav id="navbar">
+            <a href="/main.html"><i class="icon-rec"></i>精彩推荐</a>
+            <a href="/game.html"><i class="icon-cart"></i>购彩大厅</a>
+            <a href="/lottery.html" class="on"><i class="icon-history"></i>开奖信息</a>
+            <a href="/center.html"><i class="icon-user"></i>我的账户</a>
+    </nav>
+</div>
+</body>
+<textarea class="template" id="tplList" rows="1" cols="1" style="display: none">
+{#foreach $T.table as record}
+<li>
+    <a href="lotterylist.html?lid={$T.record.lotteryid}">
+        <div class="info">
+            <strong class="name">{$T.record.lotteryname}</strong>
+            <span class="issue">{$T.record.issuenum} 期</span>
+        </div>
+        <div class="result">
+            <div class="lottery-numbers">
+            {GetSytle($T.record.number,$T.record.rowid)}
+            </div>
+        </div>
+        <i class="icon-arrow"></i>
+    </a>
+</li>
+{#/for}
+</textarea>
+</html>

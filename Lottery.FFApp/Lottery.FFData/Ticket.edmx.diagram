@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a18e7ff626574b9384737daa0cc01158" Name="Diagram1">
+        <EntityTypeShape EntityType="TicketModel.Act_ActiveNews" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_ActiveRecord" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_ActiveSet" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_AgentFHRecord" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_AutoRecord" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_BetRecond" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_Day15FHSet" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_DayGzSet" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_DayYJSet" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_SetChargeDetail" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_SetFHDetail" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_SetGZDetail" Width="1.5" PointX="4.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_SetGZDetail2" Width="1.5" PointX="6.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_SetYJDetail" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_SetYJDetail2" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TicketModel.Act_UserFHDetail" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TicketModel.Log_AdminOper" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TicketModel.log_Bet" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="TicketModel.Log_ContractOper" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="TicketModel.Log_Exception" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TicketModel.Log_Point" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="TicketModel.Log_Sys" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TicketModel.Log_UserLogin" Width="1.5" PointX="4.75" PointY="12.75" />
+        <EntityTypeShape EntityType="TicketModel.N_Merchant" Width="1.5" PointX="12.75" PointY="6.75" />
+        <EntityTypeShape EntityType="TicketModel.N_User" Width="1.5" PointX="6.75" PointY="12.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserBank" Width="1.5" PointX="12.75" PointY="9.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserBankLog" Width="1.5" PointX="8.75" PointY="13.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserBet" Width="1.5" PointX="10.75" PointY="13.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserCharge" Width="1.5" PointX="12.75" PointY="13.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserChargeLog" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserContract" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserContractDetail" Width="1.5" PointX="14.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserEmail" Width="1.5" PointX="14.75" PointY="10.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserGetCash" Width="1.5" PointX="14.75" PointY="14.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserGetCashHistory" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserGroup" Width="1.5" PointX="2.75" PointY="15.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserGroupQuota" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserLevel" Width="1.5" PointX="16.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserMessage" Width="1.5" PointX="16.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserMoneyLog" Width="1.5" PointX="16.75" PointY="11.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserMoneyStatAll" Width="1.5" PointX="16.75" PointY="16.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserPlaySetting" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserPointQuota" Width="1.5" PointX="0.75" PointY="18.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserQuota" Width="1.5" PointX="2.75" PointY="18.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserQuotas" Width="1.5" PointX="18.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserRegLink" Width="1.5" PointX="18.75" PointY="6.75" />
+        <EntityTypeShape EntityType="TicketModel.N_UserZhBet" Width="1.5" PointX="18.75" PointY="9.75" />
+        <EntityTypeShape EntityType="TicketModel.Pay_temp" Width="1.5" PointX="12.75" PointY="18.75" />
+        <EntityTypeShape EntityType="TicketModel.PayUrl_temp" Width="1.5" PointX="18.75" PointY="13.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_Admin" Width="1.5" PointX="18.75" PointY="16.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_AutoRank" Width="1.5" PointX="20.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_Bank" Width="1.5" PointX="20.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_BankBinInfo" Width="1.5" PointX="20.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_ChargeSet" Width="1.5" PointX="20.75" PointY="11.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_Info" Width="1.5" PointX="20.75" PointY="16.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_LoginCheck" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_Lottery" Width="1.5" PointX="2.75" PointY="21.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_LotteryCheck" Width="1.5" PointX="8.75" PointY="21.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_LotteryData" Width="1.5" PointX="14.75" PointY="21.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_LotteryPlaySetting" Width="1.5" PointX="16.75" PointY="21.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_LotteryTime" Width="1.5" PointX="22.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_lotteryUrl" Width="1.5" PointX="22.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_Menu" Width="1.5" PointX="22.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_Message" Width="1.5" PointX="22.75" PointY="10.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_News" Width="1.5" PointX="10.75" PointY="22.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_PlayBigType" Width="1.5" PointX="22.75" PointY="14.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_PlaySmallType" Width="1.5" PointX="22.75" PointY="18.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_Role" Width="1.5" PointX="24.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_SbfChannelMap" Width="1.5" PointX="24.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TicketModel.Sys_TaskSet" Width="1.5" PointX="4.75" PointY="24.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

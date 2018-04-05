@@ -1,0 +1,791 @@
+.block-nav a .icon-user{background-image:url(../img/bn_user.png);}
+.block-nav a .icon-briefcase{background-image:url(../img/bn_briefcase.png);}
+.block-nav a .icon-report{background-image:url(../img/bn_report.png);}
+.block-nav a .icon-agency{background-image:url(../img/bn_agency.png);}
+.block-nav a .icon-guide{background-image:url(../img/bn_guide.png);}
+.block-nav a .icon-clause{background-image:url(../img/bn_clause.png);background-color:#7c71e4;}
+.block-nav a .icon-policy{background-image:url(../img/bn_policy.png);background-color:#19b5fd;}
+.block-nav a .icon-duty{background-image:url(../img/bn_duty.png);background-color:#27ad5f;}
+.block-nav a .icon-security{background-image:url(../img/bn_security.png);background-color:#f39b11;}
+.block-nav a .icon-declare{background-image:url(../img/bn_declare.png);background-color:#e94b87;}
+.tto-block .block-title .icon-gift{background-image:url(../img/bt_gift.png);background-color:#7c71e4;}
+.tto-block .block-title .icon-notice{background-image:url(../img/bt_notice.png);background-color:#00c2f4;}
+.tto-block .block-title .icon-game{background-image:url(../img/bt_game.png);background-color:#f75b4b;}
+.tto-block .block-title .icon-safety{background-image:url(../img/bt_safety.png);background-color:#12d670;}
+
+.tto-block .block-title .icon-clause{background-image:url(../img/bt_clause.png);}
+.tto-block .block-title .icon-policy{background-image:url(../img/bt_policy.png);}
+.tto-block .block-title .icon-duty{background-image:url(../img/bt_duty.png);}
+.tto-block .block-title .icon-security{background-image:url(../img/bt_security.png);}
+.tto-block .block-title .icon-declare{background-image:url(../img/bt_declare.png);}
+
+.tto-block .block-title .icon-live{background-image:url(../img/bt_live.png);}
+.tto-block .block-title .icon-license{background-image:url(../img/bt_license.png);}
+
+.block-panel{padding:15px;}
+
+.query-form{margin-bottom:0px;}
+.query-form .lab,.query-form .ipt,.query-form select,.query-form .to,.query-form .btn,.query-form .query-date{float:left;margin-right:10px;margin-bottom:10px;}
+.query-form .ipt,.query-form select{border:1px solid #e7eaeb;}
+.query-form .ipt{width:100px;height:24px;padding:2px 9px;}
+.query-form .lab,.query-form .to{height:30px;line-height:30px;overflow:hidden;}
+.query-form .query-date{position:relative;}
+.query-form .query-date .ipt{margin-right:0;margin-bottom:0;}
+.query-form .query-date .icon-date{position:absolute;z-index:9;top:50%;right:7px;width:16px;height:16px;margin-top:-8px;background-image:url(../img/icon_query_date.png);}
+.query-form select{width:100px;height:30px;padding-left:5px;}
+.query-form .btn-query{width:60px;height:30px;margin-right:5px;border-radius:3px;color:#fff;background-color:#fba026;}
+.query-form .btn-query2{width:60px;height:30px;line-height:30px; margin:auto 5px auto 0px;border-radius:3px;color:#fff;background-color:#fba026;}
+.query-form .time-range{float:left;}
+.query-form .time-range li{float:left;width:88px;height:28px;line-height:28px;margin-right:10px;border:1px solid #e7eaeb;text-align:center;color:#999;cursor:pointer;}
+.query-form .time-range .selected{color:#fff;border-color:#fba026;background-color:#fba026;}
+
+.query-result{margin-bottom:10px;}
+
+.query-table{text-align:center;}
+.query-table tr{height:40px;}
+.query-table thead tr,.play-table thead tr{border-left:1px solid #3b3c46;border-right:1px solid #3b3c46;color:#fff;background-color:#3b3c46;}
+.query-table tbody{border-bottom:1px solid #ddd;}
+.query-table tbody tr{border-left:1px solid #ddd;border-right:1px solid #ddd;border-bottom:1px dashed #ddd;}
+.query-table th,.query-table td{padding:5px;}
+.query-table .subtotal,.query-table .total{border-top:1px solid #ddd;color:#e84635;}
+.query-table .subtotal td:first-child,.query-table .total td:first-child{color:#333;}
+.query-table .btn{width:38px;height:24px;line-height:24px;margin:0 5px;border:1px solid #e7eaeb;border-radius:2px;background-color:#fff;}
+.query-table .bank,.query-table .state,.query-table .link{color:#5490e8;}
+.query-table .link{margin:0 5px;}
+
+.acting-dividends h4{height:18px;margin-bottom:10px;font-weight:normal;}
+.acting-dividends .acting-table{table-layout:fixed;margin-bottom:15px;color:#666;}
+.acting-dividends .acting-table tr{height:50px;}
+.acting-dividends .acting-table td{padding-left:10px;padding-right:10px;border:1px solid #ddd;text-align:center;}
+.acting-dividends .acting-table .type{background-color:#f1f1f1;}
+.acting-dividends .acting-table em{color:#e84635;font-family:Arial, sans-serif;}
+.acting-dividends .acting-table .btn-get{float:left;width:98px;height:28px;line-height:28px;background-color:#fba026;}
+.acting-dividends .acting-query{overflow:hidden;padding:20px 20px 0;margin-left:-20px;margin-right:-20px;border-top:1px solid #ddd;margin-top:30px;}
+.acting-dividends .acting-query .btn-query{padding-left:0;background-image:none;text-align:center;}
+
+.agent-team,.agent-team li,.agent-team h3,.agent-stat,.agent-stat li,.agent-stat h3{height:48px;overflow:hidden;}
+.agent-team,.agent-stat{border:1px solid #ddd;text-align:center;}
+.agent-team li,.agent-team h3,.agent-stat li,.agent-stat h3{float:left;}
+.agent-team li,.agent-stat li{border-left:1px solid #e1e1e1;margin-left:-1px;}
+.agent-team h3,.agent-stat h3,.agent-team .amount,.agent-stat li .amount{line-height:48px;}
+.agent-team h3,.agent-stat h3{position:relative;width:50%;border-right:1px solid #ddd;background-color:#f1f1f1;font-weight:normal;}
+.agent-team{margin-bottom:20px;}
+.agent-team li{width:25%;}
+.agent-team .amount,.agent-stat li .amount{font-size:14px;color:#c73a3b;font-family:Arial, sans-serif;}
+.agent-stat{ margin:0 0 0px 0;}
+.agent-stat h3{position:relative;width:80px;}
+.agent-stat li{width:20%;}
+.agent-stat2{border-top:0px solid #ddd;}
+
+.agent-look{height:18px;overflow:hidden;margin-top:20px;}
+.agent-look .radio{float:left;margin-right:70px;}
+.agent-look .radio input{float:left;margin:3px 10px 0 0;}
+
+.agent-chart{margin-top:20px;text-align:center;}
+
+.account-assets{overflow:hidden;margin-left:-10px;margin-right:-10px;margin-bottom:15px;}
+.account-assets li{position:relative;float:left;width:370px;height:90px;padding-left:100px;margin-left:10px;margin-right:10px;}
+.account-assets .icon-wallet,.account-assets .icon-card,.account-assets .btn-act,.account-assets .btn-refresh{position:absolute;z-index:9;}
+.account-assets .icon-wallet,.account-assets .icon-card{left:15px;top:50%;width:60px;height:60px;margin-top:-30px;background-position:center;}
+.account-assets .icon-wallet{background-image:url(../img/icon_acc_wallet.png);}
+.account-assets .icon-card{background-image:url(../img/icon_acc_card.png);}
+.account-assets h3{height:18px;overflow:hidden;margin-top:15px;font-weight:normal;}
+.account-assets .amount{height:35px;line-height:35px;overflow:hidden;margin-top:8px;font-size:25px;font-family:Arial, sans-serif;color:#e75172;}
+.account-assets .btn-act{right:20px;bottom:20px;width:60px;height:26px;line-height:26px;border-radius:3px;color:#fff;}
+.account-assets .assets-total{background-color:#fee2bd;}
+.account-assets .assets-total .btn-act{background-color:#fba026;}
+.account-assets .assets-usable{background-color:#b2eed7;}
+.account-assets .assets-usable .btn-act{background-color:#00c77a;}
+.account-assets .btn-refresh{top:5px;right:5px;width:20px;height:20px;background:url(../img/icon_acc_refresh.png) no-repeat;}
+
+.account-table tr{height:50px;}
+.account-table td{padding-right:10px;border:1px solid #ddd;}
+.account-table .name{display:inline-block;width:70px;text-align:right;}
+.account-table .amount,.account-table .not-open{margin-left:10px;}
+.account-table .amount{font-size:15px;font-family:Arial, sans-serif;color:#d90c39;}
+.account-table .not-open{color:#999;}
+.account-table a{float:right;width:20px;height:20px;margin-left:5px;border-radius:50%;background-repeat:no-repeat;}
+.account-table .btn-out{background-color:#4a4c61;background-image:url(../img/icon_acc_out.png);}
+.account-table .btn-enter{background-color:#f39b11;background-image:url(../img/icon_acc_game.png);}
+
+.account-transfer{padding:20px;margin-top:20px;margin-left:-20px;margin-right:-20px;border-top:1px solid #ddd;}
+
+.transfer-form{padding-left:90px;margin-left:0;}
+.transfer-form .lab,.withdraw-form .lab{width:70px;margin-left:-90px;}
+.transfer-form .lab{text-align:center;}
+.transfer-form .out-group .lab,.transfer-form .into-group .lab{height:50px;line-height:50px;}
+.transfer-form .out-group{margin-bottom:40px;}
+.transfer-form .into-group{margin-bottom:30px;}
+.transfer-form .btn-group{margin-top:40px;}
+
+.transfer-account{position:relative;float:left;}
+.transfer-account .oi-line{position:absolute;top:70px;width:100%;height:1px;overflow:hidden;background-color:#dfdfdf;}
+.transfer-account.active .oi-line{background-color:#fba026;}
+.transfer-account .oi-line .os,.transfer-account .oi-line .is{width:60px;height:1px;background-color:#fff;}
+.transfer-account .oi-line .os{float:left;}
+.transfer-account .oi-line .is{float:right;}
+
+.out-account,.into-account{float:left;height:50px;margin-left:-5px;margin-right:-5px;}
+.out-account li,.into-account li{position:relative;float:left;width:118px;height:48px;line-height:48px;margin-left:5px;margin-right:5px;border:1px solid #dfdfdf;text-align:center;cursor:pointer;}
+.out-account li:after,.into-account li:after,.into-account .dir,.out-account .dir{position:absolute;z-index:9;left:50%;}
+.out-account li:after,.into-account li:after{content:"";width:1px;height:20px;background-color:#dfdfdf;}
+.out-account li:after,.out-account .dir{top:100%;}
+.out-account li:after{margin-top:1px;}
+.into-account li:after,.into-account .dir{bottom:100%;}
+.into-account li:after{margin-bottom:1px;}
+.into-account .dir,.out-account .dir{display:none;width:7px;height:4px;margin-left:-3px;background:url(../img/icon_acc_tri.png) no-repeat;}
+.out-account .selected,.into-account .selected,.out-account .selected:after,.into-account .selected:after{background-color:#fba026;}
+.out-account .selected,.into-account .selected{border-color:#fba026;color:#fff;}
+.out-account .selected .dir,.into-account .selected .dir{display:block;}
+
+.choose-money li{float:left;height:28px;line-height:28px;overflow:hidden;margin:0 -1px -1px 0;border:1px solid #dfdfdf;text-align:center;cursor:pointer;}
+.account-transfer .choose-money{float:left;margin-left:15px;}
+.account-transfer .choose-money li{width:80px;}
+
+.withdraw-form{padding-left:0;margin-left:0;}
+.withdraw-form .input-group,.withdraw-form .btn-group{padding-left:100px;}
+.withdraw-form .input-group{margin-left:0;margin-bottom:10px;}
+.withdraw-form .ipt{width:180px;}
+.withdraw-form .btn-group{margin-top:30px;}
+.withdraw-form .account-type,.withdraw-form .account-bank{overflow:hidden;}
+.withdraw-form .account-bank{margin-top:8px;}
+.withdraw-form .account-bank .acc{width:200px;line-height:40px;padding-left:9px;}
+.withdraw-form .account-bank .acc-logo{float:left;margin-right:10px;margin-top:4px;}
+
+.bankcard-list{overflow:hidden;color:#666;}
+.bankcard-list li{position:relative;float:left;width:150px;height:40px;line-height:20px;overflow:hidden;padding:9px 9px 9px 59px;margin-top:10px;margin-right:10px;border:1px solid #dfdfdf;cursor:pointer;}
+.bankcard-list .selected{padding:8px 8px 8px 58px;border-width:2px;border-color:#fba026;}
+.bankcard-list p{height:20px;line-height:20px;overflow:hidden;}
+.bankcard-list .bank-logo{position:absolute;left:11px;top:50%;margin-top:-18px;}
+.bankcard-list .bank-logo img{width:36px;height:36px;}
+.bankcard-list .bank-user{margin-left:8px;}
+.bankcard-list .add-card{width:200px;padding-left:9px;}
+.bankcard-list a{display:block;height:58px;line-height:58px;margin:-9px;color:#666;}
+.bankcard-list .add-card .icon-add{float:left;width:32px;height:33px;margin:13px 15px 0 15px;background-image:url(../img/icon_add.png);}
+
+.withdraw-step .step-heading,.recharge-part .part-heading{overflow:hidden;padding-bottom:10px;border-bottom:1px solid #ddd;}
+.withdraw-step .step-heading{padding-left:20px;padding-right:20px;margin-left:-20px;margin-right:-20px;}
+.withdraw-step .step-name,.recharge-part .part-title,.recharge-part .extra{float:left;height:26px;line-height:26px;overflow:hidden;}
+.withdraw-step .step-name,.recharge-part .part-title{font-weight:normal;}
+.withdraw-step .step-name{font-size:14px;}
+.withdraw-step .step-name .no,.recharge-part .part-title .no{float:left;width:26px;height:26px;line-height:26px;margin-right:15px;border-radius:50%;text-align:center;background-color:#ddd;font-size:15px;font-family:Arial, sans-serif;color:#fba026;}
+.withdraw-step .step-content{position:relative;overflow:hidden;padding:20px 0 30px;}
+
+.withdraw-help{position:absolute;top:20px;right:20px;width:580px;color:#666;}
+.withdraw-table,.withdraw-table td{border:1px solid #ddd;}
+.withdraw-table tr{height:30px;}
+.withdraw-table td{padding-left:10px;padding-right:10px;}
+.withdraw-table .name{background-color:#f1f1f1;text-align:center;}
+
+.recharge-way{height:40px;overflow:hidden;text-align:center;font-size:0;}
+.recharge-way li{display:inline-block;width:118px;height:38px;line-height:38px;overflow:hidden;border:1px solid #ddd;border-left:0 none;font-size:12px; font-weight:bold;}
+.recharge-way .first{border-left:1px solid #ddd;border-radius:20px 0 0 20px;}
+.recharge-way .last{border-radius:0 20px 20px 0;}
+.recharge-way a{display:block;}
+.recharge-way .current a{color:#fba026;}
+
+.account-recharge .process-steps{margin-top:30px;}
+
+.recharge-form{margin-top:20px;margin-bottom:20px;margin-left:0;padding-left:170px;}
+.recharge-form .ipt{width:160px;}
+.recharge-form .btn-group{margin-top:30px;}
+
+.choose-bank,.recharge-tips{margin-left:-80px;}
+.choose-bank{margin-bottom:10px;}
+.cashier-banks{overflow:hidden;margin-right:-10px;}
+.cashier-banks li,.recharge-info li .bank{border:1px solid #dbe1e8;}
+.cashier-banks li{float:left;width:120px;height:40px;overflow:hidden;margin:0 10px 10px 0;}
+.cashier-banks li .bank,.recharge-info li .bank{width:122px;height:42px;vertical-align:top;}
+.cashier-banks li .bank{margin:-1px;}
+.cashier-banks li:hover,.cashier-banks li.selected{width:118px;height:38px;border-width:2px;border-color:#fba026;}
+.cashier-banks li:hover .bank,.cashier-banks li.selected .bank{margin:-2px;}
+.cashier-banks .radio{display:none;}
+.cashier-banks label{display:block;cursor:pointer;}
+.recharge-tips{width:470px;overflow:hidden;padding:10px 15px;line-height:30px;margin-bottom:25px;color:#666;border-radius:8px;background-color:#f5f5f5;}
+
+.recharge-limit{float:left;height:24px;line-height:24px;overflow:hidden;margin:3px 0 3px 25px;color:#666;}
+.recharge-limit .correct-amount,.recharge-limit .wrong-amount{display:block;}
+.recharge-limit .correct-amount i,.recharge-limit .wrong-amount i{float:left;width:14px;height:14px;margin:5px 10px 0 0;}
+.recharge-limit .correct-amount .icon-correct{background-image:url(../img/icon_correct.png);}
+.recharge-limit .wrong-amount{color:#d6404d;}
+.recharge-limit .wrong-amount .icon-wrong{background-image:url(../img/icon_wrong.png);}
+
+.account-recharge .choose-money{clear:both;float:left;margin-top:10px;}
+.account-recharge .choose-money li{width:70px;}
+
+.recharge-confirm{margin:30px 90px 10px;}
+
+.recharge-part{margin-top:25px;}
+.recharge-part .extra{padding-right:12px;margin-left:25px;color:#666;font-style:italic;}
+.recharge-part .part-content{position:relative;padding-top:25px;}
+
+.recharge-info{overflow:hidden;}
+.recharge-info li{height:42px;line-height:42px;overflow:hidden;}
+.recharge-info .si-name{float:left;width:200px;margin-right:20px;text-align:right;}
+.recharge-info em{margin-right:5px;color:#e84635;}
+.recharge-info .btn-copy,.payment-help{float:right;height:20px;line-height:20px;padding-left:7px;padding-right:7px;border:1px solid #ddd;border-radius:2px;}
+.recharge-info .btn-copy{margin-top:9px;}
+
+.online-payment{padding-left:215px;margin-top:35px;}
+.online-payment .btn{margin-left:5px;margin-right:5px;}
+
+.recharge-center .online-payment{padding-left:0;text-align:center;}
+.recharge-center{padding-left:60px;padding-right:60px;}
+
+.payment-tips{float:right;width:160px;overflow:hidden;padding:15px 10px 10px;margin-left:110px;border-radius:8px;background-color:#f3f3f3;}
+.payment-tips p{text-align:center;}
+
+.payment-countdown{width:103px;height:44px;line-height:44px;overflow:hidden;padding:20px 29px 20px 28px;margin-top:10px;border-radius:8px;text-align:center;color:#fff;font-size:25px;font-family:Arial, sans-serif;background:url(../img/payment_countdown.png) no-repeat center #ddd;}
+.payment-countdown span{float:left;width:44px;margin-left:15px;}
+.payment-countdown span:first-child{margin-left:0;}
+
+.recharge-completed{min-height:350px;margin-top:70px;padding-left:500px;padding-top:65px;background:url(../img/payment_card.jpg) no-repeat 60px top;}
+.recharge-completed p{line-height:30px;}
+.recharge-completed p a{color:#cc2828;}
+.recharge-completed .btn-group{margin-top:35px;}
+.recharge-completed .btn{margin-right:30px;}
+
+.i-account{position:relative;z-index:9;height:80px;overflow:hidden;padding:15px 10px 10px 110px;color:#666;}
+.i-account:after{content:'';position:absolute;z-index:-1;left:0;bottom:0;width:100%;height:50px;background-color:#f1f1f1;}
+.i-avatar{position:absolute;z-index:9;left:15px;top:15px;width:80px;height:80px;}
+.i-account .i-info{overflow:hidden;margin-top:5px;margin-bottom:24px;}
+.i-account .username{float:left;height:26px;line-height:26px;overflow:hidden;margin-right:15px;}
+.i-account .username em{display:inline-block;font-size:16px;font-family:Arial,sans-serif;color:#333;vertical-align:top;}
+
+.account-auth,.security-level,.last-login{float:left;}
+.account-auth a{float:left;width:26px;height:26px;margin-right:5px;}
+.account-auth a.verified{cursor:default;}
+.account-auth a i{display:block;width:100%;height:100%;}
+.account-auth a .icon-user{background-image:url(../img/icon_auth_user.png);}
+.account-auth a.verified .icon-user{background-image:url(../img/icon_auth_user_authed.png);}
+.account-auth a .icon-email{background-image:url(../img/icon_auth_email.png);}
+.account-auth a.verified .icon-email{background-image:url(../img/icon_auth_email_authed.png);}
+.account-auth a .icon-phone{background-image:url(../img/icon_auth_phone.png);}
+.account-auth a.verified .icon-phone{background-image:url(../img/icon_auth_phone_authed.png);}
+
+.security-level,.last-login{height:20px;line-height:20px;overflow:hidden;}
+.security-level h4,.security-level .level,.last-login h4,.last-login p{float:left;}
+.security-level h4,.last-login h4{font-weight:normal;}
+.security-level .level,.last-login p{color:#333;}
+.security-level .level{font-size:15px;}
+
+.security-bar{position:relative;float:left;width:180px;height:10px;margin-left:8px;margin-right:12px;margin-top:5px;background:url(../img/security_bar.png) no-repeat;}
+.security-bar .sec-line{position:absolute;z-index:9;top:-5px;width:7px;height:20px;margin-left:-3px;background:url(../img/security_line.png) no-repeat;}
+.security-bar .high{left:75%;}
+.security-bar .medium{left:50%;}
+.security-bar .low{left:25%;}
+
+.last-login h4{margin-left:45px;margin-right:10px;}
+
+.i-top{overflow:hidden;padding-top:10px;padding-bottom:10px;margin-top:1px;background-color:#f1f1f1;}
+.i-bottom{padding:20px;}
+
+.agent-rebate,.mybankcard{float:left;position:relative;}
+.agent-rebate,.agent-rebate h3,.mybankcard h3{height:60px;overflow:hidden;}
+.agent-rebate{width:290px;padding-left:90px;}
+.agent-rebate h3,.mybankcard h3{position:absolute;z-index:9;left:0;top:0;text-align:center;font-weight:normal;color:#666;}
+.agent-rebate h3{width:90px;}
+.mybankcard h3{width:100px;}
+.agent-rebate h3 i,.mybankcard h3 i{display:block;height:30px;margin-top:6px;margin-bottom:5px;background-position:center;}
+.agent-rebate h3 .icon-rebate{background-image:url(../img/icon_agent_rebate.png);}
+.mybankcard h3 .icon-card{background-image:url(../img/icon_bank_card.png);}
+.agent-rebate ul{overflow:hidden;padding:5px;border-radius:8px;background-color:#fff;}
+.agent-rebate li{float:left;width:85px;height:25px;line-height:25px;overflow:hidden;padding-left:8px;}
+.agent-rebate .pct{color:#d90c39;}
+
+.mybankcard{width:520px;padding-left:100px;overflow:hidden;}
+.mybankcard .bankcard-list{margin-top:-10px;margin-left:-10px;}
+.mybankcard .bankcard-list li{width:55px;padding-left:55px;padding-top:9px;padding-bottom:9px;margin-left:10px;margin-right:0;border-radius:8px;border-color:#fff;background-color:#fff;}
+.mybankcard .bankcard-list .add-card{width:100px;padding-left:9px;}
+.mybankcard .bankcard-list .add-card .icon-add{margin-left:10px;margin-right:8px;background-image:url(../img/icon_add_g.png);}
+
+.security-settings{overflow:hidden;margin-left:-10px;margin-right:-10px;}
+.security-settings li{float:left;position:relative;width:373px;height:58px;overflow:hidden;padding:15px 15px 15px 80px;margin:20px 10px 0;border:1px solid #ddd;}
+.security-settings .icon-sec{position:absolute;left:10px;top:50%;width:60px;height:60px;margin-top:-30px;border-radius:50%;background-position:center;background-color:#4a4c61;}
+.security-settings .icon-user{background-image:url(../img/icon_sec_user.png);}
+.security-settings .icon-lock{background-image:url(../img/icon_sec_lock.png);}
+.security-settings .icon-shield{background-image:url(../img/icon_sec_shield.png);}
+.security-settings .icon-question{background-image:url(../img/icon_sec_question.png);}
+.security-settings .icon-email{background-image:url(../img/icon_sec_email.png);}
+.security-settings .icon-phone{background-image:url(../img/icon_sec_phone.png);}
+.security-settings h3{height:24px;line-height:24px;overflow:hidden;font-size:13px;font-weight:normal;}
+.security-settings p{height:18px;overflow:hidden;margin-top:10px;color:#999;}
+.security-settings .btn-set{position:absolute;top:15px;right:15px;width:58px;height:24px;line-height:24px;border:1px solid #ddd;border-radius:3px;}
+.security-settings .btn-bound{border-color:#00c77a;color:#00c77a;}
+.security-settings .btn-bind{border-color:#ff5357;color:#ff5357;}
+
+.sent-mail{padding:30px 20px 60px;}
+.sent-message{position:relative;min-height:70px;padding-left:195px;padding-top:30px;}
+.sent-message .mail{position:absolute;left:20px;top:10px;}
+.sent-message h4{height:30px;line-height:30px;font-size:14px;font-weight:normal;}
+.sent-message p{margin-top:3px;color:#999;}
+.sent-mail .btn-group{margin-top:20px;text-align:center;}
+
+.site-notice{height:480px;overflow:hidden;}
+.notice-side,.notice-main{height:480px;}
+.notice-side{float:left;width:250px;overflow:auto;border-right:1px solid #ddd;}
+
+.site-notice2{height:650px;overflow:hidden;}
+.notice-side2,.notice-main2{height:650px;}
+.notice-side2{float:left;width:250px;overflow:auto;border-right:1px solid #ddd;}
+.notice-main2{overflow:hidden;}
+
+.notice-list{padding-left:10px;padding-right:10px;}
+.notice-list li{height:44px;line-height:44px;overflow:hidden;border-bottom:1px dashed #ccc;}
+.notice-list a{display:block;}
+.notice-list a .time{float:right;color:#999;}
+.notice-list a .dot{float:left;width:6px;height:6px;margin-top:19px;margin-right:12px;border-radius:50%;background-color:#f6c300;}
+.notice-list .read .dot{background-color:#6bc30d;}
+
+.notice-main{overflow:hidden;}
+
+.notice-details{padding:10px;}
+.notice-title,.notice-time{text-align:center;}
+.notice-title{line-height:32px;font-size:20px;font-weight:normal;}
+.notice-time{margin-top:5px;color:#999;}
+.notice-body{height:365px;overflow:auto;line-height:24px;margin-top:15px;}
+
+.lottery-title{height:95px;overflow:hidden;padding-left:20px;padding-right:20px;margin-left:-20px;margin-right:-20px;border-bottom:1px solid #ddd;}
+.lottery-title .logo{float:left;margin-right:25px;}
+.lottery-title h2{height:30px;overflow:hidden;margin-top:15px;font-size:20px;font-weight:normal;}
+.lottery-title p{height:18px;overflow:hidden;margin-top:3px;color:#999;}
+.lottery-rules{height:500px;overflow:auto;margin-top:20px;}
+
+.play-table{line-height:24px;}
+.play-table tr{height:40px;}
+.play-table th,.play-table td{padding:12px 20px;}
+.play-table th{color:#fff;}
+.play-table td{border:1px solid #ddd;}
+
+.info-center{height:600px;overflow:auto;padding:25px 30px;line-height:24px;}
+.info-center h3{color:#6652e9;font-weight:normal;}
+
+.tto-promotions{padding:30px 20px 30px;}
+
+.prom-list{overflow:hidden;margin-bottom:10px;}
+.prom-list li,.prom-list .prom-pic img{width:300px;}
+.prom-list li{float:left;height:270px;overflow:hidden;margin-left:10px;margin-right:10px;margin-bottom:20px;background-color:#3e4158;}
+.prom-list .prom-pic,.prom-list .prom-pic img{height:150px;}
+.prom-list .prom-info{position:relative;height:120px;overflow:hidden;}
+.prom-part .prom-info .btn-receive{float:right;width:70px;border-radius:3px;color:#fff;background-color:#dc1f48;}
+.prom-list .prom-name,.prom-list .prom-intro{height:40px;line-height:40px;overflow:hidden;}
+.prom-list .prom-name{margin-top:5px;font-size:15px;font-weight:normal;text-align:center;background-color:#514c9f;}
+.prom-list .prom-intro,.prom-list .prom-other{padding-left:12px;padding-right:12px;}
+.prom-list .new,.prom-list .hot{position:absolute;z-index:9;left:0;top:5px;width:24px;height:24px;}
+.prom-list .enter{display:block;color:#fff;}
+.prom-list .prom-other{height:35px;line-height:35px;overflow:hidden;background-color:#484b61;}
+.prom-list .prom-time{float:left;}
+.prom-list .prom-view{float:right;}
+.prom-list .prom-time .icon-time,.prom-list .prom-view .icon-view{float:left;width:12px;height:12px;margin-top:12px;margin-right:5px;}
+.prom-list .prom-time .icon-time{background-image:url(../img/icon_prom_clock.png);}
+.prom-list .prom-view .icon-view{background-image:url(../img/icon_prom_view.png);}
+.btn-query{width:60px;height:30px; line-height:30px; margin-right:5px;border-radius:3px;color:#fff;background-color:#fba026;}
+.promotion-details{overflow:hidden;border-radius:8px;background-color:#fff;box-shadow:0 2px 4px rgba(0,0,0,.25);}
+
+.prom-header{position:relative;height:50px;overflow:hidden;padding-left:15px;padding-right:15px;border-bottom:1px solid #ddd;}
+.prom-title{height:30px;line-height:30px;overflow:hidden;margin-top:10px;font-size:16px;font-weight:normal;}
+.prom-banner{height:400px;overflow:hidden;}
+.prom-content{height:650px;overflow:auto;padding:10px 20px;}
+.prom-back{position:absolute;top:7px;right:7px;width:36px;height:36px;border-radius:50%;background:url(../img/icon_prom_back.png) no-repeat center #7c71e4;}
+
+.prom-part{margin-bottom:20px;}
+.prom-part h2{height:30px;line-height:30px;overflow:hidden;margin-bottom:10px;margin-left:-20px;font-size:13px;font-weight:normal;color:#fff;background:url(../img/prom_part_tbg.png) no-repeat left center;}
+.prom-part h2 i{float:left;width:16px;height:16px;margin-right:10px;margin-left:10px;margin-top:7px;}
+.prom-part h2 .icon-time{background-image:url(../img/icon_prom_time.png);}
+.prom-part h2 .icon-con{background-image:url(../img/icon_prom_con.png);}
+.prom-part h2 .icon-rule{background-image:url(../img/icon_prom_rule.png);}
+.prom-part p{line-height:24px;}
+
+.poker-game,.poker-bg,.sports-game{background-position:center 120px;background-color:#000;}
+.poker-game{background-image:url(../img/poker_game_bg.jpg);}
+.poker-bg{background-image:url(../img/poker_bg.jpg);}
+.poker-inner,.sports-inner,.live-inner,.poker-intro,.game-inner{overflow:hidden;border-radius:0 0 8px 8px;background-color:#fff;box-shadow:0 2px 4px rgba(0,0,0,.25);}
+.poker-inner{margin-top:510px;}
+
+.poker-tutorial,.poker-tutorial .one,.poker-tutorial .two,.poker-tutorial .three{position:relative;height:70px;overflow:hidden;}
+.poker-tutorial{background-color:#3e4158;}
+.poker-tutorial .one,.poker-tutorial .two,.poker-tutorial .three{float:left;padding-left:85px;border-left:1px solid #525469;}
+.poker-tutorial .one{width:275px;border-left:0 none;}
+.poker-tutorial .two{width:274px;}
+.poker-tutorial .three{width:194px;}
+.poker-tutorial h3,.poker-tutorial h4{height:24px;overflow:hidden;margin-top:12px;font-size:16px;color:#fff;}
+.poker-tutorial p{height:18px;margin-top:5px;color:#a5b6c8;}
+.poker-tutorial .icon-user,.poker-tutorial .icon-game,.poker-tutorial .icon-course,.poker-rule h3 .icon-rule,.poker-ranking h3 .icon-cup{border-radius:50%;background-color:#6752e9;background-position:center;}
+.poker-tutorial .icon-user,.poker-tutorial .icon-game,.poker-tutorial .icon-course{position:absolute;top:50%;left:20px;width:44px;height:44px;margin-top:-22px;}
+.poker-tutorial .icon-one,.poker-tutorial .icon-two{float:left;width:17px;height:16px;margin-top:4px;margin-right:8px;}
+.poker-tutorial .icon-user{background-image:url(../img/icon_tutorial_user.png);}
+.poker-tutorial .icon-game{background-image:url(../img/icon_tutorial_game.png);}
+.poker-tutorial .icon-course{background-image:url(../img/icon_tutorial_course.png);}
+.poker-tutorial .icon-one{background-image:url(../img/icon_tutorial_one.png);}
+.poker-tutorial .icon-two{background-image:url(../img/icon_tutorial_two.png);}
+
+.poker-ranking,.poker-discount,.poker-rule{float:left;height:230px;overflow:hidden;}
+.poker-ranking,.sports-winning{width:300px;text-align:center;}
+.poker-ranking h3,.poker-rule h3,.sports-winning h3{height:30px;line-height:30px;overflow:hidden;padding-top:10px;padding-bottom:10px;border-bottom:1px solid #eee;font-size:13px;font-weight:normal;}
+.poker-ranking h3 .icon-cup,.sports-winning h3 .icon-cup,.poker-rule h3 .icon-rule{width:30px;height:30px;margin-right:15px;}
+.poker-ranking h3 .icon-cup,.sports-winning h3 .icon-cup{background-image:url(../img/icon_poker_cup.png);}
+.poker-ranking .ranking-list{margin:10px;}
+.poker-ranking .ranking-list li{height:30px;line-height:30px;overflow:hidden;}
+.poker-ranking .ranking-list li:first-child{height:35px;line-height:35px;margin-bottom:8px;color:#fff;background-color:#a497f2;}
+.poker-ranking .ranking-list span{float:left;width:33.3%;}
+
+.poker-rule{width:380px;padding-left:10px;padding-right:10px;background-color:#eee;}
+.poker-rule h3 .icon-rule{float:left;background-image:url(../img/icon_poker_rule.png);}
+.poker-rule ul{margin-left:-5px;margin-right:-5px;}
+.poker-rule li{float:left;width:185px;height:170px;overflow:hidden;margin-left:5px;margin-right:5px;background-color:#fff;}
+.poker-rule a{display:block;padding:10px 10px 0;}
+.poker-rule img{width:165px;height:120px;}
+.poker-rule .name{display:block;position:relative;height:40px;line-height:40px;overflow:hidden;text-align:center;}
+
+.poker-discount,.poker-discount img{width:300px;height:230px;}
+.poker-discount{position:relative;}
+.poker-discount img,.poker-rule img,.sports-match img,.live-list img{-webkit-transition:transform .3s ease;-moz-transition:transform .3s ease;-o-transition:transform .3s ease;transition:transform .3s ease;}
+.poker-discount img:hover,.poker-rule img:hover,.sports-match img:hover,.live-list li:hover img{-webkit-transform:scale(1.05,1.05);-moz-transform:scale(1.05,1.05);-ms-transform:scale(1.05,1.05);-o-transform:scale(1.05,1.05);transform:scale(1.05,1.05);}
+.poker-discount .btn-play,.sports-match .btn-play{position:absolute;z-index:9;left:50%;bottom:10px;width:140px;height:40px;line-height:40px;margin-left:-70px;border-radius:20px;font-size:14px;}
+
+.poker-intro{margin-top:300px;}
+
+.poker-nav,.game-nav{height:60px;overflow:hidden;border-bottom:1px solid #e1e1e1;text-align:center;font-size:14px;}
+.poker-nav a,.game-nav a{float:left;height:50px;line-height:50px;border-radius:5px;margin:5px;color:#666;}
+.poker-nav a:hover,.poker-nav .current,.game-nav a:hover,.game-nav .current{color:#fff;background-color:#e69a17;}
+.poker-nav a{width:240px;}
+
+.poker-main{padding:20px 50px;}
+
+.poker-intro .intro-con{height:400px;overflow:auto;margin-top:25px;margin-right:-18px;}
+
+.poker-con{line-height:24px;}
+.poker-con h3{height:36px;line-height:36px;overflow:hidden;margin-bottom:15px;border-bottom:1px solid #dfdfdf;font-weight:normal;font-size:14px;color:#6752e9;}
+.poker-con h4{margin-bottom:5px;font-size:20px;font-weight:normal;}
+.poker-con p{margin-bottom:20px;}
+.poker-con p img{margin-top:10px;}
+
+.poker-table{margin-top:-10px;text-align:center;}
+.poker-table th,.poker-table td{line-height:22px;padding:8px 10px;}
+.poker-table thead tr{height:50px;background-color:#6752e9;}
+.poker-table th{font-size:14px;color:#fff;}
+.poker-table tbody tr{background-color:#e4eaf0;}
+.poker-table tr{border-bottom:1px solid #fff;}
+.poker-table td{padding-left:60px;padding-right:60px;}
+.poker-table .first{padding-left:10px;padding-right:10px;color:#fff;background-color:#928c98;}
+.poker-table .last{border-left:1px solid #fff;}
+
+.poker-faq li{line-height:24px;padding:15px 0;border-bottom:1px solid #e4eaf0;}
+.poker-faq p{position:relative;padding-left:35px;}
+.poker-faq .answer{margin-top:6px;}
+.poker-faq .question .icon-q,.poker-faq .answer .icon-a{position:absolute;left:0;top:0;width:25px;height:25px;}
+.poker-faq .question .icon-q{background-image:url(../img/icon_faq_q.png);}
+.poker-faq .answer .icon-a{background-image:url(../img/icon_faq_a.png);}
+
+.sports-game{background-image:url(../img/sports_game_bg.jpg);}
+.sports-inner,.live-inner{border-top-left-radius:8px;border-top-right-radius:8px;}
+.sports-inner{margin-top:590px;}
+
+.sports-winning .winning-content{height:144px;overflow:hidden;padding-left:10px;padding-right:10px;margin-top:8px;}
+.sports-winning .winning-list li{height:24px;line-height:24px;overflow:hidden;text-align:left;}
+.sports-winning .winning-list span{margin:0 5px;}
+.sports-winning .winning-list .name{margin-right:10px;color:#337fd2;}
+.sports-winning .winning-list .money{color:#f75552;}
+
+.sports-winning,.sports-match,.sports-match li{float:left;height:220px;overflow:hidden;}
+.sports-match{width:700px;}
+.sports-match li{position:relative;}
+.sports-match .match1{width:400px;}
+.sports-match .match2{width:300px;}
+
+.tto-games,.live-game{overflow:hidden;margin-top:-10px;}
+
+.game-banner,.live-banner{position:relative;height:300px;overflow:hidden;margin-bottom:20px;background-repeat:no-repeat;background-position:center top;}
+.game-banner{background-image:url(../img/game_banner.jpg);}
+
+.game-side,.live-side{position:absolute;right:50%;bottom:20px;width:300px;height:260px;overflow:hidden;margin-right:-500px;background-color:#000;background-color:rgba(0,0,0,.8);}
+
+.game-ranking{height:120px;overflow:hidden;margin-top:10px;color:#fff;}
+.game-ranking li{height:39px;line-height:40px;overflow:hidden;border-top:1px solid #27292e;}
+.game-ranking i{float:left;width:23px;height:23px;margin-top:8px;margin-right:12px;margin-left:10px;}
+.game-ranking .icon-n1{background-image:url(../img/icon_no_n1.png);}
+.game-ranking .icon-n2{background-image:url(../img/icon_no_n2.png);}
+.game-ranking .icon-n3{background-image:url(../img/icon_no_n3.png);}
+.game-ranking .name{float:left;width:70px;overflow:hidden;font-size:14px;}
+.game-ranking .money{float:right;width:160px;overflow:hidden;margin-right:10px;font-size:18px;font-family:Arial,sans-serif;color:#fc0;text-align:right;}
+
+.game-winning,.game-winning .winning-list,.game-winning .winning-list li{height:50px;overflow:hidden;}
+.game-winning{position:relative;overflow:hidden;padding-left:36px;padding-right:36px;color:#fff;}
+.game-winning .winning-list li{float:left;width:228px;line-height:50px;}
+.game-winning .winning-list li em{color:#fc0;}
+.game-winning .prev,.game-winning .next{position:absolute;z-index:9;top:50%;width:16px;height:16px;margin-top:-8px;background-repeat:no-repeat;}
+.game-winning .prev{left:10px;background-image:url(../img/game_prev.png);}
+.game-winning .next{right:10px;background-image:url(../img/game_next.png);}
+
+.super-prize{padding-top:12px;}
+.super-prize h3,.live-ranking h3{height:24px;line-height:24px;overflow:hidden;font-weight:normal;text-align:center;color:#ffd726;}
+.super-prize h3 .icon-cup,.live-ranking h3 .icon-cup{top:3px;width:19px;height:18px;margin-right:10px;background-image:url(../img/icon_cup.png);}
+.super-prize .jackpot{width:287px;height:35px;line-height:35px;overflow:hidden;margin-top:10px;margin-left:auto;margin-right:auto;font-size:24px;text-align:center;background:url(../img/super_prize.png) no-repeat;}
+.super-prize .jackpot .n,.super-prize .jackpot .dot{float:left;}
+.super-prize .jackpot .n{width:23px;margin-left:1px;margin-right:1px;font-family:Arial,sans-serif;}
+.super-prize .jackpot .dot{width:4px;color:#fff;text-indent:-2px;}
+
+.game-content{position:relative;}
+
+.game-nav{height:50px;padding-left:5px;padding-right:5px;font-size:13px;}
+.game-nav a{width:150px;height:40px;line-height:40px;}
+
+.game-search{position:absolute;z-index:9;top:12px;right:12px;height:26px;}
+.game-search .name,.game-search .btn-search{float:left;height:26px;}
+.game-search .name{width:130px;line-height:26px \9;padding-left:10px;padding-right:10px;}
+.game-search .btn-search{width:26px;background:url(../img/icon_game_q.png) no-repeat center #6752e9;}
+
+.game-main{padding:15px 20px 20px;}
+
+.game-list{overflow:hidden;}
+.game-list li{float:left;width:200px;height:155px;margin:0 20px 15px;background-color:#22273f;}
+.game-list .game-pic{padding:10px 10px 5px;}
+.game-list .game-pic img{width:180px;height:100px;}
+.game-list .game-name,.live-list h3{background-image:linear-gradient(to bottom,#3e446a,#272838);
+}
+.game-list .game-name{height:40px;line-height:40px;overflow:hidden;text-align:center;font-size:13px;font-weight:normal;}
+.game-list .game-name a{display:block;color:#fff;}
+
+.live-banner{background-image:url(../img/live_banner.jpg);}
+
+.live-ranking h3{padding-top:8px;padding-bottom:8px;border-bottom:1px solid #282a3b;}
+.live-ranking .ranking-list{padding:5px;color:#fff;text-align:center;}
+.live-ranking .ranking-list li{height:30px;line-height:30px;overflow:hidden;}
+.live-ranking .ranking-list li:first-child{background-color:#515159;background-color:rgba(255,255,255,.3);}
+.live-ranking .ranking-list li span{float:left;width:33.33%;}
+
+.live-list{overflow:hidden;padding:20px;color:#fff;}
+.live-list li{position:relative;float:left;width:300px;height:370px;overflow:hidden;margin-left:10px;margin-right:10px;}
+.live-list h3,.live-list .btn-play{z-index:9;}
+.live-list h3{position:relative;height:50px;line-height:50px;overflow:hidden;font-size:13px;font-weight:normal;text-align:center;}
+.live-list h3 img{margin-right:10px;}
+.live-list .btn-play,.strength-license .look-more{color:#fff;background-image:linear-gradient(to bottom,#fea90d,#c67312);
+}
+.live-list .btn-play{position:absolute;left:50%;bottom:25px;width:100px;height:35px;line-height:35px;margin-left:-50px;border-radius:5px;}
+
+.mem-bg{background-image:url(../img/mem_bg.jpg);}
+
+.tto-header-mem{height:60px;overflow:hidden;padding-top:20px;padding-bottom:20px;}
+.tto-footer-mem,.float-mem{position:absolute;z-index:19;}
+.tto-footer-mem{left:0;bottom:0;width:100%;height:75px;overflow:hidden;padding-top:25px;color:#fff;}
+.tto-footer-mem:after{content:'';position:absolute;z-index:-1;left:0;top:0;width:100%;height:100%;background-color:#000;opacity:.8;filter:alpha(opacity=80);}
+
+.rec-browser{height:20px;line-height:20px;overflow:hidden;}
+.rec-browser h4,.rec-browser span{float:left;}
+.rec-browser h4{font-weight:normal;}
+.rec-browser span{margin-left:25px;padding-left:30px;background-position:left center;background-repeat:no-repeat;}
+.rec-browser .b360{background-image:url(../img/browser_360.png);}
+.rec-browser .ie{background-image:url(../img/browser_ie.png);}
+.rec-browser .ch{background-image:url(../img/browser_ch.png);}
+.rec-browser .ff{background-image:url(../img/browser_ff.png);}
+
+.copyright{margin-top:12px;}
+
+.bottom-nav{float:right;height:36px;line-height:36px;overflow:hidden;margin-top:7px;}
+.bottom-nav a{float:left;margin-left:20px;color:#fff;}
+.bottom-nav a i{float:left;width:36px;height:36px;margin-right:15px;border-radius:50%;background-position:center;background-color:#5435ae;}
+.bottom-nav a .icon-home{background-image:url(../img/icon_bn_home.png);}
+.bottom-nav a .icon-link{background-image:url(../img/icon_bn_link.png);}
+.bottom-nav a .icon-dl{background-image:url(../img/icon_bn_dl.png);}
+.bottom-nav a:hover{color:#999;}
+
+.float-mem{right:50%;top:130px;width:340px;overflow:hidden;padding:40px 30px 0;margin-right:-500px;background:url(../img/float_mem.png) no-repeat;}
+.float-mem h3{height:35px;line-height:35px;overflow:hidden;font-size:25px;font-weight:normal;color:#fff;text-align:center;}
+.float-mem .float-con{margin-top:35px;}
+.float-login,.float-retrieve{height:400px;}
+.float-register{height:550px;background-image:url(../img/float_register.png);}
+.float-login .float-con{margin-top:25px;}
+.float-register .float-con{margin-top:30px;}
+
+.user-form,.user-form a{color:#fff;}
+.user-form .input-group{position:relative;margin-bottom:20px;}
+.register-form .input-group{margin-bottom:15px;}
+.user-form .ipt{width:290px;height:24px;line-height:24px \9;padding:8px 10px 8px 40px;}
+.register-form .ipt{padding-top:6px;padding-bottom:6px;}
+.user-form .icon-ipt,.user-form .code-pic{position:absolute;z-index:9;}
+.user-form .icon-ipt{left:10px;top:50%;width:20px;height:20px;margin-top:-10px;background-position:center;}
+.user-form .btn-group{overflow:hidden;margin-top:40px;}
+.register-form .btn-group{margin-top:25px;}
+.user-form .btn-group .btn,.retrieve-way .retrieve-btn,.retrieve-completed .btn-login{width:100%;height:50px;font-size:15px;color:#fff;background-color:#5435ae;}
+.user-form .btn-reg,.user-form .btn-reset{float:left;width:160px !important;}
+.user-form .btn-reset{margin-left:20px;background-color:#4a4c61 !important;}
+.register-form .btn-group .btn{height:45px;line-height:45px;}
+.user-form .to-other{margin-top:30px;line-height:24px;font-size:14px;text-align:center;}
+.register-form .to-other{margin-top:25px;}
+.user-form a:hover{color:#ccc;text-decoration:underline;}
+.user-form .to-other .link{color:#fc0;}
+.user-form .code-pic{top:2px;right:2px;}
+.register-form .code-pic{top:0;right:0;}
+.user-form .icon-user{background-image:url(../img/icon_user.png);}
+.user-form .icon-key{background-image:url(../img/icon_key.png);}
+.user-form .icon-code{background-image:url(../img/icon_code.png);}
+.user-form .icon-qq{background-image:url(../img/icon_qq.png);}
+.user-form .icon-phone{background-image:url(../img/icon_phone.png);}
+
+.float-retrieve{color:#fff;}
+.retrieve-info .username{display:block;height:24px;line-height:24px;overflow:hidden;margin-bottom:8px;color:#fc0;font-size:16px;}
+.retrieve-strategy{height:81px;line-height:81px;overflow:hidden;margin-top:30px;font-size:14px;}
+.retrieve-strategy .icon-problem{float:left;width:81px;height:81px;margin-right:20px;background-image:url(../img/retrieve_problem.png);}
+.retrieve-way .retrieve-btn,.retrieve-completed .btn-login{display:block;line-height:50px;}
+.retrieve-way .retrieve-btn{margin-top:30px;}
+
+.retrieve-form h4{height:24px;line-height:24px;overflow:hidden;margin-bottom:15px;font-size:14px;font-weight:normal;}
+
+.retrieve-completed{padding-top:55px;background:url(../img/retrieve_completed.png) no-repeat 12px top;}
+.retrieve-completed h4,.retrieve-completed p{margin-left:150px;}
+.retrieve-completed h4{height:24px;line-height:24px;overflow:hidden;font-size:14px;font-weight:normal;}
+.retrieve-completed p{margin-top:10px;color:#999;}
+.retrieve-completed .btn-login{display:block;margin-top:90px;}
+
+.tto-index{overflow:hidden;margin-left:-10px;margin-bottom:-10px;}
+
+.index-section{float:left;margin-left:10px;}
+
+.index-block{overflow:hidden;margin-bottom:10px;background-color:#fff;}
+
+.index-banner,.index-member{border-radius:8px;}
+.index-banner{width:640px;height:280px;background-color:transparent;}
+.index-member{width:330px;height:250px;padding:15px 10px;background-image:url(../img/index_member.png);background-repeat:no-repeat;}
+.index-member .i-account{height:95px;padding:0 0 0 115px;margin-bottom:10px;}
+.index-member .i-account:after{display:none;}
+.index-member .i-account .i-avatar{left:10px;top:0;border:5px solid #fff;border-radius:50%;box-shadow:0 0 2px 2px rgba(0,0,0,.1);}
+.index-member .i-account .username{float:none;display:block;height:48px;line-height:48px;margin-top:7px;margin-bottom:10px;color:#fff;}
+.index-member .i-account .username em{color:#fc0;}
+.index-member .i-account .to-center{float:left;margin-left:15px;margin-top:4px;}
+.index-member .i-account .to-center:hover,.hot-rec .to-betting:hover,.notice-list a:hover,.safety-center .btn-safety:hover{color:#e69a17;}
+.index-member .i-account .to-center:hover,.safety-center .btn-safety:hover{text-decoration:underline;}
+.index-member .account-info{padding-left:10px;padding-right:10px;border-radius:5px;background-color:#e9e9ea;}
+.index-member .account-balance,.index-member .account-acts{height:30px;line-height:30px;overflow:hidden;padding-top:10px;padding-bottom:10px;text-align:center;}
+.index-member .account-balance{border-bottom:1px solid #fff;}
+.index-member .account-balance .amount{display:inline-block;margin-left:5px;margin-right:5px;font-size:16px;font-family:Arial,sans-serif;color:#f42628;vertical-align:top;}
+.index-member .account-balance .btn-refresh{float:right;width:12px;height:13px;margin-top:8px;margin-right:10px;background:url(../img/icon_top_refresh.png) no-repeat;}
+.index-member .account-acts .btn,.index-member .btn-center{height:30px;line-height:30px;padding-left:20px;color:#fff;background-repeat:no-repeat;}
+.index-member .account-acts .btn{width:80px;margin-left:8px;margin-right:8px;}
+.index-member .account-acts .btn-recharge{background-image:url(../img/btn_acc_recharge.png);}
+.index-member .account-acts .btn-withdraw{background-image:url(../img/btn_acc_withdraw.png);}
+.index-member .btn-center{display:block;width:100px;margin-left:auto;margin-right:auto;margin-top:15px;background-image:url(../img/btn_myacc.png);}
+
+.hot-rec,.index-games{height:250px;}
+.hot-rec{width:300px;overflow:hidden;text-align:center;background:url(../img/hot_rec.png) no-repeat;}
+.hot-rec,.hot-rec a{color:#fff;}
+.hot-rec .lot-logo{margin-top:15px;}
+.hot-rec .lot-name{height:25px;line-height:25px;overflow:hidden;margin-top:8px;font-size:15px;}
+.hot-rec .lot-issue{height:18px;overflow:hidden;margin-top:5px;}
+.hot-rec .lot-result{margin-top:10px;margin-bottom:5px;}
+.hot-rec .lot-result .number{display:inline-block;width:44px;height:44px;line-height:44px;overflow:hidden;padding:2px 4px 6px;margin-left:-3px;margin-right:-3px;font-size:24px;font-style:italic;font-family:Arial,sans-serif;color:#262732;background:url(../img/lottery_number_ball.png) no-repeat;}
+.hot-rec .to-betting{color:#fff;text-decoration:underline;}
+
+.index-games{width:690px;}
+
+.index-lots{overflow:hidden;padding:5px;}
+.index-lots li{position:relative;float:left;width:125px;height:90px;overflow:hidden;margin:5px;border-radius:5px;text-align:center;color:#fff;background-color:#e9e9ea;}
+.index-lots li img{margin-top:10px;}
+.index-lots li .hover{position:absolute;z-index:5;left:0;top:0;width:100%;height:100%;background-color:#262732;background-color:rgba(38,39,50,.7);opacity:0;filter:alpha(opacity=0);-webkit-transition:opacity .3s ease;-moz-transition:opacity .3s ease;-o-transition:opacity .3s ease;transition:opacity .3s ease;}
+.index-lots li .name,.index-lots li .btn-betting{display:block;overflow:hidden;}
+.index-lots li .name{height:18px;margin-top:20px;}
+.index-lots li .btn-betting{width:75px;height:22px;line-height:22px;margin-top:10px;margin-left:auto;margin-right:auto;border-radius:11px;color:#262732;background-color:#fba026;}
+.index-lots li:hover .hover{opacity:1;filter:alpha(opacity=100);}
+
+.index-notice,.index-safety{height:230px;}
+.index-notice{width:500px;}
+
+.index-safety{width:490px;}
+
+.safety-center{padding:10px;}
+.safety-center .security-level{float:none;padding-left:10px;padding-top:5px;padding-bottom:5px;margin-top:5px;margin-bottom:15px;}
+.safety-center .security-level .level{width:25px;height:30px;line-height:30px;margin-top:-5px;margin-bottom:-5px;font-size:14px;color:#fff;text-align:center;background:url(../img/level_shield.png) no-repeat;}
+.safety-center .btn-safety{margin-left:25px;}
+
+.history-login{border-radius:8px;background-color:#e9e9ea;}
+.history-login h3{height:36px;line-height:36px;overflow:hidden;padding-left:15px;padding-right:15px;border-bottom: 1px solid #fff;font-weight:normal;}
+.history-login h3 .icon-loc{float:left;width:10px;height:15px;margin-top:10px;margin-right:8px;background-image:url(../img/icon_loc.png);}
+.history-login ul{padding-top:5px;padding-bottom:5px;}
+.history-login li,.history-login span{height:24px;line-height:24px;overflow:hidden;}
+.history-login span{float:left;width:33.33%;text-align:center;}
+
+.client-download{overflow:hidden;}
+.client-download li{float:left;width:245px;height:430px;overflow:hidden;padding:10px;border-left:1px solid #e1e2e4;}
+.client-download li:first-child{border-left:0 none;}
+.client-download .client-name,.client-download .support-system{overflow:hidden;text-align:center;}
+.client-download .client-name{height:24px;margin-top:14px;font-size:16px;font-weight:normal;}
+.client-download .support-system{margin-top:5px;margin-bottom:32px;color:#999;}
+.client-download .client-image{position:relative;}
+.client-download .client-image i{position:absolute;left:50%;top:50%;width:80px;height:80px;margin-left:-40px;margin-top:-40px;}
+.client-download .client-image .icon-ios{background-image:url(../img/app_ios.png);}
+.client-download .client-image .icon-android{background-image:url(../img/app_android.png);}
+.client-download .client-image .icon-pc{background-image:url(../img/client_pc.png);}
+
+.download-way{margin-bottom:25px;}
+.download-way h5{height:20px;line-height:20px;overflow:hidden;margin-bottom:5px;font-size:14px;color:#666;font-weight:normal;}
+.download-way h5 i{float:left;width:20px;height:20px;margin-right:7px;}
+.download-way h5 .icon-one{background-image:url(../img/icon_dl_one.png);}
+.download-way h5 .icon-two{background-image:url(../img/icon_dl_two.png);}
+.download-way p{line-height:21px;color:#666;}
+.download-way .qrcode{float:right;width:70px;height:70px;margin-left:10px;border:1px solid #dcdcdc;}
+.download-way .btn-download{display:block;width:90px;height:35px;line-height:35px;padding-left:15px;margin-left:auto;margin-right:auto;margin-top:10px;color:#fff;}
+.download-way .btn-ios{background-image:url(../img/btn_dl_ios.png);}
+.download-way .btn-android{background-image:url(../img/btn_dl_android.png);}
+.download-way .btn-pc{background-image:url(../img/btn_dl_pc.png);}
+
+.client-pc .download-way{margin-bottom:12px;}
+
+.strength-license{padding:20px;overflow:hidden;font-size:14px;}
+.strength-license .license-img{float:right;margin-left:80px;border:10px solid #989fa2;}
+.strength-license h3,.strength-license em{color:#e69a17;}
+.strength-license h3{margin-top:160px;margin-bottom:12px;font-size:16px;font-weight:normal;}
+.strength-license p{line-height:28px;}
+.strength-license .look-more{display:block;width:200px;height:40px;line-height:40px;margin-left:65px;margin-top:45px;border-radius:20px;}
+.strength-license .look-more .icon-q{top:14px;width:12px;height:12px;margin-right:8px;background-image:url(../img/icon_lic_q.png);}
+
+.focus-slide,.focus-slide .slide-content,.focus-slide .slide-panel{height:280px;overflow:hidden;}
+.focus-slide{position:relative;}
+.focus-slide .slide-panel{float:left;width:640px;}
+.focus-slide .control-nav{position:absolute;z-index:9;left:0;bottom:10px;width:100%;font-size:0;text-align:center;}
+.focus-slide .control-nav li,.focus-slide .control-nav a{display:inline-block;width:10px;height:10px;vertical-align:top;}
+.focus-slide .control-nav li{margin-left:5px;margin-right:5px;}
+.focus-slide .control-nav a{border-radius:50%;background-color:#fff;}
+.focus-slide .control-nav .active{background-color:#e69a17;}
+
+.prom-table,.prom-table th,.prom-table td{border:1px solid #dde4ea;}
+.prom-table{margin-top:10px;text-align:center;}
+.prom-table tr{height:45px;}
+.prom-table th{line-height:45px;}
+.prom-table thead tr{background-color:#ebeff3;}
+.prom-table em{color:#e84635;}
+.prom-table .icon-cur{top:9px;width:28px;height:28px;margin-right:10px;background-position:-130px -950px;}
+.prom-info{height:50px;margin:10px 0 0 0;text-align:left;background-color:#dde4ea;}
+.prom-info em{color:#d11a2d;}
+.prom-info .btn-receive{width:80px;height:28px;line-height:28px;border-radius:3px;color:#fff;background-color:#dde4ea;}
+
+
+.icon-bank{display:inline-block;width:120px;height:40px;}
+.bank-ICBC{width:120px;height:40px;background:url(../img/Bank-ICBC.png) center no-repeat;}
+.bank-ABC{width:120px;height:40px;background:url(../img/Bank-ABC.png) center no-repeat;}
+.bank-CMB{width:120px;height:40px;background:url(../img/Bank-CMB.png) center no-repeat;}
+.bank-CCB{width:120px;height:40px;background:url(../img/Bank-CCB.png) center no-repeat;}
+.bank-PSBC{width:120px;height:40px;background:url(../img/Bank-PSBC.png) center no-repeat;}
+.bank-BOCOM{width:120px;height:40px;background:url(../img/Bank-COMM.png) center no-repeat;}
+.bank-HXB{width:120px;height:40px;background:url(../img/Bank-HXB.png) center no-repeat;}
+.bank-CEB{width:120px;height:40px;background:url(../img/Bank-CEB.png) center no-repeat;}
+.bank-BOC{width:120px;height:40px;background:url(../img/Bank-BOC.png) center no-repeat;}
+.bank-HZB{width:120px;height:40px;background:url(../img/Bank-HZB.png) center no-repeat;}
+.bank-NBB{width:120px;height:40px;background:url(../img/Bank-NBB.png) center no-repeat;}
+.bank-SZDB{width:120px;height:40px;background:url(../img/Bank-SZDB.png) center no-repeat;}
+.bank-CMBC{width:120px;height:40px;background:url(../img/Bank-CMBC.png) center no-repeat;}
+.bank-CITIC{width:120px;height:40px;background:url(../img/Bank-CITIC.png) center no-repeat;}
+.bank-CIB{width:120px;height:40px;background:url(../img/Bank-CIB.png) center no-repeat;}
+.bank-BJB{width:120px;height:40px;background:url(../img/Bank-BJB.png) center no-repeat;}
+.bank-BJRCB{width:120px;height:40px;background:url(../img/Bank-BJRCB.png) center no-repeat;}
+.bank-PAB{width:120px;height:40px;background:url(../img/Bank-PAB.png) center no-repeat;}
+.bank-SHB{width:120px;height:40px;background:url(../img/Bank-SHB.png) center no-repeat;}
+.bank-SPDB{width:120px;height:40px;background:url(../img/Bank-SPDB.png) center no-repeat;}
+.bank-GDB{width:120px;height:40px;background:url(../img/Bank-GDB.png) center no-repeat;}
+.bank-CZB{width:120px;height:40px;background:url(../img/Bank-CZB.png) center no-repeat;}
+.bank-NJB{width:120px;height:40px;background:url(../img/Bank-NJB.png) center no-repeat;}
+.bank-BHB{width:120px;height:40px;background:url(../img/Bank-BHB.png) center no-repeat;}
+.bank-WX{width:120px;height:40px;background:url(../img/Bank-WX.png) center no-repeat;}
+.bank-ZFB{width:120px;height:40px;background:url(../img/Bank-ZFB.png) center no-repeat;}
+.bank-WECHATQR{width:120px;height:40px;background:url(../img/Bank-WX.png) center no-repeat;}
+.bank-ALIPAYQR{width:120px;height:40px;background:url(../img/Bank-ZFB.png) center no-repeat;}
+.bank-QQ{width:120px;height:40px;background:url(../img/Bank-QQ.png) center no-repeat;}
+.bank-CFT{width:120px;height:40px;background:url(../img/Bank-CFT.png) center no-repeat;}

@@ -1,0 +1,1070 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C160EF7E-6D06-4CAB-8942-6BCCEBA037E2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lottery.FFApp</RootNamespace>
+    <AssemblyName>Lottery.FFApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FusionCharts">
+      <HintPath>..\DLLs\FusionCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\DLLs\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Intelligencia.UrlRewriter">
+      <HintPath>..\DLLs\Intelligencia.UrlRewriter.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJSON">
+      <HintPath>..\DLLs\LitJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lottery.DBUtility">
+      <HintPath>..\DLLs\Lottery.DBUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\DLLs\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StriveEngine">
+      <HintPath>..\DLLs\StriveEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Json">
+      <HintPath>..\DLLs\System.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="THPayHelper">
+      <HintPath>..\DLLs\THPayHelper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ajax\ajax.aspx.cs">
+      <DependentUpon>ajax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxActive.aspx.cs">
+      <DependentUpon>ajaxActive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxAgentFH.aspx.cs">
+      <DependentUpon>ajaxAgentFH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxBank.aspx.cs">
+      <DependentUpon>ajaxBank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxBet.aspx.cs">
+      <DependentUpon>ajaxBet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxBetting.aspx.cs">
+      <DependentUpon>ajaxBetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxCenter.aspx.cs">
+      <DependentUpon>ajaxCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxContractFH.aspx.cs">
+      <DependentUpon>ajaxContractFH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxContractGZ.aspx.cs">
+      <DependentUpon>ajaxContractGZ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxEmail.aspx.cs">
+      <DependentUpon>ajaxEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxHistory.aspx.cs">
+      <DependentUpon>ajaxHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxLotterydata.aspx.cs">
+      <DependentUpon>ajaxLotterydata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxMoney.aspx.cs">
+      <DependentUpon>ajaxMoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxNews.aspx.cs">
+      <DependentUpon>ajaxNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxProfitloss.aspx.cs">
+      <DependentUpon>ajaxProfitloss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax\ajaxUser.aspx.cs">
+      <DependentUpon>ajaxUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\adminTologin.aspx.cs">
+      <DependentUpon>adminTologin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\list.aspx.cs">
+      <DependentUpon>list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\nav.aspx.cs">
+      <DependentUpon>nav.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\page.aspx.cs">
+      <DependentUpon>page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="center\bankInfo.aspx.cs">
+      <DependentUpon>bankInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="center\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="center\trueNameEdit.aspx.cs">
+      <DependentUpon>trueNameEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contract\Contractfh.aspx.cs">
+      <DependentUpon>Contractfh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contract\ContractfhOper.aspx.cs">
+      <DependentUpon>ContractfhOper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contract\ContractfhPop.aspx.cs">
+      <DependentUpon>ContractfhPop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contract\Contractgz.aspx.cs">
+      <DependentUpon>Contractgz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contract\ContractgzOper.aspx.cs">
+      <DependentUpon>ContractgzOper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contract\ContractgzPop.aspx.cs">
+      <DependentUpon>ContractgzPop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contract\MyAgentfhlist.aspx.cs">
+      <DependentUpon>MyAgentfhlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="core\Common.cs" />
+    <Compile Include="email\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="email\Info.aspx.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="email\Info2.aspx.cs">
+      <DependentUpon>Info2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EMWeb\ajaxuploadhandler.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="money\charge.aspx.cs">
+      <DependentUpon>charge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="money\getcash.aspx.cs">
+      <DependentUpon>getcash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="news\info.aspx.cs">
+      <DependentUpon>info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pay\suibipay\notify.aspx.cs">
+      <DependentUpon>notify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pay\suibipay\notify.aspx.designer.cs">
+      <DependentUpon>notify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pay\suibipay\pay.aspx.cs">
+      <DependentUpon>pay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pay\suibipay\pay.aspx.designer.cs">
+      <DependentUpon>pay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pay\suibipay\result.aspx.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pay\suibipay\result.aspx.designer.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pay\suibipay\SbfHelper.cs" />
+    <Compile Include="plus\auto.aspx.cs">
+      <DependentUpon>auto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="plus\getcode.aspx.cs">
+      <DependentUpon>getcode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="plus\GetNumber.aspx.cs">
+      <DependentUpon>GetNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="temp\WebLot.aspx.cs">
+      <DependentUpon>WebLot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="temp\WebPlay.aspx.cs">
+      <DependentUpon>WebPlay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="temp\WebPoint.aspx.cs">
+      <DependentUpon>WebPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="temp\WebSite.aspx.cs">
+      <DependentUpon>WebSite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\useradd.aspx.cs">
+      <DependentUpon>useradd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\userindex.aspx.cs">
+      <DependentUpon>userindex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\usertranacc.aspx.cs">
+      <DependentUpon>usertranacc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\userupdate.aspx.cs">
+      <DependentUpon>userupdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="active\actCharge.html" />
+    <Content Include="active\actGroup2.html" />
+    <Content Include="active\actGroup3.html" />
+    <Content Include="active\actGroup4.html" />
+    <Content Include="active\active1.html" />
+    <Content Include="active\actReg.html" />
+    <Content Include="active\actYongjin.html" />
+    <Content Include="active\index.aspx" />
+    <Content Include="ajax\ajax.aspx" />
+    <Content Include="ajax\ajaxActive.aspx" />
+    <Content Include="ajax\ajaxAgentFH.aspx" />
+    <Content Include="ajax\ajaxBank.aspx" />
+    <Content Include="ajax\ajaxBet.aspx" />
+    <Content Include="ajax\ajaxBetting.aspx" />
+    <Content Include="ajax\ajaxCenter.aspx" />
+    <Content Include="ajax\ajaxContractFH.aspx" />
+    <Content Include="ajax\ajaxContractGZ.aspx" />
+    <Content Include="ajax\ajaxEmail.aspx" />
+    <Content Include="ajax\ajaxHistory.aspx" />
+    <Content Include="ajax\ajaxLotterydata.aspx" />
+    <Content Include="ajax\ajaxMoney.aspx" />
+    <Content Include="ajax\ajaxNews.aspx" />
+    <Content Include="ajax\ajaxProfitloss.aspx" />
+    <Content Include="ajax\ajaxUser.aspx" />
+    <Content Include="ajax\ajaxUserContractFH.aspx" />
+    <Content Include="aspx\adminTologin.aspx" />
+    <Content Include="aspx\list.aspx" />
+    <Content Include="aspx\nav.aspx" />
+    <Content Include="aspx\page.aspx" />
+    <Content Include="bet\betInfo.html" />
+    <Content Include="center\bankInfo.aspx" />
+    <Content Include="center\bankpwd.html" />
+    <Content Include="center\email.html" />
+    <Content Include="center\index.aspx" />
+    <Content Include="center\mobile.html" />
+    <Content Include="center\trueName.html" />
+    <Content Include="center\trueNameEdit.aspx" />
+    <Content Include="center\userpwd.html" />
+    <Content Include="center\userverify.html" />
+    <Content Include="chart\index.aspx" />
+    <Content Include="chart\style\ball.png" />
+    <Content Include="chart\style\font.css" />
+    <Content Include="chart\style\jquery-1.11.1.min.js" />
+    <Content Include="chart\style\line.js" />
+    <Content Include="chart\style\style.css" />
+    <Content Include="contract\Contractfh.aspx" />
+    <Content Include="contract\ContractfhOper.aspx" />
+    <Content Include="contract\ContractfhPop.aspx" />
+    <Content Include="contract\Contractgz.aspx" />
+    <Content Include="contract\ContractgzOper.aspx" />
+    <Content Include="contract\ContractgzPop.aspx" />
+    <Content Include="contract\index.aspx" />
+    <Content Include="contract\index2.aspx" />
+    <Content Include="contract\MyAgentfhlist.aspx" />
+    <Content Include="email\add.html" />
+    <Content Include="email\index.aspx" />
+    <Content Include="email\Info.aspx" />
+    <Content Include="email\Info2.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="help\11x5.html" />
+    <Content Include="help\3d.html" />
+    <Content Include="help\ssc.html" />
+    <Content Include="html\declare.aspx" />
+    <Content Include="html\download.html" />
+    <Content Include="html\duty.aspx" />
+    <Content Include="html\ele.aspx" />
+    <Content Include="html\index.aspx" />
+    <Content Include="html\license.aspx" />
+    <Content Include="html\line.html" />
+    <Content Include="html\live.aspx" />
+    <Content Include="html\policy.aspx" />
+    <Content Include="html\security.aspx" />
+    <Content Include="html\service.aspx" />
+    <Content Include="html\service.html" />
+    <Content Include="html\sound.html" />
+    <Content Include="html\temp.html" />
+    <Content Include="Index.aspx" />
+    <Content Include="Index2.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="money\charge.aspx" />
+    <Content Include="money\getcash.aspx" />
+    <Content Include="money\specialcharge.html" />
+    <Content Include="money\trueName.html" />
+    <Content Include="news\index.aspx" />
+    <Content Include="news\info.aspx" />
+    <Content Include="news\newsindex.html" />
+    <Content Include="news\newslist.html" />
+    <Content Include="pay\suibipay\notify.aspx" />
+    <Content Include="pay\suibipay\pay.aspx" />
+    <Content Include="pay\suibipay\result.aspx" />
+    <Content Include="plus\auto.aspx" />
+    <Content Include="plus\getcode.aspx" />
+    <Content Include="plus\GetNumber.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="statics\ajaxrequest.js" />
+    <Content Include="statics\base\lotBase.js" />
+    <Content Include="statics\base\lotData.js" />
+    <Content Include="statics\base\lotFun.js" />
+    <Content Include="statics\base\lotMenu.js" />
+    <Content Include="statics\css\common.css" />
+    <Content Include="statics\css\flipclock.css" />
+    <Content Include="statics\css\global.css" />
+    <Content Include="statics\css\login.css" />
+    <Content Include="statics\css\lottery.css" />
+    <Content Include="statics\css\member.css" />
+    <Content Include="statics\css\test.css" />
+    <Content Include="statics\echarts.min.js" />
+    <Content Include="statics\formValidator.js" />
+    <Content Include="statics\global.js" />
+    <Content Include="statics\img\1001.png" />
+    <Content Include="statics\img\1001_hot.png" />
+    <Content Include="statics\img\1003.png" />
+    <Content Include="statics\img\1004.png" />
+    <Content Include="statics\img\1004_70.png" />
+    <Content Include="statics\img\1005.png" />
+    <Content Include="statics\img\1005_70.png" />
+    <Content Include="statics\img\1007.png" />
+    <Content Include="statics\img\1009.png" />
+    <Content Include="statics\img\1009_70.png" />
+    <Content Include="statics\img\1010.png" />
+    <Content Include="statics\img\1010_70.png" />
+    <Content Include="statics\img\1011.png" />
+    <Content Include="statics\img\1012.png" />
+    <Content Include="statics\img\1013.png" />
+    <Content Include="statics\img\1014.png" />
+    <Content Include="statics\img\1015.png" />
+    <Content Include="statics\img\1015_70.png" />
+    <Content Include="statics\img\1016.png" />
+    <Content Include="statics\img\1016_70.png" />
+    <Content Include="statics\img\1017.png" />
+    <Content Include="statics\img\1018.png" />
+    <Content Include="statics\img\1019.png" />
+    <Content Include="statics\img\1020.png" />
+    <Content Include="statics\img\2001.png" />
+    <Content Include="statics\img\2001_70.png" />
+    <Content Include="statics\img\2002.png" />
+    <Content Include="statics\img\2002_70.png" />
+    <Content Include="statics\img\2003.png" />
+    <Content Include="statics\img\2004.png" />
+    <Content Include="statics\img\2005.png" />
+    <Content Include="statics\img\2006.png" />
+    <Content Include="statics\img\3001.png" />
+    <Content Include="statics\img\3002.png" />
+    <Content Include="statics\img\3002_70.png" />
+    <Content Include="statics\img\3003.png" />
+    <Content Include="statics\img\3004.png" />
+    <Content Include="statics\img\3005.png" />
+    <Content Include="statics\img\3006.png" />
+    <Content Include="statics\img\4001.png" />
+    <Content Include="statics\img\4001_70.png" />
+    <Content Include="statics\img\4002.png" />
+    <Content Include="statics\img\4003.png" />
+    <Content Include="statics\img\4004.png" />
+    <Content Include="statics\img\acc_avatar.png" />
+    <Content Include="statics\img\acc_default.png" />
+    <Content Include="statics\img\acc_logo.png" />
+    <Content Include="statics\img\acc_photo.png" />
+    <Content Include="statics\img\acc_photo_sm.png" />
+    <Content Include="statics\img\add_fav.png" />
+    <Content Include="statics\img\agent_chart.jpg" />
+    <Content Include="statics\img\Android.png" />
+    <Content Include="statics\img\app_android.png" />
+    <Content Include="statics\img\app_image_android.png" />
+    <Content Include="statics\img\app_image_ios.png" />
+    <Content Include="statics\img\app_ios.png" />
+    <Content Include="statics\img\bank-ABC.png" />
+    <Content Include="statics\img\bank-BHB.png" />
+    <Content Include="statics\img\bank-BJB.png" />
+    <Content Include="statics\img\bank-BJRCB.png" />
+    <Content Include="statics\img\bank-BOC.png" />
+    <Content Include="statics\img\bank-CCB.png" />
+    <Content Include="statics\img\bank-CEB.png" />
+    <Content Include="statics\img\bank-CIB.png" />
+    <Content Include="statics\img\bank-CITIC.png" />
+    <Content Include="statics\img\bank-CMB.png" />
+    <Content Include="statics\img\bank-CMBC.png" />
+    <Content Include="statics\img\bank-COMM.png" />
+    <Content Include="statics\img\bank-CZB.png" />
+    <Content Include="statics\img\bank-GDB.png" />
+    <Content Include="statics\img\bank-HXB.png" />
+    <Content Include="statics\img\bank-HZB.png" />
+    <Content Include="statics\img\bank-ICBC.png" />
+    <Content Include="statics\img\bank-NBB.png" />
+    <Content Include="statics\img\bank-NJB.png" />
+    <Content Include="statics\img\bank-PAB.png" />
+    <Content Include="statics\img\bank-PSBC.png" />
+    <Content Include="statics\img\bank-SHB.png" />
+    <Content Include="statics\img\bank-SPDB.png" />
+    <Content Include="statics\img\bank-SZDB.png" />
+    <Content Include="statics\img\bank-WX.png" />
+    <Content Include="statics\img\bank-ZFB.png" />
+    <Content Include="statics\img\bank_36_abc.png" />
+    <Content Include="statics\img\bank_36_cmbc.png" />
+    <Content Include="statics\img\bank_36_icbc.png" />
+    <Content Include="statics\img\betting_countdown.png" />
+    <Content Include="statics\img\bg.jpg" />
+    <Content Include="statics\img\bn_agency.png" />
+    <Content Include="statics\img\bn_briefcase.png" />
+    <Content Include="statics\img\bn_clause.png" />
+    <Content Include="statics\img\bn_declare.png" />
+    <Content Include="statics\img\bn_duty.png" />
+    <Content Include="statics\img\bn_guide.png" />
+    <Content Include="statics\img\bn_policy.png" />
+    <Content Include="statics\img\bn_report.png" />
+    <Content Include="statics\img\bn_security.png" />
+    <Content Include="statics\img\bn_user.png" />
+    <Content Include="statics\img\browser_360.png" />
+    <Content Include="statics\img\browser_ch.png" />
+    <Content Include="statics\img\browser_ff.png" />
+    <Content Include="statics\img\browser_ie.png" />
+    <Content Include="statics\img\btn_acc_recharge.png" />
+    <Content Include="statics\img\btn_acc_withdraw.png" />
+    <Content Include="statics\img\btn_dl_android.png" />
+    <Content Include="statics\img\btn_dl_ios.png" />
+    <Content Include="statics\img\btn_dl_pc.png" />
+    <Content Include="statics\img\btn_lot.png" />
+    <Content Include="statics\img\btn_lot_sm.png" />
+    <Content Include="statics\img\btn_lt_android.png" />
+    <Content Include="statics\img\btn_lt_cs.png" />
+    <Content Include="statics\img\btn_lt_ios.png" />
+    <Content Include="statics\img\btn_lt_pc.png" />
+    <Content Include="statics\img\btn_myacc.png" />
+    <Content Include="statics\img\bt_clause.png" />
+    <Content Include="statics\img\bt_declare.png" />
+    <Content Include="statics\img\bt_duty.png" />
+    <Content Include="statics\img\bt_game.png" />
+    <Content Include="statics\img\bt_gift.png" />
+    <Content Include="statics\img\bt_license.png" />
+    <Content Include="statics\img\bt_live.png" />
+    <Content Include="statics\img\bt_notice.png" />
+    <Content Include="statics\img\bt_policy.png" />
+    <Content Include="statics\img\bt_safety.png" />
+    <Content Include="statics\img\bt_security.png" />
+    <Content Include="statics\img\client_image_pc.png" />
+    <Content Include="statics\img\client_pc.png" />
+    <Content Include="statics\img\code.png" />
+    <Content Include="statics\img\ff_license.jpg" />
+    <Content Include="statics\img\ff_logo.png" />
+    <Content Include="statics\img\ff_logo2.png" />
+    <Content Include="statics\img\float_mem.png" />
+    <Content Include="statics\img\float_register.png" />
+    <Content Include="statics\img\focus_banner1.png" />
+    <Content Include="statics\img\focus_banner2.png" />
+    <Content Include="statics\img\focus_banner3.png" />
+    <Content Include="statics\img\focus_banner4.png" />
+    <Content Include="statics\img\focus_banner5.png" />
+    <Content Include="statics\img\focus_banner6.png" />
+    <Content Include="statics\img\focus_banner7.png" />
+    <Content Include="statics\img\game_banner.jpg" />
+    <Content Include="statics\img\game_next.png" />
+    <Content Include="statics\img\game_p1.jpg" />
+    <Content Include="statics\img\game_p2.jpg" />
+    <Content Include="statics\img\game_p3.jpg" />
+    <Content Include="statics\img\game_p4.jpg" />
+    <Content Include="statics\img\game_p5.jpg" />
+    <Content Include="statics\img\game_p6.jpg" />
+    <Content Include="statics\img\game_p7.jpg" />
+    <Content Include="statics\img\game_p8.jpg" />
+    <Content Include="statics\img\game_prev.png" />
+    <Content Include="statics\img\hot.png" />
+    <Content Include="statics\img\hot_rec.png" />
+    <Content Include="statics\img\icon_acc_card.png" />
+    <Content Include="statics\img\icon_acc_game.png" />
+    <Content Include="statics\img\icon_acc_out.png" />
+    <Content Include="statics\img\icon_acc_refresh.png" />
+    <Content Include="statics\img\icon_acc_tri.png" />
+    <Content Include="statics\img\icon_acc_wallet.png" />
+    <Content Include="statics\img\icon_act_doc.png" />
+    <Content Include="statics\img\icon_act_lock.png" />
+    <Content Include="statics\img\icon_act_msg.png" />
+    <Content Include="statics\img\icon_act_user.png" />
+    <Content Include="statics\img\icon_add.png" />
+    <Content Include="statics\img\icon_add_g.png" />
+    <Content Include="statics\img\icon_agent_rebate.png" />
+    <Content Include="statics\img\icon_auth_code_20.png" />
+    <Content Include="statics\img\icon_auth_email.png" />
+    <Content Include="statics\img\icon_auth_email_authed.png" />
+    <Content Include="statics\img\icon_auth_key_20.png" />
+    <Content Include="statics\img\icon_auth_phone.png" />
+    <Content Include="statics\img\icon_auth_phone_authed.png" />
+    <Content Include="statics\img\icon_auth_user.png" />
+    <Content Include="statics\img\icon_auth_user_20.png" />
+    <Content Include="statics\img\icon_auth_user_authed.png" />
+    <Content Include="statics\img\icon_bank_card.png" />
+    <Content Include="statics\img\icon_bet_more.png" />
+    <Content Include="statics\img\icon_bn_dl.png" />
+    <Content Include="statics\img\icon_bn_home.png" />
+    <Content Include="statics\img\icon_bn_link.png" />
+    <Content Include="statics\img\icon_code.png" />
+    <Content Include="statics\img\icon_correct.png" />
+    <Content Include="statics\img\icon_cup.png" />
+    <Content Include="statics\img\icon_dl_one.png" />
+    <Content Include="statics\img\icon_dl_two.png" />
+    <Content Include="statics\img\icon_email.png" />
+    <Content Include="statics\img\icon_faq_a.png" />
+    <Content Include="statics\img\icon_faq_q.png" />
+    <Content Include="statics\img\icon_game_q.png" />
+    <Content Include="statics\img\icon_h.png" />
+    <Content Include="statics\img\icon_key.png" />
+    <Content Include="statics\img\icon_lic_q.png" />
+    <Content Include="statics\img\icon_loc.png" />
+    <Content Include="statics\img\icon_lot_8.png" />
+    <Content Include="statics\img\icon_lot_add.png" />
+    <Content Include="statics\img\icon_lot_append.png" />
+    <Content Include="statics\img\icon_lot_bet.png" />
+    <Content Include="statics\img\icon_lot_clear.png" />
+    <Content Include="statics\img\icon_lot_clock.png" />
+    <Content Include="statics\img\icon_lot_cny.png" />
+    <Content Include="statics\img\icon_lot_del.png" />
+    <Content Include="statics\img\icon_lot_history.png" />
+    <Content Include="statics\img\icon_lot_i.png" />
+    <Content Include="statics\img\icon_lot_minus.png" />
+    <Content Include="statics\img\icon_lot_plus.png" />
+    <Content Include="statics\img\icon_lot_trend.png" />
+    <Content Include="statics\img\icon_lt_dl.png" />
+    <Content Include="statics\img\icon_lt_link.png" />
+    <Content Include="statics\img\icon_mini_android.png" />
+    <Content Include="statics\img\icon_mini_ios.png" />
+    <Content Include="statics\img\icon_mini_link.png" />
+    <Content Include="statics\img\icon_mini_pc.png" />
+    <Content Include="statics\img\icon_n.png" />
+    <Content Include="statics\img\icon_nav_game.png" />
+    <Content Include="statics\img\icon_nav_gift.png" />
+    <Content Include="statics\img\icon_nav_home.png" />
+    <Content Include="statics\img\icon_nav_live.png" />
+    <Content Include="statics\img\icon_nav_lot.png" />
+    <Content Include="statics\img\icon_nav_poker.png" />
+    <Content Include="statics\img\icon_nav_prom.png" />
+    <Content Include="statics\img\icon_nav_sports.png" />
+    <Content Include="statics\img\icon_not_author.png" />
+    <Content Include="statics\img\icon_not_clock.png" />
+    <Content Include="statics\img\icon_not_view.png" />
+    <Content Include="statics\img\icon_no_n1.png" />
+    <Content Include="statics\img\icon_no_n2.png" />
+    <Content Include="statics\img\icon_no_n3.png" />
+    <Content Include="statics\img\icon_page_first.png" />
+    <Content Include="statics\img\icon_page_first_hover.png" />
+    <Content Include="statics\img\icon_page_last.png" />
+    <Content Include="statics\img\icon_page_last_hover.png" />
+    <Content Include="statics\img\icon_page_next.png" />
+    <Content Include="statics\img\icon_page_next_hover.png" />
+    <Content Include="statics\img\icon_page_prev.png" />
+    <Content Include="statics\img\icon_page_prev_hover.png" />
+    <Content Include="statics\img\icon_phone.png" />
+    <Content Include="statics\img\icon_poker_cup.png" />
+    <Content Include="statics\img\icon_poker_rule.png" />
+    <Content Include="statics\img\icon_popup_card.png" />
+    <Content Include="statics\img\icon_popup_close.png" />
+    <Content Include="statics\img\icon_popup_dl.png" />
+    <Content Include="statics\img\icon_popup_doc.png" />
+    <Content Include="statics\img\icon_popup_email.png" />
+    <Content Include="statics\img\icon_popup_lock.png" />
+    <Content Include="statics\img\icon_popup_phone.png" />
+    <Content Include="statics\img\icon_popup_question.png" />
+    <Content Include="statics\img\icon_popup_shield.png" />
+    <Content Include="statics\img\icon_popup_user.png" />
+    <Content Include="statics\img\icon_prom_back.png" />
+    <Content Include="statics\img\icon_prom_clock.png" />
+    <Content Include="statics\img\icon_prom_con.png" />
+    <Content Include="statics\img\icon_prom_rule.png" />
+    <Content Include="statics\img\icon_prom_time.png" />
+    <Content Include="statics\img\icon_prom_view.png" />
+    <Content Include="statics\img\icon_qq.png" />
+    <Content Include="statics\img\icon_query_date.png" />
+    <Content Include="statics\img\icon_sec_email.png" />
+    <Content Include="statics\img\icon_sec_lock.png" />
+    <Content Include="statics\img\icon_sec_phone.png" />
+    <Content Include="statics\img\icon_sec_question.png" />
+    <Content Include="statics\img\icon_sec_shield.png" />
+    <Content Include="statics\img\icon_sec_user.png" />
+    <Content Include="statics\img\icon_side_list.png" />
+    <Content Include="statics\img\icon_sound_close.png" />
+    <Content Include="statics\img\icon_sound_open.png" />
+    <Content Include="statics\img\icon_step_done.png" />
+    <Content Include="statics\img\icon_top_exit.png" />
+    <Content Include="statics\img\icon_top_refresh.png" />
+    <Content Include="statics\img\icon_tutorial_course.png" />
+    <Content Include="statics\img\icon_tutorial_game.png" />
+    <Content Include="statics\img\icon_tutorial_one.png" />
+    <Content Include="statics\img\icon_tutorial_two.png" />
+    <Content Include="statics\img\icon_tutorial_user.png" />
+    <Content Include="statics\img\icon_user.png" />
+    <Content Include="statics\img\icon_warn.png" />
+    <Content Include="statics\img\icon_wrong.png" />
+    <Content Include="statics\img\index_member.png" />
+    <Content Include="statics\img\input_bg.png" />
+    <Content Include="statics\img\Ios.png" />
+    <Content Include="statics\img\level_shield.png" />
+    <Content Include="statics\img\line_test.jpg" />
+    <Content Include="statics\img\live_ag.jpg" />
+    <Content Include="statics\img\live_banner.jpg" />
+    <Content Include="statics\img\live_bbin.jpg" />
+    <Content Include="statics\img\live_og.jpg" />
+    <Content Include="statics\img\login_bg.jpg" />
+    <Content Include="statics\img\logo_ag.png" />
+    <Content Include="statics\img\logo_bbin.png" />
+    <Content Include="statics\img\logo_og.png" />
+    <Content Include="statics\img\lottery_ball.png" />
+    <Content Include="statics\img\lottery_ball_11x5.png" />
+    <Content Include="statics\img\lottery_ball_big.png" />
+    <Content Include="statics\img\lottery_ball_fc3d.png" />
+    <Content Include="statics\img\lottery_ball_klc.png" />
+    <Content Include="statics\img\lottery_ball_klc_big.png" />
+    <Content Include="statics\img\lottery_ball_pk10.png" />
+    <Content Include="statics\img\lottery_ball_ssc.png" />
+    <Content Include="statics\img\lottery_ball_ssl.png" />
+    <Content Include="statics\img\lottery_ball_tcp3.png" />
+    <Content Include="statics\img\lottery_dice_1.png" />
+    <Content Include="statics\img\lottery_dice_2.png" />
+    <Content Include="statics\img\lottery_dice_3.png" />
+    <Content Include="statics\img\lottery_dice_4.png" />
+    <Content Include="statics\img\lottery_dice_5.png" />
+    <Content Include="statics\img\lottery_dice_6.png" />
+    <Content Include="statics\img\lottery_number_ball.png" />
+    <Content Include="statics\img\lottery_oper.png" />
+    <Content Include="statics\img\lottery_oper_hover.png" />
+    <Content Include="statics\img\mem_bg.jpg" />
+    <Content Include="statics\img\new.png" />
+    <Content Include="statics\img\operate_doubt.png" />
+    <Content Include="statics\img\operate_fail.png" />
+    <Content Include="statics\img\operate_lot.png" />
+    <Content Include="statics\img\operate_success.png" />
+    <Content Include="statics\img\operate_warn.png" />
+    <Content Include="statics\img\payment_card.jpg" />
+    <Content Include="statics\img\payment_countdown.png" />
+    <Content Include="statics\img\payment_platform.png" />
+    <Content Include="statics\img\poker_bg.jpg" />
+    <Content Include="statics\img\poker_discount.jpg" />
+    <Content Include="statics\img\poker_flow_game_1.jpg" />
+    <Content Include="statics\img\poker_flow_game_2.jpg" />
+    <Content Include="statics\img\poker_flow_mahjong_1.jpg" />
+    <Content Include="statics\img\poker_flow_mahjong_2.jpg" />
+    <Content Include="statics\img\poker_flow_mahjong_3.jpg" />
+    <Content Include="statics\img\poker_flow_mahjong_4.jpg" />
+    <Content Include="statics\img\poker_flow_mahjong_5.jpg" />
+    <Content Include="statics\img\poker_game_bg.jpg" />
+    <Content Include="statics\img\poker_guide_game_1.jpg" />
+    <Content Include="statics\img\poker_guide_game_10.jpg" />
+    <Content Include="statics\img\poker_guide_game_11.jpg" />
+    <Content Include="statics\img\poker_guide_game_12.jpg" />
+    <Content Include="statics\img\poker_guide_game_2.jpg" />
+    <Content Include="statics\img\poker_guide_game_3.jpg" />
+    <Content Include="statics\img\poker_guide_game_4.jpg" />
+    <Content Include="statics\img\poker_guide_game_5.jpg" />
+    <Content Include="statics\img\poker_guide_game_6.jpg" />
+    <Content Include="statics\img\poker_guide_game_7.jpg" />
+    <Content Include="statics\img\poker_guide_game_8.jpg" />
+    <Content Include="statics\img\poker_guide_game_9.jpg" />
+    <Content Include="statics\img\poker_guide_mahjong_1.jpg" />
+    <Content Include="statics\img\poker_guide_mahjong_2.jpg" />
+    <Content Include="statics\img\poker_guide_mahjong_3_1.jpg" />
+    <Content Include="statics\img\poker_guide_mahjong_3_2.jpg" />
+    <Content Include="statics\img\poker_guide_mahjong_4.jpg" />
+    <Content Include="statics\img\poker_guide_mahjong_5.jpg" />
+    <Content Include="statics\img\poker_guide_mahjong_6.jpg" />
+    <Content Include="statics\img\poker_guide_mahjong_7.jpg" />
+    <Content Include="statics\img\poker_guide_mahjong_8.jpg" />
+    <Content Include="statics\img\poker_play.jpg" />
+    <Content Include="statics\img\poker_rule_dz.jpg" />
+    <Content Include="statics\img\poker_rule_qs.jpg" />
+    <Content Include="statics\img\process_steps_bg.png" />
+    <Content Include="statics\img\prom_banner.jpg" />
+    <Content Include="statics\img\prom_banner1.jpg" />
+    <Content Include="statics\img\prom_banner2.jpg" />
+    <Content Include="statics\img\prom_banner3.jpg" />
+    <Content Include="statics\img\prom_banner4.jpg" />
+    <Content Include="statics\img\prom_banner5.jpg" />
+    <Content Include="statics\img\prom_p.jpg" />
+    <Content Include="statics\img\prom_p1.jpg" />
+    <Content Include="statics\img\prom_p2.jpg" />
+    <Content Include="statics\img\prom_p3.jpg" />
+    <Content Include="statics\img\prom_p4.jpg" />
+    <Content Include="statics\img\prom_part_tbg.png" />
+    <Content Include="statics\img\qrcode_130.png" />
+    <Content Include="statics\img\regulatory_authority.png" />
+    <Content Include="statics\img\retrieve_completed.png" />
+    <Content Include="statics\img\retrieve_problem.png" />
+    <Content Include="statics\img\scan_code.png" />
+    <Content Include="statics\img\security_bar.png" />
+    <Content Include="statics\img\security_line.png" />
+    <Content Include="statics\img\sent_email.jpg" />
+    <Content Include="statics\img\slider_handle.png" />
+    <Content Include="statics\img\slogan.png" />
+    <Content Include="statics\img\slogan2.png" />
+    <Content Include="statics\img\specialcharge.png" />
+    <Content Include="statics\img\sports_game_bg.jpg" />
+    <Content Include="statics\img\sports_match1.jpg" />
+    <Content Include="statics\img\sports_match2.jpg" />
+    <Content Include="statics\img\super_prize.png" />
+    <Content Include="statics\img\user_code.png" />
+    <Content Include="statics\include\close.htm" />
+    <Content Include="statics\include\header.html" />
+    <Content Include="statics\include\lefter.html" />
+    <Content Include="statics\include\nav.html" />
+    <Content Include="statics\include\pop.html" />
+    <Content Include="statics\jquery-1.11.3.min.js" />
+    <Content Include="statics\jquery-validate.js" />
+    <Content Include="statics\jquery.signalR-1.1.4.js" />
+    <Content Include="statics\json\1001.js" />
+    <Content Include="statics\json\1003.js" />
+    <Content Include="statics\json\1004.js" />
+    <Content Include="statics\json\1005.js" />
+    <Content Include="statics\json\1007.js" />
+    <Content Include="statics\json\1010.js" />
+    <Content Include="statics\json\1011.js" />
+    <Content Include="statics\json\1012.js" />
+    <Content Include="statics\json\1013.js" />
+    <Content Include="statics\json\1015.js" />
+    <Content Include="statics\json\1016.js" />
+    <Content Include="statics\json\1018.js" />
+    <Content Include="statics\json\1019.js" />
+    <Content Include="statics\json\1020.js" />
+    <Content Include="statics\json\2002.js" />
+    <Content Include="statics\json\2003.js" />
+    <Content Include="statics\json\2004.js" />
+    <Content Include="statics\json\2005.js" />
+    <Content Include="statics\json\2006.js" />
+    <Content Include="statics\json\3001.js" />
+    <Content Include="statics\json\3002.js" />
+    <Content Include="statics\json\3003.js" />
+    <Content Include="statics\json\3004.js" />
+    <Content Include="statics\json\3005.js" />
+    <Content Include="statics\json\4001.js" />
+    <Content Include="statics\json\4002.js" />
+    <Content Include="statics\json\4003.js" />
+    <Content Include="statics\json\4004.js" />
+    <Content Include="statics\json\BigAndSmalldata.js" />
+    <Content Include="statics\json\json_0.00.js" />
+    <Content Include="statics\json\json_10.00.js" />
+    <Content Include="statics\json\json_100.00.js" />
+    <Content Include="statics\json\json_101.00.js" />
+    <Content Include="statics\json\json_102.00.js" />
+    <Content Include="statics\json\json_103.00.js" />
+    <Content Include="statics\json\json_104.00.js" />
+    <Content Include="statics\json\json_105.00.js" />
+    <Content Include="statics\json\json_106.00.js" />
+    <Content Include="statics\json\json_107.00.js" />
+    <Content Include="statics\json\json_108.00.js" />
+    <Content Include="statics\json\json_109.00.js" />
+    <Content Include="statics\json\json_110.00.js" />
+    <Content Include="statics\json\json_111.00.js" />
+    <Content Include="statics\json\json_112.00.js" />
+    <Content Include="statics\json\json_113.00.js" />
+    <Content Include="statics\json\json_114.00.js" />
+    <Content Include="statics\json\json_115.00.js" />
+    <Content Include="statics\json\json_116.00.js" />
+    <Content Include="statics\json\json_117.00.js" />
+    <Content Include="statics\json\json_118.00.js" />
+    <Content Include="statics\json\json_119.00.js" />
+    <Content Include="statics\json\json_120.00.js" />
+    <Content Include="statics\json\json_121.00.js" />
+    <Content Include="statics\json\json_122.00.js" />
+    <Content Include="statics\json\json_123.00.js" />
+    <Content Include="statics\json\json_124.00.js" />
+    <Content Include="statics\json\json_125.00.js" />
+    <Content Include="statics\json\json_126.00.js" />
+    <Content Include="statics\json\json_127.00.js" />
+    <Content Include="statics\json\json_128.00.js" />
+    <Content Include="statics\json\json_129.00.js" />
+    <Content Include="statics\json\json_130.00.js" />
+    <Content Include="statics\json\json_131.00.js" />
+    <Content Include="statics\json\json_132.00.js" />
+    <Content Include="statics\json\json_133.00.js" />
+    <Content Include="statics\json\json_15.00.js" />
+    <Content Include="statics\json\json_20.00.js" />
+    <Content Include="statics\json\json_25.00.js" />
+    <Content Include="statics\json\json_30.00.js" />
+    <Content Include="statics\json\json_35.00.js" />
+    <Content Include="statics\json\json_40.00.js" />
+    <Content Include="statics\json\json_45.00.js" />
+    <Content Include="statics\json\json_5.00.js" />
+    <Content Include="statics\json\json_50.00.js" />
+    <Content Include="statics\json\json_55.00.js" />
+    <Content Include="statics\json\json_60.00.js" />
+    <Content Include="statics\json\json_65.00.js" />
+    <Content Include="statics\json\json_70.00.js" />
+    <Content Include="statics\json\json_75.00.js" />
+    <Content Include="statics\json\json_80.00.js" />
+    <Content Include="statics\json\json_85.00.js" />
+    <Content Include="statics\json\json_90.00.js" />
+    <Content Include="statics\json\json_95.00.js" />
+    <Content Include="statics\json\LotAndSmalldata.js" />
+    <Content Include="statics\json\Lottery.js" />
+    <Content Include="statics\json\PlayBigdate.js" />
+    <Content Include="statics\js\EM.betoper.js" />
+    <Content Include="statics\js\EM.init.js" />
+    <Content Include="statics\js\EM.jquery2.js" />
+    <Content Include="statics\js\EM.jquery3.js" />
+    <Content Include="statics\js\EM.jquery4.js" />
+    <Content Include="statics\js\EM.jquery5.js" />
+    <Content Include="statics\js\EM.lottery.js" />
+    <Content Include="statics\js\EM.lotTime.js" />
+    <Content Include="statics\js\EM.nav.js" />
+    <Content Include="statics\js\EM.tools.js" />
+    <Content Include="statics\js\global.js" />
+    <Content Include="statics\js\jquery-ui.min.js" />
+    <Content Include="statics\js\jquery.flexslider-min.js" />
+    <Content Include="statics\js\jquery.min.js" />
+    <Content Include="statics\js\jquery_json.js" />
+    <Content Include="statics\js\lottery.js" />
+    <Content Include="statics\js\member.js" />
+    <Content Include="statics\js\page.charge.js" />
+    <Content Include="statics\js\page.contract.js" />
+    <Content Include="statics\js\page.getcash.js" />
+    <Content Include="statics\js\page.header.js" />
+    <Content Include="statics\js\page.index.js" />
+    <Content Include="statics\js\page.login.js" />
+    <Content Include="statics\js\page.register.js" />
+    <Content Include="statics\layer\layer.js" />
+    <Content Include="statics\layer\mobile\layer.js" />
+    <Content Include="statics\layer\mobile\need\layer.css" />
+    <Content Include="statics\layer\skin\default\icon-ext.png" />
+    <Content Include="statics\layer\skin\default\icon.png" />
+    <Content Include="statics\layer\skin\default\layer.css" />
+    <Content Include="statics\layer\skin\default\loading-0.gif" />
+    <Content Include="statics\layer\skin\default\loading-1.gif" />
+    <Content Include="statics\layer\skin\default\loading-2.gif" />
+    <Content Include="statics\laytpl.js" />
+    <Content Include="statics\mp3\fengdan.mp3" />
+    <Content Include="statics\mp3\info.mp3" />
+    <Content Include="statics\mp3\kaijiang.mp3" />
+    <Content Include="statics\mp3\paijiang.mp3" />
+    <Content Include="statics\MSClass.js" />
+    <Content Include="statics\music\pay.mp3" />
+    <Content Include="statics\music\pop.mp3" />
+    <Content Include="statics\music\time.mp3" />
+    <Content Include="statics\My97DatePicker\calendar.js" />
+    <Content Include="statics\My97DatePicker\lang\en.js" />
+    <Content Include="statics\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="statics\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="statics\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="statics\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="statics\My97DatePicker\skin\default\img.gif" />
+    <Content Include="statics\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="statics\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="statics\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="statics\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="statics\My97DatePicker\WdatePicker.js" />
+    <Content Include="statics\sharedata.js" />
+    <Content Include="statics\yanue.pop.js" />
+    <Content Include="temp\WebLot.aspx" />
+    <Content Include="temp\WebPlay.aspx" />
+    <Content Include="temp\WebPoint.aspx" />
+    <Content Include="temp\WebSite.aspx" />
+    <Content Include="user\index.aspx" />
+    <Content Include="user\useradd.aspx" />
+    <Content Include="user\userAgentFH.aspx" />
+    <Content Include="user\userContractFH.aspx" />
+    <Content Include="user\userindex.aspx" />
+    <Content Include="user\usertranacc.aspx" />
+    <Content Include="user\userupdate.aspx" />
+    <Content Include="WEB-INF\site.xml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="plus\ajaxuploadhandler.ashx" />
+    <Content Include="statics\data\android.rar" />
+    <Content Include="statics\data\client.apk" />
+    <Content Include="statics\data\ios.rar" />
+    <Content Include="statics\data\pc.rar" />
+    <Content Include="statics\data\qqwry.dat" />
+    <Content Include="statics\data\UrlRewriter.config" />
+    <Content Include="statics\log\hacker_20170504.log" />
+    <Content Include="statics\log\hacker_20170505.log" />
+    <Content Include="statics\log\hacker_20170512.log" />
+    <Content Include="statics\log\hacker_20170513.log" />
+    <Content Include="statics\log\hacker_20170519.log" />
+    <Content Include="statics\log\hacker_20170522.log" />
+    <Content Include="statics\log\hacker_20170524.log" />
+    <Content Include="statics\log\hacker_20170525.log" />
+    <Content Include="statics\log\hacker_20170526.log" />
+    <Content Include="statics\log\hacker_20170527.log" />
+    <Content Include="statics\log\hacker_20170528.log" />
+    <Content Include="statics\log\hacker_20170529.log" />
+    <Content Include="statics\log\hacker_20170530.log" />
+    <Content Include="statics\log\hacker_20170601.log" />
+    <Content Include="statics\log\hacker_20170602.log" />
+    <Content Include="statics\log\hacker_20171229.log" />
+    <None Include="Properties\PublishProfiles\ffapp.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="statics\Bets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lottery.Collect\Lottery.Collect.csproj">
+      <Project>{8db8a3f8-22f8-49a3-8271-adec06af09f1}</Project>
+      <Name>Lottery.Collect</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.DAL\Lottery.DAL.csproj">
+      <Project>{90c59389-0af4-4c84-b839-4b50c5cc3027}</Project>
+      <Name>Lottery.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.Entity\Lottery.Entity.csproj">
+      <Project>{17a4cf66-b240-4a8f-8137-c134ca6a2c89}</Project>
+      <Name>Lottery.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.Utils\Lottery.Utils.csproj">
+      <Project>{7fde2b50-2656-4ed1-8c0c-d6547fe9a21a}</Project>
+      <Name>Lottery.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1462</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64605/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,35 @@
+#content{padding-top:0;padding-bottom:0;}
+
+.service-slide .prev,.service-slide .next,.lottery-cat .feature,.dl-btns a,.dl-btns a i{background:url(../images/yl_dl.png) no-repeat;}
+
+.header-dl{position:absolute;left:50%;top:0;z-index:199;width:520px;height:109px;overflow:hidden;margin-left:-260px;text-align:center;background:url(../images/header_dl_bg.png) no-repeat;}
+
+.screen{height:800px;overflow:hidden;background:url(../images/download_banner.jpg) no-repeat center top;}
+.dl-btns{position:absolute;left:50%;top:285px;width:190px;overflow:hidden;margin-left:17px;font-size:20px;}
+.dl-btns a{display:block;height:56px;line-height:56px;margin-bottom:24px;color:#252736;text-align:left;background-position:0 -120px;}
+.dl-btns a i{float:left;width:36px;height:36px;margin:10px 8px 0 23px;}
+.dl-btns a .icon-iphone{background-position:0 -190px;}
+.dl-btns a .icon-android{background-position:-50px -190px;}
+.dl-btns a .icon-pc{background-position:-100px -190px;}
+
+.lottery-rec{height:500px;overflow:hidden;background:url(../images/lottery_rec_bg.jpg) no-repeat center top;}
+.lottery-cat{margin-top:113px;padding:0 48px;}
+.lottery-cat li{float:left;min-width:200px;margin-bottom:29px;margin-right:25px;}
+.lottery-cat .logos{height:98px;overflow:hidden;text-align:center;}
+.lottery-cat .logos a{margin:0 2px;font-size:0;}
+.lottery-cat .feature{width:199px;height:40px;line-height:40px;overflow:hidden;margin:13px auto 0;font-size:15px;text-align:center;color:#fff;background-position:0 -70px;}
+
+.our-services{height:350px;overflow:hidden;background-color:#12111b;}
+.service-slide,.service-slide .slide-content,.service-slide .slide-panel{height:350px;}
+.service-slide .slide-content,.service-slide .slide-panel{overflow:hidden;}
+.service-slide{position:relative;}
+.service-slide .slide-panel{background-position:center;background-repeat:no-repeat;}
+.service-slide .prev,.service-slide .next{position:absolute;z-index:199;top:50%;width:60px;height:60px;margin-top:-30px;}
+.service-slide .prev{left:50%;margin-left:-560px;background-position:0 0;}
+.service-slide .next{right:50%;margin-right:-560px;background-position:-70px 0;}
+
+.our-advantages{height:128px;padding-top:12px;overflow:hidden;background-color:#0d0a13;}
+.our-advantages img{margin:0 -200px;}
+
+.footer-dl{height:140px !important;padding-top:20px !important;text-align:center;}
+.footer-dl p{line-height:18px !important;margin-top:5px;text-align:center !important;}

@@ -1,0 +1,33 @@
+body{background:url(../img/login_bg.jpg) no-repeat center top;}
+
+.add-fav{position:absolute;left:0;top:0;}
+
+.login-center{width:400px;overflow:hidden;margin-left:auto;margin-right:auto;}
+.login-center .slogan{margin-top:55px;margin-bottom:40px;text-align:center;}
+
+.login-form{overflow:hidden;padding:220px 50px 40px;border-radius:10px;background:url(../img/ff_logo2.png) no-repeat center 30px;background-color:#1d1e25;background-color:rgba(29,30,37,.9);}
+.login-form .form-group{position:relative;overflow:hidden;margin-bottom:15px;}
+.login-form .control-label{display:block;}
+.login-form .control-label i,.login-form .code{position:absolute;z-index:9;}
+.login-form .control-label i{left:10px;top:10px;width:20px;height:20px;}
+.login-form .control-label .icon-user{background-image:url(../img/icon_auth_user_20.png);}
+.login-form .control-label .icon-key{background-image:url(../img/icon_auth_key_20.png);}
+.login-form .control-label .icon-code{background-image:url(../img/icon_auth_code_20.png);}
+.login-form .form-control{width:250px;height:24px;padding:8px 10px 8px 40px;background:url(../img/input_bg.png) no-repeat;}
+.login-form .code{top:5px;right:5px;}
+.login-form .btn-group{margin-top:20px;}
+.login-form .btn-group .btn{float:left;height:45px;line-height:45px;border-radius:5px;font-size:14px;color:#262732;}
+.login-form .btn-login,.login-form .btn-reg{background-color:#ffaa0d;}
+.login-form .btn-login{display:block;width:100%;}
+.login-form .btn-reg,.login-form .btn-reset{width:140px;}
+.login-form .btn-reset{margin-left:20px;background-color:#78797d;}
+
+.other-acts{overflow:hidden;margin-top:30px;margin-left:-25px;margin-right:-25px;}
+.other-acts a{float:left;width:100px;height:100px;margin-left:25px;margin-right:25px;border-radius:50%;color:#fff;background-color:#262632;}
+.other-acts a i{display:block;width:30px;height:30px;margin:24px auto 7px;background-repeat:no-repeat;background-position:center;}
+.other-acts a .icon-doc{background-image:url(../img/icon_act_doc.png);}
+.other-acts a .icon-lock{background-image:url(../img/icon_act_lock.png);}
+.other-acts a .icon-msg{background-image:url(../img/icon_act_msg.png);}
+.other-acts a .icon-user{background-image:url(../img/icon_act_user.png);}
+
+.copyright{margin-top:50px;color:#fff;text-align:center;}

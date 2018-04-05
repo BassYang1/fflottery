@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>立博国际娱乐</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="/statics/sytle/css/style.css" />
+    <script type="text/javascript" src="/statics/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/statics/global.js"></script>
+    <script type="text/javascript" src="/statics/layer/layer.min.js"></script>
+    
+    <script type="text/javascript" src="/statics/json/LotAndSmalldata.js"></script>
+    <script type="text/javascript" src="/statics/sytle/js/EM.tools.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var lid = GetQueryString("lid");
+            $("#tobet").attr('href', '/nav.aspx?tid=' + lid.substr(0, 1) + '&id=' + lid);
+            $i('curmoney').innerHTML = GetQueryString("cur");
+            $i('money').innerHTML = GetQueryString("money");
+        });
+
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+    </script>
+</head>
+<body>
+    <div class="zj-page">
+        <header class="header">
+                <h1 class="title">追号成功</h1>
+            </header>
+        <div class="content">
+            <div class="betting-success">
+                <div class="betting-message">
+                    <img src="/statics/sytle/images/icon_chest.png" alt="" />恭喜您，购彩成功！
+                </div>
+                <div class="betting-info">
+                    <i class="icon-money"></i><span class="money">本次投注：<em id="curmoney">0.00</em>元<br />
+                        账户余额：<em id="money">0.00</em>元 </span>
+                </div>
+                <ul class="actions">
+                    <li><a href="/bet/betzhlist.html" class="btn primary-btn"><i class="icon-record"></i>投注记录</a></li>
+                    <li><a id="tobet" class="btn primary-btn"><i class="icon-buy"></i>继续购彩</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

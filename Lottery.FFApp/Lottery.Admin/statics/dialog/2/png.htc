@@ -1,0 +1,42 @@
+<public:component>
+<public:property name="alpha" />
+<public:property name="dummy" />
+<script type="text/javascript">
+var propertychange=readystatechange=function(){};
+var dummy=null;
+if((element.tagName=='IMG')&&(typeof document.all!='undefined')&&(typeof document.getElementById!='undefined')&&(navigator.platform=='Win32')){
+    readystatechange=function(){
+        if((element.readyState=='loading')||(element.readyState=='complete')){
+        try{
+            if((element.alpha!=0)||((element.alpha==null)&&(element.src.substr(-4)=='.png'))){
+                element.alpha=1;
+                if(!dummy){
+                    dummy=document.createElement('div');
+                    element.parentNode.insertBefore(dummy,element);
+                    dummy.runtimestyle.position    ='absolute';
+                    dummy.runtimestyle.zIndex    =element.currentstyle.zIndex;
+                    element.runtimestyle.zIndex    =element.currentstyle.zIndex+1;
+                    dummy.runtimestyle.filter    =element.currentstyle.filter+"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+element.src+"',sizingmethod=scale)";
+                    element.runtimestyle.filter    =element.currentstyle.filter+"progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
+                }
+                dummy.runtimestyle.width=element.offsetWidth+"px";
+                dummy.runtimestyle.height=element.offsetHeight+"px";
+                dummy.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src=element.src;
+            }
+        }catch(err){return true;}
+        }
+    }
+    propertychange=function(){
+        if(!dummy||(event.propertyName=='dummy'))return;
+        dummy[event.propertyName]=element[event.propertyName];
+        dummy.runtimestyle.width=element.offsetWidth+"px";
+        dummy.runtimestyle.height=element.offsetHeight+"px";
+        dummy.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src=element.src;
+        dummy.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").enabled=element.alpha;
+        element.filters.item("DXImageTransform.Microsoft.Alpha").enabled=element.alpha!=0;
+    }
+}
+</script>
+<public:attach event="onpropertychange"     onevent="propertychange()"     />
+<public:attach event="onreadystatechange"    onevent="readystatechange()"    />
+</public:component>
