@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 namespace Lottery.FFModel
 {
     /// <summary>
-    /// 用户登录
+    /// 用户注册
     /// </summary>
-    [Description("用户登录")]
-    public class UserAddModel
+    [Description("用户注册")]
+    public class UserRegModel
     {
         /// <summary>
         /// 商户Id

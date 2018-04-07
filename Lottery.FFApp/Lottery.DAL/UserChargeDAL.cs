@@ -59,6 +59,27 @@ namespace Lottery.DAL
       }
     }
 
+    public int Save3(string orderno, string orderno3, string userId, string checkCode, Decimal money)
+    {
+        using (DbOperHandler dbOperHandler = new ComData().Doh())
+        {
+            var bankId = "888";
+            var state = 1;
+            DateTime dateTime = new DateTimePubDAL().GetDateTime();
+            dbOperHandler.Reset();
+            dbOperHandler.AddFieldItem("SsId", (object)orderno);
+            dbOperHandler.AddFieldItem("UserId", (object)userId);
+            dbOperHandler.AddFieldItem("BankId", (object)bankId);
+            dbOperHandler.AddFieldItem("CheckCode", (object)checkCode);
+            dbOperHandler.AddFieldItem("Ss3Id", (object)orderno3);
+            dbOperHandler.AddFieldItem("InMoney", (object)money);
+            dbOperHandler.AddFieldItem("DzMoney", (object)money);
+            dbOperHandler.AddFieldItem("STime", (object)dateTime.ToString("yyyy-MM-dd HH:mm:ss"));
+            dbOperHandler.AddFieldItem("State", (object)state);
+            return dbOperHandler.Insert("N_UserCharge");
+        }
+    }
+
     public void DeleteLogs()
     {
       using (DbOperHandler dbOperHandler = new ComData().Doh())

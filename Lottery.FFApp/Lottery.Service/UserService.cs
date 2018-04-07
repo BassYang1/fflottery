@@ -8,17 +8,83 @@ using System.Data.Entity.Validation;
 using Lottery.FFModel;
 using Lottery.Core;
 using Lottery.FFData;
+using System.Data;
+using Lottery.Utils;
+using Lottery.DAL;
 
 namespace Lottery.Service
 {
     public class UserService : BaseService, IUserService
     {
         /// <summary>
+        /// 注册会员
+        /// </summary>
+        /// <param name="model">注册信息</param>
+        /// <returns>用户登录凭证Token</returns>
+        public string RegiterUser(UserRegModel model)
+        {
+            using (var dbContext = new TicketEntities())
+            {
+                if (string.IsNullOrEmpty(model.MerchantId) && string.IsNullOrEmpty(model.UserName) && string.IsNullOrEmpty(model.SignKey))
+                {
+                    throw new InvalidOperationException("无效的用户登录信息");
+                }
+
+                //1, 判断用户是否存在
+                var merchantEntity = dbContext.N_Merchant.FirstOrDefault(it => (it.MerchantId.Equals(model.MerchantId, StringComparison.OrdinalIgnoreCase)));
+
+                if (merchantEntity == null)
+                {
+                    Log.Error("商户不存在");
+                    throw new InvalidOperationException("商户不存在");
+                }
+
+                if (string.IsNullOrEmpty(merchantEntity.Code))
+                {
+                    Log.Error("无效的商户信息");
+                    throw new InvalidOperationException("无效的商户信息");
+                }
+
+                //2, 验证加密串
+                //按顺序(商户Id&会员用户名&商户安全码)MD5加密串
+                var signKey = MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", model.MerchantId, model.UserName, merchantEntity.Code), "gb2312");
+                if (string.Compare(signKey, model.SignKey, true) != 0)
+                {
+                    Log.Error("无效的商户安全码");
+                    throw new InvalidOperationException("无效的商户安全码");
+                }
+
+                var result = ajaxRegiter(model);
+                if (!string.IsNullOrEmpty(result))
+                {
+                    Log.ErrorFormat("注册失败: {0}", result);
+                    throw new InvalidOperationException(result);
+                }
+
+                //3,验证用户
+                var userEntity = dbContext.N_User.FirstOrDefault(it => it.UserName.Equals(model.UserName, StringComparison.OrdinalIgnoreCase));
+
+                if (userEntity == null)
+                {
+                    Log.Error("新用户注册失败");
+                    throw new InvalidOperationException("新用户注册失败");
+                }
+
+                var token = this.GenerateToken(); // 获取用户登录Token 
+                userEntity.Token = token;
+                userEntity.ExpirationTime = DateTime.Now.AddDays(2); // 设置Token有效期
+                SaveDbChanges(dbContext);
+
+                return token;
+            }
+        }
+
+        /// <summary>
         /// 代理商登录
         /// </summary>
         /// <param name="model">登录信息</param>
         /// <returns>用户登录Token</returns>
-        public string GetUserToken(UserLoginModel model)
+        public string GetUserToken(UserAddModel model)
         {
             using (var dbContext = new TicketEntities())
             {
@@ -32,8 +98,8 @@ namespace Lottery.Service
 
                 if (merchantEntity == null)
                 {
-                    Log.Error("商户不存在。");
-                    throw new KeyNotFoundException("商户不存在。");
+                    Log.Error("商户不存在");
+                    throw new KeyNotFoundException("商户不存在");
                 }
 
                 if (string.IsNullOrEmpty(merchantEntity.Code))
@@ -43,7 +109,7 @@ namespace Lottery.Service
                 }
 
                 //2, 验证加密串
-                var signKey = MD5Cryptology.Encrypt(string.Format("{0}&{1}{2}", model.MerchantId, model.UserName, merchantEntity.Code));
+                var signKey = MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", model.MerchantId, model.UserName, merchantEntity.Code), "gb2312");
                 if (string.Compare(signKey, model.SignKey, true) != 0)
                 {
                     Log.Error("无效的商户安全码");
@@ -55,8 +121,8 @@ namespace Lottery.Service
                 
                 if (userEntity == null)
                 {
-                    Log.Error("用户不存在。");
-                    throw new KeyNotFoundException("用户不存在。");
+                    Log.Error("用户不存在");
+                    throw new KeyNotFoundException("用户不存在");
                 }
 
                 var token = this.GenerateToken(); // 获取用户登录Token 
@@ -66,23 +132,6 @@ namespace Lottery.Service
 
                 return token;
             }
-        }
-
-        private Random rnd = new Random();
-        private int seed = 0;
-        /// <summary>
-        /// 生成用户Token
-        /// </summary>
-        /// <returns></returns>
-        private string GenerateToken()
-        {
-            var rndData = new byte[48];
-            rnd.NextBytes(rndData);
-            var seedValue = Interlocked.Add(ref seed, 1);
-            var seedData = BitConverter.GetBytes(seedValue);
-            var tokenData = rndData.Concat(seedData).OrderBy(_ => rnd.Next());
-
-            return Convert.ToBase64String(tokenData.ToArray()).TrimEnd('=');
         }
 
         /// <summary>
@@ -122,5 +171,26 @@ namespace Lottery.Service
             }
         }
 
+        private string ajaxRegiter(UserRegModel model)
+        {
+            string s = "123456";
+            this.doh.Reset();
+            this.doh.SqlCmd = "SELECT Id FROM [N_User] WHERE [UserName]='" + model.UserName + "'";
+            if (this.doh.GetDataTable().Rows.Count > 0)
+                return "用户名重复";
+
+            int userId = new UserDAL().Register("0", model.UserName, MD5.Lower32(s), 0M, model.MerchantId);
+            this.doh.Reset();
+            this.doh.ConditionExpress = "id=" + (object)userId;
+            this.doh.AddFieldItem("UserGroup", "6");
+            this.doh.AddFieldItem("UserCode", Strings.PadLeft(userId.ToString()));
+            if (this.doh.Update("N_User") > 0)
+            {
+                new LogAdminOperDAL().SaveLog(model.MerchantId, userId.ToString(), "会员管理", "添加了会员" + model.UserName);
+                return "";
+            }
+
+            return "用户注册失败";
+        }
     }
 }

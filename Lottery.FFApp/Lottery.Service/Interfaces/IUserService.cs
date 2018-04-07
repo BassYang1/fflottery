@@ -10,11 +10,18 @@ namespace Lottery.Service
     public interface IUserService
     {
         /// <summary>
+        /// 注册会员
+        /// </summary>
+        /// <param name="model">注册信息</param>
+        /// <returns>用户登录凭证Token</returns>
+        string RegiterUser(UserRegModel model);
+
+        /// <summary>
         /// 代理商登录
         /// </summary>
         /// <param name="model">登录信息</param>
         /// <returns>用户登录Token</returns>
-        string GetUserToken(UserLoginModel model);
+        string GetUserToken(UserAddModel model);
         
         /// <summary>
         /// 根据Token获取用户详细信息

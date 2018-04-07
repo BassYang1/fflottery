@@ -122,52 +122,33 @@ namespace Lottery.DAL.Flex
                 if (dbOperHandler.GetDataTable().Rows.Count > 0)
                     return this.GetJsonResult(0, "账号已存在，请更换一个账号！");
                 string str = MD5.Last64(MD5.Lower32(_Password));
-                object[,] _vFields1 = new object[2, 6]
-        {
-          {
-            (object) "ParentId",
-            (object) "UserGroup",
-            (object) "UserName",
-            (object) "Password",
-            (object) "Point",
-            (object) "PayPass"
-          },
-          {
-            (object) _ParentId,
-            (object) _UserGroup,
-            (object) _UserName.ToLower(),
-            (object) str,
-            (object) _Point,
-            (object) MD5.Last64(MD5.Lower32("123456"))
-          }
-        };
+
+                object[,] _vFields1 = new object[2, 6]{
+                    {"ParentId", "UserGroup", "UserName", "Password", "Point", "PayPass"}, 
+                    {_ParentId, _UserGroup, _UserName.ToLower(), str, _Point, MD5.Last64(MD5.Lower32("123456"))}
+                };
+
                 dbOperHandler.Reset();
                 dbOperHandler.AddFieldItems(_vFields1);
                 int num = dbOperHandler.Insert("N_User");
                 if (num <= 0)
                     return this.GetJsonResult(0, "添加会员失败！");
+
                 dbOperHandler.Reset();
                 dbOperHandler.ConditionExpress = "id=@id";
                 dbOperHandler.AddConditionParameter("@id", (object)_ParentId);
                 object field = dbOperHandler.GetField("N_User", "UserCode");
+
                 dbOperHandler.Reset();
                 dbOperHandler.ConditionExpress = "id=" + (object)num;
                 dbOperHandler.AddFieldItem("UserCode", (object)(field.ToString() + Strings.PadLeft(num.ToString())));
                 dbOperHandler.Update("N_User");
-                object[,] _vFields2 = new object[2, 2]
-        {
-          {
-            (object) "UserId",
-            (object) "Change"
-          },
-          {
-            (object) num,
-            (object) 0
-          }
-        };
+
+                object[,] _vFields2 = new object[2, 2] { { "UserId", "Change" }, { num, 0 } };
                 dbOperHandler.Reset();
                 dbOperHandler.AddFieldItems(_vFields2);
                 dbOperHandler.Insert("N_UserMoneyStatAll");
+
                 return this.GetJsonResult(1, "添加会员成功！");
             }
         }

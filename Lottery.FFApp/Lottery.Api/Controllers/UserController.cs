@@ -33,6 +33,46 @@ namespace Lottery.Api.Controllers
         }
 
         /// <summary>
+        /// 会员注册
+        /// </summary>
+        /// <param name="model">会员注册</param>
+        /// <returns>会员登录成功凭证Token</returns>
+        [Route("regiter")]
+        [HttpPost]
+        [CrossSite]
+        [Description("会员注册")]
+        public Result<string> Regiter(UserRegModel model)
+        {
+            if (model == null)
+            {
+                return GetInvalidResult<string>(null, "无效的会员注册信息");
+            }
+
+            if (string.IsNullOrEmpty(model.MerchantId))
+            {
+                return GetInvalidResult<string>(null, "商户Id不能为空");
+            }
+            if (string.IsNullOrEmpty(model.UserName))
+            {
+                return GetInvalidResult<string>(null, "会员名称不能为空");
+            }
+            if (string.IsNullOrEmpty(model.SignKey))
+            {
+                return GetInvalidResult<string>(null, "签名不能为空");
+            }
+
+            try
+            {
+                var result = this.UserService.RegiterUser(model);
+                return GetSuccessResult(result);
+            }
+            catch (Exception ex)
+            {
+                return GetExceptionResult<string>(null, ex);
+            }
+        }
+
+        /// <summary>
         /// 会员登录
         /// </summary>
         /// <param name="model">登录信息</param>
@@ -41,7 +81,7 @@ namespace Lottery.Api.Controllers
         [HttpPost]
         [CrossSite]
         [Description("会员登录")]
-        public Result<string> Login(UserLoginModel model)
+        public Result<string> Login(UserAddModel model)
         {
             if (model == null)
             {

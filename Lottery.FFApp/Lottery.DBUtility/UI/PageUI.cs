@@ -10,48 +10,48 @@ using System.Web.UI;
 
 namespace Lottery.DBUtility.UI
 {
-  public abstract class PageUI : Page
-  {
-    public DbOperHandler doh;
-
-    protected override void OnError(EventArgs e)
+    public abstract class PageUI : Page
     {
-      HttpContext current = HttpContext.Current;
-      Exception lastError = current.Server.GetLastError();
-      string s = "\r\n<pre>Offending URL: " + current.Request.Url.ToString() + "\r\nSource: " + lastError.Source + "\r\nMessage: " + lastError.Message + "\r\nStack trace: " + lastError.StackTrace + "</pre>";
-      current.Response.Write(s);
-      current.Server.ClearError();
-      base.OnError(e);
-    }
+        public DbOperHandler doh;
 
-    public abstract void ConnectDb();
+        protected override void OnError(EventArgs e)
+        {
+            HttpContext current = HttpContext.Current;
+            Exception lastError = current.Server.GetLastError();
+            string s = "\r\n<pre>Offending URL: " + current.Request.Url.ToString() + "\r\nSource: " + lastError.Source + "\r\nMessage: " + lastError.Message + "\r\nStack trace: " + lastError.StackTrace + "</pre>";
+            current.Response.Write(s);
+            current.Server.ClearError();
+            base.OnError(e);
+        }
 
-    protected override void OnInit(EventArgs e)
-    {
-      this.Unload += new EventHandler(this.Jbpage_Unload);
-      base.OnInit(e);
-    }
+        public abstract void ConnectDb();
 
-    public void Alert(string msg)
-    {
-      this.ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script language=\"javascript\">alert('" + msg + "')</script>");
-    }
+        protected override void OnInit(EventArgs e)
+        {
+            this.Unload += new EventHandler(this.Jbpage_Unload);
+            base.OnInit(e);
+        }
 
-    public void Alert(string name, string msg)
-    {
-      this.ClientScript.RegisterClientScriptBlock(this.GetType(), name, "<script language=\"javascript\">alert('" + msg + "');</script>");
-    }
+        public void Alert(string msg)
+        {
+            this.ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script language=\"javascript\">alert('" + msg + "')</script>");
+        }
 
-    public TimeSpan DateDiff(DateTime DateTime1, DateTime DateTime2)
-    {
-      return new TimeSpan(DateTime1.Ticks).Subtract(new TimeSpan(DateTime2.Ticks)).Duration();
-    }
+        public void Alert(string name, string msg)
+        {
+            this.ClientScript.RegisterClientScriptBlock(this.GetType(), name, "<script language=\"javascript\">alert('" + msg + "');</script>");
+        }
 
-    private void Jbpage_Unload(object sender, EventArgs e)
-    {
-      if (this.doh == null)
-        return;
-      this.doh.Dispose();
+        public TimeSpan DateDiff(DateTime DateTime1, DateTime DateTime2)
+        {
+            return new TimeSpan(DateTime1.Ticks).Subtract(new TimeSpan(DateTime2.Ticks)).Duration();
+        }
+
+        private void Jbpage_Unload(object sender, EventArgs e)
+        {
+            if (this.doh == null)
+                return;
+            this.doh.Dispose();
+        }
     }
-  }
 }

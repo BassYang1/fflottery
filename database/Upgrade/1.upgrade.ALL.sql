@@ -38,3 +38,8 @@ GO
 
 UPDATE N_User SET MerchantId = N'111111';
 GO
+
+IF EXISTS(SElECT 1 FROM dbo.SYSOBJECTS WHERE Id = OBJECT_ID(N'N_UserCharge') AND XType = N'U')
+	AND NOT EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID(N'N_UserCharge') AND name = N'Ss3Id')
+	ALTER TABLE N_UserCharge ADD Ss3Id NVARCHAR(50);
+GO

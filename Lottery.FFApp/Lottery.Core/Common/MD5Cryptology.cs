@@ -23,6 +23,24 @@ namespace Lottery.Core
         }
 
         /// <summary>
+        /// MD5加密
+        /// </summary>
+        /// <param name="dataStr"></param>
+        /// <param name="codeType"></param>
+        /// <returns></returns>
+        public static string GetMD5(string dataStr, string codeType)
+        {
+            System.Security.Cryptography.MD5 md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            byte[] t = md5.ComputeHash(System.Text.Encoding.GetEncoding(codeType).GetBytes(dataStr));
+            System.Text.StringBuilder sb = new System.Text.StringBuilder(32);
+            for (int i = 0; i < t.Length; i++)
+            {
+                sb.Append(t[i].ToString("x").PadLeft(2, '0'));
+            }
+            return sb.ToString();
+        }
+
+        /// <summary>
         /// 解密
         /// </summary>
         /// <param name="input"></param>

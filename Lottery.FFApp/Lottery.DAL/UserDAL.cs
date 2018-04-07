@@ -57,6 +57,51 @@ namespace Lottery.DAL
             }
         }
 
+        public int Register(string _ParentId, string _UserName, string _Password, Decimal _Point, string merchantId)
+        {
+            using (DbOperHandler dbOperHandler = new ComData().Doh())
+            {
+                string str = MD5.Last64(_Password);
+                object[,] _vFields1 = new object[2, 6]
+        {
+          {
+            (object) "MerchantId",
+            (object) "ParentId",
+            (object) "UserName",
+            (object) "Password",
+            (object) "Point",
+            (object) "PayPass"
+          },
+          {
+            (object) merchantId,
+            (object) _ParentId,
+            (object) _UserName,
+            (object) str,
+            (object) _Point,
+            (object) MD5.Last64(MD5.Lower32("123456"))
+          }
+        };
+                dbOperHandler.Reset();
+                dbOperHandler.AddFieldItems(_vFields1);
+                int num = dbOperHandler.Insert("N_User");
+                object[,] _vFields2 = new object[2, 2]
+        {
+          {
+            (object) "UserId",
+            (object) "Change"
+          },
+          {
+            (object) num,
+            (object) 0
+          }
+        };
+                dbOperHandler.Reset();
+                dbOperHandler.AddFieldItems(_vFields2);
+                dbOperHandler.Insert("N_UserMoneyStatAll");
+                return num;
+            }
+        }
+
         public int Register(string _ParentId, string _UserName, string _Password, Decimal _Point)
         {
             using (DbOperHandler dbOperHandler = new ComData().Doh())

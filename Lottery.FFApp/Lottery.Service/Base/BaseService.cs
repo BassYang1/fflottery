@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using log4net;
 using Lottery.FFData;
+using Lottery.DBUtility;
+using System.Data.SqlClient;
+using Lottery.Utils;
+using Lottery.DBUtility.UI;
+using System.Threading;
 
 namespace Lottery.Service
 {
@@ -16,6 +21,41 @@ namespace Lottery.Service
     /// </summary>
     public class BaseService
     {
+        public DbOperHandler doh;
+
+        public BaseService()
+        {
+            this.ConnectDb();
+        }
+
+        ~BaseService()
+        {
+            Log.Debug("关闭数据库连接");
+            CloseDB();
+        }
+
+        private void ConnectDb()
+        {
+            if (this.doh != null)
+                return;
+
+            try
+            {
+                this.doh = (DbOperHandler)new SqlDbOperHandler(new SqlConnection(Const.ConnectionString));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void CloseDB()
+        {
+            if (this.doh == null)
+                return;
+            this.doh.Dispose();
+        }
+
         /// <summary>
         /// Log instance.
         /// </summary>
@@ -86,5 +126,23 @@ namespace Lottery.Service
 
             return source.Skip(pageIndex*pageSize).Take(pageSize).ToList();
         }
+
+        private Random rnd = new Random();
+        private int seed = 0;
+        /// <summary>
+        /// 生成用户Token
+        /// </summary>
+        /// <returns></returns>
+        public string GenerateToken()
+        {
+            var rndData = new byte[48];
+            rnd.NextBytes(rndData);
+            var seedValue = Interlocked.Add(ref seed, 1);
+            var seedData = BitConverter.GetBytes(seedValue);
+            var tokenData = rndData.Concat(seedData).OrderBy(_ => rnd.Next());
+
+            return Convert.ToBase64String(tokenData.ToArray()).TrimEnd('=');
+        }
+
     }
 }

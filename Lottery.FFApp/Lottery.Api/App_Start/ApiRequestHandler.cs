@@ -148,6 +148,7 @@ namespace Lottery.Api
             string[] ignoredApis =
             {
                 "v1/user/login",
+                "v1/user/regiter"
             };
 
             for (int i = 0; i < ignoredApis.Length; i++)
