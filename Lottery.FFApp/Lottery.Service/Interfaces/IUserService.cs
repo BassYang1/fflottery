@@ -29,5 +29,13 @@ namespace Lottery.Service
         /// <param name="token"></param>
         /// <returns>用户详细信息</returns>
         UserModel GetUserDetailByToken(string token);
+        
+        /// <summary>
+        /// 获取用户下注，最新20条
+        /// </summary>
+        /// <param name="userId">用户Id</param>
+        /// <param name="lotteryId">彩票种类Id</param>
+        /// <returns>用户下注，最新20条</returns>
+        string GetUserBets(int userId, int lotteryId);
     }
 }

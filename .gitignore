@@ -4,3 +4,4 @@ bin
 packages
 log
 .nuget
+publish

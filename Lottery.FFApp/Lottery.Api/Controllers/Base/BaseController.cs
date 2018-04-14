@@ -8,6 +8,7 @@ using System.Web.Http;
 using log4net;
 using Lottery.FFModel;
 using Lottery.Core;
+using Lottery.Service;
 
 namespace Lottery.Api.Controllers
 {
@@ -20,6 +21,24 @@ namespace Lottery.Api.Controllers
         /// Log instance.
         /// </summary>
         protected static readonly ILog Log = LogManager.GetLogger(typeof(BaseController));
+
+        /// <summary>
+        /// 当前登录用户
+        /// </summary>
+        protected UserModel CurrentUser
+        {
+            get
+            {
+                var token = HttpContext.Current.Request.Headers.GetValues("token").FirstOrDefault();
+
+                if (string.IsNullOrEmpty(token))
+                {
+                    return null;
+                }
+
+                return (new UserService()).GetUserDetailByToken(token);
+            }
+        }
 
         /// <summary>
         /// 获取处理结果

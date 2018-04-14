@@ -171,6 +171,22 @@ namespace Lottery.Service
             }
         }
 
+        /// <summary>
+        /// 获取用户下注，最新20条
+        /// </summary>
+        /// <param name="userId">用户Id</param>
+        /// <param name="lotteryId">彩票种类Id</param>
+        /// <returns>用户下注，最新20条</returns>
+        public string GetUserBets(int userId, int lotteryId)
+        {
+            string _wherestr1 = "" + " UserId = " + userId;
+            _wherestr1 = " AND LotteryId = " + lotteryId;
+            string _jsonstr = "";
+            new WebAppListOper().GetListJSON_ZH(0, 20, _wherestr1, "", ref _jsonstr);
+
+            return _jsonstr;
+        }
+
         private string ajaxRegiter(UserRegModel model)
         {
             string s = "123456";

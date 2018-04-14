@@ -111,5 +111,32 @@ namespace Lottery.Api.Controllers
                 return GetExceptionResult<string>(null, ex);
             }
         }
+
+        /// <summary>
+        /// 获取用户下注，最新20条
+        /// </summary>
+        /// <param name="lotteryId">彩票种类Id</param>
+        /// <returns>用户下注，最新20条</returns>
+        [Route("bet")]
+        [HttpGet]
+        [CrossSite]
+        [Description("获取用户下注，最新20条")]
+        public Result<string> GetUserBets(int lotteryId)
+        {
+            try
+            {
+                if (CurrentUser == null)
+                {
+                    return GetInvalidResult<string>(null, "登录用户无效");
+                }
+
+                var result = this.UserService.GetUserBets(CurrentUser.Id, lotteryId);
+                return GetSuccessResult(result);
+            }
+            catch (Exception ex)
+            {
+                return GetExceptionResult<string>(null, ex);
+            }
+        }
     }
 }

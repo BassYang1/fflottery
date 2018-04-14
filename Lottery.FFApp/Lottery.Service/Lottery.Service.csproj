@@ -60,18 +60,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BetService.cs" />
+    <Compile Include="Extensions\LotteryExtension.cs" />
     <Compile Include="Extensions\UserExtension.cs" />
     <Compile Include="Interfaces\IAccountService.cs" />
     <Compile Include="Interfaces\IBetService.cs" />
     <Compile Include="Interfaces\IPayService.cs" />
+    <Compile Include="Interfaces\ILotteryService.cs" />
     <Compile Include="PayService.cs" />
     <Compile Include="AccountService.cs" />
+    <Compile Include="LotteryService.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="Base\BaseService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lottery.Collect\Lottery.Collect.csproj">
+      <Project>{8db8a3f8-22f8-49a3-8271-adec06af09f1}</Project>
+      <Name>Lottery.Collect</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lottery.Core\Lottery.Core.csproj">
       <Project>{ac158d07-4b7d-4dd1-9061-bd4d126eff93}</Project>
       <Name>Lottery.Core</Name>
@@ -84,6 +91,10 @@
     <ProjectReference Include="..\Lottery.DBUtility\Lottery.DBUtility.csproj">
       <Project>{71e9ac32-7eaf-4677-9b25-9adb150f8bcf}</Project>
       <Name>Lottery.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottery.FFCache\Lottery.FFCache.csproj">
+      <Project>{13e68fae-a641-4e95-b08a-a6614bf530c8}</Project>
+      <Name>Lottery.FFCache</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lottery.FFData\Lottery.FFData.csproj">
       <Project>{05f71969-d197-4194-bb5c-04c666cbc869}</Project>

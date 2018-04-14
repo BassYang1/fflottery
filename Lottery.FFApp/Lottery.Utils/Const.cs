@@ -22,6 +22,26 @@ namespace Lottery.Utils
         /// </summary>
         public const string CACHE_KEY_LOTTERY_HISTORY = "LOTTERY{0}HISTORY";
 
+        /// <summary>
+        /// 彩票种类配置
+        /// </summary>
+        public const string CACHE_KEY_SYS_LOTTERY_TABLE = "SYS_LOTTERY_TABLE";
+
+        /// <summary>
+        /// 彩票种类玩法配置
+        /// </summary>
+        public const string CACHE_KEY_SYS_LOTTERY_PLAY_TABLE = "SYS_LOTTERY_PLAY_TABLE";
+
+        /// <summary>
+        /// 玩法大类配置
+        /// </summary>
+        public const string CACHE_KEY_SYS_BIG_PLAY_TABLE = "SYS_BIG_PLAY_TABLE";
+
+        /// <summary>
+        /// 玩法小类配置
+        /// </summary>
+        public const string CACHE_KEY_SYS_SMALL_PLAY_TABLE = "SYS_SMALL_PLAY_TABLE";
+
         public static string RootUserId
         {
             get
