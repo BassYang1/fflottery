@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     ajaxUserBindInfo();
+    $(".lot-center").html(GetLottery());
 });
 
 function ajaxUserBindInfo() {
@@ -63,7 +64,7 @@ function ajaxUserBindInfo() {
                 ajaxNewsList();
                 ajaxUserLogin();
                 closeload(index);
-                LayerPop('系统公告', '800px', '550px', '/news/newsindex.html');
+                //LayerPop('系统公告', '800px', '550px', '/news/newsindex.html');
                 $.ajax({
                     type: "get",
                     dataType: "json",

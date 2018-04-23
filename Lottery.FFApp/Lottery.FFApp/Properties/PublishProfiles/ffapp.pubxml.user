@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\Projects\ffyule\publish\ffweb</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\Projects\fflottery\publish\ffweb</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="active/actCharge.html">
@@ -115,25 +115,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/22/2009 16:41:14</publishTime>
     </File>
     <File Include="bin/Lottery.Collect.dll">
-      <publishTime>03/11/2018 15:08:47</publishTime>
+      <publishTime>04/22/2018 21:48:51</publishTime>
     </File>
     <File Include="bin/Lottery.DAL.dll">
-      <publishTime>03/11/2018 15:08:46</publishTime>
+      <publishTime>04/22/2018 21:47:17</publishTime>
     </File>
     <File Include="bin/Lottery.DBUtility.dll">
       <publishTime>06/15/2017 00:57:59</publishTime>
     </File>
     <File Include="bin/Lottery.Entity.dll">
-      <publishTime>03/11/2018 15:08:45</publishTime>
+      <publishTime>04/22/2018 21:47:15</publishTime>
     </File>
     <File Include="bin/Lottery.FFApp.dll">
-      <publishTime>03/11/2018 15:08:48</publishTime>
+      <publishTime>04/22/2018 21:49:30</publishTime>
     </File>
     <File Include="bin/Lottery.FFCache.dll">
-      <publishTime>03/11/2018 15:08:45</publishTime>
+      <publishTime>04/22/2018 21:47:16</publishTime>
     </File>
     <File Include="bin/Lottery.Utils.dll">
-      <publishTime>03/11/2018 15:08:45</publishTime>
+      <publishTime>04/22/2018 21:47:15</publishTime>
     </File>
     <File Include="bin/Lucene.Net.dll">
       <publishTime>02/09/2012 17:01:10</publishTime>
@@ -157,7 +157,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/09/2018 22:29:59</publishTime>
     </File>
     <File Include="center/bankpwd.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>03/24/2018 08:50:13</publishTime>
     </File>
     <File Include="center/email.html">
       <publishTime>02/09/2018 22:29:59</publishTime>
@@ -319,13 +319,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/09/2018 22:29:59</publishTime>
     </File>
     <File Include="Index.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>04/22/2018 10:23:52</publishTime>
+    </File>
+    <File Include="Index1.aspx">
+      <publishTime>04/22/2018 10:06:50</publishTime>
     </File>
     <File Include="Index2.aspx">
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="Login.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>04/22/2018 09:44:21</publishTime>
+    </File>
+    <File Include="Login1.aspx">
+      <publishTime>04/22/2018 09:43:50</publishTime>
     </File>
     <File Include="money/charge.aspx">
       <publishTime>02/09/2018 22:29:59</publishTime>
@@ -373,7 +379,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="Register.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>04/22/2018 11:17:44</publishTime>
+    </File>
+    <File Include="Register1.aspx">
+      <publishTime>04/22/2018 11:17:01</publishTime>
     </File>
     <File Include="statics/ajaxrequest.js">
       <publishTime>02/02/2018 21:45:38</publishTime>
@@ -406,7 +415,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="statics/css/member.css">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>04/22/2018 10:33:58</publishTime>
     </File>
     <File Include="statics/css/test.css">
       <publishTime>02/02/2018 21:45:38</publishTime>
@@ -427,7 +436,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="statics/data/UrlRewriter.config">
-      <publishTime>02/07/2018 21:29:20</publishTime>
+      <publishTime>04/22/2018 09:48:58</publishTime>
     </File>
     <File Include="statics/echarts.min.js">
       <publishTime>02/02/2018 21:45:38</publishTime>
@@ -1585,10 +1594,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="statics/include/header.html">
-      <publishTime>02/08/2018 20:54:45</publishTime>
+      <publishTime>04/22/2018 12:08:37</publishTime>
     </File>
     <File Include="statics/include/lefter.html">
-      <publishTime>02/02/2018 21:45:38</publishTime>
+      <publishTime>04/22/2018 10:35:08</publishTime>
     </File>
     <File Include="statics/include/nav.html">
       <publishTime>02/02/2018 21:45:38</publishTime>
@@ -1666,10 +1675,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="statics/js/page.header.js">
-      <publishTime>02/24/2018 17:31:24</publishTime>
+      <publishTime>04/22/2018 10:31:13</publishTime>
     </File>
     <File Include="statics/js/page.index.js">
-      <publishTime>02/07/2018 21:29:23</publishTime>
+      <publishTime>04/22/2018 10:31:22</publishTime>
     </File>
     <File Include="statics/js/page.login.js">
       <publishTime>03/02/2018 21:48:37</publishTime>
@@ -2119,7 +2128,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/11/2018 15:10:57</publishTime>
+      <publishTime>04/22/2018 21:49:36</publishTime>
     </File>
   </ItemGroup>
 </Project>

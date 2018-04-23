@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MD5Cryptology.cs" />
     <Compile Include="SqlHelp.cs" />
     <Compile Include="MailHelp.cs" />
     <Compile Include="CheckSSC_4Start.cs" />

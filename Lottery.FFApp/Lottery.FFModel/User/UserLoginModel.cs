@@ -11,7 +11,7 @@ namespace Lottery.FFModel
     /// 用户登录
     /// </summary>
     [Description("用户登录")]
-    public class UserAddModel
+    public class UserLoginModel
     {
         /// <summary>
         /// 商户Id

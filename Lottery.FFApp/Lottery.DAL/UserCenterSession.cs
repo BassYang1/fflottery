@@ -27,6 +27,7 @@ namespace Lottery.DAL
         protected string AdminScore = "0";
         protected string AdminPic = "1";
         protected string AdminPoint = "1";
+        protected string MerchantId = "1";
         public string loStr = "";
         public string StartTime = DateTime.Now.AddDays(-10.0).ToString("yyyy-MM-dd") + " 00:00:00";
         public string EndTime = DateTime.Now.AddDays(1.0).ToString("yyyy-MM-dd") + " 00:00:00";
@@ -68,15 +69,20 @@ namespace Lottery.DAL
         protected bool IsPower(string s)
         {
             bool flag = false;
+
             if (Cookie.GetValue(this.site.CookiePrev + "WebApp", "id") != null)
             {
                 this.AdminId = this.Str2Str(Cookie.GetValue(this.site.CookiePrev + "WebApp", "id"));
                 this.AdminName = Cookie.GetValue(this.site.CookiePrev + "WebApp", "name");
                 this.AdminCookiess = Cookie.GetValue(this.site.CookiePrev + "WebApp", "cookiess");
                 this.AdminPoint = Cookie.GetValue(this.site.CookiePrev + "WebApp", "point");
+                this.MerchantId = Cookie.GetValue(this.site.CookiePrev + "WebApp", "merchantId"); //第三方登录
                 if (this.AdminId != "0")
+                {
                     flag = true;
+                }
             }
+
             return flag;
         }
 

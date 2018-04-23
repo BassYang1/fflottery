@@ -61,7 +61,7 @@ namespace Lottery.Service
 
                 //3, 验证加密串
                 //按顺序(商户Id&会员用户名&商户安全码)MD5加密串
-                var signKey = MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}&{3}&{4}", model.OrderId, model.MerchantId, model.UserName, model.Amount.ToString("f4"), merchantEntity.Code), "gb2312");
+                var signKey = Core.MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}&{3}&{4}", model.OrderId, model.MerchantId, model.UserName, model.Amount.ToString("f4"), merchantEntity.Code), "gb2312");
                 if (string.Compare(signKey, model.SignKey, true) != 0)
                 {
                     Log.Error("无效的商户安全码");

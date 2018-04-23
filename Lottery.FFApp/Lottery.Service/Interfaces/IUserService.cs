@@ -21,8 +21,15 @@ namespace Lottery.Service
         /// </summary>
         /// <param name="model">登录信息</param>
         /// <returns>用户登录Token</returns>
-        string GetUserToken(UserAddModel model);
+        string GetUserToken(UserLoginModel model);
         
+        /// <summary>
+        /// 用户登录
+        /// </summary>
+        /// <param name="model">登录信息</param>
+        /// <returns>用户登录Token</returns>
+        UserModel Login(UserLoginModel model);
+
         /// <summary>
         /// 根据Token获取用户详细信息
         /// </summary>

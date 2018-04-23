@@ -100,13 +100,13 @@ namespace Lottery.Admin
 
     private void ajaxLogin()
     {
-      string _adminname = this.f("name");
-      string _adminpass = this.f("pass");
-      int num = this.Str2Int(this.f("type"), 0);
-      int iExpires = 0;
-      if (num > 0)
-        iExpires = 86400 * num;
-      this._response = new AdminDAL().ChkAdminLogin(_adminname, _adminpass, iExpires);
+        string _adminname = this.f("name");
+        string _adminpass = this.f("pass");
+        int num = this.Str2Int(this.f("type"), 0);
+        int iExpires = 0;
+        if (num > 0)
+            iExpires = 86400 * num;
+        this._response = new AdminDAL().ChkAdminLogin(_adminname, _adminpass, iExpires);
     }
 
     private void ajaxLogout()

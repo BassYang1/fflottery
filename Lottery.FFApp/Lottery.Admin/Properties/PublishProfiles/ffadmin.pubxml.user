@@ -6,7 +6,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\Projects\ffyule\publish\ffadmin</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\Projects\fflottery\publish\ffadmin</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="admin/activeNewsEdit.aspx">
@@ -165,6 +165,9 @@
     <File Include="admin/PageSavePop.aspx">
       <publishTime>02/02/2018 21:07:31</publishTime>
     </File>
+    <File Include="admin/regMerchant.aspx">
+      <publishTime>04/14/2018 09:49:14</publishTime>
+    </File>
     <File Include="admin/SendMessage.aspx">
       <publishTime>02/02/2018 21:07:31</publishTime>
     </File>
@@ -205,7 +208,7 @@
       <publishTime>02/02/2018 21:07:31</publishTime>
     </File>
     <File Include="admin/userChargeEdit.aspx">
-      <publishTime>02/02/2018 21:07:31</publishTime>
+      <publishTime>03/16/2018 07:30:16</publishTime>
     </File>
     <File Include="admin/userChargeUpList.aspx">
       <publishTime>02/02/2018 21:07:31</publishTime>
@@ -253,25 +256,25 @@
       <publishTime>06/22/2009 16:41:14</publishTime>
     </File>
     <File Include="bin/Lottery.Admin.dll">
-      <publishTime>03/11/2018 15:08:47</publishTime>
+      <publishTime>04/22/2018 21:47:18</publishTime>
     </File>
     <File Include="bin/Lottery.Collect.dll">
       <publishTime>12/20/2017 03:03:16</publishTime>
     </File>
     <File Include="bin/Lottery.DAL.dll">
-      <publishTime>03/11/2018 15:08:46</publishTime>
+      <publishTime>04/22/2018 21:47:17</publishTime>
     </File>
     <File Include="bin/Lottery.DBUtility.dll">
-      <publishTime>03/11/2018 15:08:45</publishTime>
+      <publishTime>04/22/2018 21:47:16</publishTime>
     </File>
     <File Include="bin/Lottery.Entity.dll">
-      <publishTime>03/11/2018 15:08:45</publishTime>
+      <publishTime>04/22/2018 21:47:15</publishTime>
     </File>
     <File Include="bin/Lottery.FFCache.dll">
-      <publishTime>03/11/2018 15:08:45</publishTime>
+      <publishTime>04/22/2018 21:47:16</publishTime>
     </File>
     <File Include="bin/Lottery.Utils.dll">
-      <publishTime>03/11/2018 15:08:45</publishTime>
+      <publishTime>04/22/2018 21:47:15</publishTime>
     </File>
     <File Include="bin/Lucene.Net.dll">
       <publishTime>02/09/2012 17:01:10</publishTime>
@@ -1048,7 +1051,7 @@
       <publishTime>02/02/2018 21:07:31</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/11/2018 15:09:44</publishTime>
+      <publishTime>04/22/2018 21:47:24</publishTime>
     </File>
     <File Include="_libs/fckeditor/editor/css/behaviors/disablehandles.htc">
       <publishTime>02/09/2018 22:29:59</publishTime>

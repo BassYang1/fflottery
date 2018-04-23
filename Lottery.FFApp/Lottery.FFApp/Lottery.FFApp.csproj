@@ -53,7 +53,7 @@
     <Reference Include="LitJSON">
       <HintPath>..\DLLs\LitJSON.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLLs\log4net.dll</HintPath>
     </Reference>
@@ -238,8 +238,20 @@
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Index1.aspx.cs">
+      <DependentUpon>Index1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login1.aspx.cs">
+      <DependentUpon>Login1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="money\charge.aspx.cs">
@@ -290,8 +302,8 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.cs" />
-    <Compile Include="Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
+    <Compile Include="Register1.aspx.cs">
+      <DependentUpon>Register1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="temp\WebLot.aspx.cs">
@@ -405,8 +417,11 @@
     <Content Include="html\sound.html" />
     <Content Include="html\temp.html" />
     <Content Include="Index.aspx" />
+    <Content Include="Index1.aspx" />
     <Content Include="Index2.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Login1.aspx" />
     <Content Include="money\charge.aspx" />
     <Content Include="money\getcash.aspx" />
     <Content Include="money\specialcharge.html" />
@@ -421,7 +436,7 @@
     <Content Include="plus\auto.aspx" />
     <Content Include="plus\getcode.aspx" />
     <Content Include="plus\GetNumber.aspx" />
-    <Content Include="Register.aspx" />
+    <Content Include="Register1.aspx" />
     <Content Include="statics\ajaxrequest.js" />
     <Content Include="statics\base\lotBase.js" />
     <Content Include="statics\base\lotData.js" />

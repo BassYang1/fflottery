@@ -13,10 +13,46 @@ namespace Lottery.FFModel
     [Description("会员")]
     public class UserModel
     {
+        /// <summary>
+        /// Token
+        /// </summary>
         [Description("Token")]
         public string Token { get; set; }
 
+        /// <summary>
+        /// SessionId
+        /// </summary>
+        [Description("SessionId")]
+        public string SessionId { get; set; }
+
+        /// <summary>
+        /// 用户Id
+        /// </summary>
         [Description("用户Id")]
         public int Id { get; set; }
+
+        /// <summary>
+        /// 商户Id
+        /// </summary>
+        [Description("商户Id")]
+        public string MerchantId { get; set; }
+
+        /// <summary>
+        /// 用户名称
+        /// </summary>
+        [Description("用户名称")]
+        public string UserName { get; set; }
+
+        /// <summary>
+        /// 用户返点
+        /// </summary>
+        [Description("用户返点")]
+        public decimal Point { get; set; }
+
+        /// <summary>
+        /// 是否启用用户
+        /// </summary>
+        [Description("是否启用用户")]
+        public int IsEnable { get; set; }
     }
 }

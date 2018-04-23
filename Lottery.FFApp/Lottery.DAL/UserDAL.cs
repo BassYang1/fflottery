@@ -56,7 +56,7 @@ namespace Lottery.DAL
                 dataTable.Dispose();
             }
         }
-
+        
         public int Register(string _ParentId, string _UserName, string _Password, Decimal _Point, string merchantId)
         {
             using (DbOperHandler dbOperHandler = new ComData().Doh())
@@ -100,6 +100,86 @@ namespace Lottery.DAL
                 dbOperHandler.Insert("N_UserMoneyStatAll");
                 return num;
             }
+        }
+
+        public int ChkRegisterMerchantApp(string parentId, string merchantId, string userName, string password, decimal point, string signKey)
+        {
+            if (string.IsNullOrEmpty(merchantId) && string.IsNullOrEmpty(userName) && string.IsNullOrEmpty(signKey))
+            {
+                throw new InvalidOperationException("无效的注册登录信息");
+            }
+
+            using (DbOperHandler dbOperHandler = new ComData().Doh())
+            {
+                //1, 判断商户是否存在                
+                dbOperHandler.Reset();
+                dbOperHandler.SqlCmd = string.Format("select top 1 MerchantId, Name, Code, ISNULL(State, 0) from N_Merchant with(nolock) where MerchantId='{0}'", merchantId);
+                DataTable tblMerchant = dbOperHandler.GetDataTable();
+
+                if (tblMerchant == null || tblMerchant.Rows.Count <= 0)
+                {
+                    throw new InvalidOperationException("商户不存在");
+                }
+
+                if (Convert.ToInt32(tblMerchant.Rows[0]["State"]) != 1)
+                {
+                    throw new InvalidOperationException("商户无效");
+                }
+
+                string code = tblMerchant.Rows[0]["Code"].ToString();
+                if (string.IsNullOrEmpty(code))
+                {
+                    throw new InvalidOperationException("商户参数无效");
+                }
+
+                //2, 验证加密串
+                var md5Key = MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", merchantId, userName, code), "gb2312");
+                if (string.Compare(md5Key, signKey, true) != 0)
+                {
+                    throw new InvalidOperationException("无效的商户安全码");
+                }
+
+                //3, 判断用户是否存在
+                dbOperHandler.Reset();
+                dbOperHandler.SqlCmd = string.Format("select top 1 Id,Point,IsEnable from N_User with(nolock) where merchantId='{1}' and username='{0}'", merchantId, userName);
+                DataTable tblUser = dbOperHandler.GetDataTable();
+
+                if (tblUser != null && tblUser.Rows.Count > 0)
+                {
+                    throw new InvalidOperationException("会员名已存在");
+                }
+
+
+                string pwdMd5 = MD5.Last64(password);
+                object[,] _vFields1 = new object[2, 7]
+                { 
+                    { "MerchantId", "ParentId", "UserName", "Password", "UserGroup", "Point", "PayPass" }, 
+                    { merchantId, parentId, userName, pwdMd5, "6", point, MD5.Last64(MD5.Lower32("123456")) }
+                };
+
+                dbOperHandler.Reset();
+                dbOperHandler.AddFieldItems(_vFields1);
+                int userId = dbOperHandler.Insert("N_User");
+
+                object[,] _vFields2 = new object[2, 2] { { "UserId", "Change" }, { userId, 0 } };
+                dbOperHandler.Reset();
+                dbOperHandler.AddFieldItems(_vFields2);
+                dbOperHandler.Insert("N_UserMoneyStatAll");
+
+                //添加Cookie
+                string cookiess = Guid.NewGuid().ToString().Replace("-", "");
+                NameValueCollection cookies = new NameValueCollection();
+                cookies.Add("id", userId.ToString());
+                cookies.Add("name", userName);
+                cookies.Add("cookiess", cookiess);
+                cookies.Add("point", "0");
+                cookies.Add("merchantId", merchantId);
+                Cookie.SetObj(this.site.CookiePrev + "WebApp", 1, cookies, this.site.CookieDomain, this.site.CookiePath);
+
+                return userId;
+            }
+
+            throw new InvalidOperationException("会员账户注册异常");
         }
 
         public int Register(string _ParentId, string _UserName, string _Password, Decimal _Point)
@@ -249,6 +329,91 @@ namespace Lottery.DAL
                 dbOperHandler.Dispose();
                 return this.JsonResult(0, "会员账号或密码错误！");
             }
+        }
+
+        public string ChkLoginMerchantApp(string merchantId, string userName, string signKey)
+        {
+            if (string.IsNullOrEmpty(merchantId) && string.IsNullOrEmpty(userName) && string.IsNullOrEmpty(signKey))
+            {
+                throw new InvalidOperationException("无效的用户登录信息");
+            }
+
+            using (DbOperHandler dbOperHandler = new ComData().Doh())
+            {
+                //1, 判断商户是否存在                
+                dbOperHandler.Reset();
+                dbOperHandler.SqlCmd = string.Format("select top 1 MerchantId, Name, Code, ISNULL(State, 0) AS State from N_Merchant with(nolock) where MerchantId='{0}'", merchantId);
+                DataTable tblMerchant = dbOperHandler.GetDataTable();
+
+                if (tblMerchant == null || tblMerchant.Rows.Count <= 0)
+                {
+                    throw new InvalidOperationException("商户不存在");
+                }
+
+                if (Convert.ToInt32(tblMerchant.Rows[0]["State"]) != 1)
+                {
+                    throw new InvalidOperationException("商户无效");
+                }
+
+                string code = tblMerchant.Rows[0]["Code"].ToString();
+                if (string.IsNullOrEmpty(code))
+                {
+                    throw new InvalidOperationException("商户参数无效");
+                }
+
+                //2, 验证加密串
+                var md5Key = MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", merchantId, userName, code), "gb2312");
+                if (string.Compare(md5Key, signKey, true) != 0)
+                {
+                    throw new InvalidOperationException("无效的商户安全码");
+                }
+
+                //3, 判断用户是否存在
+                dbOperHandler.Reset();
+                dbOperHandler.SqlCmd = string.Format("select top 1 Id,Point,IsEnable from N_User with(nolock) where merchantId='{0}' and username='{1}' and isDel=0", merchantId, userName);
+                DataTable tblUser = dbOperHandler.GetDataTable();
+
+                if (tblUser == null || tblUser.Rows.Count <= 0)
+                {
+                    throw new InvalidOperationException("会员不存在");
+                }
+
+                if (Convert.ToInt32(tblUser.Rows[0]["IsEnable"].ToString()) == 1)
+                {
+                    throw new InvalidOperationException("您的账户存在未知问题，请于客服联系！");
+                }
+                else if (Convert.ToInt32(tblUser.Rows[0]["IsEnable"].ToString()) == 2)
+                {
+                    throw new InvalidOperationException("对不起，您的网络不稳定，请重新登录！");
+                }
+
+                string userId = tblUser.Rows[0]["Id"].ToString();
+                string point = tblUser.Rows[0]["Point"].ToString();
+                string cookiess = Guid.NewGuid().ToString().Replace("-", "");
+
+                NameValueCollection cookies = new NameValueCollection();
+                cookies.Add("id", userId);
+                cookies.Add("name", userName);
+                cookies.Add("cookiess", cookiess);
+                cookies.Add("point", point);
+                cookies.Add("merchantId", merchantId);
+                Cookie.SetObj(this.site.CookiePrev + "WebApp", 1, cookies, this.site.CookieDomain, this.site.CookiePath);
+
+                dbOperHandler.Reset();
+                dbOperHandler.ConditionExpress = "Id=@Id and IsEnable=0";
+                dbOperHandler.AddConditionParameter("@Id", userId);
+                dbOperHandler.AddFieldItem("LastTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                dbOperHandler.AddFieldItem("IP", IPHelp.ClientIP);
+                dbOperHandler.AddFieldItem("sessionId", cookiess);
+                dbOperHandler.AddFieldItem("IsOnline", 1);
+                dbOperHandler.AddFieldItem("Source", 0);
+                dbOperHandler.Update("N_User");
+                dbOperHandler.Dispose();
+
+                return userId;
+            }
+
+            throw new InvalidOperationException("会员账户异常");
         }
 
         public string ChkAutoLoginWebApp(string _Id, string _sessionId, int iExpires)

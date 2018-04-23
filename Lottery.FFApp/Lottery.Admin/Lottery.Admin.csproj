@@ -65,6 +65,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\regMerchant.aspx" />
     <Content Include="statics\admin\js\adm.notify.js" />
     <Content Include="statics\app\Thumbs.db" />
     <Content Include="statics\config\site.config" />
@@ -1261,6 +1262,13 @@
     <Compile Include="admin\PageSavePop.aspx.cs">
       <DependentUpon>PageSavePop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\regMerchant.aspx.cs">
+      <DependentUpon>regMerchant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\regMerchant.aspx.designer.cs">
+      <DependentUpon>regMerchant.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\SendMessage.aspx.cs">
       <DependentUpon>SendMessage.aspx</DependentUpon>

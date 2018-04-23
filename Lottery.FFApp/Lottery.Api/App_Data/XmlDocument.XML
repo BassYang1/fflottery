@@ -597,7 +597,7 @@
             <param name="model">会员注册</param>
             <returns>会员登录成功凭证Token</returns>
         </member>
-        <member name="M:Lottery.Api.Controllers.UserController.Login(Lottery.FFModel.UserAddModel)">
+        <member name="M:Lottery.Api.Controllers.UserController.Login(Lottery.FFModel.UserLoginModel)">
             <summary>
             会员登录
             </summary>

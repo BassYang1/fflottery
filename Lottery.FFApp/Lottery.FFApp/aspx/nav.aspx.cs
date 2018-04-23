@@ -9,19 +9,19 @@ using System;
 
 namespace Lottery.Web
 {
-  public partial class nav : UserCenterSession
-  {
-    public string tId = "1";
-    public string loId = "1001";
-
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class nav : UserCenterSession
     {
-      this.Admin_Load("", "html");
-      if (!string.IsNullOrEmpty(this.Request.QueryString["id"] ?? ""))
-        this.loId = this.Request.QueryString["id"];
-      if (string.IsNullOrEmpty(this.Request.QueryString["tid"] ?? ""))
-        return;
-      this.tId = this.Request.QueryString["tid"];
+        public string tId = "1";
+        public string loId = "1001";
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            this.Admin_Load("", "html");
+            if (!string.IsNullOrEmpty(this.Request.QueryString["id"] ?? ""))
+                this.loId = this.Request.QueryString["id"];
+            if (string.IsNullOrEmpty(this.Request.QueryString["tid"] ?? ""))
+                return;
+            this.tId = this.Request.QueryString["tid"];
+        }
     }
-  }
 }

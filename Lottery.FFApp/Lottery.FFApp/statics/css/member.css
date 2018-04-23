@@ -686,6 +686,10 @@
 .index-lots li .btn-betting{width:75px;height:22px;line-height:22px;margin-top:10px;margin-left:auto;margin-right:auto;border-radius:11px;color:#262732;background-color:#fba026;}
 .index-lots li:hover .hover{opacity:1;filter:alpha(opacity=100);}
 
+
+.index-lotcenter{width:1000px; height:500px;}
+.index-lotcenter .lot-center{display:block !important; min-height:450px !important;}
+
 .index-notice,.index-safety{height:230px;}
 .index-notice{width:500px;}
 

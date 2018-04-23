@@ -81,7 +81,7 @@ namespace Lottery.Api.Controllers
         [HttpPost]
         [CrossSite]
         [Description("会员登录")]
-        public Result<string> Login(UserAddModel model)
+        public Result<string> Login(UserLoginModel model)
         {
             if (model == null)
             {

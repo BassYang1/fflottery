@@ -47,7 +47,7 @@ namespace Lottery.Service
 
                 //2, 验证加密串
                 //按顺序(商户Id&会员用户名&商户安全码)MD5加密串
-                var signKey = MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", model.MerchantId, model.UserName, merchantEntity.Code), "gb2312");
+                var signKey = Lottery.Core.MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", model.MerchantId, model.UserName, merchantEntity.Code), "gb2312");
                 if (string.Compare(signKey, model.SignKey, true) != 0)
                 {
                     Log.Error("无效的商户安全码");
@@ -84,7 +84,7 @@ namespace Lottery.Service
         /// </summary>
         /// <param name="model">登录信息</param>
         /// <returns>用户登录Token</returns>
-        public string GetUserToken(UserAddModel model)
+        public string GetUserToken(UserLoginModel model)
         {
             using (var dbContext = new TicketEntities())
             {
@@ -109,7 +109,7 @@ namespace Lottery.Service
                 }
 
                 //2, 验证加密串
-                var signKey = MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", model.MerchantId, model.UserName, merchantEntity.Code), "gb2312");
+                var signKey = Core.MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", model.MerchantId, model.UserName, merchantEntity.Code), "gb2312");
                 if (string.Compare(signKey, model.SignKey, true) != 0)
                 {
                     Log.Error("无效的商户安全码");
@@ -131,6 +131,86 @@ namespace Lottery.Service
                 SaveDbChanges(dbContext);
 
                 return token;
+            }
+        }
+
+        /// <summary>
+        /// 用户登录
+        /// </summary>
+        /// <param name="model">登录信息</param>
+        /// <returns>用户登录Token</returns>
+        public UserModel Login(UserLoginModel model)
+        {
+            using (var dbContext = new TicketEntities())
+            {
+                if (model == null || string.IsNullOrEmpty(model.MerchantId) && string.IsNullOrEmpty(model.UserName) && string.IsNullOrEmpty(model.SignKey))
+                {
+                    throw new InvalidOperationException("无效的用户登录信息");
+                }
+
+                //1, 判断用户是否存在
+                var merchantEntity = dbContext.N_Merchant.FirstOrDefault(it => (it.MerchantId.Equals(model.MerchantId, StringComparison.OrdinalIgnoreCase)));
+
+                if (merchantEntity == null)
+                {
+                    Log.Error("商户不存在");
+                    throw new InvalidOperationException("商户不存在");
+                }
+
+                if (string.IsNullOrEmpty(merchantEntity.Code))
+                {
+                    Log.Error("无效的商户");
+                    throw new InvalidOperationException("无效的商户");
+                }
+
+                //2, 验证加密串
+                var signKey = Core.MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", model.MerchantId, model.UserName, merchantEntity.Code), "gb2312");
+                if (string.Compare(signKey, model.SignKey, true) != 0)
+                {
+                    Log.Error("无效的商户安全码");
+                    throw new InvalidOperationException("无效的商户安全码");
+                }
+
+                //3,验证用户
+                var userEntity = dbContext.N_User.FirstOrDefault(it => it.UserName.Equals(model.UserName, StringComparison.OrdinalIgnoreCase));
+
+                if (userEntity == null)
+                {
+                    Log.Error("用户不存在");
+                    throw new InvalidOperationException("用户不存在");
+                }
+
+                if (userEntity.IsEnable == null || 1 == userEntity.IsEnable)
+                {
+                    Log.Error("您的账户存在未知问题，请于客服联系！");
+                    throw new InvalidOperationException("您的账户存在未知问题，请于客服联系！");
+                }
+                else if (2 == userEntity.IsEnable)
+                {
+                    Log.Error("对不起，您的网络不稳定，请重新登录！");
+                    throw new InvalidOperationException("对不起，您的网络不稳定，请重新登录！");
+                }
+
+                var token = this.GenerateToken(); // 获取用户登录Token 
+                userEntity.Token = token;
+                userEntity.ExpirationTime = DateTime.Now.AddDays(2); // 设置Token有效期
+                userEntity.SessionId = Guid.NewGuid().ToString().Replace("-", "");
+                userEntity.LastTime = DateTime.Now;
+                userEntity.IP = IPHelp.ClientIP;
+                userEntity.IsOnline = 1;
+                userEntity.Source = 0;
+
+                SaveDbChanges(dbContext);
+
+                var user = new UserModel();
+                user.Point = userEntity.Point ?? 0;
+                user.UserName = userEntity.UserName;
+                user.MerchantId = userEntity.MerchantId;
+                user.SessionId = userEntity.SessionId;
+                user.Token = token;
+                user.Id = userEntity.Id;
+
+                return user;
             }
         }
 
