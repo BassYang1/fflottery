@@ -60,11 +60,15 @@ namespace Lottery.Api.Controllers
             {
                 return GetInvalidResult<string>(null, "签名不能为空");
             }
+            if (string.IsNullOrEmpty(model.Time))
+            {
+                return GetInvalidResult<string>(null, "注册时间不能为空");
+            }
 
             try
             {
-                var result = this.UserService.RegiterUser(model);
-                return GetSuccessResult(result);
+                var result = this.UserService.Regiter(model);
+                return GetSuccessResult(result, "注册成功");
             }
             catch (Exception ex)
             {
@@ -81,61 +85,34 @@ namespace Lottery.Api.Controllers
         [HttpPost]
         [CrossSite]
         [Description("会员登录")]
-        public Result<string> Login(UserLoginModel model)
+        public Result<UserModel> Login(UserLoginModel model)
         {
             if (model == null)
             {
-                return GetInvalidResult<string>(null, "无效的会员登录信息");
+                return GetInvalidResult<UserModel>(null, "无效的会员登录信息");
             }
 
             if (string.IsNullOrEmpty(model.MerchantId))
             {
-                return GetInvalidResult<string>(null, "商户Id不能为空");
+                return GetInvalidResult<UserModel>(null, "商户Id不能为空");
             }
             if (string.IsNullOrEmpty(model.UserName))
             {
-                return GetInvalidResult<string>(null, "会员名称不能为空");
+                return GetInvalidResult<UserModel>(null, "会员名称不能为空");
             }
             if (string.IsNullOrEmpty(model.SignKey))
             {
-                return GetInvalidResult<string>(null, "签名不能为空");
+                return GetInvalidResult<UserModel>(null, "签名不能为空");
             }
 
             try
             {
-                var result = this.UserService.GetUserToken(model);
+                var result = this.UserService.Login(model);
                 return GetSuccessResult(result); 
             }
             catch (Exception ex)
             {
-                return GetExceptionResult<string>(null, ex);
-            }
-        }
-
-        /// <summary>
-        /// 获取用户下注，最新20条
-        /// </summary>
-        /// <param name="lotteryId">彩票种类Id</param>
-        /// <returns>用户下注，最新20条</returns>
-        [Route("bet")]
-        [HttpGet]
-        [CrossSite]
-        [Description("获取用户下注，最新20条")]
-        public Result<string> GetUserBets(int lotteryId)
-        {
-            try
-            {
-                if (CurrentUser == null)
-                {
-                    return GetInvalidResult<string>(null, "登录用户无效");
-                }
-
-                var result = this.UserService.GetUserBets(CurrentUser.Id, lotteryId);
-                return GetSuccessResult(result);
-            }
-            catch (Exception ex)
-            {
-                return GetExceptionResult<string>(null, ex);
+                return GetExceptionResult<UserModel>(null, ex);
             }
         }
     }

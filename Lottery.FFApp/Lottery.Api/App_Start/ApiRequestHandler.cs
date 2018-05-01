@@ -64,11 +64,11 @@ namespace Lottery.Api
             
             try
             {
-                var token = GetHeaderByKey(request, "Token");
-
                 // check token except  register & login & resetpassword
                 if (request.RequestUri != null && IsApiTokenChecked(request.RequestUri.ToString()))
                 {
+                    var token = GetHeaderByKey(request, "Token");
+
                     if (string.IsNullOrEmpty(token))
                     {
                         throw new InvalidCastException("会员登录Token无效");
@@ -148,7 +148,9 @@ namespace Lottery.Api
             string[] ignoredApis =
             {
                 "v1/user/login",
-                "v1/user/regiter"
+                "v1/user/regiter",
+                "v1/account/charge",
+                "v1/account/withdraw"
             };
 
             for (int i = 0; i < ignoredApis.Length; i++)

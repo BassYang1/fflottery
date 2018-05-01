@@ -15,114 +15,124 @@ namespace Lottery.DAL
     public class CheckOperation
     {
         /// <summary>
-        /// 
+        /// 计算奖金额
         /// </summary>
         /// <param name="row">投注信息</param>
-        /// <param name="LotteryNumber">期号</param>
+        /// <param name="lotNumber">开奖号码</param>
+        /// <param name="lotNumTotal">开奖号码和值</param>
         /// <param name="sqlCommand"></param>
         /// <returns></returns>
-        public static bool Checking(DataRow row, string LotteryNumber, SqlCommand sqlCommand)
+        public static bool Checking(DataRow row, string lotNumber, int lotNumTotal, SqlCommand sqlCommand)
         {
             try
             {
                 if (Convert.ToInt32(row["State"]) != 0)
                     return true;
-                int int32_1 = Convert.ToInt32(row["Id"]);
+                int betId = Convert.ToInt32(row["Id"]);
                 string ssId = row["SsId"].ToString();
-                int int32_2 = Convert.ToInt32(row["UserId"]);
-                int int32_3 = Convert.ToInt32(row["LotteryId"]);
-                int int32_4 = Convert.ToInt32(row["PlayId"]);
-                int int32_5 = Convert.ToInt32(row["Num"]);
-                string str1 = row["IssueNum"].ToString();
-                string betDetail2 = BetDetailDAL.GetBetDetail2(Convert.ToDateTime(row["STime2"]).ToString("yyyyMMdd"), int32_2.ToString(), int32_1.ToString());
-                Decimal num1 = Convert.ToDecimal(row["Total"]);
-                Decimal num2 = Convert.ToDecimal(row["point"]);
-                Decimal num3 = Convert.ToDecimal(row["PointMoney"]);
-                Decimal num4 = Convert.ToDecimal(row["Bonus"]);
-                Decimal num5 = Convert.ToDecimal(row["Times"]);
-                Decimal num6 = Convert.ToDecimal(row["SingleMoney"]);
+                int userId = Convert.ToInt32(row["UserId"]);
+                int lotteryId = Convert.ToInt32(row["LotteryId"]);
+                int playId = Convert.ToInt32(row["PlayId"]);
+                int betNum = Convert.ToInt32(row["Num"]);
+                string issNum = row["IssueNum"].ToString();
+                string betDetail2 = BetDetailDAL.GetBetDetail2(Convert.ToDateTime(row["STime2"]).ToString("yyyyMMdd"), userId.ToString(), betId.ToString());
+                Decimal betMoney = Convert.ToDecimal(row["Total"]); //下注金额
+                Decimal point = Convert.ToDecimal(row["point"]);
+                Decimal pointMoney = Convert.ToDecimal(row["PointMoney"]);
+
+                //赔率
+                Decimal bonus = Convert.ToDecimal(row["Bonus"]);
+
+                //下注倍数
+                Decimal times = Convert.ToDecimal(row["Times"]);
+
+                //单注金额
+                Decimal singleMoney = Convert.ToDecimal(row["SingleMoney"]);
+
                 string Pos = row["Pos"].ToString();
                 string sType = row["PlayCode"].ToString();
-                Convert.ToInt32(row["IsCheat"]);
-                Convert.ToInt32(row["IsDelay"]);
+
                 int int32_6 = Convert.ToInt32(row["ZhId"]);
                 string STime2 = row["STime"].ToString();
-                string[] strArray1 = LotteryNumber.Split(',');
+                string[] lotNums = lotNumber.Split(',');
 
-                if (sType.Equals("P_5QJ3"))
+                #region 区间玩法
+                if (sType.Equals("P_5QJ3")) //五码区间三星
                 {
-                    string[] strArray2 = betDetail2.Split(',');
-                    if (strArray2[0].IndexOf(CheckOperation.ReplaceStr(strArray1[0])) == -1 || strArray2[1].IndexOf(CheckOperation.ReplaceStr(strArray1[1])) == -1)
+                    string[] userBet = betDetail2.Split(',');
+                    if (userBet[0].IndexOf(CheckOperation.ReplaceStr(lotNums[0])) == -1 || userBet[1].IndexOf(CheckOperation.ReplaceStr(lotNums[1])) == -1)
                     {
                         sqlCommand.CommandType = CommandType.Text;
-                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)int32_2 + ")-" + (object)num2 + ") from Sys_PlaySmallType where title2='P_5QJ3'";
-                        num4 = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
+                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)userId + ")-" + (object)point + ") from Sys_PlaySmallType where title2='P_5QJ3'";
+                        bonus = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
                         sType = sType.Replace("P_5QJ3", "P_5QJ3_2");
                     }
                     else
                         sType = sType.Replace("P_5QJ3", "P_5QJ3_1");
                 }
 
-                if (sType.Equals("P_4QJ3"))
+                if (sType.Equals("P_4QJ3")) //四码区间三星
                 {
-                    if (betDetail2.Split(',')[0].IndexOf(CheckOperation.ReplaceStr(strArray1[1])) == -1)
+                    if (betDetail2.Split(',')[0].IndexOf(CheckOperation.ReplaceStr(lotNums[1])) == -1)
                     {
                         sqlCommand.CommandType = CommandType.Text;
-                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)int32_2 + ")-" + (object)num2 + ") from Sys_PlaySmallType where title2='P_4QJ3'";
-                        num4 = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
+                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)userId + ")-" + (object)point + ") from Sys_PlaySmallType where title2='P_4QJ3'";
+                        bonus = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
                         sType = sType.Replace("P_4QJ3", "P_4QJ3_2");
                     }
                     else
                         sType = sType.Replace("P_4QJ3", "P_4QJ3_1");
                 }
 
-                if (sType.Equals("P_3QJ2_L"))
+                if (sType.Equals("P_3QJ2_L")) //前三区间二星
                 {
-                    if (betDetail2.Split(',')[0].IndexOf(CheckOperation.ReplaceStr(strArray1[0])) == -1)
+                    if (betDetail2.Split(',')[0].IndexOf(CheckOperation.ReplaceStr(lotNums[0])) == -1)
                     {
                         sqlCommand.CommandType = CommandType.Text;
-                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)int32_2 + ")-" + (object)num2 + ") from Sys_PlaySmallType where title2='P_3QJ2_L'";
-                        num4 = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
+                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)userId + ")-" + (object)point + ") from Sys_PlaySmallType where title2='P_3QJ2_L'";
+                        bonus = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
                         sType = sType.Replace("P_3QJ2_L", "P_3QJ2_L_2");
                     }
                     else
                         sType = sType.Replace("P_3QJ2_L", "P_3QJ2_L_1");
                 }
 
-                if (sType.Equals("P_3QJ2_R"))
+                if (sType.Equals("P_3QJ2_R")) //后三区间二星
                 {
-                    if (betDetail2.Split(',')[0].IndexOf(CheckOperation.ReplaceStr(strArray1[2])) == -1)
+                    if (betDetail2.Split(',')[0].IndexOf(CheckOperation.ReplaceStr(lotNums[2])) == -1)
                     {
                         sqlCommand.CommandType = CommandType.Text;
-                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)int32_2 + ")-" + (object)num2 + ") from Sys_PlaySmallType where title2='P_3QJ2_R'";
-                        num4 = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
+                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)userId + ")-" + (object)point + ") from Sys_PlaySmallType where title2='P_3QJ2_R'";
+                        bonus = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
                         sType = sType.Replace("P_3QJ2_R", "P_3QJ2_R_2");
                     }
                     else
                         sType = sType.Replace("P_3QJ2_R", "P_3QJ2_R_1");
                 }
+                #endregion
 
-                if (sType.Equals("P_5QW3"))
+                #region 趣味玩法
+                if (sType.Equals("P_5QW3"))//五码趣味三星 //在个位、十位、百位上至少各选1个号码，并从千位与万位的“大小号”中各任选一种进行投注。
                 {
-                    string[] strArray2 = betDetail2.Split(',');
-                    if (strArray2[0].IndexOf(CheckOperation.ReplaceDX(strArray1[0])) == -1 || strArray2[1].IndexOf(CheckOperation.ReplaceDX(strArray1[1])) == -1)
+                    string[] userBet = betDetail2.Split(',');
+                    if (userBet[0].IndexOf(CheckOperation.ReplaceDX(lotNums[0])) == -1 || userBet[1].IndexOf(CheckOperation.ReplaceDX(lotNums[1])) == -1)
                     {
                         sqlCommand.CommandType = CommandType.Text;
-                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)int32_2 + ")-" + (object)num2 + ") from Sys_PlaySmallType where title2='P_5QW3'";
-                        num4 = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
+                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)userId + ")-" + (object)point + ") from Sys_PlaySmallType where title2='P_5QW3'";
+                        bonus = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
                         sType = sType.Replace("P_5QW3", "P_5QW3_2");
                     }
                     else
                         sType = sType.Replace("P_5QW3", "P_5QW3_1");
                 }
 
-                if (sType.Equals("P_4QW3"))
+                if (sType.Equals("P_4QW3")) //四码趣味三星 //选择一个千位的大小号属性，并从百位、十位、个位中至少各选1个号码
                 {
-                    if (betDetail2.Split(',')[0].IndexOf(CheckOperation.ReplaceDX(strArray1[1])) == -1)
+                    if (betDetail2.Split(',')[0].IndexOf(CheckOperation.ReplaceDX(lotNums[1])) == -1)
                     {
                         sqlCommand.CommandType = CommandType.Text;
-                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)int32_2 + ")-" + (object)num2 + ") from Sys_PlaySmallType where title2='P_4QW3'";
-                        num4 = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
+                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)userId + ")-" + (object)point + ") from Sys_PlaySmallType where title2='P_4QW3'";
+                        bonus = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
                         sType = sType.Replace("P_4QW3", "P_4QW3_2");
                     }
                     else
@@ -131,11 +141,11 @@ namespace Lottery.DAL
 
                 if (sType.Equals("P_3QW2_L"))
                 {
-                    if (betDetail2.Split(',')[0].IndexOf(CheckOperation.ReplaceDX(strArray1[0])) == -1)
+                    if (betDetail2.Split(',')[0].IndexOf(CheckOperation.ReplaceDX(lotNums[0])) == -1)
                     {
                         sqlCommand.CommandType = CommandType.Text;
-                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)int32_2 + ")-" + (object)num2 + ") from Sys_PlaySmallType where title2='P_3QW2_L'";
-                        num4 = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
+                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)userId + ")-" + (object)point + ") from Sys_PlaySmallType where title2='P_3QW2_L'";
+                        bonus = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
                         sType = sType.Replace("P_3QW2_L", "P_3QW2_L_2");
                     }
                     else
@@ -144,392 +154,503 @@ namespace Lottery.DAL
 
                 if (sType.Equals("P_3QW2_R"))
                 {
-                    if (betDetail2.Split(',')[0].IndexOf(CheckOperation.ReplaceDX(strArray1[2])) == -1)
+                    if (betDetail2.Split(',')[0].IndexOf(CheckOperation.ReplaceDX(lotNums[2])) == -1)
                     {
                         sqlCommand.CommandType = CommandType.Text;
-                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)int32_2 + ")-" + (object)num2 + ") from Sys_PlaySmallType where title2='P_3QW2_R'";
-                        num4 = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
+                        sqlCommand.CommandText = "select MinBonus2+20*PosBonus2*(0.1*(SELECT top 1 [Point] FROM [N_User] where Id=" + (object)userId + ")-" + (object)point + ") from Sys_PlaySmallType where title2='P_3QW2_R'";
+                        bonus = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
                         sType = sType.Replace("P_3QW2_R", "P_3QW2_R_2");
                     }
                     else
                         sType = sType.Replace("P_3QW2_R", "P_3QW2_R_1");
                 }
+                #endregion
 
-                if (sType.Equals("P_3ZBD_L"))
+                #region 包胆玩法
+                if (sType.Equals("P_3ZBD_L")) //前三组选包胆 //从0-9选择一个组成一注
                 {
-                    if (strArray1[0] == strArray1[1] || strArray1[1] == strArray1[2] || strArray1[0] == strArray1[2])
+                    if (lotNums[0] == lotNums[1] || lotNums[1] == lotNums[2] || lotNums[0] == lotNums[2])
                         sType = sType.Replace("3ZBD", "3ZBDZ3");
-                    if (strArray1[0] != strArray1[1] && strArray1[1] != strArray1[2] && strArray1[0] != strArray1[2])
+                    if (lotNums[0] != lotNums[1] && lotNums[1] != lotNums[2] && lotNums[0] != lotNums[2])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3ZBD", "3ZBDZ6");
                     }
                 }
 
-                if (sType.Equals("P_3ZBD_C"))
+                if (sType.Equals("P_3ZBD_C")) //中三组选包胆
                 {
-                    if (strArray1[1] == strArray1[2] || strArray1[2] == strArray1[3] || strArray1[1] == strArray1[3])
+                    if (lotNums[1] == lotNums[2] || lotNums[2] == lotNums[3] || lotNums[1] == lotNums[3])
                         sType = sType.Replace("3ZBD", "3ZBDZ3");
-                    if (strArray1[1] != strArray1[2] && strArray1[2] != strArray1[3] && strArray1[1] != strArray1[3])
+                    if (lotNums[1] != lotNums[2] && lotNums[2] != lotNums[3] && lotNums[1] != lotNums[3])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3ZBD", "3ZBDZ6");
                     }
                 }
 
                 if (sType.Equals("P_3ZBD_R"))
                 {
-                    if (strArray1[2] == strArray1[3] || strArray1[3] == strArray1[4] || strArray1[2] == strArray1[4])
+                    if (lotNums[2] == lotNums[3] || lotNums[3] == lotNums[4] || lotNums[2] == lotNums[4])
                         sType = sType.Replace("3ZBD", "3ZBDZ3");
-                    if (strArray1[2] != strArray1[3] && strArray1[3] != strArray1[4] && strArray1[2] != strArray1[4])
+                    if (lotNums[2] != lotNums[3] && lotNums[3] != lotNums[4] && lotNums[2] != lotNums[4])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3ZBD", "3ZBDZ6");
                     }
                 }
 
-                if (sType.Equals("R_3ZBD_WQB"))
+                if (sType.Equals("R_3ZBD_WQB")) //万千百组选包胆
                 {
-                    if (strArray1[0] == strArray1[1] || strArray1[1] == strArray1[2] || strArray1[0] == strArray1[2])
+                    if (lotNums[0] == lotNums[1] || lotNums[1] == lotNums[2] || lotNums[0] == lotNums[2])
                         sType = sType.Replace("3ZBD", "3ZBDZ3");
-                    if (strArray1[0] != strArray1[1] && strArray1[1] != strArray1[2] && strArray1[0] != strArray1[2])
+                    if (lotNums[0] != lotNums[1] && lotNums[1] != lotNums[2] && lotNums[0] != lotNums[2])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3ZBD", "3ZBDZ6");
                     }
                 }
 
                 if (sType.Equals("R_3ZBD_WQS"))
                 {
-                    if (strArray1[0] == strArray1[1] || strArray1[1] == strArray1[3] || strArray1[0] == strArray1[3])
+                    if (lotNums[0] == lotNums[1] || lotNums[1] == lotNums[3] || lotNums[0] == lotNums[3])
                         sType = sType.Replace("3ZBD", "3ZBDZ3");
-                    if (strArray1[0] != strArray1[1] && strArray1[1] != strArray1[3] && strArray1[0] != strArray1[3])
+                    if (lotNums[0] != lotNums[1] && lotNums[1] != lotNums[3] && lotNums[0] != lotNums[3])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3ZBD", "3ZBDZ6");
                     }
                 }
 
                 if (sType.Equals("R_3ZBD_WQG"))
                 {
-                    if (strArray1[0] == strArray1[1] || strArray1[1] == strArray1[4] || strArray1[0] == strArray1[4])
+                    if (lotNums[0] == lotNums[1] || lotNums[1] == lotNums[4] || lotNums[0] == lotNums[4])
                         sType = sType.Replace("3ZBD", "3ZBDZ3");
-                    if (strArray1[0] != strArray1[1] && strArray1[1] != strArray1[4] && strArray1[0] != strArray1[4])
+                    if (lotNums[0] != lotNums[1] && lotNums[1] != lotNums[4] && lotNums[0] != lotNums[4])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3ZBD", "3ZBDZ6");
                     }
                 }
 
                 if (sType.Equals("R_3ZBD_WBS"))
                 {
-                    if (strArray1[0] == strArray1[2] || strArray1[2] == strArray1[3] || strArray1[0] == strArray1[3])
+                    if (lotNums[0] == lotNums[2] || lotNums[2] == lotNums[3] || lotNums[0] == lotNums[3])
                         sType = sType.Replace("3ZBD", "3ZBDZ3");
-                    if (strArray1[0] != strArray1[2] && strArray1[2] != strArray1[3] && strArray1[0] != strArray1[3])
+                    if (lotNums[0] != lotNums[2] && lotNums[2] != lotNums[3] && lotNums[0] != lotNums[3])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3ZBD", "3ZBDZ6");
                     }
                 }
 
                 if (sType.Equals("R_3ZBD_WBG"))
                 {
-                    if (strArray1[0] == strArray1[2] || strArray1[2] == strArray1[4] || strArray1[0] == strArray1[4])
+                    if (lotNums[0] == lotNums[2] || lotNums[2] == lotNums[4] || lotNums[0] == lotNums[4])
                         sType = sType.Replace("3ZBD", "3ZBDZ3");
-                    if (strArray1[0] != strArray1[2] && strArray1[2] != strArray1[4] && strArray1[0] != strArray1[4])
+                    if (lotNums[0] != lotNums[2] && lotNums[2] != lotNums[4] && lotNums[0] != lotNums[4])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3ZBD", "3ZBDZ6");
                     }
                 }
 
                 if (sType.Equals("R_3ZBD_WSG"))
                 {
-                    if (strArray1[0] == strArray1[3] || strArray1[3] == strArray1[4] || strArray1[0] == strArray1[4])
+                    if (lotNums[0] == lotNums[3] || lotNums[3] == lotNums[4] || lotNums[0] == lotNums[4])
                         sType = sType.Replace("3ZBD", "3ZBDZ3");
-                    if (strArray1[0] != strArray1[3] && strArray1[3] != strArray1[4] && strArray1[0] != strArray1[4])
+                    if (lotNums[0] != lotNums[3] && lotNums[3] != lotNums[4] && lotNums[0] != lotNums[4])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3ZBD", "3ZBDZ6");
                     }
                 }
 
                 if (sType.Equals("R_3ZBD_QBS"))
                 {
-                    if (strArray1[1] == strArray1[2] || strArray1[2] == strArray1[3] || strArray1[1] == strArray1[3])
+                    if (lotNums[1] == lotNums[2] || lotNums[2] == lotNums[3] || lotNums[1] == lotNums[3])
                         sType = sType.Replace("3ZBD", "3ZBDZ3");
-                    if (strArray1[1] != strArray1[2] && strArray1[2] != strArray1[3] && strArray1[1] != strArray1[3])
+                    if (lotNums[1] != lotNums[2] && lotNums[2] != lotNums[3] && lotNums[1] != lotNums[3])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3ZBD", "3ZBDZ6");
                     }
                 }
 
                 if (sType.Equals("R_3ZBD_QBG"))
                 {
-                    if (strArray1[1] == strArray1[2] || strArray1[2] == strArray1[4] || strArray1[1] == strArray1[4])
+                    if (lotNums[1] == lotNums[2] || lotNums[2] == lotNums[4] || lotNums[1] == lotNums[4])
                         sType = sType.Replace("3ZBD", "3ZBDZ3");
-                    if (strArray1[1] != strArray1[2] && strArray1[2] != strArray1[4] && strArray1[1] != strArray1[4])
+                    if (lotNums[1] != lotNums[2] && lotNums[2] != lotNums[4] && lotNums[1] != lotNums[4])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3ZBD", "3ZBDZ6");
                     }
                 }
 
                 if (sType.Equals("R_3ZBD_QSG"))
                 {
-                    if (strArray1[1] == strArray1[3] || strArray1[3] == strArray1[4] || strArray1[1] == strArray1[4])
+                    if (lotNums[1] == lotNums[3] || lotNums[3] == lotNums[4] || lotNums[1] == lotNums[4])
                         sType = sType.Replace("3ZBD", "3ZBDZ3");
-                    if (strArray1[1] != strArray1[3] && strArray1[3] != strArray1[4] && strArray1[1] != strArray1[4])
+                    if (lotNums[1] != lotNums[3] && lotNums[3] != lotNums[4] && lotNums[1] != lotNums[4])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3ZBD", "3ZBDZ6");
                     }
                 }
 
                 if (sType.Equals("R_3ZBD_BSG"))
                 {
-                    if (strArray1[2] == strArray1[3] || strArray1[3] == strArray1[4] || strArray1[2] == strArray1[4])
+                    if (lotNums[2] == lotNums[3] || lotNums[3] == lotNums[4] || lotNums[2] == lotNums[4])
                         sType = sType.Replace("3ZBD", "3ZBDZ3");
-                    if (strArray1[2] != strArray1[3] && strArray1[3] != strArray1[4] && strArray1[2] != strArray1[4])
+                    if (lotNums[2] != lotNums[3] && lotNums[3] != lotNums[4] && lotNums[2] != lotNums[4])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3ZBD", "3ZBDZ6");
                     }
                 }
+                #endregion
 
-                if (sType.Equals("P_3ZHE_L") && strArray1[0] != strArray1[1] && (strArray1[0] != strArray1[2] && strArray1[1] != strArray1[2]))
-                    num4 /= new Decimal(2);
+                #region 和值玩法
+                //前三组选和值
+                if (sType.Equals("P_3ZHE_L") && lotNums[0] != lotNums[1] && (lotNums[0] != lotNums[2] && lotNums[1] != lotNums[2]))
+                    bonus /= new Decimal(2);
 
-                if (sType.Equals("P_3ZHE_C") && strArray1[1] != strArray1[2] && (strArray1[2] != strArray1[3] && strArray1[1] != strArray1[3]))
-                    num4 /= new Decimal(2);
+                //中三组选和值
+                if (sType.Equals("P_3ZHE_C") && lotNums[1] != lotNums[2] && (lotNums[2] != lotNums[3] && lotNums[1] != lotNums[3]))
+                    bonus /= new Decimal(2);
 
-                if (sType.Equals("P_3ZHE_R") && strArray1[0] != strArray1[1] && (strArray1[1] != strArray1[2] && strArray1[0] != strArray1[2]))
-                    num4 /= new Decimal(2);
+                //后三组选和值
+                if (sType.Equals("P_3ZHE_R") && lotNums[0] != lotNums[1] && (lotNums[1] != lotNums[2] && lotNums[0] != lotNums[2]))
+                    bonus /= new Decimal(2);
+                #endregion
 
+                #region 混选玩法
+                //三星组选混选 //手动输入号码，至少输入1个三位数号码组成一注
                 if (sType.Equals("P_3HX_L"))
                 {
-                    if (strArray1[0] == strArray1[1] || strArray1[1] == strArray1[2] || strArray1[0] == strArray1[2])
+                    if (lotNums[0] == lotNums[1] || lotNums[1] == lotNums[2] || lotNums[0] == lotNums[2])
                         sType = sType.Replace("3HX", "3Z3_2");
-                    if (strArray1[0] != strArray1[1] && strArray1[0] != strArray1[2] && strArray1[1] != strArray1[2])
+                    if (lotNums[0] != lotNums[1] && lotNums[0] != lotNums[2] && lotNums[1] != lotNums[2])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3HX", "3Z6_2");
                     }
                 }
 
+                //中三混合组选 //手动输入号码，至少输入1个三位数号码组成一注
                 if (sType.Equals("P_3HX_C"))
                 {
-                    if (strArray1[1] == strArray1[2] || strArray1[2] == strArray1[3] || strArray1[1] == strArray1[3])
+                    if (lotNums[1] == lotNums[2] || lotNums[2] == lotNums[3] || lotNums[1] == lotNums[3])
                         sType = sType.Replace("3HX", "3Z3_2");
-                    if (strArray1[1] != strArray1[2] && strArray1[2] != strArray1[3] && strArray1[1] != strArray1[3])
+                    if (lotNums[1] != lotNums[2] && lotNums[2] != lotNums[3] && lotNums[1] != lotNums[3])
                     {
-                        num4 /= new Decimal(2);
+                        bonus /= new Decimal(2);
                         sType = sType.Replace("3HX", "3Z6_2");
                     }
                 }
 
                 if (sType.Equals("P_3HX_R"))
                 {
-                    if (strArray1.Length == 3)
+                    if (lotNums.Length == 3)
                     {
-                        if (strArray1[0] == strArray1[1] || strArray1[1] == strArray1[2] || strArray1[0] == strArray1[2])
+                        if (lotNums[0] == lotNums[1] || lotNums[1] == lotNums[2] || lotNums[0] == lotNums[2])
                             sType = sType.Replace("3HX", "3Z3_2");
-                        if (strArray1[0] != strArray1[1] && strArray1[1] != strArray1[2] && strArray1[0] != strArray1[2])
+                        if (lotNums[0] != lotNums[1] && lotNums[1] != lotNums[2] && lotNums[0] != lotNums[2])
                         {
-                            num4 /= new Decimal(2);
+                            bonus /= new Decimal(2);
                             sType = sType.Replace("3HX", "3Z6_2");
                         }
                     }
                     else
                     {
-                        if (strArray1[2] == strArray1[3] || strArray1[3] == strArray1[4] || strArray1[2] == strArray1[4])
+                        if (lotNums[2] == lotNums[3] || lotNums[3] == lotNums[4] || lotNums[2] == lotNums[4])
                             sType = sType.Replace("3HX", "3Z3_2");
-                        if (strArray1[2] != strArray1[3] && strArray1[3] != strArray1[4] && strArray1[2] != strArray1[4])
+                        if (lotNums[2] != lotNums[3] && lotNums[3] != lotNums[4] && lotNums[2] != lotNums[4])
                         {
-                            num4 /= new Decimal(2);
+                            bonus /= new Decimal(2);
                             sType = sType.Replace("3HX", "3Z6_2");
                         }
                     }
                 }
 
+                //任三组选混选 //从万位、千位、百位、十位，个位中至少选择三个位置，手动至少输入1个三位数号码组成一注（不包含豹子号）
                 if (sType.Contains("R_3HX"))
                 {
-                    if (strArray1.Length == 3)
+                    if (lotNums.Length == 3)
                     {
-                        if (strArray1[0] == strArray1[1] || strArray1[1] == strArray1[2] || strArray1[0] == strArray1[2])
+                        if (lotNums[0] == lotNums[1] || lotNums[1] == lotNums[2] || lotNums[0] == lotNums[2])
                             sType = sType.Replace("3HX", "3Z3_2");
-                        if (strArray1[0] != strArray1[1] && strArray1[1] != strArray1[2] && strArray1[0] != strArray1[2])
+                        if (lotNums[0] != lotNums[1] && lotNums[1] != lotNums[2] && lotNums[0] != lotNums[2])
                         {
-                            num4 /= new Decimal(2);
+                            bonus /= new Decimal(2);
                             sType = sType.Replace("3HX", "3Z6_2");
                         }
                     }
                     else
                     {
-                        if (sType.Equals("R_3HX_WQB") && strArray1[0] != strArray1[1] && (strArray1[1] != strArray1[2] && strArray1[0] != strArray1[2]))
-                            num4 /= new Decimal(2);
-                        if (sType.Equals("R_3HX_WQS") && strArray1[0] != strArray1[1] && (strArray1[1] != strArray1[3] && strArray1[0] != strArray1[3]))
-                            num4 /= new Decimal(2);
-                        if (sType.Equals("R_3HX_WQG") && strArray1[0] != strArray1[1] && (strArray1[1] != strArray1[4] && strArray1[0] != strArray1[4]))
-                            num4 /= new Decimal(2);
-                        if (sType.Equals("R_3HX_WBS") && strArray1[0] != strArray1[2] && (strArray1[2] != strArray1[3] && strArray1[0] != strArray1[3]))
-                            num4 /= new Decimal(2);
-                        if (sType.Equals("R_3HX_WBG") && strArray1[0] != strArray1[2] && (strArray1[2] != strArray1[4] && strArray1[0] != strArray1[4]))
-                            num4 /= new Decimal(2);
-                        if (sType.Equals("R_3HX_WSG") && strArray1[0] != strArray1[3] && (strArray1[3] != strArray1[4] && strArray1[0] != strArray1[4]))
-                            num4 /= new Decimal(2);
-                        if (sType.Equals("R_3HX_QBS") && strArray1[1] != strArray1[2] && (strArray1[2] != strArray1[3] && strArray1[1] != strArray1[3]))
-                            num4 /= new Decimal(2);
-                        if (sType.Equals("R_3HX_QBG") && strArray1[1] != strArray1[2] && (strArray1[2] != strArray1[4] && strArray1[1] != strArray1[4]))
-                            num4 /= new Decimal(2);
-                        if (sType.Equals("R_3HX_QSG") && strArray1[1] != strArray1[3] && (strArray1[3] != strArray1[4] && strArray1[1] != strArray1[4]))
-                            num4 /= new Decimal(2);
-                        if (sType.Equals("R_3HX_BSG") && strArray1[2] != strArray1[3] && (strArray1[3] != strArray1[4] && strArray1[2] != strArray1[4]))
-                            num4 /= new Decimal(2);
+                        if (sType.Equals("R_3HX_WQB") && lotNums[0] != lotNums[1] && (lotNums[1] != lotNums[2] && lotNums[0] != lotNums[2]))
+                            bonus /= new Decimal(2);
+                        if (sType.Equals("R_3HX_WQS") && lotNums[0] != lotNums[1] && (lotNums[1] != lotNums[3] && lotNums[0] != lotNums[3]))
+                            bonus /= new Decimal(2);
+                        if (sType.Equals("R_3HX_WQG") && lotNums[0] != lotNums[1] && (lotNums[1] != lotNums[4] && lotNums[0] != lotNums[4]))
+                            bonus /= new Decimal(2);
+                        if (sType.Equals("R_3HX_WBS") && lotNums[0] != lotNums[2] && (lotNums[2] != lotNums[3] && lotNums[0] != lotNums[3]))
+                            bonus /= new Decimal(2);
+                        if (sType.Equals("R_3HX_WBG") && lotNums[0] != lotNums[2] && (lotNums[2] != lotNums[4] && lotNums[0] != lotNums[4]))
+                            bonus /= new Decimal(2);
+                        if (sType.Equals("R_3HX_WSG") && lotNums[0] != lotNums[3] && (lotNums[3] != lotNums[4] && lotNums[0] != lotNums[4]))
+                            bonus /= new Decimal(2);
+                        if (sType.Equals("R_3HX_QBS") && lotNums[1] != lotNums[2] && (lotNums[2] != lotNums[3] && lotNums[1] != lotNums[3]))
+                            bonus /= new Decimal(2);
+                        if (sType.Equals("R_3HX_QBG") && lotNums[1] != lotNums[2] && (lotNums[2] != lotNums[4] && lotNums[1] != lotNums[4]))
+                            bonus /= new Decimal(2);
+                        if (sType.Equals("R_3HX_QSG") && lotNums[1] != lotNums[3] && (lotNums[3] != lotNums[4] && lotNums[1] != lotNums[4]))
+                            bonus /= new Decimal(2);
+                        if (sType.Equals("R_3HX_BSG") && lotNums[2] != lotNums[3] && (lotNums[3] != lotNums[4] && lotNums[2] != lotNums[4]))
+                            bonus /= new Decimal(2);
                     }
                 }
+
+                #endregion
+
+                #region 组选和值玩法
 
                 if (sType.Contains("R_3ZHE"))
                 {
-                    if (sType.Equals("R_3ZHE_WQB") && strArray1[0] != strArray1[1] && (strArray1[1] != strArray1[2] && strArray1[0] != strArray1[2]))
-                        num4 /= new Decimal(2);
-                    if (sType.Equals("R_3ZHE_WQS") && strArray1[0] != strArray1[1] && (strArray1[1] != strArray1[3] && strArray1[0] != strArray1[3]))
-                        num4 /= new Decimal(2);
-                    if (sType.Equals("R_3ZHE_WQG") && strArray1[0] != strArray1[1] && (strArray1[1] != strArray1[4] && strArray1[0] != strArray1[4]))
-                        num4 /= new Decimal(2);
-                    if (sType.Equals("R_3ZHE_WBS") && strArray1[0] != strArray1[2] && (strArray1[2] != strArray1[3] && strArray1[0] != strArray1[3]))
-                        num4 /= new Decimal(2);
-                    if (sType.Equals("R_3ZHE_WBG") && strArray1[0] != strArray1[2] && (strArray1[2] != strArray1[4] && strArray1[0] != strArray1[4]))
-                        num4 /= new Decimal(2);
-                    if (sType.Equals("R_3ZHE_WSG") && strArray1[0] != strArray1[3] && (strArray1[3] != strArray1[4] && strArray1[0] != strArray1[4]))
-                        num4 /= new Decimal(2);
-                    if (sType.Equals("R_3ZHE_QBS") && strArray1[1] != strArray1[2] && (strArray1[2] != strArray1[3] && strArray1[1] != strArray1[3]))
-                        num4 /= new Decimal(2);
-                    if (sType.Equals("R_3ZHE_QBG") && strArray1[1] != strArray1[2] && (strArray1[2] != strArray1[4] && strArray1[1] != strArray1[4]))
-                        num4 /= new Decimal(2);
-                    if (sType.Equals("R_3ZHE_QSG") && strArray1[1] != strArray1[3] && (strArray1[3] != strArray1[4] && strArray1[1] != strArray1[4]))
-                        num4 /= new Decimal(2);
-                    if (sType.Equals("R_3ZHE_BSG") && strArray1[2] != strArray1[3] && (strArray1[3] != strArray1[4] && strArray1[2] != strArray1[4]))
-                        num4 /= new Decimal(2);
+                    if (sType.Equals("R_3ZHE_WQB") && lotNums[0] != lotNums[1] && (lotNums[1] != lotNums[2] && lotNums[0] != lotNums[2]))
+                        bonus /= new Decimal(2);
+                    if (sType.Equals("R_3ZHE_WQS") && lotNums[0] != lotNums[1] && (lotNums[1] != lotNums[3] && lotNums[0] != lotNums[3]))
+                        bonus /= new Decimal(2);
+                    if (sType.Equals("R_3ZHE_WQG") && lotNums[0] != lotNums[1] && (lotNums[1] != lotNums[4] && lotNums[0] != lotNums[4]))
+                        bonus /= new Decimal(2);
+                    if (sType.Equals("R_3ZHE_WBS") && lotNums[0] != lotNums[2] && (lotNums[2] != lotNums[3] && lotNums[0] != lotNums[3]))
+                        bonus /= new Decimal(2);
+                    if (sType.Equals("R_3ZHE_WBG") && lotNums[0] != lotNums[2] && (lotNums[2] != lotNums[4] && lotNums[0] != lotNums[4]))
+                        bonus /= new Decimal(2);
+                    if (sType.Equals("R_3ZHE_WSG") && lotNums[0] != lotNums[3] && (lotNums[3] != lotNums[4] && lotNums[0] != lotNums[4]))
+                        bonus /= new Decimal(2);
+                    if (sType.Equals("R_3ZHE_QBS") && lotNums[1] != lotNums[2] && (lotNums[2] != lotNums[3] && lotNums[1] != lotNums[3]))
+                        bonus /= new Decimal(2);
+                    if (sType.Equals("R_3ZHE_QBG") && lotNums[1] != lotNums[2] && (lotNums[2] != lotNums[4] && lotNums[1] != lotNums[4]))
+                        bonus /= new Decimal(2);
+                    if (sType.Equals("R_3ZHE_QSG") && lotNums[1] != lotNums[3] && (lotNums[3] != lotNums[4] && lotNums[1] != lotNums[4]))
+                        bonus /= new Decimal(2);
+                    if (sType.Equals("R_3ZHE_BSG") && lotNums[2] != lotNums[3] && (lotNums[3] != lotNums[4] && lotNums[2] != lotNums[4]))
+                        bonus /= new Decimal(2);
                 }
 
+                #endregion
+
+                #region 龙虎和
                 int num7 = 0;
                 int num8 = 0;
 
+                //万千
                 if (sType.Equals("P_LHH_WQ"))
                 {
-                    num7 = Convert.ToInt32(strArray1[0]);
-                    num8 = Convert.ToInt32(strArray1[1]);
+                    num7 = Convert.ToInt32(lotNums[0]);
+                    num8 = Convert.ToInt32(lotNums[1]);
                 }
 
+                //万百
                 if (sType.Equals("P_LHH_WB"))
                 {
-                    num7 = Convert.ToInt32(strArray1[0]);
-                    num8 = Convert.ToInt32(strArray1[2]);
+                    num7 = Convert.ToInt32(lotNums[0]);
+                    num8 = Convert.ToInt32(lotNums[2]);
                 }
 
                 if (sType.Equals("P_LHH_WS"))
                 {
-                    num7 = Convert.ToInt32(strArray1[0]);
-                    num8 = Convert.ToInt32(strArray1[3]);
+                    num7 = Convert.ToInt32(lotNums[0]);
+                    num8 = Convert.ToInt32(lotNums[3]);
                 }
 
                 if (sType.Equals("P_LHH_WG"))
                 {
-                    num7 = Convert.ToInt32(strArray1[0]);
-                    num8 = Convert.ToInt32(strArray1[4]);
+                    num7 = Convert.ToInt32(lotNums[0]);
+                    num8 = Convert.ToInt32(lotNums[4]);
                 }
 
                 if (sType.Equals("P_LHH_QB"))
                 {
-                    num7 = Convert.ToInt32(strArray1[1]);
-                    num8 = Convert.ToInt32(strArray1[2]);
+                    num7 = Convert.ToInt32(lotNums[1]);
+                    num8 = Convert.ToInt32(lotNums[2]);
                 }
 
                 if (sType.Equals("P_LHH_QS"))
                 {
-                    num7 = Convert.ToInt32(strArray1[1]);
-                    num8 = Convert.ToInt32(strArray1[3]);
+                    num7 = Convert.ToInt32(lotNums[1]);
+                    num8 = Convert.ToInt32(lotNums[3]);
                 }
 
                 if (sType.Equals("P_LHH_QG"))
                 {
-                    num7 = Convert.ToInt32(strArray1[1]);
-                    num8 = Convert.ToInt32(strArray1[4]);
+                    num7 = Convert.ToInt32(lotNums[1]);
+                    num8 = Convert.ToInt32(lotNums[4]);
                 }
 
                 if (sType.Equals("P_LHH_BS"))
                 {
-                    num7 = Convert.ToInt32(strArray1[2]);
-                    num8 = Convert.ToInt32(strArray1[3]);
+                    num7 = Convert.ToInt32(lotNums[2]);
+                    num8 = Convert.ToInt32(lotNums[3]);
                 }
 
                 if (sType.Equals("P_LHH_BG"))
                 {
-                    num7 = Convert.ToInt32(strArray1[2]);
-                    num8 = Convert.ToInt32(strArray1[4]);
+                    num7 = Convert.ToInt32(lotNums[2]);
+                    num8 = Convert.ToInt32(lotNums[4]);
                 }
 
                 if (sType.Equals("P_LHH_SG"))
                 {
-                    num7 = Convert.ToInt32(strArray1[3]);
-                    num8 = Convert.ToInt32(strArray1[4]);
+                    num7 = Convert.ToInt32(lotNums[3]);
+                    num8 = Convert.ToInt32(lotNums[4]);
                 }
 
                 if (num7 != num8)
-                    num4 = Convert.ToDecimal(num4 / Convert.ToDecimal(4.5));
+                    bonus = Convert.ToDecimal(bonus / Convert.ToDecimal(4.5));
+                #endregion
 
-                int num9 = CheckPlay.Check(LotteryNumber, betDetail2, Pos, sType);
+                #region 快三
+                if (lotteryId == 5005) //快三
+                {
+                    if (sType.Equals("K_3HZ")) //和值
+                    {
+                        sType = string.Format("{0}{1}", sType, lotNumTotal);
 
-                Decimal Money1 = num3 * num5;
+                        sqlCommand.CommandType = CommandType.Text;
+                        sqlCommand.CommandText = string.Format("select MinBonus from Sys_PlaySmallType where title2='{0}'", sType);
+                        bonus = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
+                    }
+                    //前端已计算，并存入DB
+                    //else
+                    //{ //三同号单选, 三同号通选, 二同号单选, 二同号通选
+                    //    sqlCommand.CommandType = CommandType.Text;
+                    //    sqlCommand.CommandText = string.Format("select MinBonus from Sys_PlaySmallType where title2='{0}'", sType);
+                    //    bonus = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
+                    //}
+                }
+                #endregion
+
+                #region 11选5，任选拖胆
+                //前端已计算，并存入DB
+                //if (sType.StartsWith("P11_RXTD")) //任选拖胆
+                //{
+                //    sqlCommand.CommandType = CommandType.Text;
+                //    sqlCommand.CommandText = string.Format("select MinBonus from Sys_PlaySmallType where title2='{0}'", sType);
+                //    bonus = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
+                //}
+                #endregion
+
+                //中奖注数
+                int winNum = CheckPlay.Check(lotNumber, betDetail2, Pos, sType);
+
+                Decimal Money1 = pointMoney * times;
                 int num10;
-                Decimal Money2;
-                if (num9 > 0)
+
+                //奖金金额
+                Decimal winMoney;
+
+                if (winNum > 0)
                 {
                     num10 = 3;
-                    Money2 = num4 * num5 * (Decimal)num9 * num6 / new Decimal(2);
+
+                    //3152.3800 * 1 *  num9 * 2 / 2.0
+                    if (lotteryId == 6001)
+                    {
+                        switch (sType)
+                        {
+                            case "H_ZMDX":
+                            case "H_ZMDS":
+                            case "H_ZMHSDX":
+                            case "H_ZMHSDS":
+                            case "H_ZMWSDX":
+                                int draw = CheckHK3_Start.checkDrawZM(lotNumber);
+                                winMoney = 0.0M;
+
+                                if(draw > 0)
+                                {
+                                    winMoney = draw * times * singleMoney;
+                                }
+
+                                winMoney += bonus * times * (Decimal)winNum * singleMoney / 2.0M;
+                                break;
+                            case "H_TMDX":
+                            case "H_TMDS":
+                            case "H_TMHDX":
+                            case "H_TMHDS":
+                            case "H_TMWDX":
+                            case "H_TMWDS":
+                            case "H_TMBT":
+                            case "H_TMBB":
+                                if (CheckHK3_Start.isDrawTM(lotNumber))
+                                {
+                                    num10 = 4;
+                                    winMoney = betMoney;
+                                }
+                                else
+                                {
+                                    winMoney = bonus * times * (Decimal)winNum * singleMoney / 2.0M;
+                                }
+
+                                break;
+                            default:
+                                winMoney = bonus * times * (Decimal)winNum * singleMoney / 2.0M;
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        winMoney = bonus * times * (Decimal)winNum * singleMoney / 2.0M;
+                    }
+
+                    //奖金(赔率) * 倍数 * 中奖注数，
+                    //winMoney = bonus * times * winNum * singleMoney;
+
                     Decimal num11 = new Decimal(200000);
-                    if (Money2 > num11)
-                        Money2 = num11;
+                    if (winMoney > num11)
+                        winMoney = num11;
                     sqlCommand.CommandType = CommandType.Text;
-                    sqlCommand.CommandText = "select top 1 MinNum from Sys_PlaySmallType where Id=" + (object)int32_4;
+                    sqlCommand.CommandText = "select top 1 MinNum from Sys_PlaySmallType where Id=" + (object)playId;
                     Decimal num12 = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
                     if (num12 == new Decimal(0))
                     {
-                        if (Money2 > num1 * num5 * new Decimal(100))
+                        if (winMoney > betMoney * times * new Decimal(100))
                         {
                             Decimal num13 = new Decimal(18000);
-                            if (Money2 > num13)
-                                Money2 = num13;
+                            if (winMoney > num13)
+                                winMoney = num13;
                         }
                     }
-                    else if ((Decimal)int32_5 < num12)
+                    else if ((Decimal)betNum < num12)
                     {
                         Decimal num13 = new Decimal(18000);
-                        if (Money2 > num13)
-                            Money2 = num13;
+                        if (winMoney > num13)
+                            winMoney = num13;
                     }
                 }
                 else
                 {
                     num10 = 2;
-                    Money2 = new Decimal(0);
+                    winMoney = new Decimal(0);
                 }
-                Decimal num14 = Money2 + Money1 - num1 * num5;
+
+                Decimal num14 = winMoney + Money1 - betMoney * times;
+
                 sqlCommand.CommandType = CommandType.Text;
-                sqlCommand.CommandText = "update N_UserBet set State=" + num10.ToString() + ",WinNum=" + num9.ToString() + ",WinBonus=" + Money2.ToString() + ",RealGet=" + num14.ToString() + " where Id=" + int32_1.ToString();
+                sqlCommand.CommandText = "update N_UserBet set State=" + num10.ToString() + ",WinNum=" + winNum.ToString() + ",WinBonus=" + winMoney.ToString() + ",RealGet=" + num14.ToString() + " where Id=" + betId.ToString();
                 sqlCommand.ExecuteNonQuery();
-                if (Money2 > new Decimal(0))
-                    new UserTotalTran().MoneyOpers(ssId, int32_2.ToString(), Money2, int32_3, int32_4, int32_1, 5, 99, "", "", "奖金派发", STime2);
+                if (winMoney > new Decimal(0))
+                    new UserTotalTran().MoneyOpers(ssId, userId.ToString(), winMoney, lotteryId, playId, betId, 5, 99, "", "", "奖金派发", STime2);
                 if (Money1 > new Decimal(0))
-                    new UserTotalTran().MoneyOpers(ssId, int32_2.ToString(), Money1, int32_3, int32_4, int32_1, 4, 99, "", "", "返点派发", STime2);
+                    new UserTotalTran().MoneyOpers(ssId, userId.ToString(), Money1, lotteryId, playId, betId, 4, 99, "", "", "返点派发", STime2);
                 if (int32_6 != 0)
                 {
-                    string str2 = string.Format(" where LotteryId={0} and state=0 and zhid={1} and IssueNum>'{2}'", (object)int32_3, (object)int32_6, (object)str1);
+                    string str2 = string.Format(" where LotteryId={0} and state=0 and zhid={1} and IssueNum>'{2}'", (object)lotteryId, (object)int32_6, (object)issNum);
                     sqlCommand.CommandType = CommandType.Text;
                     sqlCommand.CommandText = "select count(Id) from N_UserBet" + str2;
-                    if (Convert.ToInt32(sqlCommand.ExecuteScalar()) > 0 && num9 > 0)
+                    if (Convert.ToInt32(sqlCommand.ExecuteScalar()) > 0 && winNum > 0)
                     {
                         sqlCommand.CommandType = CommandType.Text;
                         sqlCommand.CommandText = string.Format("select count(Id) from N_UserZhBet with(nolock) where isstop=1 and Id={0}", (object)int32_6);
@@ -541,7 +662,7 @@ namespace Lottery.DAL
                             sqlCommand.CommandType = CommandType.Text;
                             sqlCommand.CommandText = "update N_UserBet set State=1 " + str2;
                             sqlCommand.ExecuteNonQuery();
-                            new UserTotalTran().MoneyOpers(ssId, int32_2.ToString(), Money3, int32_3, int32_4, int32_1, 6, 99, "", "", "终止追号", STime2);
+                            new UserTotalTran().MoneyOpers(ssId, userId.ToString(), Money3, lotteryId, playId, betId, 6, 99, "", "", "终止追号", STime2);
                         }
                     }
                 }

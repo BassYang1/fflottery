@@ -1,4 +1,122 @@
-﻿//组合
+﻿//11选5, 任选拖胆
+function Red11X5TD(balls, type) {
+    if (balls != "") {
+        var strArray1 = balls.split(",");
+        if (strArray1.length != 2) {
+            return 0;
+        }
+
+        var strArray2 = strArray1[1].split("_");
+        var len = strArray2.length;
+
+        if (len >= 1 && type == "2") {//拖码1个球
+            return len;
+        }
+        else if (len >= 2 && type == "3") {//拖码2个球
+            return (len * (len - 1)) / (2 * 1);
+        }
+        else if (len >= 3 && type == "4") { //拖码3个球
+            return (len * (len - 1) * (len - 2)) / (3 * 2 * 1);
+        }
+        else if (len >= 4 && type == "5") { //拖码4个球
+            return (len * (len - 1) * (len - 2) * (len - 3)) / (4 * 3 * 2 * 1);
+        }
+        else if (len >= 5 && type == "6") { //拖码5个球
+            return (len * (len - 1) * (len - 2) * (len - 3) * (len - 4)) / (5 * 4 * 3 * 2 * 1);
+        }
+        else if (len >= 6 && type == "7") { //拖码6个球
+            return (len * (len - 1) * (len - 2) * (len - 3) * (len - 4) * (len - 5)) / (6 * 5 * 4 * 3 * 2 * 1);
+        }
+        else if (len >= 7 && type == "8") { //拖码7个球
+            return (len * (len - 1) * (len - 2) * (len - 3) * (len - 4) * (len - 5) * (len - 6)) / (7 * 6 * 5 * 4 * 3 * 2 * 1);
+        }
+    }
+
+    return 0;
+}
+
+//快三和值
+function RedK3HZ(balls) {
+    if (balls != "") {
+        var strArray2 = balls.split("_");
+        return strArray2.length;
+    }
+    return 0;
+}
+
+//普通记录
+function RedCommon(balls) {
+    if (balls != "") {
+        var strArray2 = balls.split("_");
+        return strArray2.length;
+    }
+    return 0;
+}
+
+//普通记录
+function RedCommon2(balls) {
+    var num = 0;
+    if (balls != "") {
+        var strArray1 = balls.split(",");
+        num = 1;
+
+        for (var i = 0; i < strArray1.length; i++) {
+            var strArray2 = strArray1[i].split("_");
+            num *= strArray2.length;
+        }
+    }
+
+    return num;
+}
+
+//普通记录
+function RedCommon3(balls) {
+    var num = 0;
+    if (balls != "") {
+        var strArray1 = balls.split(",");
+
+        for (var i = 0; i < strArray1.length; i++) {
+            if (strArray1[i] != "") {
+                var strArray2 = strArray1[i].split("_");
+                num += strArray2.length;
+            }
+        }
+    }
+
+    return num;
+}
+
+//快三,二不同直选
+function RedK32BT(balls) {
+    if (balls != "") {
+        var strArray2 = balls.split("_");
+        return (strArray2.length * (strArray2.length - 1)) / 2;
+    }
+
+    return 0;
+}
+
+//快三,三不同直选
+function RedK33BT(balls) {
+    if (balls != "") {
+        var strArray2 = balls.split("_");
+        return (strArray2.length * (strArray2.length - 2)) * (strArray2.length - 1) / 6;
+    }
+
+    return 0;
+}
+
+//快三,三连号通选
+function RedK33LTX(balls) {
+    if (balls != "") {
+        var strArray2 = balls.split("_");
+        return (strArray2.length * (strArray2.length - 2)) * (strArray2.length - 1) / 6;
+    }
+
+    return 0;
+}
+
+//组合
 function RedZH(balls) {
     if (balls != "") {
         var strArray2 = balls.split(",");

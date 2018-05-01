@@ -461,6 +461,7 @@
           <Property Name="STime" Type="datetime" />
           <Property Name="State" Type="int" />
           <Property Name="ActState" Type="int" />
+          <Property Name="Ss3Id" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="N_UserChargeLog">
           <Key>
@@ -528,6 +529,7 @@
           <Property Name="STime" Type="datetime" />
           <Property Name="STime2" Type="datetime" />
           <Property Name="State" Type="int" />
+          <Property Name="Ss3Id" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="N_UserGetCashHistory">
           <Key>
@@ -1671,6 +1673,7 @@
           <Property Name="STime" Type="DateTime" Precision="3" />
           <Property Name="State" Type="Int32" />
           <Property Name="ActState" Type="Int32" />
+          <Property Name="Ss3Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="N_UserChargeLog">
           <Key>
@@ -1738,6 +1741,7 @@
           <Property Name="STime" Type="DateTime" Precision="3" />
           <Property Name="STime2" Type="DateTime" Precision="3" />
           <Property Name="State" Type="Int32" />
+          <Property Name="Ss3Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="N_UserGetCashHistory">
           <Key>
@@ -2277,7 +2281,7 @@
           <Property Name="IsUsed" Type="Int32" />
           <Property Name="Sort" Type="Int32" />
         </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -2756,6 +2760,7 @@
           <EntitySetMapping Name="N_UserCharge">
             <EntityTypeMapping TypeName="TicketModel.N_UserCharge">
               <MappingFragment StoreEntitySet="N_UserCharge">
+                <ScalarProperty Name="Ss3Id" ColumnName="Ss3Id" />
                 <ScalarProperty Name="ActState" ColumnName="ActState" />
                 <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="STime" ColumnName="STime" />
@@ -2826,6 +2831,7 @@
           <EntitySetMapping Name="N_UserGetCash">
             <EntityTypeMapping TypeName="TicketModel.N_UserGetCash">
               <MappingFragment StoreEntitySet="N_UserGetCash">
+                <ScalarProperty Name="Ss3Id" ColumnName="Ss3Id" />
                 <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="STime2" ColumnName="STime2" />
                 <ScalarProperty Name="STime" ColumnName="STime" />

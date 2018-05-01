@@ -173,6 +173,8 @@ namespace Lottery.DAL
             return new DateTimePubDAL().GetDateTime();
         }
 
+        public static DataTable LotteryDateTime { get; set; }
+
         public static DataTable LotteryTime { get; set; }
 
         protected string EncryptDES(string encryptString, string encryptKey)

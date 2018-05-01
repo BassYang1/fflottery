@@ -4,6 +4,7 @@
 // MVID: 41391965-66A5-4DE4-8203-13B298F4A572
 // Assembly location: F:\pros\tianheng\bf\WebAppOld\bin\Lottery.DBUtility.dll
 
+using log4net;
 using Lottery.Utils;
 using System;
 using System.Collections;
@@ -14,6 +15,7 @@ namespace Lottery.DBUtility
 {
     public abstract class DbOperHandler : IDisposable
     {
+        private static readonly ILog Log = LogManager.GetLogger(typeof(DbOperHandler));
         public string ConditionExpress = string.Empty;
         public string SqlCmd = string.Empty;
         protected string tableName = string.Empty;
@@ -28,7 +30,14 @@ namespace Lottery.DBUtility
 
         ~DbOperHandler()
         {
-            this.conn.Close();
+            try
+            {
+                this.conn.Close();
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }
         }
 
         public IDbConnection GetConnection()

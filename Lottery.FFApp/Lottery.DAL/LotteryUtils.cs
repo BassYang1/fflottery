@@ -84,6 +84,10 @@ namespace Lottery.DAL
           return "英国60秒 ";
         case 4004:
           return "英国120秒赛车";
+        case 5005:
+          return "广西快3";
+        case 6001:
+          return "六合彩";
         default:
           return "未知彩票";
       }

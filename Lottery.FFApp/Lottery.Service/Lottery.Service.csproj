@@ -60,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BetService.cs" />
+    <Compile Include="Extensions\AccountExtension.cs" />
+    <Compile Include="Extensions\BetExtension.cs" />
     <Compile Include="Extensions\LotteryExtension.cs" />
     <Compile Include="Extensions\UserExtension.cs" />
     <Compile Include="Interfaces\IAccountService.cs" />

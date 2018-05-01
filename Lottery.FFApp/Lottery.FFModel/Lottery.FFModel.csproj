@@ -31,6 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\Lottery.FFModel.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -42,19 +43,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\SearchWithdrawModel.cs" />
+    <Compile Include="Account\SearchChargeModel.cs" />
+    <Compile Include="Account\UserWithdrawEntity.cs" />
+    <Compile Include="Account\UserWithdrawRecordModel.cs" />
+    <Compile Include="Account\UserChargeRecordModel.cs" />
+    <Compile Include="Account\UserChargeEntity.cs" />
     <Compile Include="Account\UserChargeResultModel.cs" />
     <Compile Include="Account\UserChargeModel.cs" />
+    <Compile Include="Account\UserWithdrawModel.cs" />
+    <Compile Include="Account\UserWithdrawResultModel.cs" />
     <Compile Include="BaseModel.cs" />
+    <Compile Include="Bet\BetEnum.cs" />
+    <Compile Include="Bet\UserBetRecordModel.cs" />
+    <Compile Include="Bet\SearchBetModel.cs" />
     <Compile Include="Lottery\LotteryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result.cs" />
+    <Compile Include="Bet\UserBetEntity.cs" />
     <Compile Include="User\UserRegModel.cs" />
     <Compile Include="User\UserModel.cs" />
     <Compile Include="User\UserLoginModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Bet\" />
     <Folder Include="Pay\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lottery.FFData\Lottery.FFData.csproj">
+      <Project>{05f71969-d197-4194-bb5c-04c666cbc869}</Project>
+      <Name>Lottery.FFData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

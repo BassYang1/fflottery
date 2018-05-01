@@ -17,7 +17,23 @@ namespace Lottery.DAL
             using (DbOperHandler dbOperHandler = new ComData().Doh())
             {
                 dbOperHandler.Reset();
-                dbOperHandler.SqlCmd = "select [Id],[LotteryId],[Sn],[Time],[Sort] from Sys_LotteryTime order by Id desc";
+                dbOperHandler.SqlCmd = @"select [Id],[LotteryId],[Sn],[Time],[Sort] from Sys_LotteryTime order by Id desc";
+                DataTable table = dbOperHandler.GetDataTable();
+
+                //dbOperHandler.Reset();
+                //dbOperHandler.SqlCmd = @"select [Id],[LotteryId],[Sn],[Time],[Sort] from Sys_LotteryDateTime order by Id desc";
+                //table.Merge(dbOperHandler.GetDataTable());
+
+                return table;
+            }
+        }
+
+        public DataTable GetDateTimeTable()
+        {
+            using (DbOperHandler dbOperHandler = new ComData().Doh())
+            {
+                dbOperHandler.Reset();
+                dbOperHandler.SqlCmd = "select [Id],[LotteryId],[Sn],[Time],[Sort] from Sys_LotteryDateTime order by Id desc";
                 return dbOperHandler.GetDataTable();
             }
         }

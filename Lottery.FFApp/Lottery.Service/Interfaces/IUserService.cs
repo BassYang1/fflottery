@@ -14,15 +14,8 @@ namespace Lottery.Service
         /// </summary>
         /// <param name="model">注册信息</param>
         /// <returns>用户登录凭证Token</returns>
-        string RegiterUser(UserRegModel model);
+        string Regiter(UserRegModel model);
 
-        /// <summary>
-        /// 代理商登录
-        /// </summary>
-        /// <param name="model">登录信息</param>
-        /// <returns>用户登录Token</returns>
-        string GetUserToken(UserLoginModel model);
-        
         /// <summary>
         /// 用户登录
         /// </summary>
@@ -36,13 +29,5 @@ namespace Lottery.Service
         /// <param name="token"></param>
         /// <returns>用户详细信息</returns>
         UserModel GetUserDetailByToken(string token);
-        
-        /// <summary>
-        /// 获取用户下注，最新20条
-        /// </summary>
-        /// <param name="userId">用户Id</param>
-        /// <param name="lotteryId">彩票种类Id</param>
-        /// <returns>用户下注，最新20条</returns>
-        string GetUserBets(int userId, int lotteryId);
     }
 }

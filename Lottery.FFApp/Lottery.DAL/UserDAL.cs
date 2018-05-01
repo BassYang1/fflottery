@@ -102,7 +102,7 @@ namespace Lottery.DAL
             }
         }
 
-        public int ChkRegisterMerchantApp(string parentId, string merchantId, string userName, string password, decimal point, string signKey)
+        public int ChkRegisterMerchantApp(string parentId, string merchantId, string userName, string password, decimal point, string time, string signKey)
         {
             if (string.IsNullOrEmpty(merchantId) && string.IsNullOrEmpty(userName) && string.IsNullOrEmpty(signKey))
             {
@@ -113,7 +113,7 @@ namespace Lottery.DAL
             {
                 //1, 判断商户是否存在                
                 dbOperHandler.Reset();
-                dbOperHandler.SqlCmd = string.Format("select top 1 MerchantId, Name, Code, ISNULL(State, 0) from N_Merchant with(nolock) where MerchantId='{0}'", merchantId);
+                dbOperHandler.SqlCmd = string.Format("select top 1 MerchantId, Name, Code, ISNULL(State, 0) AS State from N_Merchant with(nolock) where MerchantId='{0}'", merchantId);
                 DataTable tblMerchant = dbOperHandler.GetDataTable();
 
                 if (tblMerchant == null || tblMerchant.Rows.Count <= 0)
@@ -133,7 +133,7 @@ namespace Lottery.DAL
                 }
 
                 //2, 验证加密串
-                var md5Key = MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", merchantId, userName, code), "gb2312");
+                var md5Key = MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}&{3}", merchantId, userName, time, code).ToLower(), "gb2312");
                 if (string.Compare(md5Key, signKey, true) != 0)
                 {
                     throw new InvalidOperationException("无效的商户安全码");
@@ -141,7 +141,7 @@ namespace Lottery.DAL
 
                 //3, 判断用户是否存在
                 dbOperHandler.Reset();
-                dbOperHandler.SqlCmd = string.Format("select top 1 Id,Point,IsEnable from N_User with(nolock) where merchantId='{1}' and username='{0}'", merchantId, userName);
+                dbOperHandler.SqlCmd = string.Format("select top 1 Id,Point,IsEnable from N_User with(nolock) where merchantId='{0}' and username='{1}'", merchantId, userName);
                 DataTable tblUser = dbOperHandler.GetDataTable();
 
                 if (tblUser != null && tblUser.Rows.Count > 0)
@@ -154,7 +154,7 @@ namespace Lottery.DAL
                 object[,] _vFields1 = new object[2, 7]
                 { 
                     { "MerchantId", "ParentId", "UserName", "Password", "UserGroup", "Point", "PayPass" }, 
-                    { merchantId, parentId, userName, pwdMd5, "6", point, MD5.Last64(MD5.Lower32("123456")) }
+                    { merchantId, parentId, userName, pwdMd5, "0", point, MD5.Last64(MD5.Lower32("123456")) }
                 };
 
                 dbOperHandler.Reset();
@@ -331,7 +331,7 @@ namespace Lottery.DAL
             }
         }
 
-        public string ChkLoginMerchantApp(string merchantId, string userName, string signKey)
+        public string ChkLoginMerchantApp(string merchantId, string userName, string time, string signKey)
         {
             if (string.IsNullOrEmpty(merchantId) && string.IsNullOrEmpty(userName) && string.IsNullOrEmpty(signKey))
             {
@@ -361,8 +361,8 @@ namespace Lottery.DAL
                     throw new InvalidOperationException("商户参数无效");
                 }
 
-                //2, 验证加密串
-                var md5Key = MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", merchantId, userName, code), "gb2312");
+                //2, 验证加密串 
+                var md5Key = MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}&{3}", merchantId, userName, time, code).ToLower(), "gb2312");
                 if (string.Compare(md5Key, signKey, true) != 0)
                 {
                     throw new InvalidOperationException("无效的商户安全码");

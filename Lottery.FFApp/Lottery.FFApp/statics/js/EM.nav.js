@@ -22,7 +22,7 @@ var PlayMaxBonus = 0;
 var PlayMinBonus = 0;
 var PlayMinBonus2 = 0;
 var PlayPosBonus = 0;
-var PriceModel = 1; //奖金模式
+var PriceModel = 1; //系数，表示单倍还是双倍 
 
 var Nmbtype = 1;
 var PriceTimes = 1; //倍数
@@ -718,6 +718,83 @@ function InitNumber() {
         html += '</div>';
         html += '</li>';
     }
+    if (Nmbtype == 5) { //广西快三
+        html += '<li>';
+        html += '<div class="inner">';
+        html += '<div class="number-run">';
+        html += '<span class="number" data-number="0">0</span>';
+        html += '<span class="number" data-number="1">1</span>';
+        html += '<span class="number" data-number="2">2</span>';
+        html += '<span class="number" data-number="3">3</span>';
+        html += '<span class="number" data-number="4">4</span>';
+        html += '<span class="number" data-number="5">5</span>';
+        html += '<span class="number" data-number="6">6</span>';
+        html += '<span class="number" data-number="7">7</span>';
+        html += '<span class="number" data-number="8">8</span>';
+        html += '<span class="number" data-number="9">9</span>';
+
+        html += '</div>';
+        html += '</div>';
+        html += '</li>';
+
+        html += '<li>';
+        html += '<div class="inner">';
+        html += '<div class="number-run">';
+        html += '<span class="number" data-number="0">0</span>';
+        html += '<span class="number" data-number="1">1</span>';
+        html += '<span class="number" data-number="2">2</span>';
+        html += '<span class="number" data-number="3">3</span>';
+        html += '<span class="number" data-number="4">4</span>';
+        html += '<span class="number" data-number="5">5</span>';
+        html += '<span class="number" data-number="6">6</span>';
+        html += '<span class="number" data-number="7">7</span>';
+        html += '<span class="number" data-number="8">8</span>';
+        html += '<span class="number" data-number="9">9</span>';
+
+        html += '</div>';
+        html += '</div>';
+        html += '</li>';
+
+        html += '<li>';
+        html += '<div class="inner">';
+        html += '<div class="number-run">';
+        html += '<span class="number" data-number="0">0</span>';
+        html += '<span class="number" data-number="1">1</span>';
+        html += '<span class="number" data-number="2">2</span>';
+        html += '<span class="number" data-number="3">3</span>';
+        html += '<span class="number" data-number="4">4</span>';
+        html += '<span class="number" data-number="5">5</span>';
+        html += '<span class="number" data-number="6">6</span>';
+        html += '<span class="number" data-number="7">7</span>';
+        html += '<span class="number" data-number="8">8</span>';
+        html += '<span class="number" data-number="9">9</span>';
+
+        html += '</div>';
+        html += '</div>';
+        html += '</li>';
+    }
+    if (Nmbtype == 6) { //六合彩
+        var count = 7;
+        html = "";
+
+        while (count-- > 0) {
+            var num = 1;
+
+            html += '<li>';
+            html += '<div class="inner">';
+            html += '<div class="number-run">';
+
+            while (num <= 49) {
+                html += '<span class="number" data-number="' + (num < 10 ? "0" + num : num) + '">' + (num < 10 ? "0" + num : num) + '</span>';
+                num++;
+            }
+
+            html += '</div>';
+            html += '</div>'; 
+            html += '</li>';
+        }
+    }
+
     $("#lottery-numbers").html(html);
 }
 

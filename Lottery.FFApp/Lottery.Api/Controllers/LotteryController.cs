@@ -54,88 +54,90 @@ namespace Lottery.Api.Controllers
             }
         }
 
-        /// <summary>
-        /// 获取彩票种类
-        /// </summary>
-        /// <returns>彩票种类</returns>
-        [Route("type")]
-        [HttpGet]
-        [CrossSite]
-        [Description("彩票种类")]
-        public Result<string> GetLottery()
-        {
-            try
-            {
-                var result = this.LotteryService.GetLottery();
-                return GetSuccessResult(result);
-            }
-            catch (Exception ex)
-            {
-                return GetExceptionResult<string>(null, ex);
-            }
-        }
+        #region
+        ///// <summary>
+        ///// 获取彩票种类
+        ///// </summary>
+        ///// <returns>彩票种类</returns>
+        //[Route("type")]
+        //[HttpGet]
+        //[CrossSite]
+        //[Description("彩票种类")]
+        //public Result<string> GetLottery()
+        //{
+        //    try
+        //    {
+        //        var result = this.LotteryService.GetLottery();
+        //        return GetSuccessResult(result);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return GetExceptionResult<string>(null, ex);
+        //    }
+        //}
 
-        /// <summary>
-        /// 获取彩票种类玩法
-        /// </summary>
-        /// <returns>彩票种类玩法</returns>
-        [Route("type/play")]
-        [HttpGet]
-        [CrossSite]
-        [Description("彩票种类玩法")]
-        public Result<string> GetLotteryPlayType()
-        {
-            try
-            {
-                var result = this.LotteryService.GetLotteryPlayType();
-                return GetSuccessResult(result);
-            }
-            catch (Exception ex)
-            {
-                return GetExceptionResult<string>(null, ex);
-            }
-        }
+        ///// <summary>
+        ///// 获取彩票种类玩法
+        ///// </summary>
+        ///// <returns>彩票种类玩法</returns>
+        //[Route("type/play")]
+        //[HttpGet]
+        //[CrossSite]
+        //[Description("彩票种类玩法")]
+        //public Result<string> GetLotteryPlayType()
+        //{
+        //    try
+        //    {
+        //        var result = this.LotteryService.GetLotteryPlayType();
+        //        return GetSuccessResult(result);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return GetExceptionResult<string>(null, ex);
+        //    }
+        //}
 
-        /// <summary>
-        /// 获取彩票玩法大类
-        /// </summary>
-        /// <returns>大类</returns>
-        [Route("big/type")]
-        [HttpGet]
-        [CrossSite]
-        [Description("获取彩票玩法大类")]
-        public Result<string> GetPlayBigType()
-        {
-            try
-            {
-                var result = this.LotteryService.GetPlayBigType();
-                return GetSuccessResult(result);
-            }
-            catch (Exception ex)
-            {
-                return GetExceptionResult<string>(null, ex);
-            }
-        }
+        ///// <summary>
+        ///// 获取彩票玩法大类
+        ///// </summary>
+        ///// <returns>大类</returns>
+        //[Route("big/type")]
+        //[HttpGet]
+        //[CrossSite]
+        //[Description("获取彩票玩法大类")]
+        //public Result<string> GetPlayBigType()
+        //{
+        //    try
+        //    {
+        //        var result = this.LotteryService.GetPlayBigType();
+        //        return GetSuccessResult(result);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return GetExceptionResult<string>(null, ex);
+        //    }
+        //}
 
-        /// <summary>
-        /// 获取彩票玩法小类
-        /// </summary>
-        /// <returns>小类</returns>
-        [Route("small/type")]
-        [HttpGet]
-        [CrossSite]
-        [Description("获取彩票玩法小类")]
-        public Result<string> GetPlaySmallType()
-        {
-            try
-            {
-                var result = this.LotteryService.GetPlaySmallType();
-                return GetSuccessResult(result);
-            }
-            catch (Exception ex)
-            {
-                return GetExceptionResult<string>(null, ex);
-            }
-        }
+        ///// <summary>
+        ///// 获取彩票玩法小类
+        ///// </summary>
+        ///// <returns>小类</returns>
+        //[Route("small/type")]
+        //[HttpGet]
+        //[CrossSite]
+        //[Description("获取彩票玩法小类")]
+        //public Result<string> GetPlaySmallType()
+        //{
+        //    try
+        //    {
+        //        var result = this.LotteryService.GetPlaySmallType();
+        //        return GetSuccessResult(result);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return GetExceptionResult<string>(null, ex);
+        //    }
+        //}
+        #endregion
     }
 }

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="03.Libraries\Lottery.FFData" Label="Lottery.FFData" Category="项目" />
+    <Node Id="EntityFramework 6.1.3" Label="EntityFramework 6.1.3" Category="包" />
+    <Node Id="03.Libraries\Lottery.Service" Label="Lottery.Service" Category="项目" />
+    <Node Id="EntityFramework 6.1.3" Label="EntityFramework 6.1.3" Category="包" />
+    <Node Id="log4net 2.0.8" Label="log4net 2.0.8" Category="包" />
+    <Node Id="03.Libraries\Lottery.Core" Label="Lottery.Core" Category="项目" />
+    <Node Id="log4net 2.0.8" Label="log4net 2.0.8" Category="包" />
+    <Node Id="01.Portal\Lottery.Api" Label="Lottery.Api" Category="项目" />
+    <Node Id="Antlr 3.4.1.9004" Label="Antlr 3.4.1.9004" Category="包" />
+    <Node Id="bootstrap 3.0.0" Label="bootstrap 3.0.0" Category="包" />
+    <Node Id="jQuery 1.10.2" Label="jQuery 1.10.2" Category="包" />
+    <Node Id="log4net 2.0.8" Label="log4net 2.0.8" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc 5.2.4" Label="Microsoft.AspNet.Mvc 5.2.4" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc.zh-Hans 5.2.4" Label="Microsoft.AspNet.Mvc.zh-Hans 5.2.4" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor 3.2.4" Label="Microsoft.AspNet.Razor 3.2.4" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor.zh-Hans 3.2.4" Label="Microsoft.AspNet.Razor.zh-Hans 3.2.4" Category="包" />
+    <Node Id="Microsoft.AspNet.Web.Optimization 1.1.1" Label="Microsoft.AspNet.Web.Optimization 1.1.1" Category="包" />
+    <Node Id="Microsoft.AspNet.Web.Optimization.zh-Hans 1.1.1" Label="Microsoft.AspNet.Web.Optimization.zh-Hans 1.1.1" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi 5.0.0" Label="Microsoft.AspNet.WebApi 5.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 5.2.4" Label="Microsoft.AspNet.WebApi.Client 5.2.4" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client.zh-Hans 5.2.4" Label="Microsoft.AspNet.WebApi.Client.zh-Hans 5.2.4" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 5.2.4" Label="Microsoft.AspNet.WebApi.Core 5.2.4" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core.zh-Hans 5.2.4" Label="Microsoft.AspNet.WebApi.Core.zh-Hans 5.2.4" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.HelpPage 5.2.4" Label="Microsoft.AspNet.WebApi.HelpPage 5.2.4" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 5.2.4" Label="Microsoft.AspNet.WebApi.WebHost 5.2.4" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.2.4" Label="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.2.4" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages 3.2.4" Label="Microsoft.AspNet.WebPages 3.2.4" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages.zh-Hans 3.2.4" Label="Microsoft.AspNet.WebPages.zh-Hans 3.2.4" Category="包" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="包" />
+    <Node Id="Modernizr 2.6.2" Label="Modernizr 2.6.2" Category="包" />
+    <Node Id="Newtonsoft.Json 6.0.8" Label="Newtonsoft.Json 6.0.8" Category="包" />
+    <Node Id="Respond 1.2.0" Label="Respond 1.2.0" Category="包" />
+    <Node Id="WebGrease 1.5.2" Label="WebGrease 1.5.2" Category="包" />
+  </Nodes>
+  <Links>
+    <Link Source="03.Libraries\Lottery.FFData" Target="EntityFramework 6.1.3" Category="安装的程序包" />
+    <Link Source="03.Libraries\Lottery.Service" Target="EntityFramework 6.1.3" Category="安装的程序包" />
+    <Link Source="03.Libraries\Lottery.Service" Target="log4net 2.0.8" Category="安装的程序包" />
+    <Link Source="03.Libraries\Lottery.Core" Target="log4net 2.0.8" Category="安装的程序包" />
+    <Link Source="bootstrap 3.0.0" Target="jQuery 1.10.2" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 5.2.4" Target="Microsoft.AspNet.WebPages 3.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 5.2.4" Target="Microsoft.AspNet.Razor 3.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc.zh-Hans 5.2.4" Target="Microsoft.AspNet.Mvc 5.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Razor.zh-Hans 3.2.4" Target="Microsoft.AspNet.Razor 3.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.1.1" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.1.1" Target="WebGrease 1.5.2" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization.zh-Hans 1.1.1" Target="Microsoft.AspNet.Web.Optimization 1.1.1" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi 5.0.0" Target="Microsoft.AspNet.WebApi.WebHost 5.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.4" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.4" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.4" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client.zh-Hans 5.2.4" Target="Microsoft.AspNet.WebApi.Client 5.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 5.2.4" Target="Microsoft.AspNet.WebApi.Client 5.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core.zh-Hans 5.2.4" Target="Microsoft.AspNet.WebApi.Core 5.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.2.4" Target="Microsoft.AspNet.WebApi.WebHost 5.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.2.4" Target="Microsoft.AspNet.Mvc 5.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.2.4" Target="Microsoft.AspNet.Razor 3.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 5.2.4" Target="Microsoft.AspNet.WebApi.Core 5.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.2.4" Target="Microsoft.AspNet.WebApi.WebHost 5.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.2.4" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.2.4" Target="Microsoft.AspNet.Razor 3.2.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages.zh-Hans 3.2.4" Target="Microsoft.AspNet.WebPages 3.2.4" Category="程序包依赖项" />
+    <Link Source="WebGrease 1.5.2" Target="Antlr 3.4.1.9004" Category="程序包依赖项" />
+    <Link Source="WebGrease 1.5.2" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="01.Portal\Lottery.Api" Target="bootstrap 3.0.0" Category="安装的程序包" />
+    <Link Source="01.Portal\Lottery.Api" Target="log4net 2.0.8" Category="安装的程序包" />
+    <Link Source="01.Portal\Lottery.Api" Target="Microsoft.AspNet.Mvc.zh-Hans 5.2.4" Category="安装的程序包" />
+    <Link Source="01.Portal\Lottery.Api" Target="Microsoft.AspNet.Razor.zh-Hans 3.2.4" Category="安装的程序包" />
+    <Link Source="01.Portal\Lottery.Api" Target="Microsoft.AspNet.Web.Optimization.zh-Hans 1.1.1" Category="安装的程序包" />
+    <Link Source="01.Portal\Lottery.Api" Target="Microsoft.AspNet.WebApi 5.0.0" Category="安装的程序包" />
+    <Link Source="01.Portal\Lottery.Api" Target="Microsoft.AspNet.WebApi.Client.zh-Hans 5.2.4" Category="安装的程序包" />
+    <Link Source="01.Portal\Lottery.Api" Target="Microsoft.AspNet.WebApi.Core.zh-Hans 5.2.4" Category="安装的程序包" />
+    <Link Source="01.Portal\Lottery.Api" Target="Microsoft.AspNet.WebApi.HelpPage 5.2.4" Category="安装的程序包" />
+    <Link Source="01.Portal\Lottery.Api" Target="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.2.4" Category="安装的程序包" />
+    <Link Source="01.Portal\Lottery.Api" Target="Microsoft.AspNet.WebPages.zh-Hans 3.2.4" Category="安装的程序包" />
+    <Link Source="01.Portal\Lottery.Api" Target="Modernizr 2.6.2" Category="安装的程序包" />
+    <Link Source="01.Portal\Lottery.Api" Target="Respond 1.2.0" Category="安装的程序包" />
+  </Links>
+  <Categories>
+    <Category Id="项目" />
+    <Category Id="包" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="项目" ValueLabel="True">
+      <Condition Expression="HasCategory('项目')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="程序包依赖项" ValueLabel="True">
+      <Condition Expression="HasCategory('程序包依赖项')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

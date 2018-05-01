@@ -15,6 +15,20 @@
     }
     PlayPos = PlayPos.substring(0, PlayPos.length - 1);
     switch (PlayCode) {
+        case "K_3HZ":
+        case "K_3STDX":
+        case "K_32TDX":
+            for (var i = 0; i < rowsLen; i++) {
+                var selectCount = 0;
+                $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
+                    orderItem += $(dom).attr("number") + "_"; //当成多注来处理
+                    selectCount++;
+                });
+                orderItem = orderItem.substring(0, orderItem.length - 1);
+            }
+            SingleOrderItem = orderItem;
+            Znum = RedK3HZ(SingleOrderItem);
+            break;
         case "P_5ZX120":
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;

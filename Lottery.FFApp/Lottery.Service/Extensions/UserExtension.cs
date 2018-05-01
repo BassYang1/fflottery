@@ -30,7 +30,12 @@ namespace Lottery.Service
 
             var model = new UserModel()
             {
-                Id = entity.Id,
+                Point = entity.Point ?? 0,
+                UserName = entity.UserName,
+                MerchantId = entity.MerchantId,
+                SessionId = entity.SessionId,
+                Token = entity.Token,
+                Id = entity.Id
             };
 
             return model;

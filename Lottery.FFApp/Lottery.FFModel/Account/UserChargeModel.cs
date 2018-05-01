@@ -38,7 +38,7 @@ namespace Lottery.FFModel
         public Decimal Amount { get; set; }
 
         /// <summary>
-        /// 签名字符串, 按顺序(充值订单号&商户Id&会员用户名&充值金额(4位小数)&商户安全码)MD5加密串
+        /// 签名字符串, 按顺序(充值订单号&amp;商户Id&amp;会员用户名&amp;充值金额(4位小数)&amp;商户安全码)MD5加密串
         /// </summary>
         [Description("签名字符串, 按顺序(充值订单号&商户Id&会员用户名&充值金额(4位小数)&商户安全码)MD5加密串")]
         public string SignKey { get; set; }

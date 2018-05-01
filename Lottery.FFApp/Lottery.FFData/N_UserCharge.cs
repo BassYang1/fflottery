@@ -24,5 +24,6 @@ namespace Lottery.FFData
         public Nullable<System.DateTime> STime { get; set; }
         public Nullable<int> State { get; set; }
         public Nullable<int> ActState { get; set; }
+        public string Ss3Id { get; set; }
     }
 }

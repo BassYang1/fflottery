@@ -141,6 +141,14 @@
             <param name="actionName">Name of the action.</param>
             <param name="parameterNames">The parameter names.</param>
         </member>
+        <member name="M:Lottery.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
         <member name="M:Lottery.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
             <summary>
             Sets the sample directly for all actions with the specified type and media type.
@@ -152,7 +160,7 @@
         </member>
         <member name="M:Lottery.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
             <summary>
-            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
             The help page will use this information to produce more accurate request samples.
             </summary>
             <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
@@ -162,7 +170,7 @@
         </member>
         <member name="M:Lottery.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
             <summary>
-            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
             The help page will use this information to produce more accurate request samples.
             </summary>
             <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
@@ -173,7 +181,7 @@
         </member>
         <member name="M:Lottery.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
             <summary>
-            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
             The help page will use this information to produce more accurate response samples.
             </summary>
             <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
@@ -183,7 +191,7 @@
         </member>
         <member name="M:Lottery.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
             <summary>
-            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
             The help page will use this information to produce more accurate response samples.
             </summary>
             <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
@@ -206,6 +214,13 @@
             <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
             <param name="sampleGenerator">The help page sample generator.</param>
         </member>
+        <member name="M:Lottery.Api.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:Lottery.Api.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
         <member name="M:Lottery.Api.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
             <summary>
             Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
@@ -215,6 +230,21 @@
             <returns>
             An <see cref="T:Lottery.Api.Areas.HelpPage.Models.HelpPageApiModel"/>
             </returns>
+        </member>
+        <member name="T:Lottery.Api.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:Lottery.Api.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:Lottery.Api.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:Lottery.Api.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
         </member>
         <member name="T:Lottery.Api.Areas.HelpPage.Models.HelpPageApiModel">
             <summary>
@@ -231,6 +261,36 @@
             Gets or sets the <see cref="P:Lottery.Api.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
             </summary>
         </member>
+        <member name="P:Lottery.Api.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:Lottery.Api.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:Lottery.Api.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:Lottery.Api.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:Lottery.Api.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:Lottery.Api.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:Lottery.Api.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:Lottery.Api.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:Lottery.Api.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
         <member name="P:Lottery.Api.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
             <summary>
             Gets the sample requests associated with the API.
@@ -245,6 +305,41 @@
             <summary>
             Gets the error messages associated with this model.
             </summary>
+        </member>
+        <member name="F:Lottery.Api.Areas.HelpPage.MultiXmlDocumentationProvider.Providers">
+            <summary>The internal documentation providers for specific files.</summary>  
+        </member>
+        <member name="M:Lottery.Api.Areas.HelpPage.MultiXmlDocumentationProvider.#ctor(System.String[])">
+            <summary>Construct an instance.</summary>  
+            <param name="paths">The physical paths to the XML documents.</param>  
+        </member>
+        <member name="M:Lottery.Api.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Reflection.MemberInfo)">
+            <summary>Gets the documentation for a subject.</summary>  
+            <param name="subject">The subject to document.</param>  
+        </member>
+        <member name="M:Lottery.Api.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Type)">
+            <summary>Gets the documentation for a subject.</summary>  
+            <param name="subject">The subject to document.</param>  
+        </member>
+        <member name="M:Lottery.Api.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpControllerDescriptor)">
+            <summary>Gets the documentation for a subject.</summary>  
+            <param name="subject">The subject to document.</param>  
+        </member>
+        <member name="M:Lottery.Api.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>Gets the documentation for a subject.</summary>  
+            <param name="subject">The subject to document.</param>  
+        </member>
+        <member name="M:Lottery.Api.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpParameterDescriptor)">
+            <summary>Gets the documentation for a subject.</summary>  
+            <param name="subject">The subject to document.</param>  
+        </member>
+        <member name="M:Lottery.Api.Areas.HelpPage.MultiXmlDocumentationProvider.GetResponseDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>Gets the documentation for a subject.</summary>  
+            <param name="subject">The subject to document.</param>  
+        </member>
+        <member name="M:Lottery.Api.Areas.HelpPage.MultiXmlDocumentationProvider.GetFirstMatch(System.Func{Lottery.Api.Areas.HelpPage.XmlDocumentationProvider,System.String})">
+            <summary>Get the first valid result from the collection of XML documentation providers.</summary>  
+            <param name="expr">The method to invoke.</param>  
         </member>
         <member name="T:Lottery.Api.Areas.HelpPage.HelpPageSampleGenerator">
             <summary>
@@ -294,10 +389,19 @@
         <member name="M:Lottery.Api.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
             <summary>
             Gets the sample object that will be serialized by the formatters. 
-            First, it will look at the <see cref="P:Lottery.Api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create one using <see cref="T:Lottery.Api.Areas.HelpPage.ObjectGenerator"/>.
+            First, it will look at the <see cref="P:Lottery.Api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:Lottery.Api.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(Lottery.Api.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:Lottery.Api.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:Lottery.Api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
             </summary>
             <param name="type">The type.</param>
             <returns>The sample object.</returns>
+        </member>
+        <member name="M:Lottery.Api.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
         </member>
         <member name="M:Lottery.Api.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Lottery.Api.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
             <summary>
@@ -335,10 +439,26 @@
             Gets the objects that are serialized as samples by the supported formatters.
             </summary>
         </member>
+        <member name="P:Lottery.Api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:Lottery.Api.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
         <member name="T:Lottery.Api.Areas.HelpPage.HelpPageSampleKey">
             <summary>
             This is used to identify the place where the sample should be applied.
             </summary>
+        </member>
+        <member name="M:Lottery.Api.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:Lottery.Api.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
         </member>
         <member name="M:Lottery.Api.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
             <summary>
@@ -537,6 +657,13 @@
             <param name="model">充值信息</param>
             <returns>充值结果</returns>
         </member>
+        <member name="M:Lottery.Api.Controllers.AccountController.Withdraw(Lottery.FFModel.UserWithdrawModel)">
+            <summary>
+            会员提现
+            </summary>
+            <param name="model">提现信息</param>
+            <returns>提现结果</returns>
+        </member>
         <member name="T:Lottery.Api.Controllers.LotteryController">
             <summary>
             彩票
@@ -554,30 +681,6 @@
             </summary>
             <param name="lotteryId">彩票种类id</param>
             <returns>彩票开奖数据，最新20条</returns>
-        </member>
-        <member name="M:Lottery.Api.Controllers.LotteryController.GetLottery">
-            <summary>
-            获取彩票种类
-            </summary>
-            <returns>彩票种类</returns>
-        </member>
-        <member name="M:Lottery.Api.Controllers.LotteryController.GetLotteryPlayType">
-            <summary>
-            获取彩票种类玩法
-            </summary>
-            <returns>彩票种类玩法</returns>
-        </member>
-        <member name="M:Lottery.Api.Controllers.LotteryController.GetPlayBigType">
-            <summary>
-            获取彩票玩法大类
-            </summary>
-            <returns>大类</returns>
-        </member>
-        <member name="M:Lottery.Api.Controllers.LotteryController.GetPlaySmallType">
-            <summary>
-            获取彩票玩法小类
-            </summary>
-            <returns>小类</returns>
         </member>
         <member name="T:Lottery.Api.Controllers.UserController">
             <summary>

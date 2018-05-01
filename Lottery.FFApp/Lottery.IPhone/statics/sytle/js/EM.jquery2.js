@@ -32,7 +32,72 @@ function CreateNumber() {
     var pk10DS = false;
     var pk10Num = 5;
 
+    //快三
+    var hezhi = false;
+    var hezhiNum = 16;
+    var chooseAll = false; //通选
+    var k3 = false; //快三
     switch (PlayCode) {
+        case "K_3HZ": //快3，和值
+            k3 = true;
+            hezhi = true;
+            ballNum = 16;
+            hezhiNum = 16;
+            remark = "对三个号码的和值进行投注，包括“和值3”至“和值18”投注。";
+            PlayExample = "投注号码与当期开奖号码的三个号码的和值相符，即中奖。";
+            PlayHelp = "和值：投注号码与当期开奖号码的三个号码的和值相符，即中奖，包括“和值3”至“和值18”。";
+            break;
+        case "K_32BT": //快3，二不同直选
+            k3 = true;
+            ballNum = 6;
+            remark = "对三个号码中两个指定的不同号码和一个任意号码进行投注。";
+            PlayExample = "当期开奖号码中有两个号码不相同，且投注号码中的两个不同号码与当期开奖号码中的两个不同号码相符，即中奖。";
+            PlayHelp = "二不同号投注：当期开奖号码中有两个号码不相同，且投注号码中的两个不同号码与当期开奖号码中的两个不同号码相符，即中奖";
+            break;
+        case "K_33BT": //快3，三不同直选
+            k3 = true;
+            ballNum = 6;
+            remark = "对三个各不相同的号码进行投注。";
+            PlayExample = "当期开奖号码的三个号码各不相同，且投注号码与当期开奖号码全部相符，即中奖。";
+            PlayHelp = "三不同号投注：当期开奖号码的三个号码各不相同，且投注号码与当期开奖号码全部相符，即中奖。";
+            break;
+        case "K_33LTX": //快3，三连号通选
+            k3 = true;
+            ballNum = 6;
+            remark = "对所有三个相连的号码（仅限：123、234、345、456）进行投注。";
+            PlayExample = "当期开奖号码为三个相连的号码（仅限：123、234、345、456），即中奖。";
+            PlayHelp = "三连号通选：当期开奖号码为三个相连的号码（仅限：123、234、345、456），即中奖。";
+            break;
+        case "K_3STDX": //快3，三同号单选
+            k3 = true;
+            ballNum = 6;
+            remark = "从所有相同的三个号码（111、222、…、666）中任意选择一组号码进行投注。";
+            PlayExample = "当期开奖号码的三个号码相同，且投注号码与当期开奖号码相符，即中奖。";
+            PlayHelp = "三同号单选：当期开奖号码的三个号码相同，且投注号码与当期开奖号码相符，即中奖。";
+            break;
+        case "K_3STTX": //快3，三同号通选
+            k3 = true;
+            chooseAll = true;
+            ballNum = 6;
+            remark = "对所有相同的三个号码（111、222、…、666）进行投注。";
+            PlayExample = "当期开奖号码的三个号码相同，且投注号码与当期开奖号码相符，即中奖。";
+            PlayHelp = "三同号通选：当期开奖号码的三个号码相同，即中奖。";
+            break;
+        case "K_32TDX": //快3，二同号单选
+            k3 = true;
+            ballNum = 6;
+            remark = "对三个号码中两个指定的相同号码和一个指定的不同号码进行投注。";
+            PlayExample = "当期开奖号码中有两个号码相同，且投注号码与当期开奖号码中两个相同号码和一个不同号码分别相符，即中奖。";
+            PlayHelp = "二同号单选：当期开奖号码中有两个号码相同，且投注号码与当期开奖号码中两个相同号码和一个不同号码分别相符，即中奖。";
+            break;
+        case "K_32TTX": //快3，二同号通选
+            k3 = true;
+            chooseAll = true;
+            ballNum = 6;
+            remark = "对三个号码中两个指定的相同号码和一个任意号码进行投注。";
+            PlayExample = "当期开奖号码中有两个号码相同，且投注号码中的两个相同号码与当期开奖号码中两个相同号码相符，即中奖。";
+            PlayHelp = "二同号复选：当期开奖号码中有两个号码相同，且投注号码中的两个相同号码与当期开奖号码中两个相同号码相符，即中奖。";
+            break;
         case "P_5FS":
             ssc = true;
             ballNum = 5;
@@ -1803,11 +1868,19 @@ function CreateNumber() {
 
     $("#remark").html(remark);
 
-    $('.lottery-balls').on('click', 'span', function () {
-        var $this = $(this);
-        $this.toggleClass('selected');
-        AutoCalcBet();
-    });
+        $('.lottery-balls').on('click', 'span', function () {
+            var $this = $(this);
+
+            if (chooseAll) {
+                $(".lottery-balls").find("span").toggleClass('selected');
+            }
+            else {
+                $this.toggleClass('selected');
+            }
+
+            AutoCalcBet();
+        });
+    }
 
     //号码批量操作
     $(".lottery-actions").delegate('a', 'click', function (event) {
@@ -1818,7 +1891,15 @@ function CreateNumber() {
                 AutoCalcBet();
                 break;
             case "大":
-                if (Nmbtype != 2 && Nmbtype != 4) {
+                if (Nmbtype == 5) {
+                    if (PlayCode == "K_3HZ") {
+                        $(this).parents(".numbers").find(".lottery-balls").find("span:gt(7)").addClass("selected");
+                    }
+                    else {
+                        $(this).parents(".numbers").find(".lottery-balls").find("span:gt(2)").addClass("selected");
+                    }
+                }
+                else if (Nmbtype != 2 && Nmbtype != 4) {
                     $(this).parents(".numbers").find(".lottery-balls").find("span[number=5],span[number=6],span[number=7],span[number=8],span[number=9]").addClass("selected");
                 }
                 else {
@@ -1827,7 +1908,15 @@ function CreateNumber() {
                 AutoCalcBet();
                 break;
             case "小":
-                if (Nmbtype != 2 && Nmbtype != 4) {
+                if (Nmbtype == 5) {
+                    if (PlayCode == "K_3HZ") {
+                        $(this).parents(".numbers").find(".lottery-balls").find("span:gt(7)").addClass("selected");
+                    }
+                    else {
+                        $(this).parents(".numbers").find(".lottery-balls").find("span:gt(2)").addClass("selected");
+                    }
+                }
+                else if (Nmbtype != 2 && Nmbtype != 4) {
                     $(this).parents(".numbers").find(".lottery-balls").find("span[number=0],span[number=1],span[number=2],span[number=3],span[number=4]").addClass("selected");
                 }
                 else {
@@ -1836,7 +1925,10 @@ function CreateNumber() {
                 AutoCalcBet();
                 break;
             case "奇":
-                if (Nmbtype != 2 && Nmbtype != 4) {
+                if (Nmbtype == 5) {
+                    $(this).parents(".numbers").find(".lottery-balls").find("span:even").addClass("selected");
+                }
+                else if (Nmbtype != 2 && Nmbtype != 4) {
                     $(this).parents(".numbers").find(".lottery-balls").find("span[number=1],span[number=3],span[number=5],span[number=7],span[number=9]").addClass("selected");
                 }
                 else {
@@ -1845,7 +1937,10 @@ function CreateNumber() {
                 AutoCalcBet();
                 break;
             case "偶":
-                if (Nmbtype != 2 && Nmbtype != 4) {
+                if (Nmbtype == 5) {
+                    $(this).parents(".numbers").find(".lottery-balls").find("span:even").addClass("selected");
+                }
+                else if (Nmbtype != 2 && Nmbtype != 4) {
                     $(this).parents(".numbers").find(".lottery-balls").find("span[number=0],span[number=2],span[number=4],span[number=6],span[number=8],span[number=10]").addClass("selected");
                 }
                 else {

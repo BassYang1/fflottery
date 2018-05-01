@@ -64,7 +64,7 @@ namespace Lottery.DAL
         using (DbOperHandler dbOperHandler = new ComData().Doh())
         {
             var bankId = "888";
-            var state = 1;
+            var state = 0;
             DateTime dateTime = new DateTimePubDAL().GetDateTime();
             dbOperHandler.Reset();
             dbOperHandler.AddFieldItem("SsId", (object)orderno);

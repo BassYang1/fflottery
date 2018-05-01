@@ -1,5 +1,29 @@
 47.90.97.240
 administrator/@#qwe123
 
-api.tyc.red
+1, 注册用户默认返点13.0
+
+
+http://api.tyc.red/help
+
+http://admin.ylgj988.com/index.php/user/login
+admin/123456/a123456A
+
+http://ylgj988.com/index.php/user/login
+wu5028/123456
+
+http://www.tyc.red/TestSignkey.aspx
+
+http://localhost:8021/Register.aspx?userName=tesaaa&signkey=49c816ef2a31952207a240a5f4cada2b&merchantId=111111&time=201804241955111
+
+http://localhost:8021/Login.aspx?userName=tesaaa&signkey=49c816ef2a31952207a240a5f4cada2b&merchantId=111111&time=201804241955111
+
+http://tyc.red/Login.aspx?userName=q00001&signkey=eb26708fb951110c254642846107ef1b&merchantId=111111&time=201804241955111
+
+吉林快三
+http://jlk3kjjg.icaile.com/?n=zt
+
+北京快三
+https://kuai3.cjcp.com.cn/beijing/
+http://bjk3kjjg.icaile.com/?n=zt
 

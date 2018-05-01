@@ -38,6 +38,89 @@ namespace Lottery.Utils
         LotteryNumber.Split(',');
         switch (sType)
         {
+                    case "H_ZMWSDX":
+                        return CheckHK3_Start.ZMWSDX(LotteryNumber, CheckNumber);
+                    case "H_ZMSBH":
+                        return CheckHK3_Start.ZMSB(LotteryNumber, CheckNumber, "红");
+                    case "H_ZMSBLAN":
+                        return CheckHK3_Start.ZMSB(LotteryNumber, CheckNumber, "蓝");
+                    case "H_ZMSBLV":
+                        return CheckHK3_Start.ZMSB(LotteryNumber, CheckNumber, "绿");
+                    case "H_ZMHSDX":
+                        return CheckHK3_Start.ZMHSDX(LotteryNumber, CheckNumber);
+                    case "H_ZMHSDS":
+                        return CheckHK3_Start.ZMHSDS(LotteryNumber, CheckNumber);
+                    case "H_ZMDX":
+                        return CheckHK3_Start.ZMDX(LotteryNumber, CheckNumber);
+                    case "H_ZMDS":
+                        return CheckHK3_Start.ZMDS(LotteryNumber, CheckNumber);
+                    case "H_ZHDX":
+                        return CheckHK3_Start.ZHDX(LotteryNumber, CheckNumber);
+                    case "H_ZHDS":
+                        return CheckHK3_Start.ZHDS(LotteryNumber, CheckNumber);
+                    case "H_SXZXDS":
+                        return CheckHK3_Start.SXZXDS(LotteryNumber, CheckNumber);
+                    case "H_SXZX":
+                        return CheckHK3_Start.SXZX(LotteryNumber, CheckNumber);
+                    case "H_TMSX":
+                        return CheckHK3_Start.TMSX(LotteryNumber, CheckNumber);
+                    case "H_TMBBB":
+                        return CheckHK3_Start.TMBBB(LotteryNumber, CheckNumber);
+                    case "H_TMBB":
+                        return CheckHK3_Start.TMBB(LotteryNumber, CheckNumber);
+                    case "H_TMSB":
+                        return CheckHK3_Start.TMSB(LotteryNumber, CheckNumber);
+                    case "H_TMBT":
+                        return CheckHK3_Start.TMBT(LotteryNumber, CheckNumber);
+                    case "H_TM": //六合彩，特码
+                        return CheckHK3_Start.TM(LotteryNumber, CheckNumber);
+                    case "H_TMDX":
+                        return CheckHK3_Start.TMDX(LotteryNumber, CheckNumber);
+                    case "H_TMDS":
+                        return CheckHK3_Start.TMDS(LotteryNumber, CheckNumber);
+                    case "H_TMHDX":
+                        return CheckHK3_Start.TMHDX(LotteryNumber, CheckNumber);
+                    case "H_TMHDS":
+                        return CheckHK3_Start.TMHDS(LotteryNumber, CheckNumber);
+                    case "H_TMWDX":
+                        return CheckHK3_Start.TMWDX(LotteryNumber, CheckNumber);
+                    case "H_TMWDS":
+                        return CheckHK3_Start.TMWDS(LotteryNumber, CheckNumber);
+                    case "H_TMTS":
+                        return CheckHK3_Start.TMTS(LotteryNumber, CheckNumber);
+                    case "H_TMWS":
+                        return CheckHK3_Start.TMWS(LotteryNumber, CheckNumber);
+                    case "K_3HZ3":
+                    case "K_3HZ4":
+                    case "K_3HZ5":
+                    case "K_3HZ6":
+                    case "K_3HZ7":
+                    case "K_3HZ8":
+                    case "K_3HZ9":
+                    case "K_3HZ10":
+                    case "K_3HZ11":
+                    case "K_3HZ12":
+                    case "K_3HZ13":
+                    case "K_3HZ14":
+                    case "K_3HZ15":
+                    case "K_3HZ16":
+                    case "K_3HZ17":
+                    case "K_3HZ18":
+                        return CheckK3_Start.K_3HZ(CheckNumber, sType.Replace("K_3HZ", ""));
+                    case "K_3STDX":
+                        return CheckK3_Start.K_3STDX(LotteryNumber, CheckNumber);
+                    case "K_3STTX":
+                        return CheckK3_Start.K_3STTX(LotteryNumber, CheckNumber);
+                    case "K_32TDX":
+                        return CheckK3_Start.K_32TDX(LotteryNumber, CheckNumber);
+                    case "K_32TTX":
+                        return CheckK3_Start.K_32TTX(LotteryNumber, CheckNumber);
+                    case "K_32BT":
+                        return CheckK3_Start.K_32BT(LotteryNumber, CheckNumber);
+                    case "K_33BT":
+                        return CheckK3_Start.K_33BT(LotteryNumber, CheckNumber);
+                    case "K_33LTX":
+                        return CheckK3_Start.K_33LTX(LotteryNumber, CheckNumber);
           case "P_5FS":
             return CheckSSC_5Start.P_5FS(LotteryNumber, CheckNumber);
           case "P_5DS":

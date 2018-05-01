@@ -54,20 +54,23 @@ namespace Lottery.DAL
                 {
                     //开奖信息
                     sqlDataAdapter.SelectCommand.CommandType = CommandType.Text;
-                    sqlDataAdapter.SelectCommand.CommandText = string.Format("select top 1 Type,Title,Number from Sys_LotteryData where Type={0} and Title='{1}'", (object)Type, (object)Title);
+                    sqlDataAdapter.SelectCommand.CommandText = string.Format("select top 1 Type,Title,Number, Total from Sys_LotteryData where Type={0} and Title='{1}'", (object)Type, (object)Title);
                     DataTable dataTable1 = new DataTable();
                     sqlDataAdapter.Fill(dataTable1);
 
                     if (dataTable1.Rows.Count > 0)
                     {
+                        //开奖信息
+                        string lotNumber = dataTable1.Rows[0]["Number"].ToString();
+                        int lotNumTotal = Convert.ToInt32(dataTable1.Rows[0]["Total"]);
+                        string lotType = dataTable1.Rows[0]["Type"].ToString();
+                        string lotTitle = dataTable1.Rows[0]["Title"].ToString();
+
                         //投注信息
-                        string LotteryNumber = dataTable1.Rows[0]["Number"].ToString();
                         sqlDataAdapter.SelectCommand.CommandType = CommandType.Text;
                         sqlDataAdapter.SelectCommand.CommandText = string.Format(@"select b.username,b.point as uPoint,a.*
                                                                                     From N_UserBet a with(nolock) left join N_User b on a.UserId=b.Id 
-                                                                                    where a.State=0 and LotteryId={0} and IssueNum='{1}'",
-                                                                                                                                         (object)dataTable1.Rows[0]["Type"].ToString(),
-                                                                                                                                         (object)dataTable1.Rows[0]["Title"].ToString());
+                                                                                    where a.State=0 and LotteryId={0} and IssueNum='{1}'", lotType, lotTitle);
                         DataTable dataTable2 = new DataTable("N_UserBet");
                         sqlDataAdapter.Fill(dataTable2);
 
@@ -77,7 +80,7 @@ namespace Lottery.DAL
                             foreach (DataRow row in (InternalDataCollectionBase)dataTable2.Rows)
                             {
                                 if (Convert.ToInt32(row["State"].ToString()) == 0)
-                                    CheckOperation.Checking(row, LotteryNumber, sqlCommand);
+                                    CheckOperation.Checking(row, lotNumber, lotNumTotal, sqlCommand);
                             }
 
                             foreach (DataRow row in (InternalDataCollectionBase)dataTable2.Rows)
@@ -165,7 +168,7 @@ namespace Lottery.DAL
                         foreach (DataRow row in (InternalDataCollectionBase)dataTable1.Rows)
                         {
                             if (Convert.ToInt32(row["State"].ToString()) == 0)
-                                CheckOperation.Checking(row, LotteryNumber, sqlCommand);
+                                CheckOperation.Checking(row, LotteryNumber, 0, sqlCommand);
                         }
                         foreach (DataRow row in (InternalDataCollectionBase)dataTable1.Rows)
                         {
@@ -236,7 +239,7 @@ namespace Lottery.DAL
                         {
                             string LotteryNumber = Number;
                             if (Convert.ToInt32(row["State"].ToString()) == 0)
-                                CheckOperation.Checking(row, LotteryNumber, sqlCommand);
+                                CheckOperation.Checking(row, LotteryNumber, 0, sqlCommand);
                         }
                         foreach (DataRow row in (InternalDataCollectionBase)dataTable.Rows)
                         {

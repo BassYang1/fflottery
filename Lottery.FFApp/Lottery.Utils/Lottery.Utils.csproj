@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckHK3_Start.cs" />
+    <Compile Include="CheckK3_Start.cs" />
     <Compile Include="MD5Cryptology.cs" />
     <Compile Include="SqlHelp.cs" />
     <Compile Include="MailHelp.cs" />

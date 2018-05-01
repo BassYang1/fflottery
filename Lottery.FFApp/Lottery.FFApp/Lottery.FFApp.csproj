@@ -338,6 +338,13 @@
       <DependentUpon>userupdate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="TestSignkey.aspx.cs">
+      <DependentUpon>TestSignkey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestSignkey.aspx.designer.cs">
+      <DependentUpon>TestSignkey.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="active\actCharge.html" />
@@ -496,6 +503,11 @@
     <Content Include="statics\img\4002.png" />
     <Content Include="statics\img\4003.png" />
     <Content Include="statics\img\4004.png" />
+    <Content Include="statics\img\5005.png" />
+    <Content Include="statics\img\5006.png" />
+    <Content Include="statics\img\5007.png" />
+    <Content Include="statics\img\5008.png" />
+    <Content Include="statics\img\6001.png" />
     <Content Include="statics\img\acc_avatar.png" />
     <Content Include="statics\img\acc_default.png" />
     <Content Include="statics\img\acc_logo.png" />
@@ -1021,6 +1033,7 @@
     <Content Include="statics\log\hacker_20170601.log" />
     <Content Include="statics\log\hacker_20170602.log" />
     <Content Include="statics\log\hacker_20171229.log" />
+    <Content Include="TestSignkey.aspx" />
     <None Include="Properties\PublishProfiles\ffapp.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

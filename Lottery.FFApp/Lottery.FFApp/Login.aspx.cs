@@ -22,14 +22,15 @@ namespace Lottery.FFApp
             string merchantId = this.q("merchantId");
             string userName = this.q("userName");
             string signKey = this.q("signKey");
+            string time = this.q("time");
 
-            if (ChkLoginWebApp(merchantId, userName, signKey))
+            if (ChkLoginWebApp(merchantId, userName, time, signKey))
             {
                 Response.Redirect("/", true);
             }
         }
 
-        public bool ChkLoginWebApp(string merchantId, string userName, string signKey)
+        public bool ChkLoginWebApp(string merchantId, string userName, string time, string signKey)
         {
             if (string.IsNullOrEmpty(merchantId))
             {
@@ -46,10 +47,15 @@ namespace Lottery.FFApp
                 this.CheckMsg = "签名不能为空";
                 return false;
             }
+            if (string.IsNullOrEmpty(time))
+            {
+                this.CheckMsg = "日期不能为空";
+                return false;
+            }
 
             try
             {
-                (new UserDAL()).ChkLoginMerchantApp(merchantId, userName, signKey);
+                (new UserDAL()).ChkLoginMerchantApp(merchantId, userName, time, signKey);
             }
             catch (InvalidOperationException e)
             {

@@ -1,0 +1,600 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Lottery.FFModel</name>
+    </assembly>
+    <members>
+        <member name="T:Lottery.FFModel.SearchWithdrawModel">
+            <summary>
+            提现查询条件
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.SearchWithdrawModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.SearchWithdrawModel.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.SearchWithdrawModel.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.SearchChargeModel">
+            <summary>
+            充值查询条件
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.SearchChargeModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.SearchChargeModel.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.SearchChargeModel.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.UserWithdrawEntity">
+            <summary>
+            提现记录扩展实体
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawEntity.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.UserWithdrawRecordModel">
+            <summary>
+            提现记录
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawRecordModel.SsId">
+            <summary>
+            提现记录ID
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawRecordModel.OrderId">
+            <summary>
+            第三方唯一提现订单号, 可为空
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawRecordModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawRecordModel.Amount">
+            <summary>
+            提现金额
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawRecordModel.State">
+            <summary>
+            记录状态
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawRecordModel.STime">
+            <summary>
+            提现时间
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.UserChargeRecordModel">
+            <summary>
+            充值记录
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeRecordModel.SsId">
+            <summary>
+            提现记录ID
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeRecordModel.OrderId">
+            <summary>
+            第三方唯一充值订单号, 可为空
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeRecordModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeRecordModel.Amount">
+            <summary>
+            充值金额
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeRecordModel.InAmount">
+            <summary>
+            到账金额
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeRecordModel.State">
+            <summary>
+            记录状态
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeRecordModel.STime">
+            <summary>
+            提现时间
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.UserChargeEntity">
+            <summary>
+            充值记录扩展实体
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeEntity.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.UserChargeResultModel">
+            <summary>
+            用户充值结果
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeResultModel.OrderId">
+            <summary>
+            第三方唯一充值订单号, 可为空
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeResultModel.SsId">
+            <summary>
+            非凡充值记录Id
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeResultModel.MerchantId">
+            <summary>
+            商户Id
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeResultModel.UserName">
+            <summary>
+            会员用户名
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeResultModel.BeforeMoney">
+            <summary>
+            充值前余额
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeResultModel.Money">
+            <summary>
+            账户余额
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.UserChargeModel">
+            <summary>
+            用户充值
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeModel.OrderId">
+            <summary>
+            第三方唯一充值订单号, 可为空
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeModel.MerchantId">
+            <summary>
+            商户Id
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeModel.UserName">
+            <summary>
+            会员用户名
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeModel.Amount">
+            <summary>
+            充值金额，保留小数位后4位
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserChargeModel.SignKey">
+            <summary>
+            签名字符串, 按顺序(充值订单号&amp;商户Id&amp;会员用户名&amp;充值金额(4位小数)&amp;商户安全码)MD5加密串
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.UserWithdrawModel">
+            <summary>
+            用户取现
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawModel.OrderId">
+            <summary>
+            第三方唯一取现订单号, 可为空
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawModel.MerchantId">
+            <summary>
+            商户Id
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawModel.UserName">
+            <summary>
+            会员用户名
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawModel.Amount">
+            <summary>
+            取现金额，保留小数位后4位
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawModel.SignKey">
+            <summary>
+            签名字符串, 按顺序(取现订单号&amp;商户Id&amp;会员用户名&amp;取现金额(4位小数)&amp;商户安全码)MD5加密串
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.UserWithdrawResultModel">
+            <summary>
+            用户取现结果
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawResultModel.OrderId">
+            <summary>
+            第三方唯一取现订单号, 可为空
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawResultModel.SsId">
+            <summary>
+            非凡充值记录Id
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawResultModel.MerchantId">
+            <summary>
+            商户Id
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawResultModel.UserName">
+            <summary>
+            会员用户名
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawResultModel.BeforeMoney">
+            <summary>
+            充值前余额
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserWithdrawResultModel.Money">
+            <summary>
+            账户余额
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.BetStateEnum">
+            <summary>
+            彩票下注状态
+            </summary>
+        </member>
+        <member name="F:Lottery.FFModel.BetStateEnum.NONE">
+            <summary>
+            彩票下注状态
+            </summary>
+        </member>
+        <member name="F:Lottery.FFModel.BetStateEnum.NOT_ISSUE">
+            <summary>
+            未开奖
+            </summary>
+        </member>
+        <member name="F:Lottery.FFModel.BetStateEnum.WITHDRAWNED">
+            <summary>
+            已撤销
+            </summary>
+        </member>
+        <member name="F:Lottery.FFModel.BetStateEnum.NOT_WIN">
+            <summary>
+            未中奖
+            </summary>
+        </member>
+        <member name="F:Lottery.FFModel.BetStateEnum.WINNED">
+            <summary>
+            已中奖
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.UserBetRecordModel">
+            <summary>
+            投注记录
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetRecordModel.SsId">
+            <summary>
+            设注记录ID
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetRecordModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetRecordModel.LotteryName">
+            <summary>
+            彩种
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetRecordModel.IssueNo">
+            <summary>
+            期号
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetRecordModel.Num">
+            <summary>
+            投注数量
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetRecordModel.Times">
+            <summary>
+            倍数
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetRecordModel.Price">
+            <summary>
+            每注金额
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetRecordModel.Amount">
+            <summary>
+            投注金额
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetRecordModel.Bouns">
+            <summary>
+            投注赔率
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetRecordModel.WinNum">
+            <summary>
+            中奖注数
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetRecordModel.WinAmount">
+            <summary>
+            中奖金额
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetRecordModel.Source">
+            <summary>
+            投注设备
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetRecordModel.State">
+            <summary>
+            记录状态
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.SearchBetModel">
+            <summary>
+            投注查询条件
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.SearchBetModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.SearchBetModel.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.SearchBetModel.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.SearchBetModel.State">
+            <summary>
+            下注状态
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.LotteryModel">
+            <summary>
+            彩票种类
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.LotteryModel.Id">
+            <summary>
+            彩票种类Id
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.LotteryModel.Title">
+            <summary>
+            彩票名称
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.LotteryModel.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.LotteryModel.MinTimes">
+            <summary>
+            最小倍数
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.LotteryModel.MaxTimes">
+            <summary>
+            最大倍数
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.LotteryModel.IsOpen">
+            <summary>
+            是否允许使用
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.LotteryModel.CloseTime">
+            <summary>
+            封单时间
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.LotteryModel.Sort">
+            <summary>
+            彩票排序
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.LotteryModel.Ltype">
+            <summary>
+            彩票种类
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.LotteryModel.IphoneSort">
+            <summary>
+            手机端排序
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.LotteryModel.IssNum">
+            <summary>
+            期数
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.Result`1">
+            <summary>
+            请求响应
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Lottery.FFModel.Result`1.Data">
+            <summary>
+            处理结果
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.Result`1.Message">
+            <summary>
+            异常提示信息
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.PageData`1">
+            <summary>
+            分页查询
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.PageData`1.Result">
+            <summary>
+            处理结果
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.PageData`1.TotalCount">
+            <summary>
+            记录总数
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.PageData`1.TotalPage">
+            <summary>
+            分页总数
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.PageData`1.PageSize">
+            <summary>
+            分页大小
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.PageData`1.PageIndex">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.UserBetEntity">
+            <summary>
+            投注记录扩展实体
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetEntity.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserBetEntity.LotteryName">
+            <summary>
+            彩种名
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.UserRegModel">
+            <summary>
+            用户注册
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserRegModel.MerchantId">
+            <summary>
+            商户Id
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserRegModel.UserName">
+            <summary>
+            会员用户名
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserRegModel.Time">
+            <summary>
+            注册时间，格式yyyyMMddHHmmss
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserRegModel.SignKey">
+            <summary>
+            签名字符串, 按顺序(商户Id&amp;会员用户名&amp;商户安全码)MD5加密串")
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.UserModel">
+            <summary>
+            会员
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserModel.Token">
+            <summary>
+            Token
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserModel.SessionId">
+            <summary>
+            SessionId
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserModel.Id">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserModel.MerchantId">
+            <summary>
+            商户Id
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserModel.UserName">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserModel.Point">
+            <summary>
+            用户返点
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserModel.IsEnable">
+            <summary>
+            是否启用用户
+            </summary>
+        </member>
+        <member name="T:Lottery.FFModel.UserLoginModel">
+            <summary>
+            用户登录
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserLoginModel.MerchantId">
+            <summary>
+            商户Id
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserLoginModel.UserName">
+            <summary>
+            会员用户名
+            </summary>
+        </member>
+        <!-- 对于成员“P:Lottery.FFModel.UserLoginModel.SignKey”忽略有格式错误的 XML 注释 -->
+    </members>
+</doc>

@@ -1,4 +1,44 @@
-﻿//组合
+﻿
+//快三和值
+function RedK3HZ(balls) {
+    if (balls != "") {
+        var strArray2 = balls.split("_");
+        return strArray2.length;
+    }
+    return 0;
+}
+
+//快三,二不同直选
+function RedK32BT(balls) {
+    if (balls != "") {
+        var strArray2 = balls.split("_");
+        return (strArray2.length * (strArray2.length - 1)) / 2;
+    }
+
+    return 0;
+}
+
+//快三,三不同直选
+function RedK33BT(balls) {
+    if (balls != "") {
+        var strArray2 = balls.split("_");
+        return (strArray2.length * (strArray2.length - 2)) * (strArray2.length - 1) / 6;
+    }
+
+    return 0;
+}
+
+//快三,三连号通选
+function RedK33LTX(balls) {
+    if (balls != "") {
+        var strArray2 = balls.split("_");
+        return (strArray2.length * (strArray2.length - 2)) * (strArray2.length - 1) / 6;
+    }
+
+    return 0;
+}
+
+//组合
 function RedZH(balls) {
     if (balls != "") {
         var strArray2 = balls.split(",");

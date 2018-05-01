@@ -6,7 +6,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\Projects\ffyule\publish\ffmobile</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\Projects\fflottery\publish\ffmobile</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="active/active1.html">
@@ -136,28 +136,28 @@
       <publishTime>06/19/2014 20:15:47</publishTime>
     </File>
     <File Include="bin/log4net.dll">
-      <publishTime>06/22/2009 16:41:14</publishTime>
+      <publishTime>04/05/2018 08:43:51</publishTime>
     </File>
     <File Include="bin/Lottery.Collect.dll">
-      <publishTime>03/11/2018 15:08:47</publishTime>
+      <publishTime>04/27/2018 06:32:00</publishTime>
     </File>
     <File Include="bin/Lottery.DAL.dll">
-      <publishTime>03/11/2018 15:08:46</publishTime>
+      <publishTime>04/27/2018 06:31:58</publishTime>
     </File>
     <File Include="bin/Lottery.DBUtility.dll">
-      <publishTime>03/11/2018 15:08:45</publishTime>
+      <publishTime>04/27/2018 06:31:55</publishTime>
     </File>
     <File Include="bin/Lottery.Entity.dll">
-      <publishTime>03/11/2018 15:08:45</publishTime>
+      <publishTime>04/27/2018 06:31:53</publishTime>
     </File>
     <File Include="bin/Lottery.FFCache.dll">
-      <publishTime>03/11/2018 15:08:45</publishTime>
+      <publishTime>04/27/2018 06:31:54</publishTime>
     </File>
     <File Include="bin/Lottery.IPhone.dll">
-      <publishTime>03/11/2018 15:08:48</publishTime>
+      <publishTime>04/27/2018 06:32:02</publishTime>
     </File>
     <File Include="bin/Lottery.Utils.dll">
-      <publishTime>03/11/2018 15:08:45</publishTime>
+      <publishTime>04/27/2018 06:31:53</publishTime>
     </File>
     <File Include="bin/Lucene.Net.dll">
       <publishTime>02/09/2012 17:01:10</publishTime>
@@ -316,7 +316,7 @@
       <publishTime>06/03/2017 19:49:54</publishTime>
     </File>
     <File Include="statics/global.js">
-      <publishTime>02/03/2018 11:52:07</publishTime>
+      <publishTime>04/24/2018 05:58:30</publishTime>
     </File>
     <File Include="statics/html/betSuccess.html">
       <publishTime>02/21/2018 10:03:41</publishTime>
@@ -334,169 +334,169 @@
       <publishTime>06/03/2017 19:49:06</publishTime>
     </File>
     <File Include="statics/json/BigAndSmalldata.js">
-      <publishTime>01/26/2018 15:56:35</publishTime>
+      <publishTime>04/24/2018 05:58:18</publishTime>
     </File>
     <File Include="statics/json/json_0.00.js">
-      <publishTime>01/27/2018 16:39:20</publishTime>
+      <publishTime>04/24/2018 05:58:19</publishTime>
     </File>
     <File Include="statics/json/json_10.00.js">
-      <publishTime>01/27/2018 16:39:23</publishTime>
+      <publishTime>04/24/2018 05:58:23</publishTime>
     </File>
     <File Include="statics/json/json_100.00.js">
-      <publishTime>01/27/2018 16:39:21</publishTime>
+      <publishTime>04/24/2018 05:58:21</publishTime>
     </File>
     <File Include="statics/json/json_101.00.js">
-      <publishTime>01/27/2018 16:39:22</publishTime>
+      <publishTime>04/24/2018 05:58:22</publishTime>
     </File>
     <File Include="statics/json/json_102.00.js">
-      <publishTime>01/27/2018 16:39:22</publishTime>
+      <publishTime>04/24/2018 05:58:22</publishTime>
     </File>
     <File Include="statics/json/json_103.00.js">
-      <publishTime>01/27/2018 16:39:22</publishTime>
+      <publishTime>04/24/2018 05:58:22</publishTime>
     </File>
     <File Include="statics/json/json_104.00.js">
-      <publishTime>01/27/2018 16:39:22</publishTime>
+      <publishTime>04/24/2018 05:58:22</publishTime>
     </File>
     <File Include="statics/json/json_105.00.js">
-      <publishTime>01/27/2018 16:39:22</publishTime>
+      <publishTime>04/24/2018 05:58:22</publishTime>
     </File>
     <File Include="statics/json/json_106.00.js">
-      <publishTime>01/27/2018 16:39:22</publishTime>
+      <publishTime>04/24/2018 05:58:22</publishTime>
     </File>
     <File Include="statics/json/json_107.00.js">
-      <publishTime>01/27/2018 16:39:22</publishTime>
+      <publishTime>04/24/2018 05:58:23</publishTime>
     </File>
     <File Include="statics/json/json_108.00.js">
-      <publishTime>01/27/2018 16:39:22</publishTime>
+      <publishTime>04/24/2018 05:58:23</publishTime>
     </File>
     <File Include="statics/json/json_109.00.js">
-      <publishTime>01/27/2018 16:39:23</publishTime>
+      <publishTime>04/24/2018 05:58:23</publishTime>
     </File>
     <File Include="statics/json/json_110.00.js">
-      <publishTime>01/27/2018 16:39:23</publishTime>
+      <publishTime>04/24/2018 05:58:23</publishTime>
     </File>
     <File Include="statics/json/json_111.00.js">
-      <publishTime>01/27/2018 16:39:23</publishTime>
+      <publishTime>04/24/2018 05:58:24</publishTime>
     </File>
     <File Include="statics/json/json_112.00.js">
-      <publishTime>01/27/2018 16:39:23</publishTime>
+      <publishTime>04/24/2018 05:58:24</publishTime>
     </File>
     <File Include="statics/json/json_113.00.js">
-      <publishTime>01/27/2018 16:39:23</publishTime>
+      <publishTime>04/24/2018 05:58:24</publishTime>
     </File>
     <File Include="statics/json/json_114.00.js">
-      <publishTime>01/27/2018 16:39:23</publishTime>
+      <publishTime>04/24/2018 05:58:24</publishTime>
     </File>
     <File Include="statics/json/json_115.00.js">
-      <publishTime>01/27/2018 16:39:23</publishTime>
+      <publishTime>04/24/2018 05:58:24</publishTime>
     </File>
     <File Include="statics/json/json_116.00.js">
-      <publishTime>01/27/2018 16:39:24</publishTime>
+      <publishTime>04/24/2018 05:58:24</publishTime>
     </File>
     <File Include="statics/json/json_117.00.js">
-      <publishTime>01/27/2018 16:39:24</publishTime>
+      <publishTime>04/24/2018 05:58:25</publishTime>
     </File>
     <File Include="statics/json/json_118.00.js">
-      <publishTime>01/27/2018 16:39:24</publishTime>
+      <publishTime>04/24/2018 05:58:25</publishTime>
     </File>
     <File Include="statics/json/json_119.00.js">
-      <publishTime>01/27/2018 16:39:24</publishTime>
+      <publishTime>04/24/2018 05:58:25</publishTime>
     </File>
     <File Include="statics/json/json_120.00.js">
-      <publishTime>01/27/2018 16:39:24</publishTime>
+      <publishTime>04/24/2018 05:58:25</publishTime>
     </File>
     <File Include="statics/json/json_121.00.js">
-      <publishTime>01/27/2018 16:39:24</publishTime>
+      <publishTime>04/24/2018 05:58:26</publishTime>
     </File>
     <File Include="statics/json/json_122.00.js">
-      <publishTime>01/27/2018 16:39:25</publishTime>
+      <publishTime>04/24/2018 05:58:26</publishTime>
     </File>
     <File Include="statics/json/json_123.00.js">
-      <publishTime>01/27/2018 16:39:25</publishTime>
+      <publishTime>04/24/2018 05:58:26</publishTime>
     </File>
     <File Include="statics/json/json_124.00.js">
-      <publishTime>01/27/2018 16:39:25</publishTime>
+      <publishTime>04/24/2018 05:58:27</publishTime>
     </File>
     <File Include="statics/json/json_125.00.js">
-      <publishTime>01/27/2018 16:39:25</publishTime>
+      <publishTime>04/24/2018 05:58:27</publishTime>
     </File>
     <File Include="statics/json/json_126.00.js">
-      <publishTime>01/27/2018 16:39:25</publishTime>
+      <publishTime>04/24/2018 05:58:27</publishTime>
     </File>
     <File Include="statics/json/json_127.00.js">
-      <publishTime>01/27/2018 16:39:26</publishTime>
+      <publishTime>04/24/2018 05:58:27</publishTime>
     </File>
     <File Include="statics/json/json_128.00.js">
-      <publishTime>01/27/2018 16:39:26</publishTime>
+      <publishTime>04/24/2018 05:58:28</publishTime>
     </File>
     <File Include="statics/json/json_129.00.js">
-      <publishTime>01/27/2018 16:39:26</publishTime>
+      <publishTime>04/24/2018 05:58:28</publishTime>
     </File>
     <File Include="statics/json/json_130.00.js">
-      <publishTime>01/27/2018 16:39:26</publishTime>
+      <publishTime>04/24/2018 05:58:28</publishTime>
     </File>
     <File Include="statics/json/json_131.00.js">
-      <publishTime>01/27/2018 16:39:26</publishTime>
+      <publishTime>04/24/2018 05:58:29</publishTime>
     </File>
     <File Include="statics/json/json_132.00.js">
-      <publishTime>01/27/2018 16:39:26</publishTime>
+      <publishTime>04/24/2018 05:58:29</publishTime>
     </File>
     <File Include="statics/json/json_133.00.js">
-      <publishTime>01/27/2018 16:39:26</publishTime>
+      <publishTime>04/24/2018 05:58:29</publishTime>
     </File>
     <File Include="statics/json/json_15.00.js">
-      <publishTime>01/27/2018 16:39:24</publishTime>
+      <publishTime>04/24/2018 05:58:25</publishTime>
     </File>
     <File Include="statics/json/json_20.00.js">
-      <publishTime>01/27/2018 16:39:26</publishTime>
+      <publishTime>04/24/2018 05:58:28</publishTime>
     </File>
     <File Include="statics/json/json_25.00.js">
-      <publishTime>01/27/2018 16:39:27</publishTime>
+      <publishTime>04/24/2018 05:58:29</publishTime>
     </File>
     <File Include="statics/json/json_30.00.js">
-      <publishTime>01/27/2018 16:39:27</publishTime>
+      <publishTime>04/24/2018 05:58:29</publishTime>
     </File>
     <File Include="statics/json/json_35.00.js">
-      <publishTime>01/27/2018 16:39:27</publishTime>
+      <publishTime>04/24/2018 05:58:29</publishTime>
     </File>
     <File Include="statics/json/json_40.00.js">
-      <publishTime>01/27/2018 16:39:27</publishTime>
+      <publishTime>04/24/2018 05:58:30</publishTime>
     </File>
     <File Include="statics/json/json_45.00.js">
-      <publishTime>01/27/2018 16:39:20</publishTime>
+      <publishTime>04/24/2018 05:58:19</publishTime>
     </File>
     <File Include="statics/json/json_5.00.js">
-      <publishTime>01/27/2018 16:39:21</publishTime>
+      <publishTime>04/24/2018 05:58:21</publishTime>
     </File>
     <File Include="statics/json/json_50.00.js">
-      <publishTime>01/27/2018 16:39:20</publishTime>
+      <publishTime>04/24/2018 05:58:19</publishTime>
     </File>
     <File Include="statics/json/json_55.00.js">
-      <publishTime>01/27/2018 16:39:20</publishTime>
+      <publishTime>04/24/2018 05:58:19</publishTime>
     </File>
     <File Include="statics/json/json_60.00.js">
-      <publishTime>01/27/2018 16:39:20</publishTime>
+      <publishTime>04/24/2018 05:58:20</publishTime>
     </File>
     <File Include="statics/json/json_65.00.js">
-      <publishTime>01/27/2018 16:39:20</publishTime>
+      <publishTime>04/24/2018 05:58:20</publishTime>
     </File>
     <File Include="statics/json/json_70.00.js">
-      <publishTime>01/27/2018 16:39:20</publishTime>
+      <publishTime>04/24/2018 05:58:20</publishTime>
     </File>
     <File Include="statics/json/json_75.00.js">
-      <publishTime>01/27/2018 16:39:21</publishTime>
+      <publishTime>04/24/2018 05:58:20</publishTime>
     </File>
     <File Include="statics/json/json_80.00.js">
-      <publishTime>01/27/2018 16:39:21</publishTime>
+      <publishTime>04/24/2018 05:58:20</publishTime>
     </File>
     <File Include="statics/json/json_85.00.js">
-      <publishTime>01/27/2018 16:39:21</publishTime>
+      <publishTime>04/24/2018 05:58:21</publishTime>
     </File>
     <File Include="statics/json/json_90.00.js">
-      <publishTime>01/27/2018 16:39:21</publishTime>
+      <publishTime>04/24/2018 05:58:21</publishTime>
     </File>
     <File Include="statics/json/json_95.00.js">
-      <publishTime>01/27/2018 16:39:21</publishTime>
+      <publishTime>04/24/2018 05:58:21</publishTime>
     </File>
     <File Include="statics/json/LotAndSmalldata.js">
       <publishTime>01/27/2018 16:39:22</publishTime>
@@ -505,7 +505,7 @@
       <publishTime>01/27/2018 16:39:22</publishTime>
     </File>
     <File Include="statics/json/PlayBigdate.js">
-      <publishTime>01/26/2018 15:56:35</publishTime>
+      <publishTime>04/24/2018 05:58:18</publishTime>
     </File>
     <File Include="statics/layer/extend/layer.ext.js">
       <publishTime>05/23/2015 00:33:24</publishTime>
@@ -628,7 +628,7 @@
       <publishTime>01/02/2016 22:33:53</publishTime>
     </File>
     <File Include="statics/sytle/css/style.css">
-      <publishTime>03/06/2018 15:59:14</publishTime>
+      <publishTime>03/24/2018 18:49:48</publishTime>
     </File>
     <File Include="statics/sytle/images/account.png">
       <publishTime>09/05/2016 16:00:06</publishTime>
@@ -1333,13 +1333,13 @@
       <publishTime>06/02/2017 19:31:10</publishTime>
     </File>
     <File Include="statics/sytle/js/EM.jquery2.js">
-      <publishTime>06/08/2017 09:49:27</publishTime>
+      <publishTime>04/27/2018 00:08:39</publishTime>
     </File>
     <File Include="statics/sytle/js/EM.jquery3.js">
-      <publishTime>06/08/2017 08:35:33</publishTime>
+      <publishTime>04/27/2018 00:09:52</publishTime>
     </File>
     <File Include="statics/sytle/js/EM.jquery4.js">
-      <publishTime>10/23/2016 01:21:08</publishTime>
+      <publishTime>04/27/2018 00:10:31</publishTime>
     </File>
     <File Include="statics/sytle/js/EM.jquery5.js">
       <publishTime>03/02/2018 22:17:55</publishTime>
@@ -1417,10 +1417,10 @@
       <publishTime>10/23/2016 17:01:31</publishTime>
     </File>
     <File Include="WEB-INF/site.xml">
-      <publishTime>01/27/2018 16:39:18</publishTime>
+      <publishTime>04/24/2018 05:58:30</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/11/2018 15:11:09</publishTime>
+      <publishTime>04/27/2018 06:32:54</publishTime>
     </File>
   </ItemGroup>
 </Project>

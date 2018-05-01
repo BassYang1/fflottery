@@ -1062,6 +1062,20 @@ namespace Lottery.DAL.Flex
                         strArray[0] = now.Year.ToString() + this.AddZero(num + 1, 3);
                         break;
                     }
+                case 6001:
+                    if (UserCenterSession.LotteryDateTime == null)
+                    {
+                        UserCenterSession.LotteryDateTime = new LotteryTimeDAL().GetDateTimeTable(); //开奖时间
+                    }
+
+                    DataRow[] dataRowArray2 = UserCenterSession.LotteryDateTime.Select("Time >'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' and LotteryId=6001", "Time ASC");
+
+                    if (dataRowArray2.Length > 0)
+                    {
+                        strArray[1] = Convert.ToDateTime(dataRowArray2[0]["Time"]).ToString("yyyy-MM-dd HH:mm:ss");
+                        strArray[0] = now.ToString("yyyy") + "-" + dataRowArray2[0]["Sn"].ToString(); //当前期开奖时间
+                    }
+                    break;
                 default:
                     using (DbOperHandler dbOperHandler = new ComData().Doh())
                     {

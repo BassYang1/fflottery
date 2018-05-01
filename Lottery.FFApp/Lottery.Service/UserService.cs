@@ -21,7 +21,7 @@ namespace Lottery.Service
         /// </summary>
         /// <param name="model">注册信息</param>
         /// <returns>用户登录凭证Token</returns>
-        public string RegiterUser(UserRegModel model)
+        public string Regiter(UserRegModel model)
         {
             using (var dbContext = new TicketEntities())
             {
@@ -47,7 +47,7 @@ namespace Lottery.Service
 
                 //2, 验证加密串
                 //按顺序(商户Id&会员用户名&商户安全码)MD5加密串
-                var signKey = Lottery.Core.MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", model.MerchantId, model.UserName, merchantEntity.Code), "gb2312");
+                var signKey = Lottery.Core.MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}&{3}", model.MerchantId, model.UserName, model.Time, merchantEntity.Code).ToLower(), "gb2312");
                 if (string.Compare(signKey, model.SignKey, true) != 0)
                 {
                     Log.Error("无效的商户安全码");
@@ -62,7 +62,8 @@ namespace Lottery.Service
                 }
 
                 //3,验证用户
-                var userEntity = dbContext.N_User.FirstOrDefault(it => it.UserName.Equals(model.UserName, StringComparison.OrdinalIgnoreCase));
+                var userEntity = dbContext.N_User.FirstOrDefault(it => it.MerchantId.Equals(model.MerchantId, StringComparison.OrdinalIgnoreCase)
+                    && it.UserName.Equals(model.UserName, StringComparison.OrdinalIgnoreCase));
 
                 if (userEntity == null)
                 {
@@ -72,61 +73,6 @@ namespace Lottery.Service
 
                 var token = this.GenerateToken(); // 获取用户登录Token 
                 userEntity.Token = token;
-                userEntity.ExpirationTime = DateTime.Now.AddDays(2); // 设置Token有效期
-                SaveDbChanges(dbContext);
-
-                return token;
-            }
-        }
-
-        /// <summary>
-        /// 代理商登录
-        /// </summary>
-        /// <param name="model">登录信息</param>
-        /// <returns>用户登录Token</returns>
-        public string GetUserToken(UserLoginModel model)
-        {
-            using (var dbContext = new TicketEntities())
-            {
-                if (string.IsNullOrEmpty(model.MerchantId) && string.IsNullOrEmpty(model.UserName) && string.IsNullOrEmpty(model.SignKey))
-                {
-                    throw new KeyNotFoundException("无效的用户登录信息");
-                }
-
-                //1, 判断用户是否存在
-                var merchantEntity = dbContext.N_Merchant.FirstOrDefault(it => (it.MerchantId.Equals(model.MerchantId, StringComparison.OrdinalIgnoreCase)));
-
-                if (merchantEntity == null)
-                {
-                    Log.Error("商户不存在");
-                    throw new KeyNotFoundException("商户不存在");
-                }
-
-                if (string.IsNullOrEmpty(merchantEntity.Code))
-                {
-                    Log.Error("无效的商户");
-                    throw new KeyNotFoundException("无效的商户");
-                }
-
-                //2, 验证加密串
-                var signKey = Core.MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", model.MerchantId, model.UserName, merchantEntity.Code), "gb2312");
-                if (string.Compare(signKey, model.SignKey, true) != 0)
-                {
-                    Log.Error("无效的商户安全码");
-                    throw new KeyNotFoundException("无效的商户安全码");
-                }
-
-                //3,验证用户
-                var userEntity = dbContext.N_User.FirstOrDefault(it => it.UserName.Equals(model.UserName, StringComparison.OrdinalIgnoreCase));
-                
-                if (userEntity == null)
-                {
-                    Log.Error("用户不存在");
-                    throw new KeyNotFoundException("用户不存在");
-                }
-
-                var token = this.GenerateToken(); // 获取用户登录Token 
-                userEntity.Token =   token;             
                 userEntity.ExpirationTime = DateTime.Now.AddDays(2); // 设置Token有效期
                 SaveDbChanges(dbContext);
 
@@ -164,7 +110,7 @@ namespace Lottery.Service
                 }
 
                 //2, 验证加密串
-                var signKey = Core.MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", model.MerchantId, model.UserName, merchantEntity.Code), "gb2312");
+                var signKey = Core.MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", model.MerchantId, model.UserName, merchantEntity.Code).ToLower(), "gb2312");
                 if (string.Compare(signKey, model.SignKey, true) != 0)
                 {
                     Log.Error("无效的商户安全码");
@@ -172,7 +118,8 @@ namespace Lottery.Service
                 }
 
                 //3,验证用户
-                var userEntity = dbContext.N_User.FirstOrDefault(it => it.UserName.Equals(model.UserName, StringComparison.OrdinalIgnoreCase));
+                var userEntity = dbContext.N_User.FirstOrDefault(it => it.MerchantId.Equals(model.MerchantId, StringComparison.OrdinalIgnoreCase) 
+                    && it.UserName.Equals(model.UserName, StringComparison.OrdinalIgnoreCase));
 
                 if (userEntity == null)
                 {
@@ -202,15 +149,7 @@ namespace Lottery.Service
 
                 SaveDbChanges(dbContext);
 
-                var user = new UserModel();
-                user.Point = userEntity.Point ?? 0;
-                user.UserName = userEntity.UserName;
-                user.MerchantId = userEntity.MerchantId;
-                user.SessionId = userEntity.SessionId;
-                user.Token = token;
-                user.Id = userEntity.Id;
-
-                return user;
+                return userEntity.ToModel();
             }
         }
 
@@ -228,57 +167,41 @@ namespace Lottery.Service
                     return null;
                 }
 
-                var member = dbContext.N_User.FirstOrDefault(item => item.Token.Equals(token, StringComparison.OrdinalIgnoreCase));
+                var user = dbContext.N_User.FirstOrDefault(item => item.Token.Equals(token, StringComparison.OrdinalIgnoreCase));
 
-                if (member == null)
+                if (user == null)
                 {
                     //Log.Debug("登录用户无效");
                     return null;
                 }
 
-                if (member.IsTokenExpired())
+                if (user.IsTokenExpired())
                 {
-                    member.Token = string.Empty;
+                    user.Token = string.Empty;
                     SaveDbChanges(dbContext);
 
                     Log.Debug("登录凭证过期");
                     return null;
                 }
 
-                var model = member.ToModel();
+                var model = user.ToModel();
 
                 return model;
             }
-        }
-
-        /// <summary>
-        /// 获取用户下注，最新20条
-        /// </summary>
-        /// <param name="userId">用户Id</param>
-        /// <param name="lotteryId">彩票种类Id</param>
-        /// <returns>用户下注，最新20条</returns>
-        public string GetUserBets(int userId, int lotteryId)
-        {
-            string _wherestr1 = "" + " UserId = " + userId;
-            _wherestr1 = " AND LotteryId = " + lotteryId;
-            string _jsonstr = "";
-            new WebAppListOper().GetListJSON_ZH(0, 20, _wherestr1, "", ref _jsonstr);
-
-            return _jsonstr;
         }
 
         private string ajaxRegiter(UserRegModel model)
         {
             string s = "123456";
             this.doh.Reset();
-            this.doh.SqlCmd = "SELECT Id FROM [N_User] WHERE [UserName]='" + model.UserName + "'";
+            this.doh.SqlCmd = "SELECT Id FROM [N_User] WHERE [UserName]='" + model.UserName + "' AND MerchantId ='" + model.MerchantId + "'";
             if (this.doh.GetDataTable().Rows.Count > 0)
                 return "用户名重复";
 
-            int userId = new UserDAL().Register("0", model.UserName, MD5.Lower32(s), 0M, model.MerchantId);
+            int userId = new UserDAL().Register("0", model.UserName, MD5.Lower32(s), 13.0M, model.MerchantId);
             this.doh.Reset();
             this.doh.ConditionExpress = "id=" + (object)userId;
-            this.doh.AddFieldItem("UserGroup", "6");
+            this.doh.AddFieldItem("UserGroup", "0");
             this.doh.AddFieldItem("UserCode", Strings.PadLeft(userId.ToString()));
             if (this.doh.Update("N_User") > 0)
             {

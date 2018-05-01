@@ -457,8 +457,8 @@ namespace Lottery.WebApp
             string curTime = curDateTime.ToString("HH:mm:ss"); //当前时间
 
             int num;
-            string curExpect; //当前期号
-            string nextExpect; //下一期期号
+            string curExpect = string.Empty; //当前期号
+            string nextExpect = string.Empty; //下一期期号
             string expectNum = "0"; //已开期数
             TimeSpan timeSpan;
 
@@ -487,6 +487,34 @@ namespace Lottery.WebApp
                 num = curDateTime.Year;
                 nextExpect = num.ToString() + Func.AddZero(Num + 1, 3);
                 timeSpan = Convert.ToDateTime(str8) - Convert.ToDateTime(curTime);
+            }
+            //香港六合彩
+            else if (ltId == "6001")
+            {
+                if (UserCenterSession.LotteryDateTime == null)
+                {
+                    UserCenterSession.LotteryDateTime = new LotteryTimeDAL().GetDateTimeTable(); //开奖时间
+                }
+
+                //大于当前时间，下一期开奖时间
+                DataRow[] dataRowArray1 = UserCenterSession.LotteryDateTime.Select("Time >'" + curDateTime + "' and LotteryId=" + ltId, "Time asc");
+
+                if (dataRowArray1.Length > 0)
+                {
+                    nextExpect = curDateTime.Year + "-" + dataRowArray1[0]["Sn"].ToString(); //下一期开奖期号
+                    nextTime = Convert.ToDateTime(dataRowArray1[0]["Time"].ToString()); //下一期开奖时间   
+                }
+
+                DataRow[] dataRowArray2 = UserCenterSession.LotteryDateTime.Select("Time <'" + curDateTime + "' and LotteryId=" + ltId, "Time desc");
+
+                if (dataRowArray2.Length > 0)
+                {
+                    curExpect = curDateTime.Year + "-" + dataRowArray2[0]["Sn"].ToString(); //当前期开奖期号
+                    expectNum = dataRowArray2[0]["Sn"].ToString(); //当前期开奖时间
+                }
+
+                //计算倒计时 & 当前期号
+                timeSpan = nextTime - Convert.ToDateTime(curTime);
             }
             else
             {

@@ -118,7 +118,12 @@ namespace Lottery.Api.Controllers
             };
 
             //if (ex is TvInvalidLoginException)
-            if (ex is Exception)
+            if (ex is InvalidOperationException)
+            {
+                result.Code = HttpConst.STATUS_CODE_500;
+                result.Message = string.IsNullOrEmpty(message) ? "服务器处理异常" : message;
+            }
+            else if (ex is Exception)
             {
                 result.Code = HttpConst.STATUS_CODE_601;
                 result.Message = "请重新登录";

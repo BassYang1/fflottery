@@ -99,12 +99,13 @@
     <Compile Include="Lottery\Collect\DefaultToOther.cs" />
     <Compile Include="Lottery\Collect\DoGetObjTask.cs" />
     <Compile Include="Lottery\Collect\Fc3dData.cs" />
+    <Compile Include="Lottery\Boyi\Hk6Data.cs" />
     <Compile Include="Lottery\Collect\HtmlOperate.cs" />
     <Compile Include="Lottery\Collect\HtmlOperate2.cs" />
     <Compile Include="Lottery\Collect\LogHelp.cs" />
     <Compile Include="Lottery\Collect\Public.cs" />
-    <Compile Include="Lottery\Collect\OfficialLotteryData.cs" />
-    <Compile Include="Lottery\Collect\QqSscData.cs" />
+    <Compile Include="Lottery\Boyi\OfficialLotteryData.cs" />
+    <Compile Include="Lottery\Boyi\QqSscData.cs" />
     <Compile Include="Lottery\Collect\TaskData.cs" />
     <Compile Include="Lottery\Collect\Tcp3Data.cs" />
     <Compile Include="Lottery\Collect\TimeData.cs" />

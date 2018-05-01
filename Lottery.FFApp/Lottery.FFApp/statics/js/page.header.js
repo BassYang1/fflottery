@@ -66,7 +66,7 @@ var lookLot = function () {
 
 //加载采种
 function GetLottery() {
-    var str1 = "", str2 = "", str3 = "", str4 = "", str5 = "", str6 = "";
+    var str1 = "", str2 = "", str3 = "", str4 = "", str5 = "", str6 = "", str7 = "";
     for (i = 0; i < lotteryJsonData.table.length; i++) {
         var id = lotteryJsonData.table[i].id;
         var title = lotteryJsonData.table[i].title;
@@ -115,7 +115,7 @@ function GetLottery() {
         }
         if (indextype == 5) {
             str5 += "<li><a  href='/" + code + "'>" + title;
-            if (id == 3002) {
+            if (id == 3002 || id == 6001) {
                 str5 += "<i class='icon icon-h'></i>";
             }
             if (id == 3005) {
@@ -132,6 +132,10 @@ function GetLottery() {
                 str6 += "<i class='icon icon-n'></i>";
             }
             str6 += "</a></li>";
+        }
+        if (indextype == 7) {
+            str7 += "<li><a  href='/" + code + "'>" + title;
+            str7 += "</a></li>";
         }
     }
 
@@ -157,13 +161,18 @@ function GetLottery() {
         gamesHtml += "</ul></dd></dl>";
     }
     if (str5 != "") {
-        gamesHtml += "<dl><dt>福彩/体彩</dt><dd><ul>";
+        gamesHtml += "<dl><dt>福彩/体彩<br />六合彩</dt><dd><ul>";
         gamesHtml += str5;
         gamesHtml += "</ul></dd></dl>";
     }
     if (str6 != "") {
         gamesHtml += "<dl><dt>北京赛车</dt><dd><ul>";
         gamesHtml += str6;
+        gamesHtml += "</ul></dd></dl>";
+    }
+    if (str7 != "") {
+        gamesHtml += "<dl><dt>快三</dt><dd><ul>";
+        gamesHtml += str7;
         gamesHtml += "</ul></dd></dl>";
     }
     return gamesHtml;
@@ -180,8 +189,9 @@ function ajaxUserInfo() {
         success: function (d) {
             if (d.result != "0") {
                 Adminname = d.AdminName;
-                $i('username').innerHTML = d.AdminName;
-                $i('money').innerHTML = UserCurMoney = d.AdminMoney;
+                UserCurMoney = d.AdminMoney;
+                //$i('username').innerHTML = d.AdminName;
+                //$i('money').innerHTML = d.AdminMoney;
             }
             else {
                 window.location.href = '/login';
@@ -257,8 +267,9 @@ function initInfo() {
                 $("#login").hide();
                 $("#Info").show();
                 Adminname = d.AdminName;
-                $i('username').innerHTML = d.AdminName;
-                $i('money').innerHTML = UserCurMoney = d.AdminMoney;
+                UserCurMoney = d.AdminMoney;
+                //$i('username').innerHTML = d.AdminName;
+                //$i('money').innerHTML = d.AdminMoney;
             }
         }
     });
@@ -267,7 +278,7 @@ function initInfo() {
 //手动刷新
 function ajaxRefresh() {
 //    var index = emLoading();
-    $i('money').innerHTML = "获取中...";
+    //$i('money').innerHTML = "获取中...";
     initInfo();
 //    closeload(index);
 }

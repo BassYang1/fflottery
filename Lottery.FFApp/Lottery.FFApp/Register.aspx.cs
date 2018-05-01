@@ -19,17 +19,18 @@ namespace Lottery.FFApp
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string merchantId = this.f("merchantId");
-            string userName = this.f("userName");
-            string signKey = this.f("signKey");
+            string merchantId = this.q("merchantId");
+            string userName = this.q("userName");
+            string signKey = this.q("signKey");
+            string time = this.q("time");
 
-            if (ChkLoginWebApp(merchantId, userName, signKey))
+            if (ChkRegisterMerchantApp(merchantId, userName, time, signKey))
             {
                 Response.Redirect("/", true);
             }
         }
 
-        public bool ChkLoginWebApp(string merchantId, string userName, string signKey)
+        public bool ChkRegisterMerchantApp(string merchantId, string userName, string time, string signKey)
         {
             if (string.IsNullOrEmpty(merchantId))
             {
@@ -46,10 +47,15 @@ namespace Lottery.FFApp
                 this.CheckMsg = "签名不能为空";
                 return false;
             }
+            if (string.IsNullOrEmpty(time))
+            {
+                this.CheckMsg = "日期不能为空";
+                return false;
+            }
 
             try
             {
-                (new UserDAL()).ChkRegisterMerchantApp("0", merchantId, userName, MD5.Lower32("123456"), 0, signKey);
+                (new UserDAL()).ChkRegisterMerchantApp("0", merchantId, userName, MD5.Lower32("123456"), 0, time, signKey);
             }
             catch (InvalidOperationException e)
             {

@@ -16,7 +16,7 @@
   <MaxWin>200000.00</MaxWin>
   <MaxWinFK>18000.00</MaxWinFK>
   <MaxLevel>13.10</MaxLevel>
-  <MinCharge>50.00</MinCharge>
+  <MinCharge>0.01</MinCharge>
   <Points>500</Points>
   <PriceOutCheck>30.00</PriceOutCheck>
   <PriceOut>100.00</PriceOut>

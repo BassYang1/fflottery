@@ -332,6 +332,58 @@ namespace Lottery.DAL.Flex
             return num;
         }
 
+        /// <summary>
+        /// 保存取现数据到DB
+        /// </summary>
+        /// <param name="getCash"></param>
+        /// <param name="merchantId"></param>
+        /// <param name="merchantName"></param>
+        /// <param name="userId"></param>
+        /// <param name="orderno3"></param>
+        /// <param name="money"></param>
+        /// <returns></returns>
+        public int Save3Withdraw(string getCash, string merchantId, string merchantName, string userId, string orderno3, Decimal money)
+        {
+            int num = 0;
+            using (SqlConnection sqlConnection = new SqlConnection(ComData.connectionString))
+            {
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = sqlConnection;
+                try
+                {
+                    if (new UserTotalTran().MoneyOpers(getCash, userId, money, 0, 0, 0, 2, 99, "提现申请", "提现申请成功，请耐心等待……", "会员提现", "") > 0)
+                    {
+                        SqlParameter[] values = new SqlParameter[9]
+            {
+              new SqlParameter("@SsId", (object) getCash),
+              new SqlParameter("@UserId", (object) userId),
+              new SqlParameter("@Ss3Id", (object)orderno3), // 
+              new SqlParameter("@BankId", "888"),
+              new SqlParameter("@PayBank", "第三方提现"),
+              new SqlParameter("@PayAccount", merchantId),
+              new SqlParameter("@PayName", merchantName),
+              new SqlParameter("@Money", (object) money),
+              new SqlParameter("@STime", (object) DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+            };
+                        sqlCommand.CommandText = "insert into N_UserGetCash(SsId,UserId,Ss3Id,BankId,PayBank,PayAccount,PayName,Money,STime) values(@SsId,@UserId,@Ss3Id,@BankId,@PayBank,@PayAccount,@PayName,@Money,@STime)";
+                        sqlCommand.CommandText += " SELECT SCOPE_IDENTITY()";
+                        sqlCommand.Parameters.AddRange(values);
+                        num = Convert.ToInt32(sqlCommand.ExecuteScalar());
+                        sqlCommand.Parameters.Clear();
+                        num = 1;
+                    }
+                    else
+                        num = 0;
+                }
+                catch (Exception ex)
+                {
+                    new LogExceptionDAL().Save("系统异常", ex.Message);
+                }
+            }
+            return num;
+        }
+
         public bool Exists(string _wherestr)
         {
             int num = 0;
