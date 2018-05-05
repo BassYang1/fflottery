@@ -66,6 +66,9 @@
     <Reference Include="log4net">
       <HintPath>..\DLLs\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\DLLs\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Configuration.Install" />
@@ -93,6 +96,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SrvConst.cs" />
+    <Compile Include="SyncBetData.cs" />
     <Compile Include="TestSrv.cs" />
   </ItemGroup>
   <ItemGroup>

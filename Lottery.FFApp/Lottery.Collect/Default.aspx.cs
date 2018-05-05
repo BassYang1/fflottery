@@ -16,7 +16,7 @@ namespace Lottery.Collect
         {
             //Win32.SetSystemTime();
             //SysFlb90mData.UpdateData();   
-            SysTw5fcData.UpdateData();
+            //SysTw5fcData.UpdateData();
 			base.Response.Write("程序已经启动，开奖进行中。" + DateTime.Now.ToString());
 			base.Response.End();
 		}
