@@ -32,7 +32,7 @@ var lookLot = function () {
         e.stopPropagation();
         var offset = $(this).offset();
         $lotNav.css({
-            left: offset.left
+            left: offset.left - 400
         });
         $lotNav.show();
     });
@@ -189,9 +189,8 @@ function ajaxUserInfo() {
         success: function (d) {
             if (d.result != "0") {
                 Adminname = d.AdminName;
-                UserCurMoney = d.AdminMoney;
-                //$i('username').innerHTML = d.AdminName;
-                //$i('money').innerHTML = d.AdminMoney;
+                $i('username').innerHTML = d.AdminName;
+                $i('money').innerHTML = UserCurMoney = d.AdminMoney;
             }
             else {
                 window.location.href = '/login';
@@ -267,9 +266,8 @@ function initInfo() {
                 $("#login").hide();
                 $("#Info").show();
                 Adminname = d.AdminName;
-                UserCurMoney = d.AdminMoney;
-                //$i('username').innerHTML = d.AdminName;
-                //$i('money').innerHTML = d.AdminMoney;
+                $i('username').innerHTML = d.AdminName;
+                $i('money').innerHTML = UserCurMoney = d.AdminMoney;
             }
         }
     });
@@ -278,7 +276,7 @@ function initInfo() {
 //手动刷新
 function ajaxRefresh() {
 //    var index = emLoading();
-    //$i('money').innerHTML = "获取中...";
+    $i('money').innerHTML = "获取中...";
     initInfo();
 //    closeload(index);
 }

@@ -10,7 +10,7 @@ using System.Web.UI;
 
 namespace Lottery.WebApp
 {
-    public partial class Index1 : Page
+    public partial class Index3 : Page
   {
     protected void Page_Load(object sender, EventArgs e)
     {

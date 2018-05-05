@@ -311,7 +311,7 @@ var lookLot = function () {
 		var offset = $(this).offset();
 
 		$lotNav.css({
-			left: offset.left
+		    left: offset.left - 400
 		});
 		$lotNav.show();
 	});

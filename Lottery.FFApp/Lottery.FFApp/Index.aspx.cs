@@ -11,9 +11,9 @@ using System.Web.UI;
 namespace Lottery.WebApp
 {
     public partial class Index : Page
-  {
-    protected void Page_Load(object sender, EventArgs e)
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+        }
     }
-  }
 }

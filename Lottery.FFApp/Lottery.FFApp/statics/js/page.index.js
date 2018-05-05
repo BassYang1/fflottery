@@ -1,6 +1,5 @@
 ﻿$(document).ready(function () {
     ajaxUserBindInfo();
-    $(".lot-center").html(GetLottery());
 });
 
 function ajaxUserBindInfo() {
