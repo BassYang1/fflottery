@@ -664,6 +664,24 @@
             <param name="model">提现信息</param>
             <returns>提现结果</returns>
         </member>
+        <member name="M:Lottery.Api.Controllers.AccountController.Search(Lottery.FFModel.SearchChargeModel,System.Int32,System.Int32)">
+            <summary>
+            分页查询充值记录
+            </summary>
+            <param name="query">查询条件</param>
+            <param name="pageSize">页面大小</param>
+            <param name="pageIndex">当前页</param>
+            <returns>充值记录</returns>
+        </member>
+        <member name="M:Lottery.Api.Controllers.AccountController.Search(Lottery.FFModel.SearchWithdrawModel,System.Int32,System.Int32)">
+            <summary>
+            分页查询提现记录
+            </summary>
+            <param name="query">查询条件</param>
+            <param name="pageSize">页面大小</param>
+            <param name="pageIndex">当前页</param>
+            <returns>提现记录</returns>
+        </member>
         <member name="T:Lottery.Api.Controllers.LotteryController">
             <summary>
             彩票
@@ -681,6 +699,26 @@
             </summary>
             <param name="lotteryId">彩票种类id</param>
             <returns>彩票开奖数据，最新20条</returns>
+        </member>
+        <member name="T:Lottery.Api.Controllers.BetController">
+            <summary>
+            投注
+            </summary>
+        </member>
+        <member name="M:Lottery.Api.Controllers.BetController.#ctor">
+            <summary>
+            会员账户
+            </summary>
+            <param name="userService"></param>
+        </member>
+        <member name="M:Lottery.Api.Controllers.BetController.Search(Lottery.FFModel.SearchBetModel,System.Int32,System.Int32)">
+            <summary>
+            分页查询投注记录
+            </summary>
+            <param name="query">查询条件</param>
+            <param name="pageSize">页面大小</param>
+            <param name="pageIndex">当前页</param>
+            <returns>投注数据</returns>
         </member>
         <member name="T:Lottery.Api.Controllers.UserController">
             <summary>
@@ -706,13 +744,6 @@
             </summary>
             <param name="model">登录信息</param>
             <returns>会员登录成功凭证Token</returns>
-        </member>
-        <member name="M:Lottery.Api.Controllers.UserController.GetUserBets(System.Int32)">
-            <summary>
-            获取用户下注，最新20条
-            </summary>
-            <param name="lotteryId">彩票种类Id</param>
-            <returns>用户下注，最新20条</returns>
         </member>
     </members>
 </doc>

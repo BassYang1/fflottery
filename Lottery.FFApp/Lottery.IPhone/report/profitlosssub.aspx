@@ -7,7 +7,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <title>立博国际娱乐</title>
+    <title>盈利彩票</title>
     <script type="text/javascript" src="/statics/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="/statics/global.js"></script>
     <script type="text/javascript" src="/statics/layer/layer.min.js"></script>

@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>立博国际娱乐</title>
+    <title>盈利彩票</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <meta name="format-detection" content="telephone=no,email=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -30,7 +30,7 @@
             </header>
             <div class="notice-content">
             	 <%=L_Detail%>
-                 <p>立博国际娱乐<br/> <%=L_Time%></p>
+                 <p>盈利彩票<br/> <%=L_Time%></p>
             </div>
         </article>
     </main>

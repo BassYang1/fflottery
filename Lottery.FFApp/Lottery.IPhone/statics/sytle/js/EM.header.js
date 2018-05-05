@@ -94,7 +94,7 @@ function ajaxUserInfo() {
             else {
                 var strmsg = "<table align='center' style='width:300px'><tr><td align='center' style='height:35px; font-size:16px;'>" + d.Message + "</td></tr></table>"
                 layer.open({
-                    title: '立博国际娱乐提示您',
+                    title: '盈利彩票提示您',
                     content: strmsg,
                     area: ['350px'],
                     btn: ['重新登陆'],

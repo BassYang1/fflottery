@@ -105,7 +105,7 @@
                                     <a href="/vip.m1" class="btn btn-act btn-withdraw">提&nbsp;现</a>--%>
                                 </div>
                             </div>
-                            <a href="/vip.c" class="btn btn-center">进入会员中心</a>
+                            <%--<a href="/vip.c" class="btn btn-center">进入会员中心</a>--%>
                         </div>
                     </div>
                     <%--<div class="index-section">
