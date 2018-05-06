@@ -283,7 +283,6 @@ namespace Lottery.IPhone
             return;
         }
 
-        string str2 = "0";
         //名称
         //彩种类别
         //倒计时
@@ -296,16 +295,19 @@ namespace Lottery.IPhone
         ltInfo = ltInfo.Replace("彩种类别", ltId);
         ltInfo = ltInfo.Replace("封单时间", lottery.CloseTime.ToString());
 
-        DateTime dateTime1 = DateTime.Now;
+        DateTime nextTime = DateTime.Now; //下一期开奖时间
         //DateTime curDateTime = this.GetDateTime(); //当前日期时间
-        DateTime curDateTime = this.GetDateTime(); //当前日期时间
+        DateTime curDateTime = DateTime.Now; //当前日期时间
         string curDate = curDateTime.ToString("yyyyMMdd"); //当前日期
         string curTime = curDateTime.ToString("HH:mm:ss"); //当前时间
 
         int num;
-        string newValue1;
-        string newValue2;
+        string curExpect = string.Empty; //当前期号
+        string nextExpect = string.Empty; //下一期期号
+        string expectNum = "0"; //已开期数
         TimeSpan timeSpan;
+
+        //福彩3d, 体彩3d
         if (ltId == "3002" || ltId == "3003")
         {
             num = curDateTime.Year;
@@ -315,93 +317,173 @@ namespace Lottery.IPhone
             int Num = Convert.ToInt32(this.doh.GetDataTable().Rows[0]["d"]) - 7 + 1;
             string str7 = curDateTime.AddDays(-1.0).ToString("yyyy-MM-dd") + " 20:30:00";
             string str8 = curDateTime.ToString("yyyy-MM-dd") + " 20:30:00";
+
             if (curDateTime > Convert.ToDateTime(curDateTime.ToString(" 20:30:00")))
+            {
                 str8 = curDateTime.AddDays(1.0).ToString("yyyy-MM-dd") + " 20:30:00";
+            }
             else
+            {
                 --Num;
+            }
+
             num = curDateTime.Year;
-            newValue1 = num.ToString() + Func.AddZero(Num, 3);
+            curExpect = num.ToString() + Func.AddZero(Num, 3);
             num = curDateTime.Year;
-            newValue2 = num.ToString() + Func.AddZero(Num + 1, 3);
+            nextExpect = num.ToString() + Func.AddZero(Num + 1, 3);
             timeSpan = Convert.ToDateTime(str8) - Convert.ToDateTime(curTime);
+        }
+        //香港六合彩
+        else if (ltId == "6001")
+        {
+            if (UserCenterSession.LotteryDateTime == null)
+            {
+                UserCenterSession.LotteryDateTime = new LotteryTimeDAL().GetDateTimeTable(); //开奖时间
+            }
+
+            //大于当前时间，下一期开奖时间
+            DataRow[] dataRowArray1 = UserCenterSession.LotteryDateTime.Select("Time >'" + curDateTime + "' and LotteryId=" + ltId, "Time asc");
+
+            if (dataRowArray1.Length > 0)
+            {
+                nextExpect = curDateTime.Year + "-" + dataRowArray1[0]["Sn"].ToString(); //下一期开奖期号
+                nextTime = Convert.ToDateTime(dataRowArray1[0]["Time"].ToString()); //下一期开奖时间   
+            }
+
+            DataRow[] dataRowArray2 = UserCenterSession.LotteryDateTime.Select("Time <'" + curDateTime + "' and LotteryId=" + ltId, "Time desc");
+
+            if (dataRowArray2.Length > 0)
+            {
+                curExpect = curDateTime.Year + "-" + dataRowArray2[0]["Sn"].ToString(); //当前期开奖期号
+                expectNum = dataRowArray2[0]["Sn"].ToString(); //当前期开奖时间
+            }
+
+            //计算倒计时 & 当前期号
+            timeSpan = nextTime - Convert.ToDateTime(curTime);
         }
         else
         {
             if (UserCenterSession.LotteryTime == null)
-                UserCenterSession.LotteryTime = new LotteryTimeDAL().GetTable();
+            {
+                UserCenterSession.LotteryTime = new LotteryTimeDAL().GetTable(); //开奖时间
+            }
+
+            //大于当前时间，下一期开奖时间
             DataRow[] dataRowArray1 = UserCenterSession.LotteryTime.Select("Time >'" + curTime + "' and LotteryId=" + ltId, "Time asc");
+
             if (dataRowArray1.Length == 0)
             {
                 dataRowArray1 = UserCenterSession.LotteryTime.Select("Time <='" + curTime + "' and LotteryId=" + ltId, "Time asc");
-                newValue2 = curDateTime.AddDays(1.0).ToString("yyyyMMdd") + "-" + dataRowArray1[0]["Sn"].ToString();
+                nextExpect = curDateTime.AddDays(1.0).ToString("yyyyMMdd") + "-" + dataRowArray1[0]["Sn"].ToString();
             }
             else
             {
-                newValue2 = curDate + "-" + dataRowArray1[0]["Sn"].ToString();
-                dateTime1 = Convert.ToDateTime(dataRowArray1[0]["Time"].ToString());
-                if (curDateTime > Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 00:00:00") && curDateTime < Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 10:00:01") && ltId == "1003")
-                    newValue2 = curDateTime.AddDays(-1.0).ToString("yyyyMMdd") + "-" + dataRowArray1[0]["Sn"].ToString();
-                if (curDateTime > Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 23:00:00") && curDateTime < Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 23:59:59") && (ltId == "1014" || ltId == "1016"))
-                    newValue2 = curDateTime.AddDays(1.0).ToString("yyyyMMdd") + "-" + dataRowArray1[0]["Sn"].ToString();
+                nextExpect = curDate + "-" + dataRowArray1[0]["Sn"].ToString(); //下一期开奖期号
+                nextTime = Convert.ToDateTime(dataRowArray1[0]["Time"].ToString()); //下一期开奖时间
+
+                if (curDateTime > Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 00:00:00")
+                    && curDateTime < Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 10:00:01")
+                    && ltId == "1003")
+                {
+                    //新疆时时彩, 北京时间0点到10点，记为前一天期号
+                    nextExpect = curDateTime.AddDays(-1.0).ToString("yyyyMMdd") + "-" + dataRowArray1[0]["Sn"].ToString();
+                }
+
+                if (curDateTime > Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 23:00:00") &&
+                    curDateTime < Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 23:59:59") &&
+                    (ltId == "1014" || ltId == "1016"))
+                {
+                    //东京1.5分彩, 北京时间23点，记为下一天期号
+                    nextExpect = curDateTime.AddDays(1.0).ToString("yyyyMMdd") + "-" + dataRowArray1[0]["Sn"].ToString();
+                }
             }
+
+            //开奖时间小于当前时间，则从下一天(+1d)开始开奖
             if (Convert.ToDateTime(dataRowArray1[0]["Time"].ToString()) < Convert.ToDateTime(curTime))
-                dateTime1 = Convert.ToDateTime(curDateTime.AddDays(1.0).ToString("yyyy-MM-dd") + " " + dataRowArray1[0]["Time"].ToString());
-            timeSpan = dateTime1 - Convert.ToDateTime(curTime);
+            {
+                nextTime = Convert.ToDateTime(curDateTime.AddDays(1.0).ToString("yyyy-MM-dd") + " " + dataRowArray1[0]["Time"].ToString());
+            }
+
+            //计算倒计时 & 当前期号
+            timeSpan = nextTime - Convert.ToDateTime(curTime);
             DataRow[] dataRowArray2 = UserCenterSession.LotteryTime.Select("Time <'" + curTime + "' and LotteryId=" + ltId, "Time desc");
+
             if (dataRowArray2.Length == 0)
             {
                 dataRowArray2 = UserCenterSession.LotteryTime.Select("LotteryId=" + ltId, "Time desc");
-                newValue1 = curDateTime.AddDays(-1.0).ToString("yyyyMMdd") + "-" + dataRowArray2[0]["Sn"].ToString();
-                str2 = dataRowArray2[0]["Sn"].ToString();
+                curExpect = curDateTime.AddDays(-1.0).ToString("yyyyMMdd") + "-" + dataRowArray2[0]["Sn"].ToString();
+                expectNum = dataRowArray2[0]["Sn"].ToString();
             }
             else
             {
-                newValue1 = curDate + "-" + dataRowArray2[0]["Sn"].ToString();
-                str2 = dataRowArray2[0]["Sn"].ToString();
-                if (curDateTime > Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 00:00:00") && curDateTime < Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 10:00:01") && ltId == "1003")
+                curExpect = curDate + "-" + dataRowArray2[0]["Sn"].ToString();
+                expectNum = dataRowArray2[0]["Sn"].ToString();
+
+                if (curDateTime > Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 00:00:00")
+                    && curDateTime < Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 10:00:01")
+                    && ltId == "1003")
                 {
-                    newValue1 = curDateTime.AddDays(-1.0).ToString("yyyyMMdd") + "-" + dataRowArray2[0]["Sn"].ToString();
-                    str2 = dataRowArray2[0]["Sn"].ToString();
+                    //新疆时时彩, 北京时间0点到10点，记为前一天期号
+                    curExpect = curDateTime.AddDays(-1.0).ToString("yyyyMMdd") + "-" + dataRowArray2[0]["Sn"].ToString();
+                    expectNum = dataRowArray2[0]["Sn"].ToString();
                 }
-                if (curDateTime > Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 23:00:00") && curDateTime < Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 23:59:59") && (ltId == "1014" || ltId == "1016"))
-                    newValue1 = curDateTime.AddDays(1.0).ToString("yyyyMMdd") + "-" + dataRowArray2[0]["Sn"].ToString();
+                if (curDateTime > Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 23:00:00")
+                    && curDateTime < Convert.ToDateTime(curDateTime.ToString("yyyy-MM-dd") + " 23:59:59")
+                    && (ltId == "1014" || ltId == "1016"))
+                {
+                    //东京1.5分彩, 北京时间23点，记为下一天期号
+                    curExpect = curDateTime.AddDays(1.0).ToString("yyyyMMdd") + "-" + dataRowArray2[0]["Sn"].ToString();
+                }
             }
+
+            //韩国1.5分彩, 韩国1.5分3D
             if (ltId == "1010" || ltId == "1017" || ltId == "3004")
             {
-                newValue1 = string.Concat((object)(new LotteryTimeDAL().GetTsIssueNum(ltId) + Convert.ToInt32(dataRowArray2[0]["Sn"].ToString())));
-                str2 = dataRowArray2[0]["Sn"].ToString();
-                newValue2 = string.Concat((object)(Convert.ToInt32(newValue1) + 1));
+                curExpect = string.Concat((object)(new LotteryTimeDAL().GetTsIssueNum(ltId) + Convert.ToInt32(dataRowArray2[0]["Sn"].ToString())));
+                expectNum = dataRowArray2[0]["Sn"].ToString();
+                nextExpect = string.Concat((object)(Convert.ToInt32(curExpect) + 1));
             }
+
+            //新加坡2分彩
             if (ltId == "1012")
             {
-                newValue1 = string.Concat((object)(new LotteryTimeDAL().GetTsIssueNum("1012") + Convert.ToInt32(dataRowArray2[0]["Sn"].ToString())));
-                str2 = dataRowArray2[0]["Sn"].ToString();
-                newValue2 = string.Concat((object)(Convert.ToInt32(newValue1) + 1));
+                curExpect = string.Concat((object)(new LotteryTimeDAL().GetTsIssueNum("1012") + Convert.ToInt32(dataRowArray2[0]["Sn"].ToString())));
+                expectNum = dataRowArray2[0]["Sn"].ToString();
+                nextExpect = string.Concat((object)(Convert.ToInt32(curExpect) + 1));
             }
+
+            //台湾5分彩
             if (ltId == "1013")
             {
-                newValue1 = string.Concat((object)(new LotteryTimeDAL().GetTsIssueNum("1013") + Convert.ToInt32(dataRowArray2[0]["Sn"].ToString())));
-                str2 = dataRowArray2[0]["Sn"].ToString();
-                newValue2 = string.Concat((object)(Convert.ToInt32(newValue1) + 1));
+                curExpect = string.Concat((object)(new LotteryTimeDAL().GetTsIssueNum("1013") + Convert.ToInt32(dataRowArray2[0]["Sn"].ToString())));
+                expectNum = dataRowArray2[0]["Sn"].ToString();
+                nextExpect = string.Concat((object)(Convert.ToInt32(curExpect) + 1));
             }
+
+            //东京1.5分彩, 菲律宾1.5分
             if (ltId == "1014" || ltId == "1015" || ltId == "1016")
             {
-                newValue1 = newValue1.Replace("-", "");
-                newValue2 = newValue2.Replace("-", "");
+                curExpect = curExpect.Replace("-", "");
+                nextExpect = nextExpect.Replace("-", "");
             }
+
+            //北京PK10
             if (ltId == "4001")
             {
-                newValue1 = string.Concat((object)(new LotteryTimeDAL().GetTsIssueNum("4001") + Convert.ToInt32(dataRowArray2[0]["Sn"].ToString())));
-                str2 = dataRowArray2[0]["Sn"].ToString();
-                newValue2 = string.Concat((object)(Convert.ToInt32(newValue1) + 1));
+                curExpect = string.Concat((object)(new LotteryTimeDAL().GetTsIssueNum("4001") + Convert.ToInt32(dataRowArray2[0]["Sn"].ToString())));
+                expectNum = dataRowArray2[0]["Sn"].ToString();
+                nextExpect = string.Concat((object)(Convert.ToInt32(curExpect) + 1));
             }
         }
-        string newValue3 = string.Concat((object)(timeSpan.Days * 24 * 60 * 60 + timeSpan.Hours * 60 * 60 + timeSpan.Minutes * 60 + timeSpan.Seconds));
-        string str9 = ltInfo.Replace("下期期号", newValue2).Replace("当前期号", newValue1).Replace("倒计时", newValue3);
-        string oldValue = "已开期数";
-        num = Convert.ToInt32(str2);
-        string newValue4 = num.ToString();
-        this._response = str9.Replace(oldValue, newValue4);
+
+        ltInfo = ltInfo.Replace("已开期数", Int32.Parse(expectNum).ToString());
+        ltInfo = ltInfo.Replace("下期期号", nextExpect);
+        ltInfo = ltInfo.Replace("当前期号", curExpect);
+
+        string countdown = string.Concat((object)(timeSpan.Days * 24 * 60 * 60 + timeSpan.Hours * 60 * 60 + timeSpan.Minutes * 60 + timeSpan.Seconds));
+        ltInfo = ltInfo.Replace("倒计时", countdown);
+
+        this._response = ltInfo;
     }
 
     private void ajaxUserInfo()

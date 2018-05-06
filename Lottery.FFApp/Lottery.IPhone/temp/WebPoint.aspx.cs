@@ -391,6 +391,93 @@ namespace Lottery.Web.temp
                         else
                             stringBuilder.Append(str2 + ",");
                     }
+                    #endregion
+
+                    #region LotteryId = 6
+                    if (Convert.ToInt32(dataTable2.Rows[index2]["LotteryId"].ToString()) == 6)
+                    {
+                        Decimal num3 = Convert.ToDecimal(dataTable2.Rows[index2]["MaxBonus"].ToString());
+                        Decimal num4 = Convert.ToDecimal(dataTable2.Rows[index2]["MinBonus"].ToString());
+                        Decimal num5 = Convert.ToDecimal(dataTable2.Rows[index2]["MinBonus2"].ToString());
+                        Decimal num6 = (num3 - num4) / new Decimal(260);
+                        if (num5 == new Decimal(0))
+                        {
+                            if (num6 == new Decimal(0))
+                            {
+                                this.doh.Reset();
+                                this.doh.SqlCmd = "select * from N_UserLevel where (Point=0.00) order by Point desc";
+                                DataTable dataTable3 = this.doh.GetDataTable();
+                                for (int index3 = 0; index3 < dataTable3.Rows.Count; ++index3)
+                                {
+                                    num1 = new Decimal(0);
+                                    Decimal num7 = Convert.ToDecimal(dataTable3.Rows[index3]["Point"].ToString());
+                                    Decimal num8 = num4 + Convert.ToDecimal(num7) * new Decimal(2) * num6;
+                                    str2 = str2 + "{\"no\":" + (object)(index3 + 1) + ",\"bonus\": \"" + Convert.ToDouble(num8).ToString("0.00") + "\",\"point\": \"0.00\"},";
+                                }
+                            }
+                            else
+                            {
+                                this.doh.Reset();
+                                this.doh.SqlCmd = "select * from N_UserLevel where (Point=" + str1 + " or Point=0.00) order by Point desc";
+                                DataTable dataTable3 = this.doh.GetDataTable();
+                                for (int index3 = 0; index3 < dataTable3.Rows.Count; ++index3)
+                                {
+                                    num1 = new Decimal(0);
+                                    Decimal num7 = Convert.ToDecimal(dataTable3.Rows[index3]["Point"].ToString());
+                                    Decimal num8 = num4 + Convert.ToDecimal(num7) * new Decimal(2) * num6;
+                                    str2 = str2 + "{\"no\":" + (object)(index3 + 1) + ",\"bonus\": \"" + Convert.ToDouble(num8).ToString("0.00") + "\",\"point\": \"" + Convert.ToDecimal((Convert.ToDecimal(str1) - num7) / new Decimal(10)).ToString("0.00") + "\"},";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            this.doh.Reset();
+                            this.doh.ConditionExpress = "Title2=@Title2 and LotteryId=1";
+                            this.doh.AddConditionParameter("@Title2", (object)"P_3Z3_L");
+                            object[] fields1 = this.doh.GetFields("Sys_PlaySmallType", "MaxBonus,MinBonus");
+                            Decimal num7 = (Convert.ToDecimal(fields1[0]) - Convert.ToDecimal(fields1[1])) / new Decimal(260);
+                            this.doh.Reset();
+                            this.doh.ConditionExpress = "Title2=@Title2 and LotteryId=1";
+                            this.doh.AddConditionParameter("@Title2", (object)"P_3Z6_L");
+                            object[] fields2 = this.doh.GetFields("Sys_PlaySmallType", "MaxBonus,MinBonus");
+                            Decimal num8 = (Convert.ToDecimal(fields2[0]) - Convert.ToDecimal(fields2[1])) / new Decimal(260);
+                            if (num6 == new Decimal(0))
+                            {
+                                this.doh.Reset();
+                                this.doh.SqlCmd = "select * from N_UserLevel where (Point=0.00) order by Point desc";
+                                DataTable dataTable3 = this.doh.GetDataTable();
+                                for (int index3 = 0; index3 < dataTable3.Rows.Count; ++index3)
+                                {
+                                    num1 = new Decimal(0);
+                                    num2 = new Decimal(0);
+                                    Decimal num9 = Convert.ToDecimal(dataTable3.Rows[index3]["Point"].ToString());
+                                    Decimal num10 = num4 + Convert.ToDecimal(num9) * new Decimal(2) * num7;
+                                    Decimal num11 = num5 + Convert.ToDecimal(num9) * new Decimal(2) * num8;
+                                    str2 = str2 + "{\"no\":" + (object)(index3 + 1) + ",\"bonus\": \"" + Convert.ToDouble(num10).ToString("0.00") + "/" + Convert.ToDouble(num11).ToString("0.00") + "\",\"point\": \"0.00\"},";
+                                }
+                            }
+                            else
+                            {
+                                this.doh.Reset();
+                                this.doh.SqlCmd = "select * from N_UserLevel where (Point=" + str1 + " or Point=0.00) order by Point desc";
+                                DataTable dataTable3 = this.doh.GetDataTable();
+                                for (int index3 = 0; index3 < dataTable3.Rows.Count; ++index3)
+                                {
+                                    num1 = new Decimal(0);
+                                    num2 = new Decimal(0);
+                                    Decimal num9 = Convert.ToDecimal(dataTable3.Rows[index3]["Point"].ToString());
+                                    Decimal num10 = num4 + Convert.ToDecimal(num9) * new Decimal(2) * num7;
+                                    Decimal num11 = num5 + Convert.ToDecimal(num9) * new Decimal(2) * num8;
+                                    str2 = str2 + "{\"no\":" + (object)(index3 + 1) + ",\"bonus\": \"" + Convert.ToDouble(num10).ToString("0.00") + "/" + Convert.ToDouble(num11).ToString("0.00") + "\",\"point\": \"" + Convert.ToDecimal((Convert.ToDecimal(str1) - num9) / new Decimal(10)).ToString("0.00") + "\"},";
+                                }
+                            }
+                        }
+                        str2 = str2.Substring(0, str2.Length - 1) + "]}";
+                        if (index2 == dataTable2.Rows.Count - 1)
+                            stringBuilder.Append(str2);
+                        else
+                            stringBuilder.Append(str2 + ",");
+                    }
                     #endregion                    
 
                 }

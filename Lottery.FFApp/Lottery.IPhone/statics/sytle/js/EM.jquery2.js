@@ -37,7 +37,289 @@ function CreateNumber() {
     var hezhiNum = 16;
     var chooseAll = false; //通选
     var k3 = false; //快三
+    //六合彩
+    var hk6 = false;
+    var randNum = 0;
+
+    var onlyone = false;
+
     switch (PlayCode) {
+        case "H_TMBT":
+        case "H_TMBB":
+        case "H_TMBBB":
+        case "H_ZMDX":
+        case "H_ZMDS":
+        case "H_ZMHSDX":
+        case "H_ZMHSDS":
+        case "H_ZMSBH":
+        case "H_ZMSBLAN":
+        case "H_ZMSBLV":
+        case "H_ZMWSDX":
+            var balls = null;
+
+            switch (PlayCode) {
+                case "H_TMBT":
+                    balls = new Array(2);
+                    balls[0] = new Array("大小", "大", "小");
+                    balls[1] = new Array("单双", "单", "双");
+                    break;
+                case "H_TMBB":
+                    balls = new Array(2);
+                    balls[0] = new Array("色波", "红", "蓝", "绿");
+                    balls[1] = new Array("大小单双", "大", "小", "单", "双");
+                    break;
+                case "H_TMBBB":
+                    balls = new Array(2);
+                    balls[0] = new Array("色波", "红", "蓝", "绿");
+                    balls[1] = new Array("大小", "大", "小");
+                    balls[2] = new Array("单双", "单", "双");
+                    break;
+                case "H_ZMDX":
+                case "H_ZMHSDX":
+                case "H_ZMWSDX":
+                    balls = new Array(6);
+                    balls[0] = new Array("正码一", "大", "小");
+                    balls[1] = new Array("正码二", "大", "小");
+                    balls[2] = new Array("正码三", "大", "小");
+                    balls[3] = new Array("正码四", "大", "小");
+                    balls[4] = new Array("正码五", "大", "小");
+                    balls[5] = new Array("正码六", "大", "小");
+                    break;
+                case "H_ZMDS":
+                case "H_ZMHSDS":
+                    balls = new Array(6);
+                    balls[0] = new Array("正码一", "单", "双");
+                    balls[1] = new Array("正码二", "单", "双");
+                    balls[2] = new Array("正码三", "单", "双");
+                    balls[3] = new Array("正码四", "单", "双");
+                    balls[4] = new Array("正码五", "单", "双");
+                    balls[5] = new Array("正码六", "单", "双");
+                    break;
+                case "H_ZMSBH":
+                    balls = new Array(6);
+                    balls[0] = new Array("正码一", "红");
+                    balls[1] = new Array("正码二", "红");
+                    balls[2] = new Array("正码三", "红");
+                    balls[3] = new Array("正码四", "红");
+                    balls[4] = new Array("正码五", "红");
+                    balls[5] = new Array("正码六", "红");
+                    break;
+                case "H_ZMSBLAN":
+                    balls = new Array(6);
+                    balls[0] = new Array("正码一", "蓝");
+                    balls[1] = new Array("正码二", "蓝");
+                    balls[2] = new Array("正码三", "蓝");
+                    balls[3] = new Array("正码四", "蓝");
+                    balls[4] = new Array("正码五", "蓝");
+                    balls[5] = new Array("正码六", "蓝");
+                    break;
+                case "H_ZMSBLV":
+                    balls = new Array(6);
+                    balls[0] = new Array("正码一", "绿");
+                    balls[1] = new Array("正码二", "绿");
+                    balls[2] = new Array("正码三", "绿");
+                    balls[3] = new Array("正码四", "绿");
+                    balls[4] = new Array("正码五", "绿");
+                    balls[5] = new Array("正码六", "绿");
+                    break;
+                default:
+                    break;
+            }
+
+            $("#projectxuehao").html("");
+            var str = "<ul class='lottery-set J_LotterySet'>";
+
+            for (var i in balls) {
+                str += "<li class='numbers'>";
+                str += "<span class='lottery-pos'>" + balls[i][0] + "</span>";
+
+                str += "<div class='lottery-balls J_LotteryBallHolder'>";
+
+                for (var j = 1; j < balls[i].length; j++) {
+                    str += "<span class='ball' number='" + balls[i][j] + "'>" + balls[i][j] + "</span>";
+                }
+
+                str += "</div>";
+                str += "<div class='lottery-actions J_LotteryActionHolder'>";
+                str += "<a href='javascript:;' class='all'>全</a>";
+                str += "<a href='javascript:;' class='clear'>清</a>";
+                str += "</div></li>";
+            }
+
+            str += "</ul>";
+            $("#projectxuehao").html(str);
+            break;
+        case "H_TMDX": //⑥合彩 特码, 大小
+        case "H_TMDS": //⑥合彩 特码, 单双
+        case "H_TMHDX": //⑥合彩 特码, 合数大小
+        case "H_TMWDX":
+        case "H_TMHDS":
+        case "H_TMWDS":
+        case "H_TMSB":
+        case "H_TMTS": 
+        case "H_TMWS":
+        case "H_TMSX":
+        case "H_SXZX":
+        case "H_SXZXDS":
+        case "H_ZHDX":
+        case "H_ZHDS":
+        case "H_ZMPTX1":
+        case "H_ZMPTX2":
+        case "H_ZMPTX3":
+        case "H_ZMPTX4":
+        case "H_ZMPTX5":
+            var title = "", balls = null;
+            switch (PlayCode) {
+                case "H_TMDX":
+                case "H_TMHDX":
+                case "H_TMWDX":
+                case "H_ZHDX":
+                    title = "大小";
+                    balls = new Array("大", "小");
+                    break;
+                case "H_TMDS":
+                case "H_TMHDS":
+                case "H_TMWDS":
+                case "H_ZHDS":
+                    title = "单双";
+                    balls = new Array("单", "双");
+                    break;
+                case "H_SXZXDS":
+                    title = "单双";
+                    balls = new Array("单", "双");
+                    onlyone = true;
+                    break;
+                case "H_TMSB":
+                    title = "色波";
+                    balls = new Array("红", "蓝", "绿");
+                    break;
+                case "H_TMTS":
+                    balls = new Array(0, 1, 2, 3, 4);
+                    title = "特码头数";
+                    break;
+                case "H_TMWS":
+                    balls = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+                    title = "特码尾数";
+                    break;
+                case "H_TMSX":
+                    balls = new Array("鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪");
+                    title = "特码生肖";
+                    break;
+                case "H_ZMPTX1":
+                case "H_ZMPTX2":
+                case "H_ZMPTX3":
+                case "H_ZMPTX4":
+                case "H_ZMPTX5":
+                    balls = new Array("鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪");
+                    title = "平特生肖";
+                    break;
+                case "H_SXZX":
+                    balls = new Array("2", "3", "4", "5", "6", "7");
+                    title = "生肖总肖";
+                    onlyone = true;
+                    break;
+                default:
+                    break;
+            }
+
+            $("#projectxuehao").html("");
+            var str = "<ul class='lottery-set J_LotterySet'>";
+            str += "<li class='numbers'>";
+            str += "<span class='lottery-pos'>" + title + "</span>";
+            str += "<div class='lottery-balls J_LotteryBallHolder'>";
+
+            for (var i in balls) {
+                str += "<span class='ball' number='" + balls[i] + "'>" + balls[i] + "</span>";
+            }
+
+            str += "</div>";
+            str += "<div class='lottery-actions J_LotteryActionHolder'>";
+            
+            if (onlyone == false) {
+                str += "<a href='javascript:;' class='all'>全</a>";
+                str += "<a href='javascript:;' class='odd'>奇</a>";
+                str += "<a href='javascript:;' class='even'>偶</a>";
+            }
+
+            str += "<a href='javascript:;' class='clear'>清</a>";
+            str += "</div></li>";
+            str += "</ul>";
+
+            $("#projectxuehao").html(str);
+            break;
+        case "H_BZ5":
+        case "H_BZ6":
+        case "H_BZ7":
+        case "H_BZ8":
+        case "H_BZ9":
+        case "H_BZ10":
+        case "H_BZ11":
+        case "H_BZ12":
+        case "H_BZ15":
+        case "H_ZMP1Z1":
+        case "H_ZMP2Z2":
+        case "H_ZMP3Z2X3":
+        case "H_ZMP3Z3":
+        case "H_ZMP4Z4":
+            hk6 = true;
+            ballNum = 49;
+            if (isNaN(PlayCode.substring(PlayCode.length - 2))) {
+                randNum = parseInt(PlayCode.substring(PlayCode.length - 1));
+            }
+            else {
+                randNum = parseInt(PlayCode.substring(PlayCode.length - 2));
+            }
+
+            $("#projectxuehao").html("");
+            var str = "<ul class='lottery-set J_LotterySet'>";
+            str += "<li class='numbers'>";
+            str += "<span class='lottery-pos'>选码</span>";
+            str += "<div class='lottery-balls J_LotteryBallHolder'>";
+            for (var j = 1; j <= ballNum; j++) {
+                if ((j + "").length == 1)
+                    str += "<span class='ball' number='0" + j + "'>0" + j + "</span>";
+                else
+                    str += "<span class='ball' number='" + j + "'>" + j + "</span>";
+            }
+            str += "</div>";
+            str += "<div class='lottery-actions J_LotteryActionHolder'>";
+            str += "<a href='javascript:;' class='random'>机</a>";
+            str += "<a href='javascript:;' class='clear'>清</a>";
+            str += "</div>";
+            str += "</li>";
+            str += "</ul>";
+
+            $("#projectxuehao").html(str);
+            break;
+        case "H_TM": //⑥合彩 特码
+            hk6 = true;
+            ballNum = 49;
+
+            $("#projectxuehao").html("");
+            var str = "<ul class='lottery-set J_LotterySet'>";
+            str += "<li class='numbers'>";
+            str += "<span class='lottery-pos'>特码</span>";
+            str += "<div class='lottery-balls J_LotteryBallHolder'>";
+            for (var j = 1; j <= ballNum; j++) {
+                if ((j + "").length == 1)
+                    str += "<span class='ball' number='0" + j + "'>0" + j + "</span>";
+                else
+                    str += "<span class='ball' number='" + j + "'>" + j + "</span>";
+            }
+            str += "</div>";
+            str += "<div class='lottery-actions J_LotteryActionHolder'>";
+            str += "<a href='javascript:;' class='all'>全</a>";
+            str += "<a href='javascript:;' class='big'>大</a>";
+            str += "<a href='javascript:;' class='small'>小</a>";
+            str += "<a href='javascript:;' class='odd'>奇</a>";
+            str += "<a href='javascript:;' class='even'>偶</a>";
+            str += "<a href='javascript:;' class='clear'>清</a>";
+            str += "</div>";
+            str += "</li>";
+            str += "</ul>";
+
+            $("#projectxuehao").html(str);
+            break;
         case "K_3HZ": //快3，和值
             k3 = true;
             hezhi = true;
@@ -1874,11 +2156,16 @@ function CreateNumber() {
             if (chooseAll) {
                 $(".lottery-balls").find("span").toggleClass('selected');
             }
+            else if (onlyone) {
+                $this.parents(".numbers").find(".lottery-balls").find("span[number]").removeClass().addClass("ball J_Ball");
+                $this.toggleClass('selected');
+            }
             else {
                 $this.toggleClass('selected');
             }
 
             AutoCalcBet();
+            SwitchBouns(SingleOrderItem);
         });
     }
 
@@ -1891,7 +2178,10 @@ function CreateNumber() {
                 AutoCalcBet();
                 break;
             case "大":
-                if (Nmbtype == 5) {
+                if (hk6) {
+                    $(this).parents(".numbers").find(".lottery-balls").find("span:gt(24)").addClass("selected");
+                }
+                else if (Nmbtype == 5) {
                     if (PlayCode == "K_3HZ") {
                         $(this).parents(".numbers").find(".lottery-balls").find("span:gt(7)").addClass("selected");
                     }
@@ -1908,7 +2198,10 @@ function CreateNumber() {
                 AutoCalcBet();
                 break;
             case "小":
-                if (Nmbtype == 5) {
+                if (hk6) {
+                    $(this).parents(".numbers").find(".lottery-balls").find("span:lt(25)").addClass("selected");
+                }
+                else if (Nmbtype == 5) {
                     if (PlayCode == "K_3HZ") {
                         $(this).parents(".numbers").find(".lottery-balls").find("span:gt(7)").addClass("selected");
                     }
@@ -1925,7 +2218,7 @@ function CreateNumber() {
                 AutoCalcBet();
                 break;
             case "奇":
-                if (Nmbtype == 5) {
+                if (Nmbtype == 5 || Nmbtype == 6) {
                     $(this).parents(".numbers").find(".lottery-balls").find("span:even").addClass("selected");
                 }
                 else if (Nmbtype != 2 && Nmbtype != 4) {
@@ -1937,8 +2230,8 @@ function CreateNumber() {
                 AutoCalcBet();
                 break;
             case "偶":
-                if (Nmbtype == 5) {
-                    $(this).parents(".numbers").find(".lottery-balls").find("span:even").addClass("selected");
+                if (Nmbtype == 5 || Nmbtype == 6) {
+                    $(this).parents(".numbers").find(".lottery-balls").find("span:odd").addClass("selected");
                 }
                 else if (Nmbtype != 2 && Nmbtype != 4) {
                     $(this).parents(".numbers").find(".lottery-balls").find("span[number=0],span[number=2],span[number=4],span[number=6],span[number=8],span[number=10]").addClass("selected");
@@ -1950,6 +2243,20 @@ function CreateNumber() {
                 break;
             case "清":
                 $(this).parents(".numbers").find(".lottery-balls").find("span[number]").removeClass().addClass("ball J_Ball");
+                AutoCalcBet();
+                break;
+            case "机":
+                var ma;
+                var i = 0;
+                var arr = new Array();
+                while (i < randNum) {
+                    ma = randomNum(1, 49);
+                    if (arr.indexOf(ma) < 0 && ma >= 1 && ma <= 49) {
+                        $(this).parents(".numbers").find(".lottery-balls").find("span[number='" + (ma > 9 ? "" + ma : "0" + ma) + "']").addClass("selected");
+                        arr.push(ma);
+                        i++;
+                    }
+                }
                 AutoCalcBet();
                 break;
         }

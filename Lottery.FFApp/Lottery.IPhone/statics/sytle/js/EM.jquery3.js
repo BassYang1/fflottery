@@ -33,7 +33,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -48,7 +48,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -63,7 +63,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -78,7 +78,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -93,7 +93,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -108,7 +108,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -126,7 +126,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -142,7 +142,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -161,7 +161,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -180,7 +180,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -199,7 +199,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -398,7 +398,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -420,7 +420,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -442,7 +442,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -464,7 +464,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -490,7 +490,7 @@
         case "R_3QTWS":
             for (var i = 0; i < rowsLen; i++) {
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
             }
@@ -507,7 +507,7 @@
         case "R_3QTTS":
             for (var i = 0; i < rowsLen; i++) {
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
                 if (i != rowsLen - 1) {
@@ -527,7 +527,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -548,7 +548,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -567,7 +567,7 @@
         case "R_2ZHE":
             for (var i = 0; i < rowsLen; i++) {
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
                 if (i != rowsLen - 1) {
@@ -586,7 +586,7 @@
             for (var i = 0; i < rowsLen; i++) {
                 var selectCount = 0;
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                     selectCount++;
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
@@ -686,7 +686,7 @@
         case "P_5QJ3":
             for (var i = 0; i < rowsLen; i++) {
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
                 if (i != rowsLen - 1) {
@@ -702,7 +702,7 @@
         case "P_4QJ3":
             for (var i = 0; i < rowsLen; i++) {
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
                 if (i != rowsLen - 1) {
@@ -719,7 +719,7 @@
         case "P_3QJ2_R":
             for (var i = 0; i < rowsLen; i++) {
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
                 if (i != rowsLen - 1) {
@@ -735,7 +735,7 @@
         case "P_5QW3":
             for (var i = 0; i < rowsLen; i++) {
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
                 if (i != rowsLen - 1) {
@@ -751,7 +751,7 @@
         case "P_4QW3":
             for (var i = 0; i < rowsLen; i++) {
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
                 if (i != rowsLen - 1) {
@@ -767,7 +767,7 @@
         case "P_3QW2_L":
             for (var i = 0; i < rowsLen; i++) {
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
                 if (i != rowsLen - 1) {
@@ -783,7 +783,7 @@
         case "P_3QW2_R":
             for (var i = 0; i < rowsLen; i++) {
                 $($(".numbers").eq(i).find("span[number].selected")).each(function (j, dom) {
-                    orderItem += $(dom).attr("number") + "_"; ;
+                    orderItem += $(dom).attr("number") + "_";
                 });
                 orderItem = orderItem.substring(0, orderItem.length - 1);
                 if (i != rowsLen - 1) {
