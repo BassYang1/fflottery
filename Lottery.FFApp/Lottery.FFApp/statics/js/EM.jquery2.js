@@ -38,8 +38,10 @@ function CreateNumber() {
 
     //六合彩
     var hk6 = false;
+    var randNum = 0;
 
     var onlyone = false;
+
     switch (PlayCode) {
         case "H_TMBT":
         case "H_TMBB":
@@ -160,6 +162,11 @@ function CreateNumber() {
         case "H_SXZXDS":
         case "H_ZHDX":
         case "H_ZHDS":
+        case "H_ZMPTX1":
+        case "H_ZMPTX2":
+        case "H_ZMPTX3":
+        case "H_ZMPTX4":
+        case "H_ZMPTX5":
             var title = "", balls = null;
             switch (PlayCode) {
                 case "H_TMDX":
@@ -197,6 +204,14 @@ function CreateNumber() {
                     balls = new Array("鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪");
                     title = "特码生肖";
                     break;
+                case "H_ZMPTX1":
+                case "H_ZMPTX2":
+                case "H_ZMPTX3":
+                case "H_ZMPTX4":
+                case "H_ZMPTX5":
+                    balls = new Array("鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪");
+                    title = "平特生肖";
+                    break;
                 case "H_SXZX":
                     balls = new Array("2", "3", "4", "5", "6", "7");
                     title = "生肖总肖";
@@ -231,12 +246,53 @@ function CreateNumber() {
 
             $("#spchoose").html(str);
             break;
+        case "H_BZ5":
+        case "H_BZ6":
+        case "H_BZ7":
+        case "H_BZ8":
+        case "H_BZ9":
+        case "H_BZ10":
+        case "H_BZ11":
+        case "H_BZ12":
+        case "H_BZ15":
+        case "H_ZMP1Z1":
+        case "H_ZMP2Z2":
+        case "H_ZMP3Z2X3":
+        case "H_ZMP3Z3":
+        case "H_ZMP4Z4":
+            hk6 = true;
+            ballNum = 49;
+            if (isNaN(PlayCode.substring(PlayCode.length - 2))) {
+                randNum = parseInt(PlayCode.substring(PlayCode.length - 1));
+            }
+            else {
+                randNum = parseInt(PlayCode.substring(PlayCode.length - 2));
+            }
+
+            $("#spchoose").html("");
+            var str = "<ul class='lottery-choose'>";
+            str += "<li class='numbers'>";
+            str += "<span class='pos'>选码</span>";
+            str += "<div class='lottery-balls'>";
+            for (var j = 1; j <= ballNum; j++) {
+                if ((j + "").length == 1)
+                    str += "<span class='ball' number='0" + j + "'>0" + j + "</span>";
+                else
+                    str += "<span class='ball' number='" + j + "'>" + j + "</span>";
+            }
+            str += "</div>";
+            str += "<div class='oper'>";
+            str += "<a href='javascript:;' class='random'>机</a>";
+            str += "<a href='javascript:;' class='clear'>清</a>";
+            str += "</div>";
+            str += "</li>";
+            str += "</ul>";
+
+            $("#spchoose").html(str);
+            break;
         case "H_TM": //⑥合彩 特码
             hk6 = true;
             ballNum = 49;
-            remark = '香港⑥合彩公司当期开出的最后一码为特码。';
-            PlayExample = '开奖号码：30 40 34 08 25 15 + 42, 投注特码：42。';
-            PlayHelp = '香港⑥合彩公司当期开出的最后一码为特码。';
 
             $("#spchoose").html("");
             var str = "<ul class='lottery-choose'>";
@@ -2353,6 +2409,20 @@ function CreateNumber() {
                 break;
             case "清":
                 $(this).parents(".numbers").find(".lottery-balls").find("span[number]").removeClass().addClass("ball");
+                AutoCalcBet();
+                break;
+            case "机":
+                var ma;
+                var i = 0;
+                var arr = new Array();
+                while (i < randNum) {
+                    ma = randomNum(1, 49);
+                    if (arr.indexOf(ma) < 0 && ma >= 1 && ma <= 49) {
+                        $(this).parents(".numbers").find(".lottery-balls").find("span[number='" + (ma > 9 ? "" + ma : "0" + ma) + "']").addClass("selected");
+                        arr.push(ma);
+                        i++;
+                    }
+                }
                 AutoCalcBet();
                 break;
         }

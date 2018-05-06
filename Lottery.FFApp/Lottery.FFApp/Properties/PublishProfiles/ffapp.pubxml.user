@@ -10,28 +10,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="active/actCharge.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="active/actGroup2.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="active/actGroup3.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="active/actGroup4.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="active/active1.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="active/actReg.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="active/actYongjin.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="active/index.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="ajax/ajax.aspx">
       <publishTime>02/02/2018 21:45:38</publishTime>
@@ -88,16 +88,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="aspx/list.aspx">
-      <publishTime>02/27/2018 22:20:23</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="aspx/nav.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="aspx/page.aspx">
-      <publishTime>02/27/2018 13:25:23</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="bet/betInfo.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="bin/FusionCharts.dll">
       <publishTime>08/27/2009 20:32:40</publishTime>
@@ -115,25 +115,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/05/2018 08:43:51</publishTime>
     </File>
     <File Include="bin/Lottery.Collect.dll">
-      <publishTime>05/01/2018 21:06:19</publishTime>
+      <publishTime>05/06/2018 10:33:28</publishTime>
     </File>
     <File Include="bin/Lottery.DAL.dll">
-      <publishTime>05/01/2018 21:06:18</publishTime>
+      <publishTime>05/06/2018 10:33:27</publishTime>
     </File>
     <File Include="bin/Lottery.DBUtility.dll">
       <publishTime>06/15/2017 00:57:59</publishTime>
     </File>
     <File Include="bin/Lottery.Entity.dll">
-      <publishTime>05/01/2018 21:06:08</publishTime>
+      <publishTime>05/06/2018 10:33:22</publishTime>
     </File>
     <File Include="bin/Lottery.FFApp.dll">
-      <publishTime>05/01/2018 21:06:22</publishTime>
+      <publishTime>05/06/2018 10:33:30</publishTime>
     </File>
     <File Include="bin/Lottery.FFCache.dll">
-      <publishTime>05/01/2018 21:06:10</publishTime>
+      <publishTime>05/06/2018 10:33:22</publishTime>
     </File>
     <File Include="bin/Lottery.Utils.dll">
-      <publishTime>05/01/2018 21:06:09</publishTime>
+      <publishTime>05/06/2018 10:33:22</publishTime>
     </File>
     <File Include="bin/Lucene.Net.dll">
       <publishTime>02/09/2012 17:01:10</publishTime>
@@ -154,34 +154,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/28/2015 17:27:52</publishTime>
     </File>
     <File Include="center/bankInfo.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="center/bankpwd.html">
-      <publishTime>03/24/2018 08:50:13</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="center/email.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="center/index.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="center/mobile.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="center/trueName.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="center/trueNameEdit.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="center/userpwd.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="center/userverify.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="chart/index.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="chart/style/ball.png">
       <publishTime>02/02/2018 21:45:38</publishTime>
@@ -199,31 +199,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="contract/Contractfh.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="contract/ContractfhOper.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="contract/ContractfhPop.aspx">
-      <publishTime>02/12/2018 15:08:03</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="contract/Contractgz.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="contract/ContractgzOper.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="contract/ContractgzPop.aspx">
-      <publishTime>02/12/2018 15:08:31</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="contract/index.aspx">
-      <publishTime>02/27/2018 10:07:07</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="contract/index2.aspx">
-      <publishTime>02/27/2018 10:06:42</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="contract/MyAgentfhlist.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="contract2/Contractfh.aspx">
       <publishTime>02/08/2018 22:03:57</publishTime>
@@ -253,16 +253,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/08/2018 21:00:36</publishTime>
     </File>
     <File Include="email/add.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="email/index.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="email/Info.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="email/Info2.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>02/09/2018 22:29:59</publishTime>
@@ -286,19 +286,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="html/ele.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="html/index.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="html/license.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="html/line.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="html/live.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="html/policy.aspx">
       <publishTime>02/02/2018 21:45:38</publishTime>
@@ -313,13 +313,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="html/sound.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="html/temp.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="Index.aspx">
-      <publishTime>05/01/2018 19:47:51</publishTime>
+      <publishTime>05/05/2018 13:07:49</publishTime>
     </File>
     <File Include="Index1.aspx">
       <publishTime>04/22/2018 10:06:50</publishTime>
@@ -327,35 +327,38 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Index2.aspx">
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
+    <File Include="Index3.aspx">
+      <publishTime>05/05/2018 13:05:57</publishTime>
+    </File>
     <File Include="Login.aspx">
       <publishTime>04/22/2018 09:44:21</publishTime>
     </File>
     <File Include="Login1.aspx">
-      <publishTime>04/22/2018 09:43:50</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="money/charge.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="money/getcash.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="money/specialcharge.html">
       <publishTime>02/27/2018 17:56:33</publishTime>
     </File>
     <File Include="money/trueName.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="news/index.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="news/info.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="news/newsindex.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="news/newslist.html">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="pay/suibipay/notify.aspx">
       <publishTime>02/09/2018 22:29:59</publishTime>
@@ -382,7 +385,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/22/2018 11:17:44</publishTime>
     </File>
     <File Include="Register1.aspx">
-      <publishTime>04/22/2018 11:17:01</publishTime>
+      <publishTime>05/05/2018 13:05:57</publishTime>
     </File>
     <File Include="statics/ajaxrequest.js">
       <publishTime>02/02/2018 21:45:38</publishTime>
@@ -415,7 +418,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="statics/css/member.css">
-      <publishTime>04/27/2018 20:34:31</publishTime>
+      <publishTime>05/05/2018 12:21:51</publishTime>
     </File>
     <File Include="statics/css/test.css">
       <publishTime>02/02/2018 21:45:38</publishTime>
@@ -583,13 +586,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/27/2018 06:40:34</publishTime>
     </File>
     <File Include="statics/img/5006.png">
-      <publishTime>05/01/2018 20:44:20</publishTime>
+      <publishTime>05/02/2018 06:36:22</publishTime>
     </File>
     <File Include="statics/img/5007.png">
-      <publishTime>05/01/2018 20:44:20</publishTime>
+      <publishTime>05/02/2018 06:36:23</publishTime>
     </File>
     <File Include="statics/img/5008.png">
-      <publishTime>05/01/2018 20:44:20</publishTime>
+      <publishTime>05/02/2018 06:36:23</publishTime>
     </File>
     <File Include="statics/img/6001.png">
       <publishTime>04/01/2018 12:46:23</publishTime>
@@ -1609,13 +1612,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="statics/include/header.html">
-      <publishTime>05/01/2018 20:51:25</publishTime>
+      <publishTime>05/05/2018 12:58:52</publishTime>
     </File>
     <File Include="statics/include/lefter.html">
       <publishTime>04/22/2018 10:35:08</publishTime>
     </File>
     <File Include="statics/include/nav.html">
-      <publishTime>02/02/2018 21:45:38</publishTime>
+      <publishTime>05/05/2018 12:57:45</publishTime>
     </File>
     <File Include="statics/include/pop.html">
       <publishTime>02/02/2018 21:45:38</publishTime>
@@ -1636,13 +1639,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="statics/js/EM.jquery2.js">
-      <publishTime>05/01/2018 14:17:57</publishTime>
+      <publishTime>05/06/2018 10:19:33</publishTime>
     </File>
     <File Include="statics/js/EM.jquery3.js">
-      <publishTime>05/01/2018 14:23:40</publishTime>
+      <publishTime>05/06/2018 10:20:10</publishTime>
     </File>
     <File Include="statics/js/EM.jquery4.js">
-      <publishTime>05/01/2018 14:24:30</publishTime>
+      <publishTime>05/06/2018 10:20:22</publishTime>
     </File>
     <File Include="statics/js/EM.jquery5.js">
       <publishTime>03/02/2018 22:19:27</publishTime>
@@ -1660,7 +1663,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2018 06:55:24</publishTime>
     </File>
     <File Include="statics/js/global.js">
-      <publishTime>02/19/2018 08:02:46</publishTime>
+      <publishTime>05/05/2018 12:30:47</publishTime>
     </File>
     <File Include="statics/js/jquery-ui.min.js">
       <publishTime>02/02/2018 21:45:38</publishTime>
@@ -1690,10 +1693,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="statics/js/page.header.js">
-      <publishTime>05/01/2018 16:27:05</publishTime>
+      <publishTime>05/05/2018 12:30:45</publishTime>
     </File>
     <File Include="statics/js/page.index.js">
-      <publishTime>04/22/2018 10:31:22</publishTime>
+      <publishTime>05/05/2018 12:25:36</publishTime>
     </File>
     <File Include="statics/js/page.login.js">
       <publishTime>03/02/2018 21:48:37</publishTime>
@@ -2122,31 +2125,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/24/2018 17:30:41</publishTime>
     </File>
     <File Include="user/index.aspx">
-      <publishTime>02/12/2018 13:55:28</publishTime>
+      <publishTime>05/05/2018 13:05:58</publishTime>
     </File>
     <File Include="user/useradd.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:58</publishTime>
     </File>
     <File Include="user/userAgentFH.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:58</publishTime>
     </File>
     <File Include="user/userContractFH.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:58</publishTime>
     </File>
     <File Include="user/userindex.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:58</publishTime>
     </File>
     <File Include="user/usertranacc.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:58</publishTime>
     </File>
     <File Include="user/userupdate.aspx">
-      <publishTime>02/09/2018 22:29:59</publishTime>
+      <publishTime>05/05/2018 13:05:58</publishTime>
     </File>
     <File Include="WEB-INF/site.xml">
       <publishTime>02/02/2018 21:45:38</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/01/2018 21:07:08</publishTime>
+      <publishTime>05/06/2018 10:33:55</publishTime>
     </File>
   </ItemGroup>
 </Project>

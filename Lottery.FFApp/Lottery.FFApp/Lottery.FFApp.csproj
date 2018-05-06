@@ -234,12 +234,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="Index3.aspx.cs">
+      <DependentUpon>Index3.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Index1.aspx.cs">
-      <DependentUpon>Index1.aspx</DependentUpon>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Register.aspx.cs">
@@ -423,8 +423,8 @@
     <Content Include="html\service.html" />
     <Content Include="html\sound.html" />
     <Content Include="html\temp.html" />
+    <Content Include="Index3.aspx" />
     <Content Include="Index.aspx" />
-    <Content Include="Index1.aspx" />
     <Content Include="Index2.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Login.aspx" />

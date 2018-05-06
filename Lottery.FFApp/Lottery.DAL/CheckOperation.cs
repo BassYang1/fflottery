@@ -42,6 +42,7 @@ namespace Lottery.DAL
 
                 //赔率
                 Decimal bonus = Convert.ToDecimal(row["Bonus"]);
+                Decimal bonus2 = 0.0M;
 
                 //下注倍数
                 Decimal times = Convert.ToDecimal(row["Times"]);
@@ -543,6 +544,17 @@ namespace Lottery.DAL
                 //}
                 #endregion
 
+                #region 六合彩
+                if (lotteryId == 6001) //六合彩
+                {
+                    if (sType.Equals("H_ZMP3Z2X3")) //平三中二
+                    {
+                        sqlCommand.CommandType = CommandType.Text;
+                        sqlCommand.CommandText = "select MinBonus from Sys_PlaySmallType where title2='H_ZMP3Z2QZ'";
+                        bonus2 = Convert.ToDecimal(sqlCommand.ExecuteScalar().ToString());
+                    }
+                }
+                #endregion
                 //中奖注数
                 int winNum = CheckPlay.Check(lotNumber, betDetail2, Pos, sType);
 
@@ -594,6 +606,14 @@ namespace Lottery.DAL
                                     winMoney = bonus * times * (Decimal)winNum * singleMoney / 2.0M;
                                 }
 
+                                break;
+                            case "H_ZMP3Z2X3":
+                                if (winNum == Calculate.RedCommon4(betDetail2, 3)) //3选2全中
+                                {
+                                    bonus = bonus2;
+                                }
+
+                                winMoney = bonus * times * (Decimal)winNum * singleMoney / 2.0M;
                                 break;
                             default:
                                 winMoney = bonus * times * (Decimal)winNum * singleMoney / 2.0M;

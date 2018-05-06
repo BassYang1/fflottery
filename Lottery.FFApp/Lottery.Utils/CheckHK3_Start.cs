@@ -187,6 +187,290 @@ namespace Lottery.Utils
         }
 
         /// <summary>
+        /// 平一中一
+        /// </summary>
+        /// <param name="CheckNumber"></param>
+        /// <param name="lotNumber"></param>
+        /// <returns></returns>
+        public static int ZMP1Z1(string lotNumber, string CheckNumber)
+        {
+            if (string.IsNullOrEmpty(CheckNumber) || string.IsNullOrEmpty(lotNumber))
+            {
+                return 0;
+            }
+
+            string[] userNums = CheckNumber.Split(',');
+            string[] lotNums = lotNumber.Split(',');
+            int num = 0;
+
+            if (lotNums.Length != 7 || userNums.Length < 1)
+            {
+                return 0;
+            }
+
+            foreach (string n in lotNums)
+            {
+                if (userNums.Contains(n))
+                {
+                    num++;
+                }
+            }
+
+            return num;
+        }
+
+        /// <summary>
+        /// 平二中二
+        /// </summary>
+        /// <param name="CheckNumber"></param>
+        /// <param name="lotNumber"></param>
+        /// <returns></returns>
+        public static int ZMP2Z2(string lotNumber, string CheckNumber)
+        {
+            if (string.IsNullOrEmpty(CheckNumber) || string.IsNullOrEmpty(lotNumber))
+            {
+                return 0;
+            }
+
+            string[] userNums = CheckNumber.Split(',');
+            string[] lotNums = lotNumber.Split(',');
+            int num = 0;
+
+            if (lotNums.Length != 7 || userNums.Length < 2)
+            {
+                return 0;
+            }
+
+            foreach (string n in lotNums)
+            {
+                if (userNums.Contains(n))
+                {
+                    num++;
+                }
+            }
+
+            return num * (num - 1) / 2 * 1;
+        }
+
+        /// <summary>
+        /// 平三中二
+        /// </summary>
+        /// <param name="CheckNumber"></param>
+        /// <param name="lotNumber"></param>
+        /// <returns></returns>
+        public static int ZMP3Z2X3(string lotNumber, string CheckNumber)
+        {
+            if (string.IsNullOrEmpty(CheckNumber) || string.IsNullOrEmpty(lotNumber))
+            {
+                return 0;
+            }
+
+            string[] userNums = CheckNumber.Split(',');
+            string[] lotNums = lotNumber.Split(',');
+            int num = 0;
+
+            if (lotNums.Length != 7 || userNums.Length < 3)
+            {
+                return 0;
+            }
+
+            foreach (string n in lotNums)
+            {
+                if (userNums.Contains(n))
+                {
+                    num++;
+                }
+            }
+
+            return num * (num - 1) / 2 * 1;
+        }
+
+        /// <summary>
+        /// 平三中三
+        /// </summary>
+        /// <param name="CheckNumber"></param>
+        /// <param name="lotNumber"></param>
+        /// <returns></returns>
+        public static int ZMP3Z3(string lotNumber, string CheckNumber)
+        {
+            if (string.IsNullOrEmpty(CheckNumber) || string.IsNullOrEmpty(lotNumber))
+            {
+                return 0;
+            }
+
+            string[] userNums = CheckNumber.Split(',');
+            string[] lotNums = lotNumber.Split(',');
+            int num = 0;
+
+            if (lotNums.Length != 7 || userNums.Length < 3)
+            {
+                return 0;
+            }
+
+            foreach (string n in lotNums)
+            {
+                if (userNums.Contains(n))
+                {
+                    num++;
+                }
+            }
+
+            return num * (num - 1) * (num - 2) / 3 * 2 * 1;
+        }
+
+        /// <summary>
+        /// 平三中三
+        /// </summary>
+        /// <param name="CheckNumber"></param>
+        /// <param name="lotNumber"></param>
+        /// <returns></returns>
+        public static int ZMP4Z4(string lotNumber, string CheckNumber)
+        {
+            if (string.IsNullOrEmpty(CheckNumber) || string.IsNullOrEmpty(lotNumber))
+            {
+                return 0;
+            }
+
+            string[] userNums = CheckNumber.Split(',');
+            string[] lotNums = lotNumber.Split(',');
+            int num = 0;
+
+            if (lotNums.Length != 7 || userNums.Length < 4)
+            {
+                return 0;
+            }
+
+            foreach (string n in lotNums)
+            {
+                if (userNums.Contains(n))
+                {
+                    num++;
+                }
+            }
+
+            return num * (num - 1) * (num - 2) * (num - 3) / 4 * 3 * 2 * 1;
+        }
+
+        /// <summary>
+        /// 尾数大小
+        /// </summary>
+        /// <param name="CheckNumber"></param>
+        /// <param name="lotNumber"></param>
+        /// <param name="len"></param>
+        /// <returns></returns>
+        public static int ZMPTX(string lotNumber, string CheckNumber, int len)
+        {
+            if (string.IsNullOrEmpty(CheckNumber) || string.IsNullOrEmpty(lotNumber) || len <= 0 || len > 5)
+            {
+                return 0;
+            }
+
+            string[] userNums = CheckNumber.Split('_');
+            string[] lotNums = lotNumber.Split(',');
+
+            if (lotNums.Length != 7)
+            {
+                return 0;
+            }
+
+            InitSX();
+
+            string[] lotSX = new string[7];
+            int ma;
+            string sx;
+
+            for (int i = 0; i < 7; i++)
+            {
+                ma = Convert.ToInt32(lotNums[i]);
+                sx = SXNums[ma];
+
+                if (lotSX.Contains(sx) == false)
+                {
+                    lotSX[i] = sx;
+                }
+            }
+
+            int num = 0;
+
+
+            foreach (string betSX in userNums)
+            {
+                if (!string.IsNullOrEmpty(betSX) && lotSX.Contains(betSX))
+                {
+                    num++;
+                }
+            }
+
+            if (len == 1)
+            {
+                return num;
+            }
+            else if (len == 2)
+            {
+                return num * (num - 1) / 2 * 1;
+            }
+            else if (len == 3)
+            {
+                return num * (num - 1) * (num - 2) / 3 * 2 * 1;
+            }
+            else if (len == 4)
+            {
+                return num * (num - 1) * (num - 2) * (num - 3) / 4 * 3 * 2 * 1;
+            }
+            else if (len == 5)
+            {
+                return num * (num - 1) * (num - 2) * (num - 3) * (num - 4) / 5 * 4 * 3 * 2 * 1;
+            }
+
+            return 0;
+        }
+
+        /// <summary>
+        /// 尾数大小
+        /// </summary>
+        /// <param name="CheckNumber"></param>
+        /// <param name="lotNumber"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static int BZ(string lotNumber, string CheckNumber, int type)
+        {
+            if (string.IsNullOrEmpty(CheckNumber) || string.IsNullOrEmpty(lotNumber) || type < 5 || type > 15)
+            {
+                return 0;
+            }
+
+            string[] userNums = CheckNumber.Split('_');
+            string[] lotNums = lotNumber.Split(',');
+            List<string> nums = new List<string>();
+
+            foreach (var n in lotNums)
+            {
+                if (userNums.Contains(n) == false && nums.Contains(n) == false)
+                {
+                    nums.Add(n);
+                }
+            }
+            
+            int num = 1;
+            int repeart = 1;
+
+            if (nums.Count < type)
+            {
+                return 0;
+            }
+            else
+            {
+                for (int i = 0; i < type; i++)
+                {
+                    num *= (nums.Count - i);
+                    repeart *= (type - i);
+                }
+
+                return num / repeart;
+            }
+        }
+
+        /// <summary>
         /// 尾数大小
         /// </summary>
         /// <param name="CheckNumber"></param>

@@ -72,6 +72,39 @@ namespace Lottery.DAL
             int num5;
             switch (str1)
             {
+                case "H_ZMP1Z1":
+                    num5 = RedCommon4(balls, 1);
+                    break;
+                case "H_ZMP2Z2":
+                    num5 = RedCommon4(balls, 2);
+                    break;
+                case "H_ZMP3Z2X3":
+                    num5 = RedCommon4(balls, 3);
+                    break;
+                case "H_ZMP3Z3":
+                    num5 = RedCommon4(balls, 3);
+                    break;
+                case "H_ZMP4Z4":
+                    num5 = RedCommon4(balls, 4);
+                    break;
+                case "H_BZ5":
+                case "H_BZ6":
+                case "H_BZ7":
+                case "H_BZ8":
+                case "H_BZ9":
+                case "H_BZ10":
+                case "H_BZ11":
+                case "H_BZ12":
+                case "H_BZ15":
+                    num5 = RedCommon4(balls, Convert.ToInt32(str1.Replace("H_BZ", "")));
+                    break;
+                case "H_ZMPTX1":
+                case "H_ZMPTX2":
+                case "H_ZMPTX3":
+                case "H_ZMPTX4":
+                case "H_ZMPTX5":
+                    num5 = RedCommon4(balls, Convert.ToInt32(str1.Replace("H_ZMPTX", "")));
+                    break;
                 case "H_SXZX":
                 case "H_SXZXDS":
                     num5 = 1;
@@ -601,6 +634,33 @@ namespace Lottery.DAL
             }
 
             return num;
+        }
+
+        //组合数
+        public static int RedCommon4(string balls, int len)
+        {
+            int num = 1;
+            int repeat = 1;
+
+            if (balls != "")
+            {
+                string[] strArray2 = balls.Split('_');
+
+                if (strArray2.Length < len)
+                {
+                    return 0;
+                }
+
+                for (int i = 0; i < len; i++)
+                {
+                    num *= (strArray2.Length - i);
+                    repeat *= (len - i);
+                }
+
+                return num / repeat;
+            }
+
+            return 0;
         }
 
         //11选5, 任选拖胆

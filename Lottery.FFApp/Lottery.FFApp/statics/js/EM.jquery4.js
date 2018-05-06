@@ -1,4 +1,12 @@
-﻿//11选5, 任选拖胆
+﻿function randomNum(minNum, maxNum) {
+    var r = Math.random() * (maxNum - minNum);
+    var re = Math.round(r + minNum);
+    re = Math.max(Math.min(re, maxNum), minNum)
+
+    return re;
+}
+
+//11选5, 任选拖胆
 function Red11X5TD(balls, type) {
     if (balls != "") {
         var strArray1 = balls.split(",");
@@ -84,6 +92,29 @@ function RedCommon3(balls) {
     }
 
     return num;
+}
+
+//组合数
+function RedCommon4(balls, len) {
+    var num = 1;
+    var repeat = 1;
+
+    if (balls != "") {
+        var strArray2 = balls.split("_");
+
+        if (strArray2.length < len) {
+            return 0;
+        }
+        
+        for (var i = 0; i < len; i++) {
+            num *= (strArray2.length - i);
+            repeat *= (len - i);
+        }
+
+        return num / repeat;
+    }
+
+    return 0;
 }
 
 //快三,二不同直选
