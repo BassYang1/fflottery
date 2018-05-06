@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using System.Threading;
 using System.Timers;
 
 namespace Lottery.WinService
@@ -20,7 +21,6 @@ namespace Lottery.WinService
         //private System.Timers.Timer gzTimer;
         //private System.Timers.Timer fh2610Timer;
         //private System.Timers.Timer fh1125Timer;
-        private System.Timers.Timer syncBetTimer;
         private static string hourStr = "3"; //执行时间, 默认凌晨3点
         private static readonly ILog log = log4net.LogManager.GetLogger(typeof(LotterySrv));
         //private DateTime? lastGzDate; //上一次发放工资的日期
@@ -62,11 +62,6 @@ namespace Lottery.WinService
             //fh1125Timer.Elapsed += new ElapsedEventHandler(FH1125_Elapsed);
             //fh1125Timer.AutoReset = true;
             //log.Info("开始定时发放工资(结算当月11号到25号的分红)...");
-
-            //同步彩票投注记录
-            syncBetTimer = new System.Timers.Timer(5 * 60 * 1000);
-            syncBetTimer.Elapsed += new ElapsedEventHandler(SyncBet_Elapsed);
-            syncBetTimer.AutoReset = true;
         }
 
         protected override void OnStart(string[] args)
@@ -76,7 +71,9 @@ namespace Lottery.WinService
             //fh2610Timer.Enabled = true;
             //fh1125Timer.Enabled = true;
 
-            syncBetTimer.Enabled = true;
+            timerBetSync.Elapsed += new ElapsedEventHandler(SyncBet_Elapsed);
+            ThreadPool.QueueUserWorkItem(new WaitCallback(ThBetSync_Fun));
+
             TimeData.Run();
         }
 
@@ -87,7 +84,7 @@ namespace Lottery.WinService
             //fh2610Timer.Enabled = false;
             //fh1125Timer.Enabled = false;
 
-            syncBetTimer.Enabled = false;
+            timerBetSync.Stop();
             TimeData.Stop();
         }
 
@@ -98,7 +95,7 @@ namespace Lottery.WinService
             //fh2610Timer.Enabled = false;
             //fh1125Timer.Enabled = false;
 
-            syncBetTimer.Enabled = false;
+            timerBetSync.Stop();
             TimeData.Stop();
         }
 
@@ -231,23 +228,47 @@ namespace Lottery.WinService
         //    }
         //}
 
+        #region 同步彩票投注记录
         /// <summary>
         /// 同步彩票投注记录
         /// </summary>
-        /// <param name="source"></param>
-        /// <param name="e"></param>
-        public void SyncBet_Elapsed(object source, ElapsedEventArgs e)
+        private static System.Timers.Timer timerBetSync = new System.Timers.Timer(SyncBetData.SyncDataInterval * 60 * 1000.0);
+
+        /// <summary>
+        /// 同步彩票投注记录, 锁
+        /// </summary>
+        private static object obj_loBetSync = new object();
+
+        private static void ThBetSync_Fun(object stateInfo)
+        {
+            SyncBet_Elapsed(null, null);
+            timerBetSync.Start();
+        }
+
+        private static void SyncBet_Elapsed(object sender, ElapsedEventArgs e)
         {
             try
             {
-                log.Info("同步彩票投注记录...");
-                SyncBetData.DoSync();
+                lock (obj_loBetSync)
+                {
+                    try
+                    {
+                        log.Info("同步彩票投注记录...");
+                        SyncBetData.DoSync();
+                    }
+                    catch (Exception ex)
+                    {
+                        log.Error(ex);
+                    }
+                }
             }
             catch (Exception ex)
             {
-                log.Error(ex);
+                log.ErrorFormat("同步彩票投注记录异常 {0}", ex);
             }
         }
+
+        #endregion
     }
 
 }
