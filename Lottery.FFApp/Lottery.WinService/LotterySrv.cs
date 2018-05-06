@@ -253,8 +253,8 @@ namespace Lottery.WinService
                 {
                     try
                     {
-                        log.Info("同步彩票投注记录...");
-                        SyncBetData.DoSync();
+                        ThreadPool.QueueUserWorkItem(new WaitCallback(SyncBetData.DoSync));
+                        ThreadPool.QueueUserWorkItem(new WaitCallback(SyncUserData.DoSync));
                     }
                     catch (Exception ex)
                     {

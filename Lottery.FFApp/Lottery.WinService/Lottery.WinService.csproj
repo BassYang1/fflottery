@@ -97,6 +97,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SrvConst.cs" />
+    <Compile Include="SyncUserData.cs" />
     <Compile Include="SyncBetData.cs" />
     <Compile Include="TestSrv.cs" />
   </ItemGroup>

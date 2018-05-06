@@ -39,7 +39,6 @@ namespace Lottery.WinService
     public static class SyncBetData
     {
         private static readonly ILog log = log4net.LogManager.GetLogger(typeof(SyncBetData));
-        private static string apiHost;
         private static string syncDataApi;
         private static string checkStateApi;
         private static DateTime Dt1970 = new DateTime(1970, 1, 1);
@@ -53,11 +52,6 @@ namespace Lottery.WinService
 
         static SyncBetData()
         {
-            if (ConfigurationManager.AppSettings["ApiHost"] != null)
-            {
-                apiHost = ConfigurationManager.AppSettings["ApiHost"].ToString();
-            }
-
             if (ConfigurationManager.AppSettings["SyncDataApi"] != null)
             {
                 syncDataApi = ConfigurationManager.AppSettings["SyncDataApi"].ToString();
@@ -147,7 +141,7 @@ namespace Lottery.WinService
                         betTime = (Convert.ToDateTime(row["STime"]).Ticks - Dt1970.Ticks) / 10000000
                     };
 
-                    RestClient client = new RestClient(apiHost);
+                    RestClient client = new RestClient(SrvConst.ApiHost);
                     RestRequest req = new RestRequest(syncDataApi, Method.POST);
                     req.AddParameter("application/json; charset=utf-8", req.JsonSerializer.Serialize(data), ParameterType.RequestBody);
                     req.AddHeader("Accept", "*/*");
@@ -182,7 +176,7 @@ namespace Lottery.WinService
                         continue;
                     }
 
-                    RestClient client = new RestClient(apiHost);
+                    RestClient client = new RestClient(SrvConst.ApiHost);
                     RestRequest req = new RestRequest(string.Format("{0}?tradeNo={1}", checkStateApi, row["Ssid"].ToString()), Method.GET);
                     req.AddHeader("Accept", "*/*");
                     req.AddHeader("Content-Type", "application/json; charset=utf-8");

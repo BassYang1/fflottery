@@ -10,6 +10,7 @@ namespace Lottery.WinService
     public class SrvConst
     {
         public static string ConnStr = string.Empty;
+        public static string ApiHost = string.Empty;
 
         static SrvConst()
         {
@@ -17,6 +18,15 @@ namespace Lottery.WinService
             {
                 ConnStr = ConfigurationManager.ConnectionStrings["ConnStr"].ToString();
             }
+
+            if (ConfigurationManager.AppSettings["ApiHost"] != null)
+            {
+                ApiHost = ConfigurationManager.AppSettings["ApiHost"].ToString();
+            }
+
         }
+
+        public const string SuccMsg = "succ";
+        public const string SuccState = "200";
     }
 }
