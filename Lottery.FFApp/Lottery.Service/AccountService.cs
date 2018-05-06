@@ -36,6 +36,11 @@ namespace Lottery.Service
                     throw new InvalidOperationException("无效的充值金额");                    
                 }
 
+                if (string.IsNullOrEmpty(model.OrderId))
+                {
+                    throw new InvalidOperationException("第三方交易ID无效");
+                }
+
                 //1, 判断用户是否存在
                 var merchantEntity = dbContext.N_Merchant.FirstOrDefault(it => (it.MerchantId.Equals(model.MerchantId, StringComparison.OrdinalIgnoreCase)));
 
@@ -61,7 +66,18 @@ namespace Lottery.Service
                     throw new InvalidOperationException("用户不存在");
                 }
 
-                //3, 验证加密串
+                //3,验证订单是否存在
+                var chargeEntity = dbContext.N_UserCharge.FirstOrDefault(it => it.UserId == userEntity.Id
+                    && it.State.HasValue && it.State.Value == 1
+                    && model.OrderId.Equals(it.Ss3Id, StringComparison.OrdinalIgnoreCase));
+
+                if (chargeEntity != null)
+                {
+                    Log.Error("用户充值订单已经存在");
+                    throw new InvalidOperationException("用户充值订单已经存在");
+                }
+
+                //4, 验证加密串
                 //按顺序(商户Id&会员用户名&商户安全码)MD5加密串
                 var signKey = Core.MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}&{3}&{4}", model.OrderId, model.MerchantId, model.UserName, model.Amount.ToString("f4"), merchantEntity.Code).ToLower(), "gb2312");
                 if (string.Compare(signKey, model.SignKey, true) != 0)
@@ -70,7 +86,7 @@ namespace Lottery.Service
                     throw new InvalidOperationException("无效的商户安全码");
                 }
 
-                //4, 支付
+                //5, 支付
                 string orderId = SsId.Charge;
                 UserChargeResultModel result = new UserChargeResultModel()
                 {
@@ -129,6 +145,11 @@ namespace Lottery.Service
                     throw new InvalidOperationException("无效的用户登录信息");
                 }
 
+                if (string.IsNullOrEmpty(model.OrderId))
+                {
+                    throw new InvalidOperationException("第三方交易ID无效");
+                }
+
                 if (model.Amount <= 0)
                 {
                     throw new InvalidOperationException("无效的取现金额");
@@ -158,7 +179,18 @@ namespace Lottery.Service
                     throw new InvalidOperationException("用户不存在");
                 }
 
-                //3, 验证加密串
+                //3,验证订单是否存在
+                var withdrawEntity = dbContext.N_UserGetCash.FirstOrDefault(it => it.UserId == userEntity.Id
+                    && it.State.HasValue && it.State.Value == 1
+                    && model.OrderId.Equals(it.Ss3Id, StringComparison.OrdinalIgnoreCase));
+
+                if (withdrawEntity != null)
+                {
+                    Log.Error("用户提现订单已经存在");
+                    throw new InvalidOperationException("用户提现订单已经存在");
+                }
+
+                //4, 验证加密串
                 //按顺序(商户Id&会员用户名&商户安全码)MD5加密串
                 var signKey = Core.MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}&{3}&{4}", model.OrderId, model.MerchantId, model.UserName, model.Amount.ToString("f4"), merchantEntity.Code).ToLower(), "gb2312");
                 if (string.Compare(signKey, model.SignKey, true) != 0)
@@ -167,7 +199,7 @@ namespace Lottery.Service
                     throw new InvalidOperationException("无效的商户安全码");
                 }
 
-                //4, 取现
+                //5, 取现
                 string orderId = SsId.GetCash;
                 UserWithdrawResultModel result = new UserWithdrawResultModel()
                 {
