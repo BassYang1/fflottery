@@ -14,6 +14,10 @@ namespace Lottery.FFModel
     [Description("提现记录扩展实体")]
     public class UserWithdrawEntity: N_UserGetCash
     {
+        public UserWithdrawEntity()
+        {
+        }
+
         public UserWithdrawEntity(N_UserGetCash charge)
         {
             Id = charge.Id;

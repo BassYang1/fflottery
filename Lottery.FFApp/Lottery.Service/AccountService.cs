@@ -251,8 +251,19 @@ namespace Lottery.Service
                 //用户名
                 var chargeEntities = entities.Join(db.N_User.Where(u => string.IsNullOrEmpty(query.UserName) || u.UserName.Contains(query.UserName)),
                     c => c.UserId, u => u.Id,
-                    (c, u) => new UserChargeEntity(c)
+                    (c, u) => new UserChargeEntity()
                     {
+                        Id = c.Id,
+                        SsId = c.SsId,
+                        UserId = c.UserId,
+                        BankId = c.BankId,
+                        CheckCode = c.CheckCode,
+                        InMoney = c.InMoney,
+                        DzMoney = c.DzMoney,
+                        STime = c.STime,
+                        State = c.State,
+                        ActState = c.ActState,
+                        Ss3Id = c.Ss3Id,
                         UserName = u.UserName
                     });
 
@@ -293,8 +304,21 @@ namespace Lottery.Service
                 //用户名
                 var chargeEntities = entities.Join(db.N_User.Where(u => string.IsNullOrEmpty(query.UserName) || u.UserName.Contains(query.UserName)),
                     c => c.UserId, u => u.Id,
-                    (c, u) => new UserWithdrawEntity(c)
+                    (c, u) => new UserWithdrawEntity()
                     {
+                        Id = c.Id,
+                        SsId = c.SsId,
+                        UserId = c.UserId,
+                        BankId = c.BankId,
+                        PayBank = c.PayBank,
+                        PayAccount = c.PayAccount,
+                        PayName = c.PayName,
+                        Money = c.Money,
+                        Msg = c.Msg,
+                        STime = c.STime,
+                        State = c.State,
+                        STime2 = c.STime2,
+                        Ss3Id = c.Ss3Id,
                         UserName = u.UserName
                     });
 

@@ -98,7 +98,7 @@ namespace Lottery.WinService
                     {
                         cmd.CommandType = CommandType.Text;
                         //0-未开奖，1-已撤销, 2-未中奖, 3-已中奖
-                        cmd.CommandText = @"SELECT B.Id, B.Ssid, U.UserName ,B.Total, B.RealGet, B.STime, ISNULL(B.IsSync, 0) AS IsSync 
+                        cmd.CommandText = @"SELECT B.Id, B.Ssid, U.UserName, CAST(ROUND(B.Total*B.Times,4) AS NUMERIC(15,4)) AS Total, B.RealGet, B.STime, ISNULL(B.IsSync, 0) AS IsSync 
                                 FROM N_UserBet B INNER JOIN N_User U ON B.UserId=U.Id WHERE ISNULL(B.IsSync, 0) IN (0, 1) AND ISNULL(B.State, 0) IN (2, 3);";
                         conn.Open();
 

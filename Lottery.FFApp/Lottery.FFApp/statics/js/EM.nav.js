@@ -15,14 +15,14 @@ var PlayRemark;
 var playPoints;
 var playBouns;
 var PlayPos = "";
-var Price = 1; //圆角分
+var Price = 1; //圆角分类型
 var PriceName = "元";
 var PlayMaxNum = 100;
 var PlayMaxBonus = 0;
 var PlayMinBonus = 0;
 var PlayMinBonus2 = 0;
 var PlayPosBonus = 0;
-var PriceModel = 1; //系数，表示单倍还是双倍 
+var PriceModel = 1; //系数，表示1元还是2元模式
 
 var Nmbtype = 1;
 var PriceTimes = 1; //倍数
@@ -171,8 +171,8 @@ function InitHeader() {
         Price = getCookie("price");
     }
     else {
-        Price = 1;
-        $("#model").val("1");
+        Price = 2;
+        $("#model").val("2");
     }
 
     InitNumber();
@@ -500,6 +500,7 @@ function InitNumber() {
         html += '<span class="number" data-number="7">7</span>';
         html += '<span class="number" data-number="8">8</span>';
         html += '<span class="number" data-number="9">9</span>';
+
         html += '</div>';
         html += '</div>';
         html += '</li>';
@@ -517,6 +518,7 @@ function InitNumber() {
         html += '<span class="number" data-number="7">7</span>';
         html += '<span class="number" data-number="8">8</span>';
         html += '<span class="number" data-number="9">9</span>';
+
         html += '</div>';
         html += '</div>';
         html += '</li>';
@@ -534,6 +536,7 @@ function InitNumber() {
         html += '<span class="number" data-number="7">7</span>';
         html += '<span class="number" data-number="8">8</span>';
         html += '<span class="number" data-number="9">9</span>';
+
         html += '</div>';
         html += '</div>';
         html += '</li>';

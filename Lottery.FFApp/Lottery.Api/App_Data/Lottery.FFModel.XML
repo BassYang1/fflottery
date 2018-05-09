@@ -550,11 +550,6 @@
             Token
             </summary>
         </member>
-        <member name="P:Lottery.FFModel.UserModel.SessionId">
-            <summary>
-            SessionId
-            </summary>
-        </member>
         <member name="P:Lottery.FFModel.UserModel.Id">
             <summary>
             用户Id
@@ -575,9 +570,9 @@
             用户返点
             </summary>
         </member>
-        <member name="P:Lottery.FFModel.UserModel.IsEnable">
+        <member name="P:Lottery.FFModel.UserModel.Amount">
             <summary>
-            是否启用用户
+            账户金额
             </summary>
         </member>
         <member name="T:Lottery.FFModel.UserLoginModel">
@@ -595,6 +590,15 @@
             会员用户名
             </summary>
         </member>
-        <!-- 对于成员“P:Lottery.FFModel.UserLoginModel.SignKey”忽略有格式错误的 XML 注释 -->
+        <member name="P:Lottery.FFModel.UserLoginModel.Time">
+            <summary>
+            查询时间，格式yyyyMMddHHmmss
+            </summary>
+        </member>
+        <member name="P:Lottery.FFModel.UserLoginModel.SignKey">
+            <summary>
+            签名字符串, 按顺序(&amp;商户Id&amp;会员用户名&amp;查询时间&amp;商户安全码)MD5加密串
+            </summary>
+        </member>
     </members>
 </doc>

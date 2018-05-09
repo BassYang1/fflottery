@@ -115,5 +115,27 @@ namespace Lottery.Api.Controllers
                 return GetExceptionResult<UserModel>(null, ex);
             }
         }
+
+        /// <summary>
+        /// 获取会员详细
+        /// </summary>
+        /// <param name="token">会员登录token</param>
+        /// <returns>会员详细信息</returns>
+        [Route("detail")]
+        [HttpGet]
+        [CrossSite]
+        [Description("获取会员详细")]
+        public Result<UserModel> GetUserDetailByToken()
+        {
+            try
+            {
+                var result = this.CurrentUser;
+                return GetSuccessResult(result);
+            }
+            catch (Exception ex)
+            {
+                return GetExceptionResult<UserModel>(null, ex);
+            }
+        }
     }
 }

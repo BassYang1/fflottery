@@ -17,7 +17,7 @@
         <div>用户名<asp:TextBox ID="txtUserName" runat="server"></asp:TextBox></div>
         <div>时间<asp:TextBox ID="txtTime" runat="server"></asp:TextBox></div>
         <div>商户Key<asp:TextBox ID="txtKey" runat="server"></asp:TextBox></div>
-        <div><asp:Button ID="Button1" runat="server" Text="加密" OnClick="Button1_Click" /></div>
+        <div><asp:Button ID="Button1" runat="server" Text="登录加密" OnClick="Button1_Click" /></div>
         <div><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></div>
     </div>
         

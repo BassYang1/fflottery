@@ -91,11 +91,6 @@ namespace Lottery.Api.Controllers
         {
             try
             {
-                if (CurrentUser == null)
-                {
-                    return GetInvalidResult(new PageData<UserChargeRecordModel>(pageSize, pageIndex), "登录用户无效");
-                }
-
                 var result = this.AccountService.SearchCharge(query, pageSize, pageIndex);
                 return GetSuccessResult(result);
             }
@@ -120,11 +115,6 @@ namespace Lottery.Api.Controllers
         {
             try
             {
-                if (CurrentUser == null)
-                {
-                    return GetInvalidResult(new PageData<UserWithdrawRecordModel>(pageSize, pageIndex), "登录用户无效");
-                }
-
                 var result = this.AccountService.SearchWithdraw(query, pageSize, pageIndex);
                 return GetSuccessResult(result);
             }

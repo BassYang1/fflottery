@@ -147,6 +147,7 @@ namespace Lottery.Api
         {
             string[] ignoredApis =
             {
+                "v1/user/detail",
                 "v1/user/login",
                 "v1/user/regiter",
                 "v1/account/charge",

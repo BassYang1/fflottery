@@ -354,7 +354,7 @@ namespace Lottery.DAL.Flex
                 {
                     if (new UserTotalTran().MoneyOpers(getCash, userId, money, 0, 0, 0, 2, 99, "提现申请", "提现申请成功，请耐心等待……", "会员提现", "") > 0)
                     {
-                        SqlParameter[] values = new SqlParameter[9]
+                        SqlParameter[] values = new SqlParameter[10]
             {
               new SqlParameter("@SsId", (object) getCash),
               new SqlParameter("@UserId", (object) userId),
@@ -364,9 +364,10 @@ namespace Lottery.DAL.Flex
               new SqlParameter("@PayAccount", merchantId),
               new SqlParameter("@PayName", merchantName),
               new SqlParameter("@Money", (object) money),
+              new SqlParameter("@State", 1),
               new SqlParameter("@STime", (object) DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
             };
-                        sqlCommand.CommandText = "insert into N_UserGetCash(SsId,UserId,Ss3Id,BankId,PayBank,PayAccount,PayName,Money,STime) values(@SsId,@UserId,@Ss3Id,@BankId,@PayBank,@PayAccount,@PayName,@Money,@STime)";
+                        sqlCommand.CommandText = "insert into N_UserGetCash(SsId,UserId,Ss3Id,BankId,PayBank,PayAccount,PayName,Money,STime, State) values(@SsId,@UserId,@Ss3Id,@BankId,@PayBank,@PayAccount,@PayName,@Money,@STime, @State)";
                         sqlCommand.CommandText += " SELECT SCOPE_IDENTITY()";
                         sqlCommand.Parameters.AddRange(values);
                         num = Convert.ToInt32(sqlCommand.ExecuteScalar());

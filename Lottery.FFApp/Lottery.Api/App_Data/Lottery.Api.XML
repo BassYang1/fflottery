@@ -745,5 +745,12 @@
             <param name="model">登录信息</param>
             <returns>会员登录成功凭证Token</returns>
         </member>
+        <member name="M:Lottery.Api.Controllers.UserController.GetUserDetailByToken">
+            <summary>
+            获取会员详细
+            </summary>
+            <param name="token">会员登录token</param>
+            <returns>会员详细信息</returns>
+        </member>
     </members>
 </doc>

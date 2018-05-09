@@ -14,6 +14,10 @@ namespace Lottery.FFModel
     [Description("充值记录扩展实体")]
     public class UserChargeEntity: N_UserCharge
     {
+        public UserChargeEntity()
+        {
+        }
+
         public UserChargeEntity(N_UserCharge charge)
         {
             Id = charge.Id;

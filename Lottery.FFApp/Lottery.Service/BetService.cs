@@ -44,8 +44,41 @@ namespace Lottery.Service
                 //用户名
                 var betEntities = entities.Join(db.N_User.Where(u => string.IsNullOrEmpty(query.UserName) || u.UserName.Contains(query.UserName)),
                     b => b.UserId, u => u.Id,
-                    (b, u) => new UserBetEntity(b)
+                    (b, u) => new UserBetEntity()
                     {
+                        Id = b.Id,
+                        SsId = b.SsId,
+                        UserId = b.UserId,
+                        UserMoney = b.UserMoney,
+                        LotteryId = b.LotteryId,
+                        PlayId = b.PlayId,
+                        PlayCode = b.PlayCode,
+                        IssueNum = b.IssueNum,
+                        Number = b.Number,
+                        SingleMoney = b.SingleMoney,
+                        Times = b.Times,
+                        Num = b.Num,
+                        Detail = b.Detail,
+                        DX = b.DX,
+                        DS = b.DS,
+                        Total = b.Total,
+                        Point = b.Point,
+                        PointMoney = b.PointMoney,
+                        Bonus = b.Bonus,
+                        WinNum = b.WinNum,
+                        WinBonus = b.WinBonus,
+                        RealGet = b.RealGet,
+                        Pos = b.Pos,
+                        STime = b.STime,
+                        STime2 = b.STime2,
+                        IsOpen = b.IsOpen,
+                        State = b.State,
+                        IsDelay = b.IsDelay,
+                        IsWin = b.IsWin,
+                        STime9 = b.STime9,
+                        IsCheat = b.IsCheat,
+                        ZhId = b.ZhId,
+                        Source = b.Source,
                         UserName = u.UserName
                     });
 

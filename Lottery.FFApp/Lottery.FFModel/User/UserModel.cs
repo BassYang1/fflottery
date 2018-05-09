@@ -20,12 +20,6 @@ namespace Lottery.FFModel
         public string Token { get; set; }
 
         /// <summary>
-        /// SessionId
-        /// </summary>
-        [Description("SessionId")]
-        public string SessionId { get; set; }
-
-        /// <summary>
         /// 用户Id
         /// </summary>
         [Description("用户Id")]
@@ -47,12 +41,12 @@ namespace Lottery.FFModel
         /// 用户返点
         /// </summary>
         [Description("用户返点")]
-        public decimal Point { get; set; }
+        public Decimal Point { get; set; }
 
         /// <summary>
-        /// 是否启用用户
+        /// 账户金额
         /// </summary>
-        [Description("是否启用用户")]
-        public int IsEnable { get; set; }
+        [Description("账户金额")]
+        public Decimal Amount { get; set; }
     }
 }

@@ -89,9 +89,9 @@ namespace Lottery.Service
         {
             using (var dbContext = new TicketEntities())
             {
-                if (model == null || string.IsNullOrEmpty(model.MerchantId) && string.IsNullOrEmpty(model.UserName) && string.IsNullOrEmpty(model.SignKey))
+                if (string.IsNullOrEmpty(model.MerchantId) && string.IsNullOrEmpty(model.UserName) && string.IsNullOrEmpty(model.Time) && string.IsNullOrEmpty(model.SignKey))
                 {
-                    throw new InvalidOperationException("无效的用户登录信息");
+                    throw new InvalidOperationException("无效的查询请求信息");
                 }
 
                 //1, 判断用户是否存在
@@ -110,7 +110,8 @@ namespace Lottery.Service
                 }
 
                 //2, 验证加密串
-                var signKey = Core.MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}", model.MerchantId, model.UserName, merchantEntity.Code).ToLower(), "gb2312");
+                //按顺序(&amp;商户Id&amp;会员用户名&amp;查询时间&amp;商户安全码)MD5加密串
+                var signKey = Core.MD5Cryptology.GetMD5(string.Format("{0}&{1}&{2}&{3}", model.MerchantId, model.UserName, model.Time, merchantEntity.Code).ToLower(), "gb2312");
                 if (string.Compare(signKey, model.SignKey, true) != 0)
                 {
                     Log.Error("无效的商户安全码");

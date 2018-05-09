@@ -33,7 +33,7 @@ namespace Lottery.Service
                 Point = entity.Point ?? 0,
                 UserName = entity.UserName,
                 MerchantId = entity.MerchantId,
-                SessionId = entity.SessionId,
+                Amount = entity.Money ?? 0,
                 Token = entity.Token,
                 Id = entity.Id
             };

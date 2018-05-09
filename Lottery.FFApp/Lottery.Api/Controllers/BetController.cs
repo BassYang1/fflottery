@@ -47,11 +47,6 @@ namespace Lottery.Api.Controllers
         {
             try
             {
-                if (CurrentUser == null)
-                {
-                    return GetInvalidResult(new PageData<UserBetRecordModel>(pageSize, pageIndex), "登录用户无效");
-                }
-
                 var result = this.BetService.SearchBets(query, pageSize, pageIndex);
                 return GetSuccessResult(result);
             }

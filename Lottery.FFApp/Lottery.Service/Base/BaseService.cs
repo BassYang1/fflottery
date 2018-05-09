@@ -51,9 +51,13 @@ namespace Lottery.Service
 
         private void CloseDB()
         {
-            if (this.doh == null)
-                return;
-            this.doh.Dispose();
+            try
+            {
+                if (this.doh == null)
+                    return;
+                this.doh.Dispose();
+            }
+            catch { }
         }
 
         /// <summary>

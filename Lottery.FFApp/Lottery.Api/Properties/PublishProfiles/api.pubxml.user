@@ -10,13 +10,13 @@
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_Data/Lottery.Api.XML">
-      <publishTime>05/01/2018 21:17:50</publishTime>
+      <publishTime>05/09/2018 22:22:34</publishTime>
     </File>
     <File Include="App_Data/Lottery.FFModel.XML">
-      <publishTime>05/01/2018 21:08:23</publishTime>
+      <publishTime>05/09/2018 22:22:50</publishTime>
     </File>
     <File Include="App_Data/XmlDocument.XML">
-      <publishTime>05/01/2018 14:47:28</publishTime>
+      <publishTime>05/09/2018 22:17:53</publishTime>
     </File>
     <File Include="Areas/HelpPage/HelpPage.css">
       <publishTime>04/24/2018 16:44:04</publishTime>
@@ -91,40 +91,40 @@
       <publishTime>04/05/2018 08:43:51</publishTime>
     </File>
     <File Include="bin/Lottery.Api.dll">
-      <publishTime>05/01/2018 21:17:50</publishTime>
+      <publishTime>05/09/2018 22:22:34</publishTime>
     </File>
     <File Include="bin/Lottery.Api.XML">
-      <publishTime>05/01/2018 21:17:50</publishTime>
+      <publishTime>05/09/2018 22:22:34</publishTime>
     </File>
     <File Include="bin/Lottery.Collect.dll">
-      <publishTime>05/01/2018 21:17:42</publishTime>
+      <publishTime>05/09/2018 22:22:30</publishTime>
     </File>
     <File Include="bin/Lottery.Core.dll">
-      <publishTime>05/01/2018 21:17:41</publishTime>
+      <publishTime>05/09/2018 22:22:29</publishTime>
     </File>
     <File Include="bin/Lottery.DAL.dll">
-      <publishTime>05/01/2018 21:17:40</publishTime>
+      <publishTime>05/09/2018 22:22:28</publishTime>
     </File>
     <File Include="bin/Lottery.DBUtility.dll">
-      <publishTime>05/01/2018 21:17:30</publishTime>
+      <publishTime>05/09/2018 22:22:27</publishTime>
     </File>
     <File Include="bin/Lottery.Entity.dll">
-      <publishTime>05/01/2018 21:17:29</publishTime>
+      <publishTime>05/09/2018 22:22:24</publishTime>
     </File>
     <File Include="bin/Lottery.FFCache.dll">
-      <publishTime>05/01/2018 21:17:30</publishTime>
+      <publishTime>05/09/2018 22:22:27</publishTime>
     </File>
     <File Include="bin/Lottery.FFData.dll">
-      <publishTime>05/01/2018 21:17:37</publishTime>
+      <publishTime>05/09/2018 22:22:28</publishTime>
     </File>
     <File Include="bin/Lottery.FFModel.dll">
-      <publishTime>05/01/2018 21:17:39</publishTime>
+      <publishTime>05/09/2018 22:22:28</publishTime>
     </File>
     <File Include="bin/Lottery.Service.dll">
-      <publishTime>05/01/2018 21:17:45</publishTime>
+      <publishTime>05/09/2018 22:22:31</publishTime>
     </File>
     <File Include="bin/Lottery.Utils.dll">
-      <publishTime>05/01/2018 21:17:30</publishTime>
+      <publishTime>05/09/2018 22:22:24</publishTime>
     </File>
     <File Include="bin/Lucene.Net.dll">
       <publishTime>02/09/2012 17:01:10</publishTime>
@@ -295,7 +295,7 @@
       <publishTime>04/05/2018 12:17:55</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/01/2018 21:18:44</publishTime>
+      <publishTime>05/09/2018 22:23:11</publishTime>
     </File>
   </ItemGroup>
 </Project>

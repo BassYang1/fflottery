@@ -14,6 +14,10 @@ namespace Lottery.FFModel
     [Description("投注记录扩展实体")]
     public class UserBetEntity: N_UserBet
     {
+        public UserBetEntity()
+        {
+        }
+
         public UserBetEntity(N_UserBet bet)
         {
             Id = bet.Id;

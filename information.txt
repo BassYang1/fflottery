@@ -18,6 +18,8 @@ wu5028/123456
 
 http://www.tyc.red/TestSignkey.aspx
 
+http://localhost:8021/TestSignkey.aspx
+
 http://localhost:8021/Register.aspx?userName=tesaaa&signkey=49c816ef2a31952207a240a5f4cada2b&merchantId=111111&time=201804241955111
 
 http://localhost:8021/Login.aspx?userName=tesaaa&signkey=49c816ef2a31952207a240a5f4cada2b&merchantId=111111&time=201804241955111

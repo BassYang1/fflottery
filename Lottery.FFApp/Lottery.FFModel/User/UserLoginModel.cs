@@ -26,9 +26,15 @@ namespace Lottery.FFModel
         public string UserName { get; set; }
 
         /// <summary>
-        /// 签名字符串, 按顺序(商户Id&会员用户名&商户安全码)MD5加密串")
+        /// 查询时间，格式yyyyMMddHHmmss
         /// </summary>
-        [Description("签名字符串, 按顺序(商户Id&会员用户名&商户安全码)MD5加密串")]
+        [Description("查询时间，格式yyyyMMddHHmmss")]
+        public string Time { get; set; }
+
+        /// <summary>
+        /// 签名字符串, 按顺序(&amp;商户Id&amp;会员用户名&amp;查询时间&amp;商户安全码)MD5加密串
+        /// </summary>
+        [Description("签名字符串, 按顺序(&amp;商户Id&amp;会员用户名&amp;查询时间&amp;商户安全码)MD5加密串")]
         public string SignKey { get; set; }
     }
 }
